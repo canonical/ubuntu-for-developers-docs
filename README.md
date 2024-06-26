@@ -1,2 +1,3 @@
-# ubuntu-for-developers-docs
-Ubuntu Desktop as a Developer Platform
+# Ubuntu for Developers
+
+Documentation for Ubuntu Desktop as a developer platform.
