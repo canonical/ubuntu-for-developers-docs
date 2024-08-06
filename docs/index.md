@@ -9,9 +9,18 @@ hidden: true
 howto/index
 reference/index
 explanation/index
+
+Contribute documentation <howto/contribute-docs.md>
 :::
 
-Documentation for Ubuntu Desktop as a developer platform.
+This documentation provides guidance for using the [Ubuntu Desktop](https://ubuntu.com/desktop) distribution as a developer platform. The guide focuses on setting up the system as a workstation for developers, with an emphasis on the following toolchains:
+
+* Java
+* .NET
+* Golang
+* Python
+* Rust
+* GCC
 
 
 ## In this documentation
@@ -22,14 +31,14 @@ Documentation for Ubuntu Desktop as a developer platform.
 :link: tutorial/index
 :link-type: doc
 
-**Get started** - hands-on introduction to developing on Ubuntu Desktop for new users
+**Get started** - hands-on introduction to developing on Ubuntu Desktop for new users.
 :::
 
 :::{grid-item-card} [How-to guides](/index)
 :link: howto/index
 :link-type: doc
 
-**Step-by-step guides** covering key operations and common tasks
+**Step-by-step guides** covering key operations and common tasks, including basic system setup and a path to developing a 'hello world' application with each of the toolchains.
 :::
 
 ::::
@@ -41,14 +50,14 @@ Documentation for Ubuntu Desktop as a developer platform.
 :link: reference/index
 :link-type: doc
 
-**Explanations** - conceptual information
+**Resources** for quick reference.
 :::
 
 :::{grid-item-card} [Explanation](/index)
 :link: explanation/index
 :link-type: doc
 
-**Discussion and clarification** of key topics
+**Discussion and clarification** of key topics; conceptual information.
 :::
 
 ::::
@@ -68,7 +77,7 @@ Meet us in `#ubuntu` on IRC Libera.Chat.
 * **[Report bugs](https://github.com/canonical/ubuntu-for-developers-docs/issues/new)**:
 We want to know about the problems so we can fix them.
 
-* **[Contribute code](https://github.com/canonical/ubuntu-for-developers-docs)**:
-The code is open and we are open to accepting changes to it.
+* **[Contribute docs](https://github.com/canonical/ubuntu-for-developers-docs)**:
+The source is open, and we welcome contributions.
 
 Thinking about using Ubuntu Desktop as your development platform? [Get it!](https://ubuntu.com/desktop/developers)
