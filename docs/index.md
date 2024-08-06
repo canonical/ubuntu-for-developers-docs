@@ -1,6 +1,6 @@
 # Ubuntu for Developers
 
-```{toctree}
+:::{toctree}
 ---
 maxdepth: 2
 hidden: true
@@ -9,49 +9,49 @@ hidden: true
 howto/index
 reference/index
 explanation/index
-```
+:::
 
 Documentation for Ubuntu Desktop as a developer platform.
 
 
 ## In this documentation
 
-````{grid} 1 1 2 2
+::::{grid} 1 1 2 2
 
-```{grid-item-card} [Tutorial](/index)
+:::{grid-item-card} [Tutorial](/index)
 :link: tutorial/index
 :link-type: doc
 
 **Get started** - hands-on introduction to developing on Ubuntu Desktop for new users
-```
+:::
 
-```{grid-item-card} [How-to guides](/index)
+:::{grid-item-card} [How-to guides](/index)
 :link: howto/index
 :link-type: doc
 
 **Step-by-step guides** covering key operations and common tasks
-```
+:::
 
-````
+::::
 
-````{grid} 1 1 2 2
+::::{grid} 1 1 2 2
 :reverse:
 
-```{grid-item-card} [Reference](/index)
+:::{grid-item-card} [Reference](/index)
 :link: reference/index
 :link-type: doc
 
 **Explanations** - conceptual information
-```
+:::
 
-```{grid-item-card} [Explanation](/index)
+:::{grid-item-card} [Explanation](/index)
 :link: explanation/index
 :link-type: doc
 
 **Discussion and clarification** of key topics
-```
+:::
 
-````
+::::
 
 
 ## Project and community
