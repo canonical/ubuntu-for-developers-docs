@@ -1,10 +1,12 @@
-(howtos)=
+(howto)=
+
 # How-to guides
 
 :::{toctree}
 ---
 maxdepth: 1
-
+hidden: true
 ---
-Contribute documentation <contribute-docs.md>
+Install and set up Rust <rust-setup.md>
+Develop using Rust <rust-use.md>
 :::
