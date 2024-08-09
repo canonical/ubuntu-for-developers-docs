@@ -25,12 +25,12 @@ Install the `cargo` package, which automatically pulls required dependencies, in
 
 ### Installing latest Rust toolchain using Rustup
 
-Install the Rustup manager from the Snap Store ([snaprcraft.io: Rustup](https://snapcraft.io/rustup) and the Rust toolchain using `rustup`.
+Install the Rustup manager from the Snap Store [snaprcraft.io: Rustup](https://snapcraft.io/rustup) and the Rust toolchain using `rustup`.
 
 1. In a terminal, run:
 
     ```
-    snap install rustup
+    snap install --classic rustup
     ```
 
 2. After installing Rustup, use it to install the latest stable Rust version:
@@ -62,7 +62,7 @@ Many editors and IDEs (Integrated Development Environment) come with various deg
 
 - [Visual Studio Code](https://snapcraft.io/code): Install the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension from the VSCode Marketplace.
 
-- [Helix Editor](https://helix-editor.com/) and [Zed Editor](https://zed.dev/): Install rust-analyzer using Cargo:
+- [Helix Editor](https://helix-editor.com/) and [Zed Editor](https://zed.dev/): Install rust-analyzer using Rustup:
 
     ```
     rustup component add rust-analyzer
