@@ -4,10 +4,9 @@ This article provides guidance on basic use of the Rust toolchain for developmen
 
 [`rustc` is the actual compiler](https://doc.rust-lang.org/rustc/index.html), and `cargo` is the build system and also the project management tool.
 
-Usually you don't want to use `rustc` directly, but rather use `cargo` as the build system to use `rustc` indirectly.
-You can find Rust upstream explaining why you should use `cargo` here: <https://doc.rust-lang.org/stable/cargo/guide/why-cargo-exists.html>.
+In most cases, there is no reason to use `rustc` directly. Instead, use `cargo` as the build system to call `rustc` indirectly. Refer to Rust documentation for an explanation [Why Cargo Exists](https://doc.rust-lang.org/stable/cargo/guide/why-cargo-exists.html).
 
-If you still insist that you want to use `rustc` directly for some reason, we still provide an example of how to use `rustc` directly at the end of this article.
+If you want to use `rustc` without `cargo`, refer to the example [Using `rustc` directly](#how-to-use-rustc-directly).
 
 ## Creating a Rust project using Cargo
 
@@ -43,9 +42,9 @@ If you still insist that you want to use `rustc` directly for some reason, we st
 
 ## Building programmes with nightly Rust
 
-A nightly toolchain can be useful if the shiny new Rust language feature you want to try has yet to land in the stable channel or if you want to know how the latest Rust compiler will optimize your code.
+A nightly toolchain can be useful if the new Rust language feature you want to try has yet to land in the stable channel, or if you want to know how the latest Rust compiler optimises your code.
 
-By default, the nightly Rust builds are not selected for use. Use the `+nightly` parameter to to build your project with the nightly Rust version:
+By default, the nightly Rust builds are not selected for use. Use the `+nightly` parameter to build your project with the nightly Rust version:
 
 ```
 cargo +nightly build
@@ -57,6 +56,7 @@ To run the project, use:
 cargo +nightly run
 ```
 
+(how-to-use-rustc-directly)=
 ## How to Use `rustc` Directly
 
 Consider the following Rust code in a file called `answer.rs`:
@@ -69,7 +69,7 @@ pub extern "C" fn the_answer() -> usize {
 }
 ```
 
-Say, you have a C program that calls this Rust function in a file called `c_main.c`:
+Then you have a C program that calls this Rust function in a file called `c_main.c`:
 
 ```c
 #include <stdio.h>
@@ -83,20 +83,21 @@ int main() {
 }
 ```
 
-You will need to compile the Rust code first using:
+You need to compile the Rust code first using:
 
-```bash
+```none
 rustc answer.rs --emit obj --crate-type=lib -Copt-level=3 -o answer.o
 ```
 
-... then compile and link the final program:
+Then compile and link the final program:
 
-```bash
+```none
 gcc -O3 c_main.c answer.o -o main
 ```
 
-When you execute this program, you should see
+When you execute this program, you should see:
 
-```
+```none
+./main
 The answer is 42
 ``` 
