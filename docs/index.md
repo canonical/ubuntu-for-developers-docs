@@ -5,7 +5,7 @@
 maxdepth: 2
 hidden: true
 ---
-/tutorial/index
+tutorial/index
 howto/index
 reference/index
 explanation/index
