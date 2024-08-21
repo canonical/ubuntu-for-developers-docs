@@ -1,6 +1,6 @@
 # How to develop using Java on Ubuntu
 
-This article provides guidance on basic use of the Java toolchain for development on Ubuntu. It shows how to create a 'hello world' program and explains how to build projects using `gradle` or `maven`.
+This article guides the basic use of the Java toolchain for development on Ubuntu. It shows how to create a 'hello world' program and explains how to build projects using `Gradle` or `maven`.
 
 [`javac` is the actual compiler](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html) but usually Java projects are built using a build system. [`gradle`](https://gradle.org/) and [`maven`](https://maven.apache.org/) are popular tools for building Java projects.
 
@@ -27,9 +27,9 @@ Run
 apt install maven
 ```
 
-to install Maven and default Java Development Kit from the Ubuntu archive.
+to install Maven and the default Java Development Kit from the Ubuntu archive.
 
-Alternatively download Maven from https://maven.apache.org/download.cgi.
+Alternatively, download Maven from https://maven.apache.org/download.cgi.
 
 ## Create a Java project using Maven
 
@@ -39,7 +39,7 @@ Alternatively download Maven from https://maven.apache.org/download.cgi.
     mvn archetype:generate -DgroupId=com.yourcompany -DartifactId=helloworld -Dversion=1.0-SNAPSHOT -Dpackage=com.yourcompany.helloworld -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
     ```
 
-    and press `Enter` when prompted to confirm your selection.
+    Press `Enter` when prompted to confirm your selection.
 
     This creates a new project using [maven-archetype-quickstart](https://maven.apache.org/archetypes/maven-archetype-quickstart/).
 
@@ -119,9 +119,9 @@ Alternatively download Maven from https://maven.apache.org/download.cgi.
     mvn -Dmaven.compiler.release=8 package
     ```
 
-    Notice: -Dmaven.compiler.release=8. Maven quickstart generates a project that targets Java 7 that is no longer supported by Java 21 LTS release. The project target can be changed by updating `maven.compiler.target` and `maven.compiler.source` properties in `pom.xml`
+    Notice: -Dmaven.compiler.release=8. Maven quickstart generates a project that targets Java 7 which is no longer supported by the Java 21 LTS release. The project target can be changed by updating the `maven.compiler.target` and `maven.compiler.source` properties in `pom.xml`
 
-    This builds and runs unit test.
+    This builds and runs unit tests.
 
     Run the application:
 
@@ -137,15 +137,15 @@ Download Gradle from [gradle.org](https://gradle.org/releases).
 Note: Gradle introduced Java 21 support in version 8.5.
 
 
-Alternatively run
+Alternatively, run
 
 ```
 snap install gradle
 ```
 
-to install community-maintained Gradle snap.The snap provides Gradle version 7 that does not support Java 21.
+to install community-maintained Gradle snap. The snap provides Gradle version 7 but does not support Java 21.
 
-Notice: The snap requires setting up `JAVA_HOME` variable. For example:
+Notice: The snap requires setting up the `JAVA_HOME` variable. For example:
 
 ```
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
@@ -153,7 +153,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 
 ## Create a Java project using Gradle
 
-1. Create Java project using `gradle init` command:
+1. Create a Java project using the `gradle init` command:
 
     ```
     mkdir helloworld
@@ -167,9 +167,9 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     --no-split-project \
     --no-incubating
     ```
-    Press `Enter` when prompted for Java version.
+    Press `Enter` when prompted for the Java version.
 
-    Gradle sets up basic project structure with a `Hello World!` application:
+    Gradle sets up a basic project structure with a `Hello World!` application:
 
     ```
     cat app/src/main/java/com/yourcompany/helloworld/App.java
@@ -225,7 +225,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     ./gradlew run
     ```
 
-    This build and runs the project.
+    This builds and runs the project.
 
 ## How to Use `javac` Directly
 
@@ -248,7 +248,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     ```
     javac App.java -d out
     ```
-    to compile the class file in `out` directory.
+    to compile the class file in the `out` directory.
 
     Execute the program:
 
@@ -273,9 +273,9 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
         }
     }
     ```
-    Note: the file lacks .java extension.
+    Note: the file lacks a .java extension.
 
-    Make file executable:
+    Make the file executable:
 
     ```
     chmod +x App
