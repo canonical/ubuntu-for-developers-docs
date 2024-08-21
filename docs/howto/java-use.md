@@ -163,7 +163,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     --no-split-project \
     --no-incubating
     ```
-    Press `Enter` when prompted for the Java version.
+    Press <kbd>Enter</kbd> when prompted for the Java version.
 
     Gradle sets up a basic project structure with a `Hello World!` application:
 
