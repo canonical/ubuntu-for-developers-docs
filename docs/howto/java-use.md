@@ -84,11 +84,9 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
     }
     ```
 
-    ```
-    cat src/test/java/com/yourcompany/helloworld/AppTest.java
-    ```
+    ```{code-block} java
+    :caption: src/test/java/com/yourcompany/helloworld/AppTest.java
 
-    ```Java
     package com.yourcompany.helloworld;
 
     import static org.junit.Assert.assertTrue;
