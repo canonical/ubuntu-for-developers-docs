@@ -115,7 +115,10 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
     mvn -Dmaven.compiler.release=8 package
     ```
 
-    Notice: -Dmaven.compiler.release=8. Maven quickstart generates a project that targets Java 7 which is no longer supported by the Java 21 LTS release. The project target can be changed by updating the `maven.compiler.target` and `maven.compiler.source` properties in `pom.xml`
+    :::{note}
+    Notice the `-Dmaven.compiler.release=8` option.
+    Maven quickstart generates a project that targets Java 7 which is no longer supported by the Java 21 LTS release. The project target can be changed by updating the `maven.compiler.target` and `maven.compiler.source` properties in `pom.xml`
+    :::
 
     This builds and runs unit tests.
 
