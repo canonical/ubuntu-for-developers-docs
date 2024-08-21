@@ -253,7 +253,9 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 
 1. Create a Hello World application in a file `App`:
 
-    ```
+    ```{code-block}
+    :caption: App
+
     #!/usr/bin/java
     public class App {
         public String getGreeting() {
@@ -265,7 +267,10 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
         }
     }
     ```
-    Note: the file lacks a .java extension.
+
+:::{important}
+This file does not have a `.java` extension!
+:::
 
     Make the file executable:
 
