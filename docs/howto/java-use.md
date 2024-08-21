@@ -227,6 +227,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 
     This builds and runs the project.
 
+(how-to-use-javac-directly)=
 ## How to Use `javac` Directly
 
 1. Create a Hello World application in a file `App.java`:
