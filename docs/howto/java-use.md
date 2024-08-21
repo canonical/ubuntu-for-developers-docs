@@ -261,7 +261,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 
 1. Create a Hello World application in a file `App`:
 
-    ```Java
+    ```
     #!/usr/bin/java
     public class App {
         public String getGreeting() {
