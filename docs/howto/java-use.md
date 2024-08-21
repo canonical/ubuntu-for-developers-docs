@@ -66,11 +66,9 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
                     `-- AppTest.java
     ```
 
-    ```
-    cat src/main/java/com/yourcompany/helloworld/App.java
-    ```
+    ```{code-block} java
+    :caption: src/main/java/com/yourcompany/helloworld/App.java
 
-    ```Java
     package com.yourcompany.helloworld;
 
     /**
