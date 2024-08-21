@@ -39,7 +39,7 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
     mvn archetype:generate -DgroupId=com.yourcompany -DartifactId=helloworld -Dversion=1.0-SNAPSHOT -Dpackage=com.yourcompany.helloworld -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
     ```
 
-    Press `Enter` when prompted to confirm your selection.
+    Press <kbd>Enter</kbd> when prompted to confirm your selection.
 
     This creates a new project using [maven-archetype-quickstart](https://maven.apache.org/archetypes/maven-archetype-quickstart/).
 
