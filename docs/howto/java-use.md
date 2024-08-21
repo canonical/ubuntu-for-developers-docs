@@ -155,7 +155,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 
 1. Create a Java project using the `gradle init` command:
 
-    ```
+    ```bash
     mkdir helloworld
     cd helloworld
     gradle init \
