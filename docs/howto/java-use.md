@@ -133,7 +133,9 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
 
 Download Gradle from [gradle.org](https://gradle.org/releases).
 
-Note: Gradle introduced Java 21 support in version 8.5.
+:::{note}
+Gradle introduced Java 21 support in version 8.5.
+:::
 
 
 Alternatively, run
