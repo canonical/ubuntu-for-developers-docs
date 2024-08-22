@@ -283,13 +283,13 @@ This file does not have a `.java` extension!
 
     Make the file executable:
 
-    ```none
+    ```
     chmod +x App
     ```
 
     Run the application
 
-    ```none
+    ```
     ./App
     Hello World!
     ```
