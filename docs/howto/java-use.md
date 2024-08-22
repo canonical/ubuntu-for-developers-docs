@@ -146,11 +146,13 @@ snap install gradle
 
 to install community-maintained Gradle snap. The snap provides Gradle version 7 but does not support Java 21.
 
-Notice: The snap requires setting up the `JAVA_HOME` variable. For example:
+:::{note}
+The snap requires setting up the `JAVA_HOME` variable. For example:
 
-```
+```bash
 export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
 ```
+:::
 
 ## Create a Java project using Gradle
 
