@@ -258,7 +258,7 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     Hello World!
     ```
 
-## Running Java application as shebang script
+## Running Java application as a shebang script
 
 1. Create a Hello World application in a file `App`:
 
