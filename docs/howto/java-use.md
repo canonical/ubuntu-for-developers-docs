@@ -290,6 +290,6 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     Run the application
 
     ```
-        ./App
-        Hello World!
+    ./App
+    Hello World!
     ```
