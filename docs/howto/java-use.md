@@ -277,9 +277,9 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     }
     ```
 
-:::{important}
-This file does not have a `.java` extension!
-:::
+    :::{important}
+    This file does not have a `.java` extension!
+    :::
 
     Make the file executable:
 
@@ -290,6 +290,6 @@ This file does not have a `.java` extension!
     Run the application
 
     ```
-    ./App
-    Hello World!
+        ./App
+        Hello World!
     ```
