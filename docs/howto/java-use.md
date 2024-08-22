@@ -36,7 +36,12 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
 1. Create a new Java project using the `archetype:generate` Maven sub-command:
 
     ```
-    mvn archetype:generate -DgroupId=com.yourcompany -DartifactId=helloworld -Dversion=1.0-SNAPSHOT -Dpackage=com.yourcompany.helloworld -DarchetypeGroupId=org.apache.maven.archetypes -DarchetypeArtifactId=maven-archetype-quickstart -DarchetypeVersion=1.4
+    mvn archetype:generate -DgroupId=com.yourcompany \
+        -DartifactId=helloworld -Dversion=1.0-SNAPSHOT \
+        -Dpackage=com.yourcompany.helloworld \
+        -DarchetypeGroupId=org.apache.maven.archetypes \
+        -DarchetypeArtifactId=maven-archetype-quickstart \
+        -DarchetypeVersion=1.4
     ```
 
     Press `Enter` when prompted to confirm your selection.
