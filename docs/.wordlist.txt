@@ -50,7 +50,7 @@ reST
 reStructuredText
 roadmap
 RTD
-snaprcraft
+snapcraft
 subdirectories
 subfolders
 subtree
