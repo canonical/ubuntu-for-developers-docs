@@ -4,6 +4,7 @@
 addons
 API
 APIs
+AppTest
 balancer
 Charmhub
 CLI
@@ -16,7 +17,9 @@ favicon
 Furo
 Git
 GitHub
+Gradle
 Grafana
+helloworld
 IAM
 installable
 integrations
@@ -48,6 +51,7 @@ reStructuredText
 roadmap
 RTD
 snapcraft
+src
 subdirectories
 subfolders
 subtree
@@ -56,3 +60,4 @@ UI
 UUID
 VM
 YAML
+yourcompany
