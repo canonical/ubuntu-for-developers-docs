@@ -19,6 +19,7 @@ GitHub
 Grafana
 IAM
 installable
+integrations
 JSON
 Juju
 Kubeflow
@@ -46,6 +47,7 @@ reST
 reStructuredText
 roadmap
 RTD
+snapcraft
 subdirectories
 subfolders
 subtree

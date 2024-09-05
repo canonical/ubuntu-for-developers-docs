@@ -154,6 +154,8 @@ linkcheck_anchors_ignore_for_url = [
     r'https://github\.com/.*'
 ]
 
+linkcheck_retries = 3
+
 ############################################################
 ### Additions to default configuration
 ############################################################

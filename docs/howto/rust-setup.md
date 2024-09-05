@@ -25,7 +25,7 @@ Install the `cargo` package, which automatically pulls required dependencies, in
 
 ### Installing latest Rust toolchain using Rustup
 
-Install the Rustup manager from the Snap Store [snaprcraft.io: Rustup](https://snapcraft.io/rustup) and the Rust toolchain using `rustup`.
+Install the Rustup manager from the Snap Store [snapcraft.io: Rustup](https://snapcraft.io/rustup) and the Rust toolchain using `rustup`.
 
 1. In a terminal, run:
 
