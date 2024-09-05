@@ -18,7 +18,9 @@ Git
 GitHub
 Grafana
 IAM
+IntelliJ
 installable
+integrations
 JSON
 Juju
 Kubeflow
@@ -38,6 +40,8 @@ Numbat
 observability
 OEM
 OLM
+OpenJDK
+openjdk
 Permalink
 pre
 Quickstart
@@ -46,9 +50,11 @@ reST
 reStructuredText
 roadmap
 RTD
+snaprcraft
 subdirectories
 subfolders
 subtree
+TCK
 Ubuntu
 UI
 UUID
