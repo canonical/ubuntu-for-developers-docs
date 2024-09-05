@@ -2,10 +2,12 @@
 # modified. Add any custom terms to .custom_wordlist.txt instead.
 
 addons
+apache
 API
 APIs
 AppTest
 balancer
+cgi
 Charmhub
 CLI
 Diátaxis
@@ -18,6 +20,7 @@ Furo
 Git
 GitHub
 Gradle
+gradle
 Grafana
 helloworld
 IAM
@@ -45,6 +48,7 @@ OLM
 Permalink
 pre
 Quickstart
+quickstart
 ReadMe
 reST
 reStructuredText
