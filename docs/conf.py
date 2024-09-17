@@ -220,3 +220,18 @@ rst_prolog = '''
 .. role:: center
    :class: align-center
 '''
+
+# Redefine the Sphinx 'command' role to behave/render like 'literal'
+from docutils.parsers.rst import roles
+from sphinx.util.docutils import SphinxRole
+from docutils import nodes
+
+class CommandRole(SphinxRole):
+    def run(self):
+        text = self.text
+        node = nodes.literal(text, text)
+        return [node], []
+
+def setup(app):
+    roles.register_local_role('command', CommandRole())
+
