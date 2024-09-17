@@ -1,41 +1,58 @@
 # How to develop using Java on Ubuntu
 
-This article guides the basic use of the Java toolchain for development on Ubuntu. It shows how to create a 'hello world' program and explains how to build projects using `Gradle` or `maven`.
+This article provides basic guidance on how to use of the Java toolchain for development on Ubuntu. It shows how to create a 'Hello World' program and explains how to build projects using Gradle or Maven.
 
-[`javac` is the actual compiler](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html) but usually Java projects are built using a build system. [`gradle`](https://gradle.org/) and [`maven`](https://maven.apache.org/) are popular tools for building Java projects.
+[`javac` is the actual compiler](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html), but developers usually use build systems to compile, build, and package Java projects. [Gradle](https://gradle.org/) and [Maven](https://maven.apache.org/) are popular tools for building Java projects.
 
-If you want to use `javac` directly, refer to the example [Using `javac` directly](#how-to-use-javac-directly).
-
-## Install Java Development Kit
-
-Run
-
-```
-apt install default-jdk
-```
-
-to install the default Java Development Kit for your Ubuntu release.
-
-Use ``apt install openjdk-21-jdk`` to install the latest LTS release.
+To use {command}`javac` directly, refer to the example {ref}`compiling-java-application-using-javac-directly`.
 
 
-## Install Maven
+(installing-java-development-kit)=
+## Installing Java Development Kit
 
-Run
+To install the default Java Development Kit for your Ubuntu release, run:
 
-```
-apt install maven
+```none
+sudo apt install default-jdk
 ```
 
-to install Maven and the default Java Development Kit from the Ubuntu archive.
 
-Alternatively, download Maven from https://maven.apache.org/download.cgi.
+To install the latest LTS release, use:
 
-## Create a Java project using Maven
+```none
+sudo apt install openjdk-21-jdk
+```
+
+
+## Creating a Java project using Maven
+
+Setting up and building a new Java project using the Apache Maven tool.
+
+
+:::
+### Prerequisites
+:::
+
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
+
+- Apache Maven:
+
+    To install Maven and the default Java Development Kit from the Ubuntu archive, use:
+
+    ```none
+    sudo apt install maven
+    ```
+
+    Alternatively, download Maven from [maven.apache.org](https://maven.apache.org/download.cgi) and follow the installation instructions: [Installing Apache Maven](https://maven.apache.org/install.html).
+
+
+:::
+### Maven project
+:::
 
 1. Create a new Java project using the `archetype:generate` Maven sub-command:
 
-    ```
+    ```none
     mvn archetype:generate -DgroupId=com.yourcompany \
         -DartifactId=helloworld -Dversion=1.0-SNAPSHOT \
         -Dpackage=com.yourcompany.helloworld \
@@ -44,35 +61,39 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
         -DarchetypeVersion=1.4
     ```
 
-    Press <kbd>Enter</kbd> when prompted to confirm your selection.
+    Press {kbd}`Enter` when prompted to confirm your selection.
 
     This creates a new project using [maven-archetype-quickstart](https://maven.apache.org/archetypes/maven-archetype-quickstart/).
 
+    Maven sets up a basic project structure:
 
-2. Change to the project directory:
+    ```{terminal}
+    :input: tree
+    :user: dev
+    :host: ubuntu
 
-    ```
-    cd hello_world
+    .
+    └── helloworld
+        ├── pom.xml
+        └── src
+        ├── main
+        │   └── java
+        │       └── com
+        │           └── yourcompany
+        │               └── helloworld
+        │                   └── App.java
+        └── test
+            └── java
+                └── com
+                    └── yourcompany
+                        └── helloworld
+                            └── AppTest.java
     ```
 
-    Maven has already set up a basic project structure that includes a `Hello world` application and a unit test:
-
-    ```
-    helloworld
-    |-- pom.xml
-    `-- src
-        |-- main
-        |   `-- java
-        |       `-- $package
-        |           `-- App.java
-        `-- test
-            `-- java
-                `-- $package
-                    `-- AppTest.java
-    ```
+    That includes a 'Hello World' application and a unit test:
 
     ```{code-block} java
-    :caption: src/main/java/com/yourcompany/helloworld/App.java
+    :caption: `src/main/java/com/yourcompany/helloworld/App.java`
 
     package com.yourcompany.helloworld;
 
@@ -90,7 +111,7 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
     ```
 
     ```{code-block} java
-    :caption: src/test/java/com/yourcompany/helloworld/AppTest.java
+    :caption: `src/test/java/com/yourcompany/helloworld/AppTest.java`
 
     package com.yourcompany.helloworld;
 
@@ -114,73 +135,133 @@ Alternatively, download Maven from https://maven.apache.org/download.cgi.
     }
     ```
 
-3. Build and run the program:
+2. Change to the project directory:
 
     ```
+    cd helloworld
+    ```
+
+3. Build and package the application:
+
+    ```none
     mvn -Dmaven.compiler.release=8 package
     ```
 
     :::{note}
-    Notice the `-Dmaven.compiler.release=8` option.
-    Maven quickstart generates a project that targets Java 7 which is no longer supported by the Java 21 LTS release. The project target can be changed by updating the `maven.compiler.target` and `maven.compiler.source` properties in `pom.xml`
+    Notice the `-Dmaven.compiler.release=8` option. Maven quickstart generates a project that targets Java 7, which is no longer supported by the Java 21 LTS release. The project target can be changed by updating the `maven.compiler.target` and `maven.compiler.source` properties in the {file}`pom.xml` file.
     :::
 
     This builds and runs unit tests.
 
     Run the application:
 
-    ```
-    java -cp target/helloworld-1.0-SNAPSHOT.jar com.yourcompany.helloworld.App
+    ```{terminal}
+    :input: java -cp target/helloworld-1.0-SNAPSHOT.jar com.yourcompany.helloworld.App
+    :user: dev
+    :host: ubuntu
+
     Hello World!
     ```
 
-## Install Gradle
 
-Download Gradle from [gradle.org](https://gradle.org/releases).
+## Creating a Java project using Gradle
 
-:::{note}
-Gradle introduced Java 21 support in version 8.5.
+Setting up and building a new Java project using the Gradle build tool.
+
+
+:::
+### Prerequisites
 :::
 
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
 
-Alternatively, run
+- Gradle:
 
-```
-snap install gradle
-```
+    Download Gradle from [gradle.org](https://gradle.org/releases) and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
 
-to install community-maintained Gradle snap. The snap provides Gradle version 7 but does not support Java 21.
+    :::{note}
+    Gradle introduced Java 21 support in version 8.5.
+    :::
 
-:::{note}
-The snap requires setting up the `JAVA_HOME` variable. For example:
+    Alternatively, to install the community-maintained Gradle snap, run:
 
-```bash
-export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-```
+    ```none
+    sudo snap install gradle
+    ```
+
+    The snap provides Gradle version 7, which does not support Java 21.
+
+    :::{note}
+    The snap requires setting up the `JAVA_HOME` variable. For example:
+
+    ```bash
+    export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+    ```
+    :::
+
+
 :::
-
-## Create a Java project using Gradle
+### Gradle project
+:::
 
 1. Create a Java project using the `gradle init` command:
 
-    ```bash
+    ```none
     mkdir helloworld
     cd helloworld
+    cd helloworld
     gradle init \
-    --type java-application \
-    --dsl kotlin \
-    --test-framework junit-jupiter \
-    --package com.yourcompany.helloworld \
-    --project-name helloworld  \
-    --no-split-project \
-    --no-incubating
+        --type java-application \
+        --dsl kotlin \
+        --test-framework junit-jupiter \
+        --package com.yourcompany.helloworld \
+        --project-name helloworld  \
+        --no-split-project \
+        --no-incubating
     ```
-    Press <kbd>Enter</kbd> when prompted for the Java version.
 
-    Gradle sets up a basic project structure with a `Hello World!` application:
+    Press {kbd}`Enter` when prompted for the Java version.
+
+    Gradle sets up a basic project structure:
+
+    ```{terminal}
+    :input: tree
+    :user: dev
+    :host: ubuntu
+
+    .
+    └── helloworld-gradle
+        ├── app
+        │   ├── build.gradle.kts
+        │   └── src
+        │       ├── main
+        │       │   ├── java
+        │       │   │   └── com
+        │       │   │       └── yourcompany
+        │       │   │           └── helloworld
+        │       │   │               └── App.java
+        │       │   └── resources
+        │       └── test
+        │           ├── java
+        │           │   └── com
+        │           │       └── yourcompany
+        │           │           └── helloworld
+        │           │               └── AppTest.java
+        │           └── resources
+        ├── gradle
+        │   ├── libs.versions.toml
+        │   └── wrapper
+        │       ├── gradle-wrapper.jar
+        │       └── gradle-wrapper.properties
+        ├── gradlew
+        ├── gradlew.bat
+        └── settings.gradle.kts
+    ```
+
+    That includes a 'Hello World' application and a unit test:
 
     ```{code-block} java
-    :caption: app/src/main/java/com/yourcompany/helloworld/App.java
+    :caption: `app/src/main/java/com/yourcompany/helloworld/App.java`
 
     /*
     * This Java source file was generated by the Gradle 'init' task.
@@ -198,11 +279,8 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     }
     ```
 
-
-    and a unit test:
-
     ```{code-block} java
-    :caption: app/src/test/java/com/yourcompany/helloworld/AppTest.java
+    :caption: `app/src/test/java/com/yourcompany/helloworld/AppTest.java`
     /*
     * This Java source file was generated by the Gradle 'init' task.
     */
@@ -219,20 +297,44 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     }
     ```
 
-    2. Build and run the project:
+2. Build and run the project using the generated Gradle Wrapper:
 
+    ```{terminal}
+    :input: ./gradlew run
+    :user: dev
+    :host: ubuntu
+
+    Downloading https://services.gradle.org/distributions/gradle-8.10.1-bin.zip
+    .............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+
+    > Task :app:run
+    Hello World!
+
+    BUILD SUCCESSFUL in 31s
+    2 actionable tasks: 2 executed
     ```
-    ./gradlew run
-    ```
 
-    This builds and runs the project.
 
-(how-to-use-javac-directly)=
-## How to Use `javac` Directly
+(compiling-java-application-using-javac-directly)=
+## Compiling Java application using `javac` directly
 
-1. Create a Hello World application in a file `App.java`:
+Compiling a Java application directly using the {command}`javac` tool.
 
-    ```Java
+
+:::
+### Prerequisites
+:::
+
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
+
+
+:::
+### Procedure
+:::
+
+1. Create a 'Hello World' application in a file named {file}`App.java`:
+
+    ```{code-block} java
     public class App {
         public String getGreeting() {
             return "Hello World!";
@@ -244,26 +346,44 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     }
     ```
 
-    Run
+2. Compile the class file in the {file}`out` directory:
 
-    ```
+    ```none
     javac App.java -d out
     ```
-    to compile the class file in the `out` directory.
 
-    Execute the program:
+3. Execute the program:
 
-    ```
-    java -cp out/ App
+    ```{terminal}
+    :input: java -cp out/ App
+    :user: dev
+    :host: ubuntu
+
     Hello World!
     ```
 
+
 ## Running Java application as a shebang script
 
-1. Create a Hello World application in a file `App`:
+Running a Java application as a script with the {command}`java` interpreter specified using the 'shebang' (`#!`) interpreter directive.
 
-    ```{code-block}
-    :caption: App
+
+:::
+### Prerequisites
+:::
+
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
+
+
+:::
+### Procedure
+:::
+
+1. Create a 'Hello World' application in a file named {file}`App` and include the interpreter directive on the first line:
+
+    ```{code-block} java
+    :caption: `App`
+    :force:
 
     #!/usr/bin/java
     public class App {
@@ -277,19 +397,22 @@ export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     }
     ```
 
-    :::{important}
-    This file does not have a `.java` extension!
+    :::{note}
+    This file does not have a `.java` extension.
     :::
 
-    Make the file executable:
+2. Make the file executable:
 
     ```
     chmod +x App
     ```
 
-    Run the application
+3. Run the application:
 
-    ```
-    ./App
+    ```{terminal}
+    :input: ./App
+    :user: dev
+    :host: ubuntu
+
     Hello World!
     ```
