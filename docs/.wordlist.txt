@@ -2,9 +2,12 @@
 # modified. Add any custom terms to .custom_wordlist.txt instead.
 
 addons
+apache
 API
 APIs
+AppTest
 balancer
+cgi
 Charmhub
 CLI
 Diátaxis
@@ -16,7 +19,10 @@ favicon
 Furo
 Git
 GitHub
+Gradle
+gradle
 Grafana
+helloworld
 IAM
 installable
 integrations
@@ -42,12 +48,14 @@ OLM
 Permalink
 pre
 Quickstart
+quickstart
 ReadMe
 reST
 reStructuredText
 roadmap
 RTD
 snapcraft
+src
 subdirectories
 subfolders
 subtree
@@ -56,3 +64,4 @@ UI
 UUID
 VM
 YAML
+yourcompany
