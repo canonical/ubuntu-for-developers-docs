@@ -24,6 +24,7 @@ gradle
 Grafana
 helloworld
 IAM
+IntelliJ
 installable
 integrations
 JSON
@@ -45,6 +46,8 @@ Numbat
 observability
 OEM
 OLM
+OpenJDK
+openjdk
 Permalink
 pre
 Quickstart
@@ -59,6 +62,7 @@ src
 subdirectories
 subfolders
 subtree
+TCK
 Ubuntu
 UI
 UUID
