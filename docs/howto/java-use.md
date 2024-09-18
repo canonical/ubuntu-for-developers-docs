@@ -7,23 +7,6 @@ This article provides basic guidance on how to use of the Java toolchain for dev
 To use {command}`javac` directly, refer to the example {ref}`compiling-java-application-using-javac-directly`.
 
 
-(installing-java-development-kit-dev)=
-## Installing Java Development Kit
-
-To install the default Java Development Kit for your Ubuntu release, run:
-
-```none
-sudo apt install default-jdk
-```
-
-
-To install the latest LTS release, use:
-
-```none
-sudo apt install openjdk-21-jdk
-```
-
-
 ## Creating a Java project using Maven
 
 Setting up and building a new Java project using the Apache Maven tool.
@@ -33,7 +16,7 @@ Setting up and building a new Java project using the Apache Maven tool.
 ### Prerequisites
 :::
 
-- Java Development Kit; refer to {ref}`installing-java-development-kit-dev`.
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
 
 - Apache Maven:
 
@@ -173,7 +156,7 @@ Setting up and building a new Java project using the Gradle build tool.
 ### Prerequisites
 :::
 
-- Java Development Kit; refer to {ref}`installing-java-development-kit-dev`.
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
 
 - Gradle:
 
@@ -325,7 +308,7 @@ Compiling a Java application directly using the {command}`javac` tool.
 ### Prerequisites
 :::
 
-- Java Development Kit; refer to {ref}`installing-java-development-kit-dev`.
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
 
 
 :::
@@ -372,7 +355,7 @@ Running a Java application as a script with the {command}`java` interpreter spec
 ### Prerequisites
 :::
 
-- Java Development Kit; refer to {ref}`installing-java-development-kit-dev`.
+- Java Development Kit; refer to {ref}`installing-java-development-kit`.
 
 
 :::

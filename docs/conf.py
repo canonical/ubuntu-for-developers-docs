@@ -235,3 +235,9 @@ class CommandRole(SphinxRole):
 def setup(app):
     roles.register_local_role('command', CommandRole())
 
+# Define a custom role for package-name formatting
+def pkg_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
+    node = nodes.literal(rawtext, text)
+    return [node], []
+
+roles.register_local_role('pkg', pkg_role)
