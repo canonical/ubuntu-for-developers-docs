@@ -1,13 +1,13 @@
 # How to develop using Go on Ubuntu
 
-This how-to guide will show you how to build and run a "hello world" program
+This guide shows how to build and run a 'Hello World' program
 using the Go toolchain on Ubuntu.
-It will demonstrate some builtin tooling that is bundled with the default Go installation.
-Lastly, it will cover some basic usage of the Delve debugger.
+It demonstrates some built-in tooling that is bundled with the default Go installation.
+Lastly, it covers basic usage of the Delve debugger.
 
 ## Creating a Go module
 
-Create a project directory and change into it:
+#. Create a project directory and change into it:
 
 ```none
 mkdir heygo && cd heygo
@@ -19,8 +19,8 @@ Create a file to be the main entry point of the program:
 touch heygo.go
 ```
 
-Initialise the project as a Go module, giving the address of an online repo 
-where you will host the source; alternatively, just use a temporary url for testing:
+Initialise the project as a Go module, giving the address of an online repository 
+for hosting the source; alternatively, just use a temporary URL for testing:
 
 ```none
 go mod init youruser.github.com/heygo
@@ -28,7 +28,7 @@ go mod init youruser.github.com/heygo
 
 ## Writing the code
 
-Open `heygo.go` in a text editor and add the following text:
+Create a `heygo.go` file with the following content:
 
 ```{code-block} go
 :caption: `heygo.go`
@@ -41,14 +41,14 @@ func main() {
 }
 ```
 
-Here, the name of the package — `main` — is identified and the `fmt`
-package is imported from Go's standard library.
+Here, the name of the package — `main` — is identified, and the `fmt`
+package is imported from the Go standard library.
 A `main()` function is defined and a method is called from `fmt`
 to print a line of text that is passed as an argument.
 
-To compile and run your program use the `go run` command.
-If you pass the current directory as an argument the Go compiler
-will automatically find the main package and main function during
+To compile and run your program, use the `go run` command.
+If you pass the current directory as an argument, the Go compiler
+automatically finds the main package and main function during
 the build:
 
 ```none
@@ -67,7 +67,7 @@ The default Go installation includes several useful tools,
 including tools for formatting (`gofmt`) and vetting (`go vet`) code.
 
 In the same directory where you initialised the module,
-delete `heygo.go` and replace it with a new file `heygoV2.go`:
+delete `heygo.go` and replace it with a new file, `heygoV2.go`:
 
 ```{code-block} go
 :caption: `heygoV2.go`
@@ -86,13 +86,13 @@ with a Go install.
 
 ### Go vet
 
-Running `go vet hello.go` will output the following error:
+Running `go vet hello.go` outputs the following error:
 
 ```none
 vet: ./hello.go:6:14: undefined: greeting
 ```
 
-To fix the error define the `greeting` variable:
+To fix the error, define the `greeting` variable:
 
 ```{code-block} diff
 :caption: `heygoV2.go`
@@ -109,8 +109,8 @@ fmt.Println(greeting)
 
 ### Gofmt
 
-Running `go -w fmt hello.go` will identify formatting
-issues and write necessary changes to the file:
+Running `go -w fmt hello.go` identifies formatting
+issues and writes necessary changes to the file:
 
 ```{code-block} diff
 :caption: `heygoV2.go`
@@ -127,19 +127,19 @@ func main() {
 }
 ```
 
-In this case, unneeded semicolons were removed
-from the import line and the call to the print
-method in the main function was indented correctly.
+In this case, unneeded semicolons are removed
+from the `import` line, and the call to the print
+method in the `main` function is indented correctly.
 
 ### Delve
 
 [Delve](https://github.com/go-delve/delve) is a popular debugger for Go code.
-There is Delve-support in editors like VSCode and GoLang.
-In this guide Delve will be used as a command-line debugging tool.
+Many editors, including VSCode and GoLang, support Delve.
+In this guide, Delve is used as a command-line debugging tool.
 
-You will need to have the Go toolchain set up to install Delve.
-Delve can be installed by cloning the repo, changing to the cloned
-directory and invoking `go instal`:
+You need to have the Go toolchain set up to install Delve.
+Delve can be installed by cloning the repository, changing to the cloned
+directory and invoking `go install`:
 
 ```none
 git clone https://github.com/go-delve/delve
@@ -149,7 +149,7 @@ go install github.com/go-delve/delve/cmd/dlv
 
 Create a file to debug called `main.go` in a new folder where you have initialised a Go module.
 This program is intended to calculate the average value from an array of integers.
-However, there is a bug in the for-loop that needs to be investigated:
+However, there is a bug in the `for` loop that needs to be investigated:
 
 ```{code-block} go
 :caption: `main.go`
@@ -176,13 +176,13 @@ func main() {
 
 ```
 
-To initiate a debugging session with Delve run `dlv debug` on the file:
+To initiate a debugging session with Delve, run `dlv debug` on the file:
 
 ```none
 dlv debug main.go
 ```
 
-This output will indicate that you are in an interactive debugging session.
+This output indicates that you are in an interactive debugging session.
 You can interact with the debugger by entering commands after the `(dlv)` prompt:
 
 ```none
@@ -190,25 +190,25 @@ Type 'help' for list of commands.
 (dlv)
 ```
 
-To test the `calculateAverage` function set a break point at line 6:
+To test the `calculateAverage` function, set a break point at line 6:
 
 ```none
 (dlv) break main.go:7
 ```
 
-If the break point has been set successfully you will get the following message:
+If the break point is set successfully, you get the following message:
 
 ```none
 Breakpoint 1 set at 0x49cee9 for main.calculateAverage() ./main.go:6
 ```
 
-Next you can continue to the for-loop:
+Next you can continue to the `for` loop:
 
 ```none
 (dlv) continue
 ```
 
-Delve will show visually where you are in the code; in this case, at the start of the for-loop:
+Delve shows visually where you are in the code; in this case, at the start of the `for` loop:
 
 ```none
 > [Breakpoint 1] main.calculateAverage() ./main.go:7 (hits goroutine(1):1 total:1) (PC: 0x49cee9)
@@ -233,13 +233,13 @@ The value of `sum` can be checked with the `print` command:
 
 As expected, it has been initialised to `0`.
 
-Now step through the for-loop with:
+Now step through the `for` loop with:
 
 ```none
 (dlv) step
 ```
 
-Again, your position in the code will be shown:
+Again, your position in the code is shown:
 
 ```none
 > main.calculateAverage() ./main.go:8 (PC: 0x49cf09)
@@ -322,11 +322,11 @@ Warning: debugging optimized function
 	runtime.curg._panic.arg: interface {}(string) "runtime error: index out of range [3] with length 3"
 ```
 
-The array has a length of 3 but the index is initialised at 0.
-This means the loop will attempt to run four times on three values.
+The array has a length of `3` but the index is initialised at `0`.
+This means the loop attempts to run four times on three values.
 There is an off-by-one error.
 
-Changing the code as follows will fix the error:
+Changing the code as follows fixes the error:
 
 ```{code-block} diff
 func calculateAverage(numbers []int) float64 {

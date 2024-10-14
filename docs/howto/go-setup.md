@@ -5,7 +5,7 @@ microservices and CLI tools. This how-to guide outlines
 how to install a Go distribution and set up a development
 environment on Ubuntu.
 
-## Install and set up Go
+## Installing and setting up Go
 
 A Go installation includes the `go` command,
 a compiler and other tools. 
@@ -15,7 +15,7 @@ There are multiple ways to install the Go toolchain on Ubuntu.
 After using any installation method, confirm that
 you have installed a specific version of Go with:
 
-```
+```none
 go version
 ```
 
@@ -47,7 +47,7 @@ sudo snap refresh go --channel=1.22/stable --classic
 
 #### Debian package
 
-Go can also be installed as a **Debian package**:
+To install Go using the default Ubuntu package manager:
 
 ```
 sudo apt install golang-go
@@ -62,19 +62,19 @@ binaries or build from source.
 
 ### Precompiled Go binaries
 
-Precompiled Go binaries are available in compressed format on the [release page](https://go.dev/dl/) of the official Go website and can be fetched with `wget`:
+Precompiled Go binaries are available in a compressed format on the [release page](https://go.dev/dl/) of the official Go website and can be fetched with `wget`:
 
 ```none
-wget https://go.dev/dl/go{version}.linux-amd64.tar.gz 
+wget https://go.dev/dl/go<version>.linux-amd64.tar.gz 
 ```
 
 Extract the files into an appropriate directory:
 
 ```none
-sudo tar -C /usr/local -xzf go{version}.linux-amd64.tar.gz
+sudo tar -C /usr/local -xzf go<version>.linux-amd64.tar.gz
 ```
 
-Add the `go` binary to your path:
+Add the `go` binary to your `$PATH` environment variable:
 
 ```none
 export PATH=$PATH:/usr/local/go/bin
@@ -85,7 +85,7 @@ export PATH=$PATH:/usr/local/go/bin
 Multiple Go versions can be installed on the same machine.
 
 ```{note}
-Go must be installed to to use `go install` and `go build`.
+Go must be installed to use `go install` and `go build`.
 ```
 
 Fetch a specific version from the Go website:
@@ -94,10 +94,10 @@ Fetch a specific version from the Go website:
 go install golang.org/dl/go{version-number}@latest
 ```
 
-Ensure that Go binaries are available in your PATH:
+Ensure that Go binaries are available in your `$PATH`:
 
 ```none
-export PATH=$PATH:/home/username/go/bin
+export PATH=$PATH:$HOME/go/bin
 ```
 
 Download a specific Go version:
@@ -106,7 +106,7 @@ Download a specific Go version:
 go{version-number} download
 ```
 
-To use the version of Go that you downloaded append
+To use the version of Go that you downloaded, append
 the version number to the `go` command:
 
 ```none
@@ -116,15 +116,14 @@ go{version-number} version
 ### Building from source
 
 ```{note}
-To build Go from source you need a Go compiler installed on your machine.
+To build Go from source, you need a Go compiler installed on your machine.
 ```
 
-Clone the Go repo, then change into the cloned repo and pull the latest changes:
+#. Clone the Go repository, then change into the cloned repository:
 
 ```none
 git clone https://github.com/golang/go build-go-from-source
 cd build-go-from-source
-git pull
 ```
 
 Change into the subdirectory containing the source code and run the script to build the Go binary:
@@ -138,8 +137,8 @@ cd src/
 Building Go from source may take several minutes.
 ```
 
-If successful the output will indicate where the binary has been installed on your machine.
-You will need to add this to your PATH to enable calling the version of Go that you have compiled.
+If successful, the output indicates where the binary has been installed on your machine.
+Add this to your ``PATH`` to enable calling the version of Go that you have compiled.
 
 ```none
 ALL TESTS PASSED
@@ -150,19 +149,19 @@ Installed commands in /home/username/build-go-from-source/bin
 
 ```
 
-Later you can update Go to the latest version by pulling the latest changes into the repo and rebuilding the binary as needed.
+To update Go to the latest version, pull the latest changes into the repository and rebuild the binary.
 
 ## Editing and debugging
 
-Some of the most common editors used for Go are:
+Some of the most common Integrated Development Environments used for Go are:
 
 - Visual Studio Code: a free editor with a dedicated [Go extension](https://marketplace.visualstudio.com/items?itemName=golang.Go) maintained by the Go Team
-- GoLand: [GoLand](https://www.jetbrains.com/go/) is a paid editor developed specifically designed for the Go programming language
+- GoLand: [GoLand](https://www.jetbrains.com/go/) is a paid editor developed specifically for the Go programming language
 
 Both Visual Studio Code and GoLand rely on [Delve](https://github.com/go-delve/delve) for debugging.
 Delve can also be installed as a standalone program and run [on the command line](https://github.com/go-delve/delve/blob/master/Documentation/cli/getting_started.md).
 
-A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others:
+A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. Install it by running:
 
 ```none
 go install golang.org/x/tools/gopls@latest
@@ -176,47 +175,44 @@ our [how to develop with Go](./go-use.md) guide.
 ```
 
 Go has excellent cross-platform build capabilities.
-To build a Go program called `hello.go` run:
+To build a Go program called `hello.go`, run:
 
 ```none
 go build hello.go
 ```
 
-This will build a binary that can be run on your Ubuntu system.
+This builds a binary that can be run on your Ubuntu system.
 Different target systems can be set for the compiler.
-To set the environment for a Windows amd64 build run:
+To set the environment for a Windows amd64 build, run:
 
 ```none
 export GOOS=windows GOARCH=amd64
 ```
 
-Running `go build` will now create a `hello.exe` that runs on Windows.
-This can be quickly tested by installing wine with `sudo apt install wine`.
+Running `go build` creates a `hello.exe` binary that runs on Windows.
 
-The binaries targetting Linux and Windows can then both be tested on
-your Ubuntu machine:
+To test the (Linux) binary, execute it by running:
 
 ```none
 ./hello
-wine hello.exe
 ```
 
 ### Building for multiple targets
 
-For a full list of targets run:
+For a full list of targets, run:
 
 ```none
 go tool dist list
 ```
 
-For this example filter the output down to Windows and Linux on amd:
+For this example, filter the output to Windows and Linux on `amd`:
 
 ```none
 go tool dist list | grep 'amd' | grep -E 'windows|linux'
 ```
 
-Create a makefile that will automatically set
-the build environment and create runnable binaries for
+Create a makefile that automatically sets
+the build environment and creates executable binaries for
 both Windows and Linux platforms:
 
 ```make
@@ -246,6 +242,5 @@ Test the builds on your code:
 ```none
 make all
 ./hello_lin_amd64
-wine hello_win_amd64
 ```
 
