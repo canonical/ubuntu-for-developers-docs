@@ -108,7 +108,6 @@ Running the following command will modify the environmental variable for the cur
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-### Downloading and using different Go versions
 To persist the change and make `go` available in new terminal sessions and across reboots, 
 append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
 
@@ -152,14 +151,14 @@ Running `go version` without appending a version number will still invoke your d
 
 With Go installed and `go` available in your $PATH Go can be built from source.
 
-#. Clone the Go repository, then change into the cloned repository:
+1. Clone the Go repository, then change into the cloned repository:
 
 ```none
 git clone https://github.com/golang/go build-go-from-source
 cd build-go-from-source
 ```
 
-Change into the subdirectory containing the source code and run the script to build the Go binary:
+2. Change into the subdirectory containing the source code and run the script to build the Go binary:
 
 ```none
 cd src/
@@ -188,13 +187,15 @@ Installed commands in /home/<username>/build-go-from-source/bin
 
 Some of the most common Integrated Development Environments used for Go are:
 
-- Visual Studio Code: a free editor with a dedicated [Go extension](https://marketplace.visualstudio.com/items?itemName=golang.Go) maintained by the Go Team
-- GoLand: [GoLand](https://www.jetbrains.com/go/) is a paid editor developed specifically for the Go programming language
+- [Visual Studio Code](https://code.visualstudio.com/): a free editor with a dedicated [Go extension](https://marketplace.visualstudio.com/items?itemName=golang.Go) maintained by the Go Team
+- [GoLand](https://www.jetbrains.com/go/): a paid editor developed specifically for the Go programming language
 
 Both Visual Studio Code and GoLand rely on [Delve](https://github.com/go-delve/delve) for debugging.
 Delve can also be installed as a standalone program and run [on the command line](https://github.com/go-delve/delve/blob/master/Documentation/cli/getting_started.md).
 
-A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. Install it by running:
+An overview of basic Delve usage is included in our [how to develop with Go](./go-use.md) guide.
+
+A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is also actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. Install it by running:
 
 ```none
 go install golang.org/x/tools/gopls@latest
@@ -203,12 +204,12 @@ go install golang.org/x/tools/gopls@latest
 ## Cross-compilation
 
 ```{note}
-For the basics of writing and testing Go code see
-our [how to develop with Go](./go-use.md) guide.
+For the basics of writing and testing a Hello World program in Go
+see our [how to develop with Go](./go-use.md) guide.
 ```
 
 Go has excellent cross-platform build capabilities.
-To build a Go program called `hello.go`, run:
+To build a program called `hello.go`, containing valid Go code, run:
 
 ```none
 go build hello.go
@@ -216,13 +217,14 @@ go build hello.go
 
 This builds a binary that can be run on your Ubuntu system.
 Different target systems can be set for the compiler.
+
 To set the environment for a Windows amd64 build, run:
 
 ```none
 export GOOS=windows GOARCH=amd64
 ```
 
-Running `go build` creates a `hello.exe` binary that runs on Windows.
+This causes `go build` to create a `hello.exe` binary that runs on Windows.
 
 To test the (Linux) binary, execute it by running:
 
@@ -270,7 +272,7 @@ clean:
 	rm -f $(WINDOWS) $(LINUX)
 ```
 
-Test the builds on your code:
+Generate the builds and test the Linux build:
 
 ```none
 make all
