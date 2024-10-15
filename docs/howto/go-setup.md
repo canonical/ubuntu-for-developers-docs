@@ -34,22 +34,49 @@ on how to install the latest version of Go without a package manager.
 
 #### Snap
 
-Go can be installed as a snap:
+To install the latest version of Go as a snap, run:
 
 ```none
 sudo snap install go --classic
 ```
 
-You can print a list of available Go releases with:
+If you need to install a specific version, first enter the command:
 
 ```none
 snap info go
 ```
 
-To switch between release versions use `refresh`:
+The output will indicate the snap channels that are available:
 
 ```none
-sudo snap refresh go --channel=1.22/stable --classic
+...
+...
+channels:
+  latest/stable:       1.23.2       2024-10-03 (10730)  68MB classic
+  latest/candidate:    ↑                                     
+  latest/beta:         ↑                                     
+  latest/edge:         1.24-e705a2d 2024-08-07 (10683) 111MB classic
+  1.23/stable:         1.23.2       2024-10-03 (10730)  68MB classic
+  1.23/candidate:      1.23.2       2024-10-02 (10730)  68MB classic
+  1.23/beta:           ↑                                     
+  1.23/edge:           ↑                                     
+  1.22/stable:         1.22.8       2024-10-03 (10719)  64MB classic
+  1.22/candidate:      1.22.8       2024-10-02 (10719)  64MB classic
+...
+...
+```
+
+The stable version of Go 1.22 is installed with:
+
+```none
+sudo snap install go --channel=1.22/stable --classic
+```
+
+To switch between release versions use `snap refresh`;
+for example, to switch to the edge release of the latest Go version run:
+
+```none
+sudo snap refresh go --channel=latest/edge --classic
 ```
 
 #### Debian package
