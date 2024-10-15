@@ -116,33 +116,37 @@ append the above line to `$HOME/.profile` (or `/etc/profile`) and source the fil
 source $HOME/.profile
 ```
 
-Fetch a specific version from the Go website:
+### Downloading and using multiple Go versions
 
 If Go is already installed and `go` is available in your `$PATH`,
 other versions of Go can be installed in addition to the default version.
 
+1. Install the binary for a specific version from the Go website:
 
 ```none
 go install golang.org/dl/go<version-number>@latest
 ```
 
+2. Download the SDK for that Go version:
 
 ```none
 go<version-number> download
 ```
 
-Download a specific Go version:
+To confirm the download location of the SDK run:
 
 ```none
 go<version-number> env GOROOT
 ```
 
-To use the version of Go that you downloaded, append
+3. To use the version of Go that you downloaded, append
 the version number to the `go` command:
 
 ```none
 go<version-number> version
 ```
+
+Running `go version` without appending a version number will still invoke your default Go installation.
 
 ### Building from source
 
