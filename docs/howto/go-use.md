@@ -17,8 +17,14 @@ For testing purposes, you can use a generic URL:
 ```none
 go mod init youruser.github.com/heygo
 ```
+The `go mod init` command creates a `go.mod` file in the project root that tracks the
+version of Go used for the program and any external dependencies.
 
-## Writing the code
+```{note}
+If you `go get <package>` to fetch a specific package or `go mod tidy`
+to scan your code for references to external packages, the `go.mod` file
+will be updated automatically.
+```
 
 3. Create a `heygo.go` file with the following content:
 
