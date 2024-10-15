@@ -182,7 +182,7 @@ Installed commands in /home/<username>/build-go-from-source/bin
 
 ```
 
-To update Go to the latest version, pull the latest changes into the repository and rebuild the binary.
+3. Optional: To update Go to the latest version, `git pull` the latest changes and rebuild the binary with the `all.bash` script.
 
 ## Editing and debugging
 
