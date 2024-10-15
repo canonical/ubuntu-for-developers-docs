@@ -101,30 +101,33 @@ Extract the files into an appropriate directory:
 sudo tar -C /usr/local -xzf go<version>.linux-amd64.tar.gz
 ```
 
-Add the `go` binary to your `$PATH` environment variable:
+To use the `go` binary you need to add it to your `$PATH` environment variable.
+Running the following command will modify the environmental variable for the current terminal session:
 
 ```none
 export PATH=$PATH:/usr/local/go/bin
 ```
 
 ### Downloading and using different Go versions
+To persist the change and make `go` available in new terminal sessions and across reboots, 
+append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
 
-Multiple Go versions can be installed on the same machine.
-
-```{note}
-Go must be installed to use `go install` and `go build`.
+```none
+source $HOME/.profile
 ```
 
 Fetch a specific version from the Go website:
+
+If Go is already installed and `go` is available in your `$PATH`,
+other versions of Go can be installed in addition to the default version.
+
 
 ```none
 go install golang.org/dl/go{version-number}@latest
 ```
 
-Ensure that Go binaries are available in your `$PATH`:
 
 ```none
-export PATH=$PATH:$HOME/go/bin
 ```
 
 Download a specific Go version:
@@ -142,9 +145,7 @@ go{version-number} version
 
 ### Building from source
 
-```{note}
-To build Go from source, you need a Go compiler installed on your machine.
-```
+With Go installed and `go` available in your $PATH Go can be built from source.
 
 #. Clone the Go repository, then change into the cloned repository:
 
@@ -165,7 +166,7 @@ Building Go from source may take several minutes.
 ```
 
 If successful, the output indicates where the binary has been installed on your machine.
-Add this to your ``PATH`` to enable calling the version of Go that you have compiled.
+Add this to your `$PATH` to enable calling the version of Go that you have compiled.
 
 ```none
 ALL TESTS PASSED
