@@ -123,24 +123,25 @@ other versions of Go can be installed in addition to the default version.
 
 
 ```none
-go install golang.org/dl/go{version-number}@latest
+go install golang.org/dl/go<version-number>@latest
 ```
 
 
 ```none
+go<version-number> download
 ```
 
 Download a specific Go version:
 
 ```none
-go{version-number} download
+go<version-number> env GOROOT
 ```
 
 To use the version of Go that you downloaded, append
 the version number to the `go` command:
 
 ```none
-go{version-number} version
+go<version-number> version
 ```
 
 ### Building from source
@@ -171,9 +172,9 @@ Add this to your `$PATH` to enable calling the version of Go that you have compi
 ```none
 ALL TESTS PASSED
 ---
-Installed Go for linux/amd64 in /home/username/build-go-from-source
-Installed commands in /home/username/build-go-from-source/bin
-*** You need to add /home/ubuntu/build-go-from-source/bin to your PATH.
+Installed Go for linux/amd64 in /home/<username>/build-go-from-source
+Installed commands in /home/<username>/build-go-from-source/bin
+*** You need to add /home/<username>/build-go-from-source/bin to your PATH.
 
 ```
 
