@@ -23,7 +23,14 @@ go version
 
 Installing Go with a package manager is a convenient option.
 This method does not require manually adding the `go` binary
-to your PATH and future updates can be handled through the package manager.
+to your `$PATH` and future updates can be handled through the package manager.
+
+```{note}
+Depending on the package manager used, the latest version of Go
+may not be available.
+See [Precompiled Go binaries](#precompiled-go-binaries) for instructions
+on how to install the latest version of Go without a package manager.
+```
 
 #### Snap
 
@@ -51,13 +58,6 @@ To install Go using the default Ubuntu package manager:
 
 ```
 sudo apt install golang-go
-```
-
-```{note}
-Depending on the package manager used, the latest version of Go
-may not be available.
-If you need the latest version you can download precompiled
-binaries or build from source.
 ```
 
 ### Precompiled Go binaries
