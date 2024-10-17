@@ -353,7 +353,7 @@ both Windows and Linux platforms:
 ```make
 EXE=heygo
 WINDOWS=$(EXE)_win_amd64.exe
-LINUX=$(EXE)_lin_amd64
+LINUX=$(EXE)_linux_amd64
 
 .PHONY: all clean
 
@@ -376,6 +376,6 @@ Generate the builds and test the Linux build:
 
 ```none
 make all
-./hello_lin_amd64
+./hello_linux_amd64
 ```
 
