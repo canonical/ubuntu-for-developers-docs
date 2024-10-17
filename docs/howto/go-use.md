@@ -1,7 +1,7 @@
 # How to develop using Go on Ubuntu
 
 This guide shows how to build, run and debug Go programs on Ubuntu.
-For instructions on how to install Go and the Delve debugger refer to
+For instructions on how to install Go and the Delve debugger, refer to
 our dedicated [install and set up Go](./go-setup.md) guide.
 
 ## Creating a Go project

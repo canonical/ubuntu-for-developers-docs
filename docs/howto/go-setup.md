@@ -23,20 +23,24 @@ go version
 
 Some steps in this guide require that Go is installed and
 that the `go` command can be run from your terminal.
-If you are not using a package manager you will need
+If you are not using a package manager to install the tools, you need
 to modify your `$PATH` manually.
 
 To temporarily add Go to your `$PATH`, run:
 
-	export PATH=$PATH:/path/to/your/go/bin
+```none
+export PATH=$PATH:/path/to/your/go/bin
 
 To persist the change and make go available in new terminal sessions and across reboots, 
 append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
 
-	source $HOME/.profile
+```none
+source $HOME/.profile
 
+:::{note}
 The files to modify and commands to use when modifying the `$PATH` may vary
 depending on your shell environment.
+:::
 
 ### Package managers
 
@@ -164,7 +168,7 @@ export PATH=$PATH:/usr/lib/go-1.21/bin
 go version go1.21.9 linux/amd64
 ```
 
-4. Optional: if you want to easily switch between versions use aliases.
+4. Optional: to easily switch between versions, use aliases.
 
 For example, in a `.bashrc` file:
 
@@ -183,7 +187,7 @@ go1.21 version
 go1.23 version
 ```
 
-If you have a default installation of Go installed with `apt install golang-go`
+If you have a default installation of Go installed with `apt install golang-go`,
 this can still be invoked with `go`.
 
 #### Go install and download
@@ -284,7 +288,7 @@ IDEs used for Go development commonly rely on [Delve](https://github.com/go-delv
 Delve can also be installed as a standalone program and run [on the command line](https://github.com/go-delve/delve/blob/master/Documentation/cli/getting_started.md).
 
 
-To install Delve run:
+To install Delve, run:
 
 ```none
 sudo apt install delve
