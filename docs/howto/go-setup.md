@@ -133,14 +133,58 @@ To use the `go` binary you need to add it to your `$PATH` environment variable.
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-
-```none
-```
-
 ### Downloading and using multiple Go versions
 
-If Go is already installed and `go` is available in your `$PATH`,
-other versions of Go can be installed in addition to the default version.
+Sometimes it may be necessary to run multiple Go versions
+on the same machine.
+
+#### Ubuntu archive
+
+When installing a specific version of Go the command is:
+
+```none
+sudo apt install golang-<version>
+```
+
+1. To install versions `1.21` and `1.23`:
+
+```none
+sudo apt install golang-1.21 golang-1.23
+```
+
+2. To temporarily add a specific version to your `$PATH`:
+
+```none
+export PATH=$PATH:/usr/lib/go-1.21/bin
+```
+
+3. To check the version:
+
+```none
+go version go1.21.9 linux/amd64
+```
+
+4. Optional: if you want to easily switch between versions use aliases.
+
+For example, in a `.bashrc` file:
+
+```none
+alias go1.21='/usr/lib/go-1.21/bin/go'
+alias go1.23='/usr/lib/go-1.23/bin/go'
+```
+
+These can now be called separately:
+
+```none
+go1.21 version
+```
+
+```none
+go1.23 version
+```
+
+If you have a default installation of Go installed with `apt install golang-go`
+this can still be invoked with `go`.
 
 #### Go install and download
 
@@ -222,8 +266,13 @@ Some of the most common Integrated Development Environments (IDEs) used for Go a
 
 A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is also actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. 
 
+You can install gopls from the Ubuntu archive:
 
-A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is also actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. Install it by running:
+```none
+sudo apt install gopls
+```
+
+Alternatively, if `go` is in your `$PATH` you can use `go install`:
 
 ```none
 go install golang.org/x/tools/gopls@latest
