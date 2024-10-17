@@ -7,32 +7,44 @@ environment on Ubuntu.
 
 ## Installing and setting up Go
 
-A Go installation includes the `go` command,
-a compiler and other tools. 
+Go includes the `go` command, a compiler and other tools and can be
+installed with the default Ubuntu package manager
 
-There are multiple ways to install the Go toolchain on Ubuntu.
+1. Update the list of available packages:
 
-After using any installation method, confirm that
-you have installed a specific version of Go with:
+```none
+sudo apt update
+```
+
+2. Install the latest version of Go:
+
+```none
+sudo apt install golang-go
+```
+
+3. Confirm successful installation with:
 
 ```none
 go version
 ```
 
+:::{note}
+See [Precompiled Go binaries](#precompiled-go-binaries) for instructions
+on how to install specific versions of Go without a package manager.
+:::
+
 ### Adding Go binary to path
 
-Some steps in this guide require that Go is installed and
-that the `go` command can be run from your terminal.
-If you are not using a package manager to install the tools, you need
-to modify your `$PATH` manually.
+If you are not using a package manager to install Go, you need
+to add the Go binary to your `$PATH`.
 
-To temporarily add Go to your `$PATH`, run:
+1. To temporarily add Go to your `$PATH`, run:
 
 ```none
 export PATH=$PATH:/path/to/your/go/bin
 ```
 
-To persist the change and make go available in new terminal sessions and across reboots, 
+2. To persist the change and make go available in new terminal sessions and across reboots, 
 append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
 
 ```none
@@ -44,96 +56,23 @@ The files to modify and commands to use when modifying the `$PATH` may vary
 depending on your shell environment.
 :::
 
-### Package managers
-
-Installing Go with a package manager is a convenient option.
-This method does not require manually adding the `go` binary
-to your `$PATH` and future updates can be handled through the package manager.
-
-:::{note}
-Depending on the package manager used, the latest version of Go
-may not be available.
-See [Precompiled Go binaries](#precompiled-go-binaries) for instructions
-on how to install the latest version of Go without a package manager.
-:::
-
-#### Snap
-
-To install the latest version of Go as a snap, run:
-
-```none
-sudo snap install go --classic
-```
-
-If you need to install a specific version, first enter the command:
-
-```none
-snap info go
-```
-
-The output indicates the snap channels that are available:
-
-```none
-...
-...
-channels:
-  latest/stable:       1.23.2       2024-10-03 (10730)  68MB classic
-  latest/candidate:    ↑                                     
-  latest/beta:         ↑                                     
-  latest/edge:         1.24-e705a2d 2024-08-07 (10683) 111MB classic
-  1.23/stable:         1.23.2       2024-10-03 (10730)  68MB classic
-  1.23/candidate:      1.23.2       2024-10-02 (10730)  68MB classic
-  1.23/beta:           ↑                                     
-  1.23/edge:           ↑                                     
-  1.22/stable:         1.22.8       2024-10-03 (10719)  64MB classic
-  1.22/candidate:      1.22.8       2024-10-02 (10719)  64MB classic
-...
-...
-```
-
-The stable version of Go 1.22 is installed with:
-
-```none
-sudo snap install go --channel=1.22/stable --classic
-```
-
-To switch between release versions, use `snap refresh`;
-for example, to switch to the edge release of the latest Go version, run:
-
-```none
-sudo snap refresh go --channel=latest/edge --classic
-```
-
-#### Debian package
-
-To install Go using the default Ubuntu package manager
-first update the list of available packages:
-
-```
-sudo apt update
-```
-
-Then install Go:
-
-```none
-sudo apt install golang-go
-```
-
 ### Precompiled Go binaries
 
-Precompiled Go binaries are available in a compressed format on the [release page](https://go.dev/dl/) of the official Go website and can be fetched with `wget`:
+Precompiled Go binaries are available in a compressed format on the [release page](https://go.dev/dl/) of the official Go website.
+
+1. Fetch a specific Go version with `wget`:
 
 ```none
 wget https://go.dev/dl/go<version>.linux-amd64.tar.gz 
 ```
 
-Extract the files into an appropriate directory:
+2. Extract the files into an appropriate directory:
 
 ```none
 sudo tar -C /usr/local -xzf go<version>.linux-amd64.tar.gz
 ```
 
-To use the `go` binary you need to add it to your `$PATH` environment variable.
+3. Add the `go` binary to your `$PATH` environment variable:
 
 ```none
 export PATH=$PATH:/usr/local/go/bin
@@ -144,35 +83,51 @@ export PATH=$PATH:/usr/local/go/bin
 Sometimes it may be necessary to run multiple Go versions
 on the same machine.
 
-#### Ubuntu archive
-
-When installing a specific version of Go the command is:
+The general command to install a specific version of Go is:
 
 ```none
 sudo apt install golang-<version>
 ```
 
-1. To install versions `1.21` and `1.23`:
+1. To install versions `1.21` and `1.23`, run:
 
 ```none
 sudo apt install golang-1.21 golang-1.23
 ```
 
-2. To temporarily add a specific version to your `$PATH`:
+Each `go` binary will be installed in `/usr/lib/go-<version>/bin/`
+
+2. Test the `go` binaries with:
+
+```none
+/usr/lib/go-1.21/bin/go version
+/usr/lib/go-1.23/bin/go version
+```
+
+3. Optional: add binary to `$PATH`.
+
+Make the name of the binary unique so that there is no
+naming collision with any default `go` installation:
+
+```none
+sudo mv /usr/lib/go-1.21/bin/go /usr/lib/go-1.21/bin/go1.21
+```
+
+Then add it to your path `$PATH`:
 
 ```none
 export PATH=$PATH:/usr/lib/go-1.21/bin
 ```
 
-3. To check the version:
+Test with:
 
 ```none
-go version go1.21.9 linux/amd64
+go1.21 version
 ```
 
-4. Optional: to easily switch between versions, use aliases.
+4. Optional: create aliases for different Go versions.
 
-For example, in a `.bashrc` file:
+For example, in a `.bashrc` file, add the lines:
 
 ```none
 alias go1.21='/usr/lib/go-1.21/bin/go'
@@ -189,78 +144,6 @@ go1.21 version
 go1.23 version
 ```
 
-If you have a default installation of Go installed with `apt install golang-go`,
-this can still be invoked with `go`.
-
-#### Go install and download
-
-:::{note}
-You need to have the Go toolchain set up and `go` available in your `$PATH` to use `go install`.
-:::
-
-1. Install the binary for a specific version from the Go website:
-
-```none
-go install golang.org/dl/go<version-number>@latest
-```
-
-2. Download the SDK for that Go version:
-
-```none
-go<version-number> download
-```
-
-To confirm the download location of the SDK, run:
-
-```none
-go<version-number> env GOROOT
-```
-
-3. To use the version of Go that you downloaded, append
-the version number to the `go` command:
-
-```none
-go<version-number> version
-```
-
-Running `go version` without appending a version number stills invoke your default Go installation.
-
-### Building from source
-
-With Go installed and `go` available in your $PATH, Go can be built from source.
-
-1. Clone the Go repository, then change into the cloned repository:
-
-```none
-git clone https://github.com/golang/go build-go-from-source
-cd build-go-from-source
-```
-
-2. Change into the subdirectory containing the source code and run the script to build the Go binary:
-
-```none
-cd src/
-./all.bash 
-```
-
-:::{note}
-Building Go from source may take several minutes.
-:::
-
-If successful, the output indicates where the binary has been installed on your machine.
-Add this to your `$PATH` to enable calling the version of Go that you have compiled.
-
-```none
-ALL TESTS PASSED
----
-Installed Go for linux/amd64 in /home/<username>/build-go-from-source
-Installed commands in /home/<username>/build-go-from-source/bin
-*** You need to add /home/<username>/build-go-from-source/bin to your PATH.
-
-```
-
-3. Optional: To update Go to the latest version, `git pull` the latest changes and rebuild the binary with the `all.bash` script.
-
 ## Editing and debugging
 
 ### Integrated Development Environments and editors
@@ -270,25 +153,20 @@ Some of the most common Integrated Development Environments (IDEs) used for Go a
 - [Visual Studio Code](https://code.visualstudio.com/): a free editor with a dedicated [Go extension](https://marketplace.visualstudio.com/items?itemName=golang.Go) maintained by the Go Team
 - [GoLand](https://www.jetbrains.com/go/): a paid editor developed specifically for the Go programming language
 
-A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is also actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. 
-
-You can install gopls from the Ubuntu archive:
+Both can be installed as snaps:
 
 ```none
-sudo apt install gopls
+sudo snap install code --classic
 ```
-
-Alternatively, if `go` is in your `$PATH` you can use `go install`:
 
 ```none
-go install golang.org/x/tools/gopls@latest
+sudo snap install goland --classic
 ```
 
-### Debugging
+### Delve debugger and official Go language server
 
 IDEs used for Go development commonly rely on [Delve](https://github.com/go-delve/delve) for debugging.
 Delve can also be installed as a standalone program and run [on the command line](https://github.com/go-delve/delve/blob/master/Documentation/cli/getting_started.md).
-
 
 To install Delve, run:
 
@@ -296,20 +174,28 @@ To install Delve, run:
 sudo apt install delve
 ```
 
-If Go is installed and in your `$PATH` then Delve can also be installed with `go install`:
-
-```none
-go install github.com/go-delve/delve/cmd/dlv@latest
-```
-
 An overview of basic Delve usage is included in our [how to develop with Go](./go-use.md) guide.
 
-## Cross-compilation
+
+A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. 
+
+You can install gopls from the Ubuntu archive:
+
+```none
+sudo apt install gopls
+```
 
 :::{note}
-For the basics of writing and testing a Hello World program in Go
-see our [how to develop with Go](./go-use.md) guide.
+If you have Go installed and `go` on your `$PATH` then
+the latest version of many Go tools like gopls and Delve can be installed with:
+
+	go install url/of/tool/<name-of-tool>@latest
+
+This can be useful if you need a version of a tool that is not yet available
+through the package manager.
 :::
+
+## Cross-compilation
 
 Go has excellent cross-platform build capabilities.
 To build a program called `hello.go`, containing valid Go code, run:
@@ -334,6 +220,11 @@ To test the (Linux) binary, execute it by running:
 ```none
 ./hello
 ```
+
+:::{note}
+For the basics of writing and testing a Hello World program in Go
+see our [how to develop with Go](./go-use.md) guide.
+:::
 
 ### Building for multiple targets
 
