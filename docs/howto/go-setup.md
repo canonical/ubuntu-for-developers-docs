@@ -30,12 +30,14 @@ To temporarily add Go to your `$PATH`, run:
 
 ```none
 export PATH=$PATH:/path/to/your/go/bin
+```
 
 To persist the change and make go available in new terminal sessions and across reboots, 
 append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
 
 ```none
 source $HOME/.profile
+```
 
 :::{note}
 The files to modify and commands to use when modifying the `$PATH` may vary
@@ -48,12 +50,12 @@ Installing Go with a package manager is a convenient option.
 This method does not require manually adding the `go` binary
 to your `$PATH` and future updates can be handled through the package manager.
 
-```{note}
+:::{note}
 Depending on the package manager used, the latest version of Go
 may not be available.
 See [Precompiled Go binaries](#precompiled-go-binaries) for instructions
 on how to install the latest version of Go without a package manager.
-```
+:::
 
 #### Snap
 
@@ -192,9 +194,9 @@ this can still be invoked with `go`.
 
 #### Go install and download
 
-```{note}
+:::{note}
 You need to have the Go toolchain set up and `go` available in your `$PATH` to use `go install`.
-```
+:::
 
 1. Install the binary for a specific version from the Go website:
 
@@ -241,9 +243,9 @@ cd src/
 ./all.bash 
 ```
 
-```{note}
+:::{note}
 Building Go from source may take several minutes.
-```
+:::
 
 If successful, the output indicates where the binary has been installed on your machine.
 Add this to your `$PATH` to enable calling the version of Go that you have compiled.
@@ -304,10 +306,10 @@ An overview of basic Delve usage is included in our [how to develop with Go](./g
 
 ## Cross-compilation
 
-```{note}
+:::{note}
 For the basics of writing and testing a Hello World program in Go
 see our [how to develop with Go](./go-use.md) guide.
-```
+:::
 
 Go has excellent cross-platform build capabilities.
 To build a program called `hello.go`, containing valid Go code, run:

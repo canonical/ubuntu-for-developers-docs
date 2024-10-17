@@ -22,11 +22,11 @@ go mod init youruser.github.com/heygo
 The `go mod init` command creates a `go.mod` file in the project root that tracks the
 version of Go used for the program and any external dependencies.
 
-```{note}
+:::{note}
 If you `go get <package>` to fetch a specific package or `go mod tidy`
 to scan your code for references to external packages, the `go.mod` file
 is updated automatically.
-```
+:::
 
 3. Create a `heygo.go` file with the following content:
 
@@ -257,9 +257,9 @@ Again, your position in the code is shown:
     13:	func main() {
 ```
 
-```{note}
+:::{note}
 This output showing the code position is truncated for the remainder of this guide.
-```
+:::
 
 7. Check the value of the index:
 
