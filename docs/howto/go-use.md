@@ -138,22 +138,7 @@ method in the `main` function is indented correctly.
 Many editors, including VSCode and GoLang, support Delve.
 In this guide, Delve is used as a command-line debugging tool.
 
-#### Installing Delve and starting a debugging session
-
-```{note}
-You need to have the Go toolchain set up and `go` available in your `$PATH` to install Delve.
-```
-
-1. Install Delve by cloning the repository, changing to the cloned
-directory and invoking `go install`:
-
-```none
-git clone https://github.com/go-delve/delve
-cd delve
-go install github.com/go-delve/delve/cmd/dlv
-```
-
-2. Create a file to debug called `main.go` in a new folder where you have initialised a Go module.
+1. Create a file to debug called `main.go` in a new folder where you have initialised a Go module.
 
 This program is intended to calculate the average value from an array of integers.
 However, there is a bug in the `for` loop that needs to be investigated:
@@ -183,13 +168,13 @@ func main() {
 
 ```
 
-3. Initiate a debugging session with Delve by running `dlv debug` on the file:
+2. Initiate a debugging session with Delve by running `dlv debug` on the file:
 
 ```none
 dlv debug main.go
 ```
 
-This will put you in an interactive debugging session.
+This puts you in an interactive debugging session.
 You can interact with the debugger by entering commands after the `(dlv)` prompt:
 
 ```none
@@ -203,12 +188,10 @@ To exit at any time:
 (dlv) exit
 ```
 
-#### Example debugging session
-
 Delve is used in this example to debug the `calculateAverage` function.
 You need to be in a debugging session, indicated by the `(dlv)` prompt.
 
-1. Set a break point at line 6:
+3. Set a break point at line 6:
 
 ```none
 (dlv) break main.go:6
@@ -220,7 +203,7 @@ If the break point is set successfully, you get the following message:
 Breakpoint 1 set at 0x49cee9 for main.calculateAverage() ./main.go:6
 ```
 
-2. Continue to the `for` loop:
+4. Continue to the `for` loop:
 
 ```none
 (dlv) continue
@@ -243,7 +226,7 @@ Delve shows visually where you are in the code with "=>"; in this case, at the s
     12:	
 ```
 
-3. Check the value of `sum` with the `print` command:
+5. Check the value of `sum` with the `print` command:
 
 ```none
 (dlv) print sum
@@ -251,7 +234,7 @@ Delve shows visually where you are in the code with "=>"; in this case, at the s
 
 As expected, `sum` has been initialised to `0`.
 
-4. Step through the `for` loop with:
+6. Step through the `for` loop with:
 
 ```none
 (dlv) step
@@ -278,7 +261,7 @@ Again, your position in the code is shown:
 This output showing the code position is truncated for the remainder of this guide.
 ```
 
-5. Check the value of the index:
+7. Check the value of the index:
 
 ```none
 (dlv) print i
@@ -286,7 +269,7 @@ This output showing the code position is truncated for the remainder of this gui
 
 This outputs `0`.
 
-6. Step again to confirm that the `sum` value has been incremented
+8. Step again to confirm that the `sum` value has been incremented
 with the first element in the `numbers` array:
 
 ```none
@@ -301,7 +284,7 @@ with the first element in the `numbers` array:
 
 So far so good, the sum is equal to the first element of the list.
 
-7. Keep stepping through the code until you find the bug:
+9. Keep stepping through the code until you find the bug:
 
 ```none
 (dlv) step
@@ -345,7 +328,7 @@ The array has a length of `3` but the index is initialised at `0`.
 This means the loop attempts to run four times on three values.
 There is an off-by-one error.
 
-8. Change the code as follows to fix the error:
+10. Change the code as follows to fix the error:
 
 ```{code-block} diff
 func calculateAverage(numbers []int) float64 {

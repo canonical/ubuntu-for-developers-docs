@@ -229,6 +229,29 @@ A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is als
 go install golang.org/x/tools/gopls@latest
 ```
 
+### Debugging
+
+IDEs used for Go development commonly rely on [Delve](https://github.com/go-delve/delve) for debugging.
+Delve can also be installed as a standalone program and run [on the command line](https://github.com/go-delve/delve/blob/master/Documentation/cli/getting_started.md).
+
+
+To install Delve run:
+
+```none
+sudo apt install delve
+```
+
+Delve can also be installed by cloning the repository, changing to the cloned
+directory and invoking `go install`:
+
+```none
+git clone https://github.com/go-delve/delve
+cd delve
+go install github.com/go-delve/delve/cmd/dlv
+```
+
+An overview of basic Delve usage is included in our [how to develop with Go](./go-use.md) guide.
+
 ## Cross-compilation
 
 ```{note}
