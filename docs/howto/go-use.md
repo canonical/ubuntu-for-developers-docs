@@ -85,12 +85,12 @@ fmt.Println(greeting);
 
 This code contains a bug and is poorly formatted.
 
-2. Run `go vet hello.go`
+2. Run `go vet heygoV2.go`
 
 This outputs the following error:
 
 ```none
-vet: ./hello.go:6:14: undefined: greeting
+vet: ./heygoV2.go:6:14: undefined: greeting
 ```
 
 3. Fix the error by defining the `greeting` variable:
