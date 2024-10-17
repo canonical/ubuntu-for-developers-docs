@@ -19,6 +19,25 @@ you have installed a specific version of Go with:
 go version
 ```
 
+### Adding Go binary to path
+
+Some steps in this guide require that Go is installed and
+that the `go` command can be run from your terminal.
+If you are not using a package manager you will need
+to modify your `$PATH` manually.
+
+To temporarily add Go to your `$PATH`, run:
+
+	export PATH=$PATH:/path/to/your/go/bin
+
+To persist the change and make go available in new terminal sessions and across reboots, 
+append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
+
+	source $HOME/.profile
+
+The files to modify and commands to use when modifying the `$PATH` may vary
+depending on your shell environment.
+
 ### Package managers
 
 Installing Go with a package manager is a convenient option.
