@@ -1,6 +1,8 @@
 # How to develop using Go on Ubuntu
 
 This guide shows how to build, run and debug Go programs on Ubuntu.
+For instructions on how to install Go and the Delve debugger refer to
+our dedicated [install and set up Go](./go-setup.md) guide.
 
 ## Creating a Go project
 
@@ -23,7 +25,7 @@ version of Go used for the program and any external dependencies.
 ```{note}
 If you `go get <package>` to fetch a specific package or `go mod tidy`
 to scan your code for references to external packages, the `go.mod` file
-will be updated automatically.
+is updated automatically.
 ```
 
 3. Create a `heygo.go` file with the following content:
@@ -71,6 +73,7 @@ delete `heygo.go` and replace it with a new file, `heygoV2.go`:
 
 ```{code-block} go
 :caption: `heygoV2.go`
+:linenos:
 package main;
 
 import "fmt";
@@ -94,6 +97,7 @@ vet: ./hello.go:6:14: undefined: greeting
 
 ```{code-block} diff
 :caption: `heygoV2.go`
+:linenos:
 package main
 
 import "fmt";
@@ -105,11 +109,12 @@ fmt.Println(greeting)
 }
 ```
 
-4. Run `gofmt -w hello.go` to identify formatting
-issues and write necessary changes to the file:
+4. Running `gofmt -w heygoV2.go` identifies formatting
+issues and writes necessary changes to the file:
 
 ```{code-block} diff
 :caption: `heygoV2.go`
+:linenos:
 package main
 
 - import "fmt";
@@ -127,7 +132,7 @@ In this case, unneeded semicolons are removed
 from the `import` line, and the call to the print
 method in the `main` function is indented correctly.
 
-### Delve
+### Debugging with Delve
 
 [Delve](https://github.com/go-delve/delve) is a popular debugger for Go code.
 Many editors, including VSCode and GoLang, support Delve.

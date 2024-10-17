@@ -65,7 +65,7 @@ If you need to install a specific version, first enter the command:
 snap info go
 ```
 
-The output will indicate the snap channels that are available:
+The output indicates the snap channels that are available:
 
 ```none
 ...
@@ -91,8 +91,8 @@ The stable version of Go 1.22 is installed with:
 sudo snap install go --channel=1.22/stable --classic
 ```
 
-To switch between release versions use `snap refresh`;
-for example, to switch to the edge release of the latest Go version run:
+To switch between release versions, use `snap refresh`;
+for example, to switch to the edge release of the latest Go version, run:
 
 ```none
 sudo snap refresh go --channel=latest/edge --classic
@@ -100,9 +100,16 @@ sudo snap refresh go --channel=latest/edge --classic
 
 #### Debian package
 
-To install Go using the default Ubuntu package manager:
+To install Go using the default Ubuntu package manager
+first update the list of available packages:
 
 ```
+sudo apt update
+```
+
+Then install Go:
+
+```none
 sudo apt install golang-go
 ```
 
@@ -121,23 +128,25 @@ sudo tar -C /usr/local -xzf go<version>.linux-amd64.tar.gz
 ```
 
 To use the `go` binary you need to add it to your `$PATH` environment variable.
-Running the following command will modify the environmental variable for the current terminal session:
 
 ```none
 export PATH=$PATH:/usr/local/go/bin
 ```
 
-To persist the change and make `go` available in new terminal sessions and across reboots, 
-append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
 
 ```none
-source $HOME/.profile
 ```
 
 ### Downloading and using multiple Go versions
 
 If Go is already installed and `go` is available in your `$PATH`,
 other versions of Go can be installed in addition to the default version.
+
+#### Go install and download
+
+```{note}
+You need to have the Go toolchain set up and `go` available in your `$PATH` to use `go install`.
+```
 
 1. Install the binary for a specific version from the Go website:
 
@@ -151,7 +160,7 @@ go install golang.org/dl/go<version-number>@latest
 go<version-number> download
 ```
 
-To confirm the download location of the SDK run:
+To confirm the download location of the SDK, run:
 
 ```none
 go<version-number> env GOROOT
@@ -164,11 +173,11 @@ the version number to the `go` command:
 go<version-number> version
 ```
 
-Running `go version` without appending a version number will still invoke your default Go installation.
+Running `go version` without appending a version number stills invoke your default Go installation.
 
 ### Building from source
 
-With Go installed and `go` available in your $PATH Go can be built from source.
+With Go installed and `go` available in your $PATH, Go can be built from source.
 
 1. Clone the Go repository, then change into the cloned repository:
 
@@ -204,15 +213,15 @@ Installed commands in /home/<username>/build-go-from-source/bin
 
 ## Editing and debugging
 
-Some of the most common Integrated Development Environments used for Go are:
+### Integrated Development Environments and editors
+
+Some of the most common Integrated Development Environments (IDEs) used for Go are:
 
 - [Visual Studio Code](https://code.visualstudio.com/): a free editor with a dedicated [Go extension](https://marketplace.visualstudio.com/items?itemName=golang.Go) maintained by the Go Team
 - [GoLand](https://www.jetbrains.com/go/): a paid editor developed specifically for the Go programming language
 
-Both Visual Studio Code and GoLand rely on [Delve](https://github.com/go-delve/delve) for debugging.
-Delve can also be installed as a standalone program and run [on the command line](https://github.com/go-delve/delve/blob/master/Documentation/cli/getting_started.md).
+A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is also actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. 
 
-An overview of basic Delve usage is included in our [how to develop with Go](./go-use.md) guide.
 
 A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is also actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim and others. Install it by running:
 
