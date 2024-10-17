@@ -290,13 +290,10 @@ To install Delve run:
 sudo apt install delve
 ```
 
-Delve can also be installed by cloning the repository, changing to the cloned
-directory and invoking `go install`:
+If Go is installed and in your `$PATH` then Delve can also be installed with `go install`:
 
 ```none
-git clone https://github.com/go-delve/delve
-cd delve
-go install github.com/go-delve/delve/cmd/dlv
+go install github.com/go-delve/delve/cmd/dlv@latest
 ```
 
 An overview of basic Delve usage is included in our [how to develop with Go](./go-use.md) guide.
