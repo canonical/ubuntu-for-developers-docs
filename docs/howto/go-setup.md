@@ -83,13 +83,7 @@ export PATH=$PATH:/usr/local/go/bin
 Sometimes it may be necessary to run multiple Go versions
 on the same machine.
 
-The general command to install a specific version of Go is:
-
-```none
-sudo apt install golang-<version>
-```
-
-1. To install versions `1.21` and `1.23`, run:
+1. To install Go versions `1.21` and `1.23`, run:
 
 ```none
 sudo apt install golang-1.21 golang-1.23
@@ -97,51 +91,11 @@ sudo apt install golang-1.21 golang-1.23
 
 Each `go` binary will be installed in `/usr/lib/go-<version>/bin/`
 
-2. Test the `go` binaries with:
+2. Test the `go` binaries by calling them with their full paths:
 
 ```none
 /usr/lib/go-1.21/bin/go version
 /usr/lib/go-1.23/bin/go version
-```
-
-3. Optional: add binary to `$PATH`.
-
-Make the name of the binary unique so that there is no
-naming collision with any default `go` installation:
-
-```none
-sudo mv /usr/lib/go-1.21/bin/go /usr/lib/go-1.21/bin/go1.21
-```
-
-Then add it to your path `$PATH`:
-
-```none
-export PATH=$PATH:/usr/lib/go-1.21/bin
-```
-
-Test with:
-
-```none
-go1.21 version
-```
-
-4. Optional: create aliases for different Go versions.
-
-For example, in a `.bashrc` file, add the lines:
-
-```none
-alias go1.21='/usr/lib/go-1.21/bin/go'
-alias go1.23='/usr/lib/go-1.23/bin/go'
-```
-
-These can now be called separately:
-
-```none
-go1.21 version
-```
-
-```none
-go1.23 version
 ```
 
 ## Editing and debugging
