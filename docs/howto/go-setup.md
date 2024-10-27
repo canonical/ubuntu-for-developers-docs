@@ -7,8 +7,17 @@ environment on Ubuntu.
 
 ## Installing and setting up Go
 
-Go includes the `go` command, a compiler and other tools and can be
-installed with the default Ubuntu package manager
+Go includes the `go` command, a compiler and other tools.
+You can install Go as a Debian package or as a snap.
+Snap provides a larger number of Go versions but — unlike
+a Debian package — these cannot be installed in a Docker container.
+
+:::{note}
+See [Precompiled Go binaries](#precompiled-go-binaries) for instructions
+on how to install Go without a package manager.
+:::
+
+### Debian package
 
 1. Update the list of available packages:
 
@@ -29,8 +38,29 @@ go version
 ```
 
 :::{note}
-See [Precompiled Go binaries](#precompiled-go-binaries) for instructions
-on how to install specific versions of Go without a package manager.
+If you need to install a specific version of Go use:
+
+	sudo apt install golang-<version>
+:::
+
+### Snap package
+
+1. Install the latest Go snap:
+
+```none
+sudo snap install go --classic
+```
+
+2. Confirm successful installation:
+
+```none
+go version
+```
+
+:::{note}
+To install a specific version of Go, specify the channel; for example:
+
+	sudo snap install go --channel=1.22/stable --classic
 :::
 
 ### Adding Go binary to path
