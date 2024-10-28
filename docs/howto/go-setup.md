@@ -85,7 +85,7 @@ source $HOME/.profile
 The files to modify and commands to use when modifying the `$PATH` may vary
 depending on your shell environment.
 :::
-
+(precompiled-go-binaries)=
 ### Precompiled Go binaries
 
 Precompiled Go binaries are available in a compressed format on the [release page](https://go.dev/dl/) of the official Go website.
