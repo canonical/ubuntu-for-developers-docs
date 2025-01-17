@@ -73,7 +73,7 @@ Next, you will be prompted to install third-party software for graphics and hard
 
 ### Choosing the Ubuntu installation type
 
-On the next screen, select **Erase disk and install Ubuntu** if you want to install Ubuntu as the only OS on your device. Select Manual installation to install Ubuntu as a secondary OS on your system. Instructions on how to manually install Ubuntu can be found here.
+On the next screen, select **Erase disk and install Ubuntu** if you want to install Ubuntu as the only OS on your device. Select Manual installation to install Ubuntu as a secondary OS on your system. Instructions on how to install Ubuntu as a secondary OS can be found [here](https://ubuntu.com/tutorials/install-ubuntu-desktop#installing-ubuntu-alongside-another-operating-system).
 
 ![choose-installation-type-ubuntu.jpeg](../assets/howto/install-ubuntu/choose-installation-type-ubuntu.jpeg)
 
