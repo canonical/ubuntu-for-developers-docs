@@ -1,14 +1,14 @@
 # How to set up development environment for Go on Ubuntu
 
-Go is a popular language for backend web development,microservices and CLI tools. This how-to guide outlineshow to install a Go distribution and set up a developmentenvironment on Ubuntu.
+Go is a popular language for back-end web development, microservices and CLI tools. This how-to guide outlines how to install a Go distribution and set up a development environment on Ubuntu.
 
 
 ## Installing and setting up Go
 
-Go includes the `go` command, a compiler and other tools.You can install Go as a Debian package or as a snap.Snap provides a larger number of Go versions but — unlikea Debian package — these cannot be installed in a Docker container.
+Go includes the `go` command, a compiler and other tools. You can install Go as a Debian package or as a snap. Snap provides a larger number of Go versions but — unlike a Debian package — these cannot be installed in a Docker container.
 
 :::{note}
-See [Precompiled Go binaries](#precompiled-go-binaries) for instructionson how to install Go without a package manager.
+See [Precompiled Go binaries](#precompiled-go-binaries) for instructions on how to install Go without a package manager.
 :::
 
 
@@ -66,7 +66,7 @@ sudo snap install go --channel=1.22/stable --classic
 
 ### Adding the Go binary to `$PATH`
 
-When not using a package manager to install Go, you needto add the Go binary to your `$PATH` environment variable.
+When not using a package manager to install Go, you need to add the Go binary to your `$PATH` environment variable.
 
 * To temporarily add `go` to your `$PATH`, run:
 
@@ -81,7 +81,7 @@ When not using a package manager to install Go, you needto add the Go binary to 
     ```
 
 :::{note}
-The files to modify and commands to use when modifying the `$PATH` may varydepending on your shell environment.
+The files to modify and commands to use when modifying the `$PATH` may vary depending on your shell environment.
 :::
 
 
@@ -110,7 +110,7 @@ Precompiled Go binaries are available in a compressed format on the [release pag
 
 ### Downloading and using multiple Go versions
 
-Sometimes it may be necessary to run multiple Go versionson the same machine.
+Sometimes it may be necessary to run multiple Go versions on the same machine.
 
 1. To install Go versions 1.21 and 1.23, run:
 
@@ -165,7 +165,7 @@ sudo apt install delve
 
 An overview of basic Delve usage is included in our [how to develop with Go](./go-use.md) guide.
 
-A Go language server [gopls](https://pkg.go.dev/golang.org/x/tools/gopls) is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
+A Go language server, [gopls](https://pkg.go.dev/golang.org/x/tools/gopls), is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
 
 To install gopls from the Ubuntu archive:
 
@@ -174,19 +174,19 @@ sudo apt install gopls
 ```
 
 :::{note}
-If you have Go installed and `go` in your `$PATH`, thenthe latest version of many Go tools like gopls and Delve can be installed with:
+If you have Go installed and `go` in your `$PATH`, then the latest version of many Go tools like `gopls` and Delve can be installed with:
 
 ```none
 go install url/of/tool/<name-of-tool>@latest
 ```
 
-This is useful when you need a version of a tool that is not yet availablethrough the package manager.
+This is useful when you need a version of a tool that is not yet available through the package manager.
 :::
 
 
 ## Cross-compilation
 
-Go has excellent cross-platform build capabilities.To build a program called `hello.go`, containing valid Go code, run:
+Go has excellent cross-platform build capabilities. To build a program called `hello.go`, containing valid Go code, run:
 
 ```none
 go build hello.go
@@ -227,7 +227,7 @@ For this example, filter the output to Windows and Linux on `amd`:
 go tool dist list | grep 'amd' | grep -E 'windows|linux'
 ```
 
-Create a Makefile that automatically setsthe build environment and creates executable binaries forboth Windows and Linux platforms:
+Create a Makefile that automatically sets the build environment and creates executable binaries for both Windows and Linux platforms:
 
 ```make
 EXE=heygo

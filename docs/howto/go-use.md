@@ -1,6 +1,7 @@
 # How to develop using Go on Ubuntu
 
-This guide shows how to build, run, and debug Go programs on Ubuntu.For instructions on how to install Go and the Delve debugger, refer toour dedicated [install and set up Go](./go-setup.md) guide.
+This guide shows how to build, run, and debug Go programs on Ubuntu. For instructions on how to install Go and the Delve debugger, refer to our dedicated [install and set up Go](./go-setup.md) guide.
+
 
 ## Creating a Go project
 
@@ -10,7 +11,7 @@ This guide shows how to build, run, and debug Go programs on Ubuntu.For instruct
     mkdir heygo && cd heygo
     ```
 
-2. Initialize the project as a Go module. When initiliazing a module, provide the URL of a repository for hosting the source. For testing purposes, use a generic URL:
+2. Initialize the project as a Go module. When initializing a module, provide the URL of a repository for hosting the source. For testing purposes, use a generic URL:
 
     ```none
     go mod init youruser.github.com/heygo
@@ -55,7 +56,7 @@ This guide shows how to build, run, and debug Go programs on Ubuntu.For instruct
 Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and format code. Delve is recommended for advanced debugging.
 
 
-### Go vet and gofmt
+### Go vet and `gofmt`
 
 1. In the same directory where you initialized the module, delete `heygo.go` and replace it with a new file, `heygoV2.go`:
 
@@ -123,7 +124,7 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
 
 ### Debugging with Delve
 
-[Delve](https://github.com/go-delve/delve) is a popular debugger for Go code. Many editors, including VSCode and GoLang, support Delve. In this guide, Delve is used as a command-line debugging tool.
+[Delve](https://github.com/go-delve/delve) is a popular debugger for Go code. Many editors, including VSCode and GoLand, support Delve. In this guide, Delve is used as a command-line debugging tool.
 
 1. Create a file to debug called `main.go` in a new folder where you have initialized a Go module.
 
