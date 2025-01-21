@@ -1,2 +1,2 @@
-canonical-sphinx
+canonical-sphinx[full]
 sphinx-autobuild
