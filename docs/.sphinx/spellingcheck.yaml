@@ -3,6 +3,7 @@ matrix:
   aspell:
     lang: en
     d: en_GB
+    add-extra-dicts: en_US
   dictionary:
     wordlists:
     - .wordlist.txt
