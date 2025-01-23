@@ -13,91 +13,50 @@ Before you can install Ubuntu Desktop, you need to make sure you have:
 
 ## Preparing for installation
 
-You can install Ubuntu desktop as: 
+You can install Ubuntu desktop as:
 
 - The only operating system (OS) on your device (single boot), which is ideal if you run resource-intensive tasks requiring full hardware utilization.
-- Along with another OS (dual boot), which is ideal if you need Ubuntu OSes for only specific tasks.
-- Run it inside another OS using virtualization software, ideal for testing Ubuntu without affecting your main system. Follow [this guide](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview) to install Ubuntu as a VM.
+- Along with another OS (dual boot), which is ideal if you need Ubuntu OS for only specific development tasks.
+- Run it inside another OS using virtualization software. This is ideal for testing Ubuntu without affecting your main system. This guide explains how to [install Ubuntu as a VM using VirtualBox](https://ubuntu.com/tutorials/how-to-run-ubuntu-desktop-on-a-virtual-machine-using-virtualbox#1-overview).
 
-Whichever mode you choose to install Ubuntu desktop as, you can choose to run it in GUI (with a user interface) or headless mode (without a user interface). For a developer environment, you will install Ubuntu desktop as a single boot with a GUI. 
+Whichever mode you choose to install Ubuntu desktop in, you can run it in GUI (with a user interface) or headless mode (without a user interface). For a developer environment, you will install Ubuntu desktop with a GUI, as headless mode is more suitable for cloud servers.
 
-To achieve this, download the ISO file for the [latest version of Ubuntu desktop](https://www.ubuntu.com/download). Then, create a bootable USB stick using tools for flashing OS images onto storage devices like [balenaEtcher](https://etcher.balena.io/).
+## Automated installation
 
-## Installing Ubuntu desktop
+You can install Ubuntu automatically using an `autoinstall.yaml` file. This allows you to skip most of the installation steps and restore an existing Ubuntu environment setup automatically. This guide explains how you can [provide an autoinstall configuration during installation](https://canonical-subiquity.readthedocs-hosted.com/en/latest/tutorial/providing-autoinstall.html).
 
-Follow the steps below to install Ubuntu desktop.
+## Extended app selection
 
-### Initializing the installation
+During your Ubuntu installation process, you can choose to add more apps to Ubuntu’s default selection using the Extended selection which contains but is not limited to:
 
-Insert the bootable USB stick into the device you want to install Ubuntu desktop and boot or restart the device. It should detect the bootable ISO during the boot process and initialize the installer.
+- Compilers and language-specific tools like Node.js and Ruby.
+- Containers & Virtualization tools like Docker, VirtualBox, and Vagrant.
+- Database management tools like MySQL workbench and PgAdmin.
 
 :::{note}
-
-Hold F12 during startup and select the USB device from the system-specific boot menu if your device does not detect the bootable ISO. Alternatively, look for a brief message that informs you which key to press to bring up the boot menu when your system starts.
-
+The list above is not comprehensive and you can always add more apps to Ubuntu using the app centre.
 :::
 
-Once the installer is initialised, you will be required to **choose your preferred language**, select the **accessibility settings** you require, **choose your keyboard layout**, and connect to the Internet for your installation. 
+## Single boot configuration
 
-### Initiating the installation process
+A single boot configuration is straightforward and eliminates the need to manage multiple operating systems in your device, thus, making updates and maintenance easier. This guide explains how you can [install Ubuntu as the only OS on your device](https://ubuntu.com/tutorials/install-ubuntu-desktop#1-overview).
 
-On the next screen, you will be provided with the option to **Try Ubuntu**, which allows you to preview Ubuntu without making any changes to your PC, or to **Install Ubuntu**, which allows you to install Ubuntu with or instead of your current operating system.
+:::{note}
+Before proceeding with this installation, ensure that all your data is backed up and can be restored as this process will erase everything on your hard drive.
+:::
 
-![install-or-try-ubuntu.jpeg](../assets/howto/install-ubuntu/install-or-try-ubuntu.jpeg)
+## Dual boot configuration
 
-<aside>
+In a dual-boot configuration, you install Ubuntu and another operating system on your device. To proceed with the dual boot option, you need to have enough free disk space to allocate separate partitions for both operating systems and additional room for updates and personal files.
 
-If your system uses Intel’s Rapid Storage Technology, you must disable it to continue with the installation. Visit [help.ubuntu.com/rst](https://help.ubuntu.com/rst/) for more information.
+The Ubuntu installer automatically selects the largest partition on the drive to install, however, you can switch to manual partitioning for a more fine-grained control of the partitions. This guide explains how you can [install Ubuntu desktop as a secondary OS](https://ubuntu.com/tutorials/install-ubuntu-desktop#installing-ubuntu-alongside-another-operating-system) on your device.
 
-</aside>
+## Authentication with Active Directories
 
-### Choosing installation process
+On the “Create login details” screen during a manual installation, you will be allowed to link your system to an existing Active Directory domain. This will allow you to log in with your domain account after installation. This guide explains how to [join an Active Directory during installation](https://documentation.ubuntu.com/adsys/en/stable/how-to/join-ad-installation/#join-at-installation-time).
 
-On the installation setup screen, you can choose between **Interactive installation** and **Automated Installation**. Choose the **Interactive installation** option, which is the standard installation option. 
+## Post installation recommendations
 
-However, you can choose the **Automated Installation** option if you have a configuration file to standardize your installation. You can get more information about automated installation [here](https://blog.local-optimum.net/getting-started-with-autoinstall-on-ubuntu-desktop-24-04-lts-147a1defb2de). 
+Welcome to Ubuntu!! Be sure to keep your system up to date to receive the latest updates and security patches. You can automate this process by enabling automatic updates.
 
-![choose-installation-setup-ubuntu.jpeg](../assets/howto/install-ubuntu/choose-installation-setup-ubuntu.jpeg)
-
-### Choosing starter apps
-
-Next, you will be prompted to choose the apps you would like to start the install with. You can choose the **Default selection** to proceed with essential apps like web browsers or the **Extended selection** to install office tools and utilities.
-
-![install-apps-ubuntu.jpeg](../assets/howto/install-ubuntu/install-apps-ubuntu.jpeg)
-
-### Installing third-party software
-
-Next, you will be prompted to install third-party software for graphics and hardware and to support additional media formats. To get the best performance out of your installation, tick all the boxes.
-
-![install-additional-software-ubuntu.jpeg](../assets/howto/install-ubuntu/install-additional-software-ubuntu.jpeg)
-
-### Choosing the Ubuntu installation type
-
-On the next screen, select **Erase disk and install Ubuntu** if you want to install Ubuntu as the only OS on your device. Select Manual installation to install Ubuntu as a secondary OS on your system. Instructions on how to install Ubuntu as a secondary OS can be found [here](https://ubuntu.com/tutorials/install-ubuntu-desktop#installing-ubuntu-alongside-another-operating-system).
-
-![choose-installation-type-ubuntu.jpeg](../assets/howto/install-ubuntu/choose-installation-type-ubuntu.jpeg)
-
-### Creating login details
-
-On the next screen, you will be prompted to enter your name and the name of your system and create a username and password. 
-
-On this page, there are two other options you can enable:
-
-- **Require my password to log in**: You should enable this option to prevent unauthorized access.
-- **Use Active Directory**: This option allows you to link your system to an existing Active Directory domain, allowing you to log in with your domain account after installation. Learn how to join an Active Directory using [this guide](https://documentation.ubuntu.com/adsys/en/stable/how-to/join-ad-installation/#join-at-installation-time).
-
-![create-login-details.jpeg](../assets/howto/install-ubuntu/create-login-details.jpeg)
-
-### Final installation steps
-
-On the next page, you will be required to select your location and timezone. If you are connected to the Internet, they will be automatically detected.
-
-![choose-your-location.jpeg](../assets/howto/install-ubuntu/choose-your-location.jpeg)
-
-The next page will summarise the installation options you chose to confirm your setup before proceeding with the installation process. If everything looks okay, proceed with the installation, else go back and modify the options you are not satisified with.
-
-## Post Installation Recommendations
-
-Welcome to Ubuntu!! Be sure to keep your system up to date to receive the latest updates and security patches. You can automate this process by [enabling automatic updates](https://www.kolide.com/features/checks/ubuntu-unattended-upgrades).
-
-Now that you have installed Ubuntu desktop, you can take your developer workspace to the next level by installing and configuring a version control system like Git.
+Now that you have installed Ubuntu desktop, you can take your developer environment to the next level by installing and configuring a version control system like Git.
