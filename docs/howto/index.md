@@ -6,6 +6,7 @@
 :maxdepth: 1
 :hidden: true
 
+Install and configure a VCS <vcs-install.md>
 Install and set up Go <go-setup.md>
 Develop using Go <go-use.md>
 Install and set up Java <java-setup.md>
