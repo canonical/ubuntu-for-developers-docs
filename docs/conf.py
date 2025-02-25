@@ -17,13 +17,13 @@ import datetime
 ############################################################
 
 # Product name
-project = 'Ubuntu Desktop as a Developer Platform'
-author = 'Canonical Ltd.'
+project = "Ubuntu Desktop as a Developer Platform"
+author = "Canonical Ltd."
 
 # The title you want to display for the documentation in the sidebar.
 # You might want to include a version number here.
 # To not display any title, set this option to an empty string.
-html_title = 'Ubuntu for Developers'
+html_title = "Ubuntu for Developers"
 
 # The default value uses CC-BY-SA as the license and the current year
 # as the copyright year.
@@ -46,17 +46,17 @@ html_title = 'Ubuntu for Developers'
 #   -H 'Accept: application/vnd.github.v3.raw' \
 #   https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
 
-copyright = '%s CC-BY-SA, %s' % (datetime.date.today().year, author)
+copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 
 ## Open Graph configuration - defines what is displayed as a link preview
 ## when linking to the documentation from another website (see https://ogp.me/)
 # The URL where the documentation will be hosted (leave empty if you
 # don't know yet)
-ogp_site_url = 'https://canonical-ubuntu-for-developers.readthedocs-hosted.com/'
+ogp_site_url = "https://canonical-ubuntu-for-developers.readthedocs-hosted.com/"
 # The documentation website name (usually the same as the product name)
 ogp_site_name = project
 # The URL of an image or logo that is used in the preview
-ogp_image = 'https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg'
+ogp_image = "https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg"
 
 # Update with the local path to the favicon for your product
 # (default is the circle of friends)
@@ -65,53 +65,41 @@ ogp_image = 'https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg
 # (Some settings must be part of the html_context dictionary, while others
 #  are on root level. Don't move the settings.)
 html_context = {
-
     # Change to the link to the website of your product (without "https://")
     # For example: "ubuntu.com/lxd" or "microcloud.is"
     # If there is no product website, edit the header template to remove the
     # link (see the readme for instructions).
-    'product_page': 'ubuntu.com/desktop/developers',
-
+    "product_page": "ubuntu.com/desktop/developers",
     # Add your product tag (the orange part of your logo, will be used in the
     # header) to ".sphinx/_static" and change the path here (start with "_static")
     # (default is the circle of friends)
     # 'product_tag': '_static/tag.png',
-
     # Change to the discourse instance you want to be able to link to
     # using the :discourse: metadata at the top of a file
     # (use an empty value if you don't want to link)
-    'discourse': 'https://discourse.ubuntu.com/c/foundations/',
-
+    "discourse": "https://discourse.ubuntu.com/c/foundations/",
     # Change to the Mattermost channel you want to link to
     # (use an empty value if you don't want to link)
-    'mattermost': 'https://chat.canonical.com/canonical/channels/documentation',
-
+    "mattermost": "https://chat.canonical.com/canonical/channels/documentation",
     # Change to the Matrix channel you want to link to
     # (use an empty value if you don't want to link)
-    'matrix': 'https://matrix.to/#/#documentation:ubuntu.com',
-
+    "matrix": "https://matrix.to/#/#documentation:ubuntu.com",
     # Change to the GitHub URL for your project
     # This is used, for example, to link to the source files and allow creating GitHub issues directly from the documentation.
-    'github_url': 'https://github.com/canonical/ubuntu-for-developers-docs',
-
+    "github_url": "https://github.com/canonical/ubuntu-for-developers-docs",
     # Change to the branch for this version of the documentation
     # 'github_version': 'main',
-
     # Change to the folder that contains the documentation
     # (usually "/" or "/docs/")
-    'github_folder': '/docs/',
-
+    "github_folder": "/docs/",
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
-    'github_issues': 'enabled',
-
+    "github_issues": "enabled",
     # Controls the existence of Previous / Next buttons at the bottom of pages
     # Valid options: none, prev, next, both
-    'sequential_nav': "both",
-
+    "sequential_nav": "both",
     # Controls whether to display the contributors for each file
     "display_contributors": True,
-
     # Controls the time frame for showing the contributors
     # "display_contributors_since": ""
 }
@@ -124,8 +112,8 @@ html_context = {
 # You can comment them out if you don't need this (but you can also just
 # leave them).
 
-html_static_path = ['.sphinx/_static']
-templates_path = ['.sphinx/_templates']
+html_static_path = [".sphinx/_static"]
+templates_path = [".sphinx/_templates"]
 
 ############################################################
 ### Redirects
@@ -144,15 +132,11 @@ redirects = {}
 ############################################################
 
 # Links to ignore when checking links
-linkcheck_ignore = [
-    'http://127.0.0.1:8000'
-    ]
+linkcheck_ignore = ["http://127.0.0.1:8000", "https://crates.io"]
 
 # Pages on which to ignore anchors
 # (This list will be appended to linkcheck_anchors_ignore_for_url)
-linkcheck_anchors_ignore_for_url = [
-    r'https://github\.com/.*'
-]
+linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
 
 linkcheck_retries = 3
 
@@ -166,9 +150,7 @@ linkcheck_retries = 3
 # By default, the following MyST extensions are enabled:
 # substitution, deflist, linkify
 # If you need more extensions, add them here.
-myst_enable_extensions = {
-    'colon_fence'
-    }
+myst_enable_extensions = {"colon_fence"}
 
 # You must include the canonical_sphinx extension here.
 # This extension automatically enables the following Sphinx extensions:
@@ -178,14 +160,12 @@ myst_enable_extensions = {
 # terminal-output, youtube-links
 # If you need more extensions, add them here (in addition to
 # canonical_sphinx).
-extensions = [
-    'canonical_sphinx'
-    ]
+extensions = ["canonical_sphinx"]
 
 # Add files or directories that should be excluded from processing.
 exclude_patterns = [
-    'doc-cheat-sheet*',
-    ]
+    "doc-cheat-sheet*",
+]
 
 # Add custom CSS files (located in .sphinx/_static/)
 # html_css_files = []
@@ -197,9 +177,9 @@ exclude_patterns = [
 
 # Specify a reST string that is included at the end of each file.
 # The suggested value pulls the reuse/links.txt file into each reST file.
-rst_epilog = '''
+rst_epilog = """
 .. include:: /reuse/links.txt
-'''
+"""
 
 # By default, the documentation includes a feedback button at the top.
 # You can disable it by setting the following configuration to True.
@@ -216,15 +196,16 @@ rst_epilog = '''
 ## Add any configuration that is not covered by the common conf.py file.
 
 # Define a :center: role that can be used to center the content of table cells.
-rst_prolog = '''
+rst_prolog = """
 .. role:: center
    :class: align-center
-'''
+"""
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
 from docutils.parsers.rst import roles
 from sphinx.util.docutils import SphinxRole
 from docutils import nodes
+
 
 class CommandRole(SphinxRole):
     def run(self):
@@ -232,12 +213,15 @@ class CommandRole(SphinxRole):
         node = nodes.literal(text, text)
         return [node], []
 
+
 def setup(app):
-    roles.register_local_role('command', CommandRole())
+    roles.register_local_role("command", CommandRole())
+
 
 # Define a custom role for package-name formatting
 def pkg_role(name, rawtext, text, lineno, inliner, options={}, content=[]):
     node = nodes.literal(rawtext, text)
     return [node], []
 
-roles.register_local_role('pkg', pkg_role)
+
+roles.register_local_role("pkg", pkg_role)
