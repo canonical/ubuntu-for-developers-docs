@@ -132,7 +132,7 @@ Many Rust applications can run inside a web browser. To build a Rust project for
 
 ## Installing debugging tooling
 
-Your code editor or IDE probably already has debugging functionalities tailored for Rust applications. If not, you can also debug Rust applications on Ubuntu using familiar debugging tools, such as like GDB and LLDB.
+Your code editor or IDE probably already has debugging functionalities tailored for Rust applications. If not, you can also debug Rust applications on Ubuntu using familiar debugging tools such as GDB and LLDB.
 
 To install the corresponding debugging support packages, run:
 
