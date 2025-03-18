@@ -2,7 +2,7 @@
 
 This article provides guidance on basic usage of the Rust toolchain for development on Ubuntu. It shows how to create a 'Hello World' programme and explains how to compile Rust programmes using {command}`rustc` and build projects using {command}`cargo`.
 
-[`rustc` is the actual compiler](https://doc.rust-lang.org/rustc/index.html), while {command}`cargo` is the build system and project management tool.
+[`rustc`](https://doc.rust-lang.org/stable/rustc/index.html) is the actual compiler, while [`cargo`](https://doc.rust-lang.org/stable/cargo/index.html) is the build system and project management tool.
 
 In most cases, there is no reason to use {command}`rustc` directly. Instead, use {command}`cargo` as the build system to call {command}`rustc` indirectly. Refer to the Rust documentation for an explanation: [Why Cargo Exists](https://doc.rust-lang.org/stable/cargo/guide/why-cargo-exists.html)
 
