@@ -160,7 +160,9 @@ myst_enable_extensions = {"colon_fence"}
 # terminal-output, youtube-links
 # If you need more extensions, add them here (in addition to
 # canonical_sphinx).
-extensions = ["canonical_sphinx"]
+extensions = ["canonical_sphinx","sphinxcontrib.mermaid"]
+
+myst_fence_as_directive = ["mermaid"]
 
 # Add files or directories that should be excluded from processing.
 exclude_patterns = [
