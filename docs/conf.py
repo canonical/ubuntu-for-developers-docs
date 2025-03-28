@@ -167,6 +167,7 @@ myst_fence_as_directive = ["mermaid"]
 # Add files or directories that should be excluded from processing.
 exclude_patterns = [
     "doc-cheat-sheet*",
+    "reuse",
 ]
 
 # Add custom CSS files (located in .sphinx/_static/)
