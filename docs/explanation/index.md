@@ -6,4 +6,5 @@
 :hidden: true
 
 Installing Ubuntu Desktop for developers <install-ubuntu.md>
+Introduction to the .NET Toolchain<dotnet-introduction.md>
 :::
