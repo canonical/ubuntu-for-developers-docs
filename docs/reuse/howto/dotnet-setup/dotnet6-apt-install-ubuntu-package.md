@@ -28,7 +28,7 @@ sudo apt update && sudo apt install aspnetcore-runtime-6.0
 ```
 
 Alternatively, you can just install the .NET runtime without the ASP\.NET Core
-compponents:
+components:
 
 ```text
 sudo apt update && sudo apt install dotnet-runtime-6.0

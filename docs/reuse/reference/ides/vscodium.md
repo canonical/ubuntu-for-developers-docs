@@ -1,6 +1,6 @@
-### VSCodium
+### VS Codium
 
-Visual Studio Code is also distributed by the community as VSCodium whoose
+Visual Studio Code is also distributed by the community as VS Codium whose
 builds are freely licensed and disable telemetry.
 
 Official Website:

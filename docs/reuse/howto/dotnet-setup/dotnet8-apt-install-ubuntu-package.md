@@ -42,7 +42,7 @@ want to install these packages.
 ```
 
 Alternatively, you can just install the .NET runtime without the ASP\.NET Core
-compponents:
+components:
 
 ```text
 sudo apt update && sudo apt install --install-suggests dotnet-runtime-8.0
