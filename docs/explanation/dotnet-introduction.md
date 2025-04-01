@@ -28,7 +28,7 @@ The .NET platform supports multiple programming languages, the primary ones are:
 
 ```{note}
 We recommend not to use Visual Basic for new projects. It is mostly used by
-legacy projects nowadays. While Microsoft is commited to maintain it for the
+legacy projects nowadays. While Microsoft is committed to maintain it for the
 foreseeable future, the .NET team will focus on supporting existing scenarios.
 It's unlikely that support for new workloads or runtime features, will be added.
 ```
@@ -45,7 +45,7 @@ everything.
 
    Diagram of the Common Language Infrastructure
 
-   Credit: Deviousasti (License: CC BY-SA 4.0 Deed)
+   Credit: {spellexception}`Deviousasti` (License: CC BY-SA 4.0 Deed)
 ```
 
 ### Software Development Kit (SDK)
@@ -84,9 +84,9 @@ that you can use one command to interact with multiple versions of .NET.
 
 The primary mechanism for sharing code, assets & libraries in the .NET toolchain
 are NuGet packages. Put simply, a NuGet package is a single ZIP file with the
-`.nupkg` file extension that contains compiled code (DLLs), other files related
-to that code, and a descriptive manifest that includes information like the
-package's version number.
+`.nupkg` file extension that contains compiled code ({spellexception}`DLLs`),
+other files related to that code, and a descriptive manifest that includes
+information like the package's version number.
 
 NuGet is also the name of the the package manager for .NET. The NuGet client
 tools provide the ability to produce and consume packages.
@@ -98,9 +98,8 @@ Learn more about NuGet [here](https://learn.microsoft.com/en-us/nuget/what-is-nu
 
 ## Release cycle & support policies
 
-A new major release of .NET is published every year in November. They are
-alternatingly declared as a long-term support (LTS) release or
-standard-term support (STS) release:
+A major new release of .NET is published every November, alternating between
+a long-term support (LTS) release and a standard-term support (STS) release:
 
 - **LTS releases**: Get free support and patches for three years by the .NET team.
   These releases usually have an even major version number and and are released
@@ -113,7 +112,7 @@ The quality of all releases is the same. The only difference is the length of
 support provided by upstream.
 
 Patch updates are released monthly on the second Tuesday of each month, also
-known as Patch Tuesday. Within a release's support lifecycle, systems must
+known as Patch Tuesday. Within a release's support life-cycle, systems must
 remain current on released patch updates. Patches to releases are compatible,
 which eliminates risk adversely affecting applications.
 
@@ -134,21 +133,21 @@ Currently we (Canonical) only build the x.x.1xx feature band for Ubuntu.
 Higher feature bands are usually short lived, less stable and are more
 complex to build from source.
 
-The Micirosoft .NET team is working on reducing complexity for building these
-feature bands from source and we may provide higher feature bands in the futuee
+The Microsoft .NET team is working on reducing complexity for building these
+feature bands from source and we may provide higher feature bands in the future
 via a PPA.
 
 (dotnet-history)=
 ## .NET implementations & history
 
 In the .NET community you may encounter the terms ".NET Framework", ".NET Core", 
-just ".NET" or "Mono". These terms have different meainings and carry a vastly
+just ".NET" or "Mono". These terms have different meanings and carry a vastly
 different context.
 
 ### .NET Framework
 
 **.NET Framework** refers to the original .NET implementation by Microsoft. It
-is a propriatary, closed-source and windows only implementation. The development
+is a proprietary, closed-source and windows only implementation. The development
 started in the late 1990s with it's first release in early 2000s. Microsoft
 still maintains .NET Framework due to the many still actively used Business
 applications, but no longer develops new features.
@@ -178,29 +177,15 @@ receives new feature development.
 
 ### .NET (Core)
 
-At the end of 2014, Microsoft announced **.NET Core** – an open-source,
-cross-platform successor to the .NET Framework and announced the adoption
-of a conventional open-source development model under the stewardship of the
+At the end of 2014, Microsoft announced **.NET Core**, an open-source,
+cross-platform successor to the .NET Framework. Alongside this, Microsoft
+adopted an open-source development model under the stewardship of the
 .NET Foundation.
 
-In November 2020, Microsoft released .NET 5.0. The "Core" branding was abandoned
-and version 4.0 was skipped to avoid conflation with .NET Framework, of which
-the latest releases had all used 4.x versioning for all significant (non-bugfix)
-releases since 2010.
-
-The table below illustartes the timeline of the transition as well as the
-version number conflict between .NET Framework and .NET (Core):
-
-
-At the end of 2014, Microsoft introduced .NET Core, an open-source,
-cross-platform successor to the .NET Framework. Alongside this, Microsoft
-adopted a standardized open-source development model under the stewardship
-of the .NET Foundation.
-
-In November 2020, Microsoft released .NET 5.0, dropping the "Core" branding.
-The version number 4.0 was deliberately skipped to prevent confusion with
-.NET Framework, whose major releases had consistently followed the 4.x
-versioning pattern since 2010.
+In November 2020, Microsoft released .NET 5.0, discontinuing the "Core"
+branding. The version number 4.0 was deliberately skipped to prevent
+confusion with .NET Framework, whose major releases had consistently
+followed the 4.x versioning pattern since 2010.
 
 The table below illustrates the transition timeline and the versioning
 conflict between .NET Framework and .NET (Core):
@@ -260,4 +245,4 @@ conflict between .NET Framework and .NET (Core):
   - .NET 8
 ```
 
-See more .NET release information on [versionsof.net](https://versionsof.net/). 
+See more .NET release information on [{spellexception}`versionsof.net`](https://versionsof.net/). 

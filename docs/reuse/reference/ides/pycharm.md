@@ -32,7 +32,7 @@ Installation:
   ```
 
 
-### PyCharm EDU
+### PyCharm {spellexception}`EDU`
 
 Supported Languages / Toolchains / Frameworks:
 : Python, Django, Jupyter

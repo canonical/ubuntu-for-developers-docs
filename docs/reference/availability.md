@@ -20,10 +20,10 @@
 
 | Version      | Source package                                          | End of Life (Upstream) | 
 |--------------|---------------------------------------------------------|------------------------|
-| .NET 9 (STS) | [dotnet9](https://launchpad.net/ubuntu/+source/dotnet9) | 12th May 2026          |
-| .NET 8 (LTS) | [dotnet8](https://launchpad.net/ubuntu/+source/dotnet8) | 10th November 2026     |
-| .NET 7 (STS) | [dotnet7](https://launchpad.net/ubuntu/+source/dotnet7) | 14th May 2024          |
-| .NET 6 (LTS) | [dotnet6](https://launchpad.net/ubuntu/+source/dotnet6) | 12th November 2024     |
+| .NET 9 (STS) | [dotnet9](https://launchpad.net/ubuntu/+source/dotnet9) | 12 May 2026          |
+| .NET 8 (LTS) | [dotnet8](https://launchpad.net/ubuntu/+source/dotnet8) | 10 November 2026     |
+| .NET 7 (STS) | [dotnet7](https://launchpad.net/ubuntu/+source/dotnet7) | 14 May 2024          |
+| .NET 6 (LTS) | [dotnet6](https://launchpad.net/ubuntu/+source/dotnet6) | 12 November 2024     |
 
 ## LLVM / Clang
 
@@ -36,7 +36,7 @@
 | 24.04 LTS (Noble Numbat)    | 14, 15, 16, **17**, **18** (default), 19 |
 | 22.04 LTS (Jammy Jellyfish) | 11, 12, **13**, **14** (default), **15** |
 | 20.04 LTS (Focal Fossa)     | 6, 7, 8, **9**, **10** (default), **11**, **12**, 18 |
-| 18.04 LST (Bionic Beaver)   | 3.7, **3.9**, 4, 5, **6** (default), **7**, **8**, **9**, **10** |
+| 18.04 LTS (Bionic Beaver)   | 3.7, **3.9**, 4, 5, **6** (default), **7**, **8**, **9**, **10** |
 | 16.04 LTS (Xenial Xerus)    | **3.6**, 3.7, **3.8** (default), 3.9, **4**, **5**, **6**, 8 |
 | 14.04 LTS (Trusty Tahr)     | 3.3, **3.4** (default), 3.5, **3.6**, **3.8**, 3.9 |
 

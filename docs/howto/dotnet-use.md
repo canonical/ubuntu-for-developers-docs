@@ -7,7 +7,7 @@ command-line interface (CLI).
 
 ## Prerequisites
 
-This articale assumes that **you have installed the .NET SDK**. If you need
+This article assumes that **you have installed the .NET SDK**. If you need
 guidance on that, see the dedicated article: {doc}`/howto/dotnet-setup`
 
 ## The .NET CLI
@@ -17,10 +17,10 @@ selects the right version of the .NET SDK or runtime when invoked. This has
 the advantage that you can use one command to interact with multiple versions
 of .NET.
 
-Any .NET SDK provides subcommands like `new`, `run`, `build` and `publish`,
+Any .NET SDK provides sub-commands like `new`, `run`, `build` and `publish`,
 which we'll use shortly to develop the 'Hello World' application.
 
-Run `dotnet --help` to see all available subcommands.
+Run `dotnet --help` to see all available sub-commands.
 
 ## Creating a .NET project
 
@@ -137,7 +137,7 @@ Hello, World!
 
 ```{note}
 The actual output you will see, depends on the programming language you have
-choosen, because the `console` templates have slightly different text. The above
+chosen, because the `console` templates have slightly different text. The above
 output is from the C# template, the F# template would result in "Hello from F#"
 and the VB template would result in "Hello World!" (without the `,`).
 ```
@@ -161,7 +161,7 @@ Build succeeded in 2.7s
 
 As shown by the terminal output, in this case (using .NET 9) the build output
 will be located in `bin/Release/net9.0/publish/`. This directory would also
-contain all depenencies (but in our case we do not have any). You can copy
+contain all dependencies (but in our case we do not have any). You can copy
 this directory on the target system and run you application with:
 
 ```

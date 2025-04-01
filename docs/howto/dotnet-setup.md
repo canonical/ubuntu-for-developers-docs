@@ -6,7 +6,7 @@ There are multiple methods for installing the .NET toolchain on Ubuntu:
 
 - Using the [`dotnet` snap](https://snapcraft.io/dotnet) – a .NET toolchain
   installer that makes it easy to install the latest releases of .NET
-  SDKs/Runtimes in parallel.
+  SDKs/runtimes in parallel.
 - Using Ubuntu packages from Ubuntu package feeds – official packages maintained
   by the Ubuntu team and installed through the Ubuntu package-management system.
 - Using Microsoft packages from the Microsoft package feed – official packages
@@ -33,7 +33,7 @@ fit your needs.
 ```
 
 With the many options available to install .NET on Ubuntu it can seem
-overwhealing at first which method to choose. Below you find an overview and
+overwhelming at first which method to choose. Below you find an overview and
 more details for specific cases that should help you select an installation
 method:
 
@@ -208,7 +208,7 @@ Example output:
 
 #### Install .NET components
 
-To install a .NET component run the follwoing command:
+To install a .NET component run the following command:
 
 ```text
 dotnet-installer install [<component> [<versison>]]
@@ -252,7 +252,7 @@ Examples:
 
 #### Uninstall .NET components
 
-To install a .NET component, run the follwoing command:
+To install a .NET component, run the following command:
 
 ```text
 dotnet-installer remove <component> <versison>
@@ -570,14 +570,14 @@ Every .NET release that does not contain security fixes has to follow
 the Ubuntu [stable release update (SRU) process](
 https://documentation.ubuntu.com/sru/en/latest/). This process delays the
 deployment of .NET releases by at least a week and sometimes much longer
-(dependening on the backlog of the SRU reviewers).
+(depending on the backlog of the SRU reviewers).
 
 If you want to install new .NET releases as soon as they are available, 
 you can configure APT to install the proposed updates to skip this delay.
 
 ```{note}
 Canonical is collaborating with Microsoft and other .NET partners.
-.NET release are thouroughly tested before they are upload to the Ubuntu
+.NET release are thoroughly tested before they are upload to the Ubuntu
 archive. Historically no significant regressions were reported for .NET
 proposed updates. Therefore, the risk of installing proposed updates for .NET
 can be considered minimal or at least insignificantly small compared to waiting
@@ -612,7 +612,7 @@ archive to your apt sources:
   EOF
   ```
 
-- for `arm64`, `s390x` (aka IMB System Z) or `ppc64el` (aka POWER) systems 
+- for `arm64`, `s390x` (aka IBM System Z) or `ppc64el` (aka POWER) systems 
 
   ```text
   sudo tee /etc/apt/sources.list.d/ubuntu-$(lsb_release -cs)-proposed.list >/dev/null <<EOF
@@ -696,20 +696,20 @@ See Microsoft's [documentation](https://learn.microsoft.com/en-us/dotnet/core/in
 
 ## Check installed versions/components
 
-To display installed .NET SDKs, Runtimes and other useful information, run the
-follwoing command:
+To display installed .NET SDKs, runtimes and other useful information, run the
+following command:
 
 ```text
 dotnet --info
 ```
 
-To just list installed .NET SDKs, run the follwoing command:
+To just list installed .NET SDKs, run the following command:
 
 ```text
 dotnet --list-sdks
 ```
 
-To just list installed .NET runtimes, run the follwoing command:
+To just list installed .NET runtimes, run the following command:
 
 ```text
 dotnet --list-runtimes
@@ -801,7 +801,7 @@ The following popular .NET extensions are available for VS Code:
   * - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp):
     - Base language support for C#
     - free
-  * - [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+  * - [C# {spellexception}`Dev` Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
     - Extended language support and builds on top of the "C#" extension
     - - free for individuals, academia and open-source development
       - paid for organizations
@@ -831,8 +831,8 @@ The following popular .NET extensions are available for VS Codium:
   * - [C#](https://open-vsx.org/extension/muhammad-sammy/csharp):
     - Base language support for C# 
     
-      (fork of the Microsoft extension that replaces the propriatary debugger
-      with Samsungs FOSS .NET debugger)
+      (fork of the Microsoft extension that replaces the proprietary debugger
+      with Samsung's FOSS .NET debugger)
     - free
   * - [Ionide for F#](https://open-vsx.org/extension/Ionide/Ionide-fsharp)
     - F# language support
