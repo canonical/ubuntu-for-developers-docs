@@ -91,7 +91,7 @@ html_context = {
     # 'github_version': 'main',
     # Change to the folder that contains the documentation
     # (usually "/" or "/docs/")
-    "github_folder": "/docs/",
+    "repo_folder": "/docs/",
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
     "github_issues": "enabled",
