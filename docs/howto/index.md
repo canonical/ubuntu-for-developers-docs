@@ -7,6 +7,7 @@
 :hidden: true
 
 Install and set up .NET <dotnet-setup.md>
+Develop using .NET <dotnet-use.md>
 Install and set up Go <go-setup.md>
 Develop using Go <go-use.md>
 Install and set up Java <java-setup.md>
