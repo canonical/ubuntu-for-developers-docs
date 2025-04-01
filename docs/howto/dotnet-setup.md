@@ -681,7 +681,7 @@ remove them you have to uninstall and re-install the effected packages.
 TODO: add doumentation about conflicts with Ubuntu provided packages 
       and how to resolve them
 -->
-See Microsoft's [documentation](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu#register-the-microsoft-package-repository) for this installation method.
+See Microsoft's [documentation](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-decision#register-the-microsoft-package-repository) for this installation method.
 
 (dotnet-installation-microsoft-script)=
 ### Install .NET with the Microsoft installation script
