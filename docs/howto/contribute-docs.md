@@ -43,7 +43,7 @@ Follow these steps to build the documentation on your local machine.
 * Git
 * The `make` tool
     :::{note}
-    The `make` command is compatible with Unix systems. If you're on Windows, you can [install Ubuntu with WSL to follow along](https://github.com/canonical/open-documentation-academy/blob/main/wsl/tutorial/develop-with-ubuntu-wsl.md).
+    The `make` command is compatible with Unix systems. On Windows, [install Ubuntu with WSL](https://documentationacademy.org/docs/howto/get-started/using_wsl/).
     :::
 
 
@@ -81,7 +81,7 @@ Follow these steps to build the documentation on your local machine.
 
 ## Documentation format
 
-The Ubuntu for Developers documentation is built with Sphinx using the MyST flavour of the Markdown mark-up language. If you're new to Markdown or MyST, read our [MyST style guide](https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/style-guide-myst/).
+The Ubuntu for Developers documentation is built with Sphinx using the MyST flavor of the Markdown mark-up language. If you're new to Markdown or MyST, read our [MyST style guide](https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/style-guide-myst/).
 
 
 ## Testing the documentation

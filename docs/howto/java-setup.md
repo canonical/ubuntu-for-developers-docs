@@ -31,7 +31,7 @@ Latest or early access releases are available in the latest development release 
 sudo apt install openjdk-24-jdk
 ```
 
-Latest or early-access releases are also available through the community maintained [openjdk](https://snapcraft.io/openjdk) snap package.
+Latest or early-access releases are also available through the community maintained [OpenJDK](https://snapcraft.io/openjdk) snap package.
 
 - To install the latest early-access release, run:
 

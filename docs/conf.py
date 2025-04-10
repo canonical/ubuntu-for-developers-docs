@@ -80,7 +80,7 @@ html_context = {
     "discourse": "https://discourse.ubuntu.com/c/foundations/",
     # Change to the Mattermost channel you want to link to
     # (use an empty value if you don't want to link)
-    "mattermost": "https://chat.canonical.com/canonical/channels/documentation",
+    "mattermost": "",
     # Change to the Matrix channel you want to link to
     # (use an empty value if you don't want to link)
     "matrix": "https://matrix.to/#/#documentation:ubuntu.com",
@@ -113,7 +113,7 @@ html_context = {
 # leave them).
 
 html_static_path = [".sphinx/_static"]
-templates_path = [".sphinx/_templates"]
+#templates_path = [".sphinx/_templates"]
 
 ############################################################
 ### Redirects
@@ -171,7 +171,7 @@ exclude_patterns = [
 ]
 
 # Add custom CSS files (located in .sphinx/_static/)
-# html_css_files = []
+html_css_files = ["custom_header.css"]
 
 # Add custom JavaScript files (located in .sphinx/_static/)
 # html_js_files = []
