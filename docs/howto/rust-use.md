@@ -6,7 +6,7 @@ This article provides guidance on basic use of the Rust toolchain for developmen
 
 In most cases, there is no reason to use {command}`rustc` directly. Instead, use {command}`cargo` as the build system to call {command}`rustc` indirectly. Refer to Rust documentation for an explanation [Why Cargo Exists](https://doc.rust-lang.org/stable/cargo/guide/why-cargo-exists.html).
 
-If you want to use {command}`rustc` without {command}`cargo`, refer to the example [Using `rustc` directly](#how-to-use-rustc-directly).
+If you want to use {command}`rustc` without {command}`cargo`, refer to the example [Using `rustc` directly](#using-rustc-directly).
 
 ## Creating a Rust project using Cargo
 
