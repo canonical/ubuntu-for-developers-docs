@@ -1,6 +1,6 @@
 # How to develop using Rust on Ubuntu
 
-This article provides guidance on basic use of the Rust toolchain for development on Ubuntu. It shows how to create a 'Hello World' programme and explains how to compile Rust programmes using {command}`rustc` and build projects using {command}`cargo`.
+This article provides guidance on basic use of the Rust toolchain for development on Ubuntu. It shows how to create a 'Hello World' program and explains how to compile Rust programs using {command}`rustc` and build projects using {command}`cargo`.
 
 [`rustc` is the actual compiler](https://doc.rust-lang.org/rustc/index.html), and {command}`cargo` is the build system and also the project management tool.
 
@@ -22,7 +22,7 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
     cd hello_world
     ```
 
-    Notice that Cargo has already set up a Git repository with a skeleton project inside (which includes the basic 'hello world' programme):
+    Notice that Cargo has already set up a Git repository with a skeleton project inside (which includes the basic 'hello world' program):
 
     ```none
     cat src/main.rs
@@ -34,16 +34,16 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
     }
     ```
 
-3. Build and run the programme:
+3. Build and run the program:
 
     ```none
     cargo run
     ```
 
 
-## Building programmes with nightly Rust
+## Building programs with nightly Rust
 
-A nightly toolchain can be useful if the new Rust language feature you want to try has yet to land in the stable channel, or if you want to know how the latest Rust compiler optimises your code.
+A nightly toolchain can be useful if the new Rust language feature you want to try has yet to land in the stable channel, or if you want to know how the latest Rust compiler optimizes your code.
 
 By default, the nightly Rust builds are not selected for use. Use the `+nightly` parameter to build your project with the nightly Rust version:
 
@@ -57,8 +57,8 @@ To run the project, use:
 cargo +nightly run
 ```
 
-(how-to-use-rustc-directly)=
-## How to Use `rustc` Directly
+(using-rustc-directly)=
+## Using `rustc` directly
 
 Consider the following Rust code in a file called {file}`answer.rs`:
 
