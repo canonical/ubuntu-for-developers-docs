@@ -26,7 +26,7 @@ Setting up and building a new Java project using the Apache Maven tool.
     sudo apt install maven
     ```
 
-    Alternatively, download Maven from [maven.apache.org](https://maven.apache.org/download.cgi) and follow the installation instructions: [Installing Apache Maven](https://maven.apache.org/install.html).
+    Alternatively, download Maven from [Apache Maven Project](https://maven.apache.org/download.cgi) and follow the installation instructions: [Installing Apache Maven](https://maven.apache.org/install.html).
 
 
 :::
@@ -46,7 +46,7 @@ Setting up and building a new Java project using the Apache Maven tool.
 
     Press {kbd}`Enter` when prompted to confirm your selection.
 
-    This creates a new project using [maven-archetype-quickstart](https://maven.apache.org/archetypes/maven-archetype-quickstart/).
+    This creates a new project using [Maven Quickstart Archetype](https://maven.apache.org/archetypes/maven-archetype-quickstart/).
 
     Maven sets up a basic project structure:
 
@@ -131,7 +131,7 @@ Setting up and building a new Java project using the Apache Maven tool.
     ```
 
     :::{note}
-    Notice the `-Dmaven.compiler.release=8` option. Maven quickstart generates a project that targets Java 7, which is no longer supported by the Java 21 LTS release. The project target can be changed by updating the `maven.compiler.target` and `maven.compiler.source` properties in the {file}`pom.xml` file.
+    Notice the `-Dmaven.compiler.release=8` option. The `maven-archetype-quickstart` archetype generates a project that targets Java 7, which is no longer supported by the Java 21 LTS release. The project target can be changed by updating the `maven.compiler.target` and `maven.compiler.source` properties in the {file}`pom.xml` file.
     :::
 
     This builds and runs unit tests.
@@ -160,7 +160,7 @@ Setting up and building a new Java project using the Gradle build tool.
 
 - Gradle:
 
-    Download Gradle from [gradle.org](https://gradle.org/releases) and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
+    Download Gradle from the [Gradle Releases](https://gradle.org/releases) page and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
 
     :::{note}
     Gradle introduced Java 21 support in version 8.5.
