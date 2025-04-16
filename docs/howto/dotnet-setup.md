@@ -4,38 +4,23 @@
 
 There are multiple methods for installing the .NET toolchain on Ubuntu:
 
-- Using the [`dotnet` snap](https://snapcraft.io/dotnet) – a .NET toolchain
-  installer that makes it easy to install the latest releases of .NET
-  SDKs/runtimes in parallel.
-- Using Ubuntu packages from Ubuntu package feeds – official packages maintained
-  by the Ubuntu team and installed through the Ubuntu package-management system.
-- Using Microsoft packages from the Microsoft package feed – official packages
-  maintained by Microsoft and installed through the Ubuntu package-management
-  system.
-- Using Microsoft's installation script – a script you download and run in your
-  terminal that allows you to install any .NET release.
-- Manual installation – download the release binaries as a tarball and install
-  them manually.
+- Using the [`dotnet` snap](https://snapcraft.io/dotnet) – a .NET toolchain installer that makes it easy to install the latest releases of .NET  SDKs/runtimes in parallel.
+- Using Ubuntu packages from Ubuntu package feeds – official packages maintained by the Ubuntu team and installed through the Ubuntu package-management system.
+- Using Microsoft packages from the Microsoft package feed – official packages maintained by Microsoft and installed through the Ubuntu package-management  system.
+- Using Microsoft's installation script – a script you download and run in your terminal that allows you to install any .NET release.
+- Manual installation – download the release binaries as a tarball and install them manually.
 
 ```{warning}
-It's recommended that you choose one method to install the .NET toolchain from.
-**Do not mix multiple installation methods**, as this may leads to problems when
-apps try to resolve a specific version of .NET or when you try to update your
-installation to a new release.
+It's recommended to install the .NET toolchain from.**Do not mix multiple installation methods**, as this may lead to problems when applications try to resolve a specific version of .NET or when you try to update your installation to a new release.
 ```
 
-### Decide how to install .NET
+### Deciding how to install .NET
 
 ```{tip}
-**We recommend to use the `dotnet` snap** as we created it specifically
-to make installing .NET on Ubuntu easy, but there are cases where this may not
-fit your needs.
+**We recommend to use the `dotnet` snap** as we created it specifically to make installing .NET on Ubuntu easy, but there are cases where this may not fit your needs.
 ```
 
-With the many options available to install .NET on Ubuntu it can seem
-overwhelming at first which method to choose. Below you find an overview and
-more details for specific cases that should help you select an installation
-method:
+With the many options available to install .NET on Ubuntu, it can seem overwhelming at first, which method to choose. Below you find an overview and more details for specific cases that should help you select an installation method:
 
 ```{mermaid}
 :zoom:
@@ -133,9 +118,7 @@ flowchart TD
     - no support for IBM System Z and POWER  system architectures
 ```
 
-¹ Clarification: We (Canonical) maintain .NET packages since 2023. We asked
-  Microsoft to discontinue their package feed for newer Ubuntu versions in
-  favor of our Ubuntu packages.
+¹ Clarification: Canonical maintains .NET packages since 2023. The maintainer team has asked Microsoft to discontinue their package feed for newer Ubuntu versions in favor of Canonical Ubuntu packages.
 
 <!--
 
@@ -167,30 +150,26 @@ TODO
 ---
 
 (dotnet-installation-snap)=
-### Install .NET with the `dotnet` snap
+### Installing .NET with the `dotnet` snap
 
-Just install the `dotnet` snap:
+Install the `dotnet` snap:
 
 ```text
 sudo snap install --classic --edge dotnet
 ```
 
-Now you are effectively done. If you run the `dotnet` command without any .NET
-component installed, the snap will automatically install the latest .NET LTS SDK
-before proceeding with the invoked command. 
+Now you are effectively done. If you run the `dotnet` command without any .NET component installed, the snap automatically installs the latest .NET LTS SDK before proceeding with the invoked command. 
 
-#### List installed/available components and versions
+#### Listing installed/available components and versions
 
-To list components and versions which are installed or available for
-installation run the following command in a terminal:
+To list components and versions that are installed or available for installation, run the following command in a terminal:
 
 ```text
 dotnet-installer list
 ```
 
 ```{tip}
-By default unsupported (end of life) versions are not listed. To list all
-available versions add the `--all` flag.
+By default, unsupported (end of life) versions are not listed. To list all available versions, add the `--all` flag.
 ```
 
 Example output:
@@ -206,22 +185,20 @@ Example output:
 └────────────┴────────────────────┴──────────────────────┴─────────────────────┴─────────────┘
 ```
 
-#### Install .NET components
+#### Installing .NET components
 
-To install a .NET component run the following command:
+To install a .NET component, run the following command:
 
 ```text
 dotnet-installer install [<component> [<versison>]]
 ```
 
 Valid values for the `<component>` parameter are:
-- `runtime`: installs the .NET runtime (without the components needed to run
-   ASP\.NET Core apps)
+- `runtime`: installs the .NET runtime (without the components needed to run ASP\.NET Core apps)
 - `aspnetcore-runtime`: installs the ASP\.NET Core runtime
-- `sdk` (default): installs the .NET SDK (including the .NET runtime with the
-   components needed to run ASP\.NET Core apps)
+- `sdk` (default): installs the .NET SDK (including the .NET runtime with the components needed to run ASP\.NET Core apps)
 
-Valid values for the `<versison>` parameter are:
+Valid values for the `<version>` parameter are:
 - `lts`: installs the latest .NET LTS release
 - `latest` (default): installs the latest .NET release
 - `9.0`: installs .NET 9.0
@@ -250,7 +227,7 @@ Examples:
   dotnet-installer install sdk 9.0
   ```
 
-#### Uninstall .NET components
+#### Uninstalling .NET components
 
 To install a .NET component, run the following command:
 
@@ -258,21 +235,19 @@ To install a .NET component, run the following command:
 dotnet-installer remove <component> <versison>
 ```
 
-The command works similar to the `dotnet installer install` command (documented
-above) -- just uninstalling instead of installing. One difference to the syntax
-of the installation command is that the parameters `<component>` and
-`<versison>` are required.
+The command works similar to the `dotnet installer install` command (documented above) -- just uninstalling instead of installing. One difference to the syntax of the installation command is that the parameters `<component>` and
+`<version>` are required.
 
-#### Uninstall the `dotnet` snap
+#### Uninstalling the `dotnet` snap
 
-To remove the `dotnet` snap and all installed components, simply run:
+To remove the `dotnet` snap and all installed components, run:
 
 ```text
 snap remove dotnet
 ```
 
 (dotnet-installation-ubuntu-packages)=
-### Install .NET from Ubuntu packages
+### Installing .NET from Ubuntu packages
 
 Choose your Ubuntu version:
 
@@ -299,7 +274,7 @@ Choose the .NET version you want to install:
 
 <!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 9 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -314,7 +289,7 @@ Available for Architectures:
 
 <!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 8 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -358,7 +333,7 @@ Choose the .NET version you want to install:
 
 <!-- Content for Ubuntu 24.10 (Oracular Oriole) and .NET 9 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -373,7 +348,7 @@ Available for Architectures:
 
 <!-- Content for Ubuntu 24.10 (Oracular Oriole) and .NET 8 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -417,7 +392,7 @@ Choose the .NET version you want to install:
 
 <!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 9 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
@@ -432,7 +407,7 @@ Available for Architectures:
 
 <!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 8 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -450,7 +425,7 @@ Available for Architectures:
 ```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
 ```
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
@@ -468,7 +443,7 @@ Available for Architectures:
 ```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
 ```
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
@@ -495,7 +470,7 @@ Choose the .NET version you want to install:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 9 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
@@ -510,7 +485,7 @@ Available for Architectures:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 8 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -526,7 +501,7 @@ Available for Architectures:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 7 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -542,7 +517,7 @@ Available for Architectures:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 6 -->
 
-Available for Architectures:
+Available for architectures:
 : `amd64` (aka `x64`), `arm64`
 
 ```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
@@ -559,38 +534,25 @@ Available for Architectures:
 ::::::
 
 (dotnet-install-proposed-updates)=
-#### How to install proposed .NET updates 
+#### Installing proposed .NET updates 
 
-This section shows you how to install proposed updates for Ubuntu .NET packages
-from the Ubuntu archive. 
+This section shows how to install proposed updates for Ubuntu .NET packages from the Ubuntu archive. 
 
 ##### Motivation
 
-Every .NET release that does not contain security fixes has to follow
-the Ubuntu [stable release update (SRU) process](
-https://documentation.ubuntu.com/sru/en/latest/). This process delays the
-deployment of .NET releases by at least a week and sometimes much longer
-(depending on the backlog of the SRU reviewers).
+Every .NET release that does not contain security fixes has to follow the Ubuntu [stable release update (SRU) process](https://documentation.ubuntu.com/sru/en/latest/). This process delays the deployment of .NET releases by at least a week and sometimes much longer (depending on the backlog of the SRU reviewers).
 
-If you want to install new .NET releases as soon as they are available, 
-you can configure APT to install the proposed updates to skip this delay.
+If you want to install new .NET releases as soon as they are available, you can configure APT to install the proposed updates to skip this delay.
 
 ```{note}
-Canonical is collaborating with Microsoft and other .NET partners.
-.NET release are thoroughly tested before they are upload to the Ubuntu
-archive. Historically no significant regressions were reported for .NET
-proposed updates. Therefore, the risk of installing proposed updates for .NET
-can be considered minimal or at least insignificantly small compared to waiting
-for the SRU completion.
+Canonical is collaborating with Microsoft and other .NET partners..NET releases are thoroughly tested before they are uploaded to the Ubuntu archive. Historically, no significant regressions were reported for .NET proposed updates. Therefore, the risk of installing proposed updates for .NET can be considered minimal or at least insignificantly small compared to waiting for the SRU completion.
 ```
 
-##### Add the Ubuntu proposed updates APT repository
+##### Adding the Ubuntu proposed updates APT repository
 
-First of all we have to add the Ubuntu proposed updates APT repository as a 
-source for APT to install update from.
+First add the Ubuntu proposed updates APT repository as a source for APT to install updates from.
 
-If the file `/etc/apt/sources.list.d/ubuntu.sources` exists on your system
-you can add `<release>-proposed` to the `Suites:` line. For example:
+If the file `/etc/apt/sources.list.d/ubuntu.sources` exists on your system, add `<release>-proposed` to the `Suites:` line. For example:
 
 ```text
 Types: deb
@@ -600,8 +562,7 @@ Components: main restricted universe multiverse
 Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
 ```
 
-Otherwise, you can modify the software sources manually by adding the proposed
-archive to your apt sources:
+Otherwise, modify the software sources manually by adding the proposed archive to your APT sources:
 
 - for `amd64` (aka `x64`) systems:
   
@@ -619,18 +580,16 @@ archive to your apt sources:
   # Enable Ubuntu proposed archive
   deb http://ports.ubuntu.com/ubuntu-ports $(lsb_release -cs)-proposed restricted main multiverse universe
   EOF
-  ```  
+  ```
 
-Now you should update APT to fetch the package index from the added archive:
+Now update APT to fetch the package index from the added archive:
 
 ```text
 sudo apt update
 ```
 
 ````{important}
-If you are using Ubuntu 22.04 or lower you have to configure APT to not install
-proposed updates by default. This is already the default since Ubuntu 24.04.
-Otherwise APT will install proposed updates for all packages.
+If using Ubuntu 22.04 or lower, configure APT to not install proposed updates by default. This is already the default since Ubuntu 24.04. Otherwise APT installs proposed updates for all packages.
 
 ```text
 sudo tee /etc/apt/preferences.d/proposed-updates >/dev/null <<EOF
@@ -642,10 +601,9 @@ EOF
 ```
 ````
 
-##### Configure APT to install proposed .NET updates 
+##### Configuring APT to install proposed .NET updates
 
-Finally, we need to configure APT to consider .NET packages from the
-proposed archive for installation: 
+Finally, configure APT to consider .NET packages from the proposed archive for installation: 
 
 ```text
 sudo tee /etc/apt/preferences.d/dotnet-proposed-updates >/dev/null <<EOF
@@ -656,60 +614,57 @@ Pin-Priority: 500
 EOF
 ```
 
-##### How to undo this all?
+##### Disabling installation of proposed updates
 
-If you later decide that you no longer want to install proposed .NET updates,
-you simply have to:
+To stop the package management system from installing proposed .NET updates:
 
-1. remove/delete the configuration you created and
-2. update the APT package index:  
+1. Delete the configuration you created.
+2. Update the APT package index:
 
    ```text
    sudo apt update
    ```
 
 ````{note}
-Proposed updates you already have installed are still installed. If you want to
-remove them you have to uninstall and re-install the effected packages.
+Already installed proposed updates remain installed. To remove them, uninstall and re-install the affected packages.
 ````
 
 (dotnet-installation-microsoft-packages)=
-### Install .NET from Microsoft packages
+### Installing .NET from Microsoft packages
 
 <!-- 
 
 TODO: add doumentation about conflicts with Ubuntu provided packages 
       and how to resolve them
 -->
-See Microsoft's [documentation](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-decision#register-the-microsoft-package-repository) for this installation method.
+For this installation method, see Microsoft's documentation: [Install .NET SDK or .NET Runtime on Ubuntu](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install).
 
 (dotnet-installation-microsoft-script)=
-### Install .NET with the Microsoft installation script
+### Installing .NET with the Microsoft installation script
 
-See Microsoft's [documentation](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#scripted-install) for this installation method.
+For this installation method, see Microsoft's documentation: [Install .NET on Linux by using an install script or by extracting binaries](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual).
 
 (dotnet-installation-microsoft-manual)=
-### Install .NET manually
+### Installing .NET manually
 
-See Microsoft's [documentation](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#manual-install) for this installation method.
+For this installation method, see Microsoft's documentation: [Manual install](https://learn.microsoft.com/en-us/dotnet/core/install/linux-scripted-manual#manual-install).
 
 
-## Check installed versions/components
+## Checking installed versions and components
 
-To display installed .NET SDKs, runtimes and other useful information, run the
-following command:
+To display installed .NET SDKs, runtimes, and other useful information, run the following command:
 
 ```text
 dotnet --info
 ```
 
-To just list installed .NET SDKs, run the following command:
+To list installed .NET SDKs, run the following command:
 
 ```text
 dotnet --list-sdks
 ```
 
-To just list installed .NET runtimes, run the following command:
+To list installed .NET runtimes, run the following command:
 
 ```text
 dotnet --list-runtimes
@@ -770,19 +725,15 @@ Microsoft.AspNetCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft
 Microsoft.NETCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.NETCore.App]
 ```
 
-## Set-up a .NET IDE
+## Setting up a .NET IDE
 
-Many editors and IDEs (Integrated Development Environment) come with various
-degrees of support for .NET workloads. Here are some popular ones:
+Many editors and IDEs (Integrated Development Environment) come with various degrees of support for .NET workloads. Here are some popular ones:
 
 ### JetBrains Rider
 
-JetBrains Rider currently offers the best developer experience for .NET projects
-on Linux. It integrates extensive debugging and profiling tools. It is free for
-non-commercial use; otherwise you need to pay for a license.
+JetBrains Rider currently offers the best developer experience for .NET projects on Linux. It integrates extensive debugging and profiling tools. It is free for non-commercial use.
 
-To install [JetBrains Rider](https://snapcraft.io/rider) run the
-following command:
+To install [JetBrains Rider](https://snapcraft.io/rider), run the following command:
 
 ```text
 sudo snap install rider --classic
@@ -803,7 +754,7 @@ The following popular .NET extensions are available for VS Code:
     - free
   * - [C# {spellexception}`Dev` Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
     - Extended language support and builds on top of the "C#" extension
-    - - free for individuals, academia and open-source development
+    - - free for individuals, academia, and open-source development
       - paid for organizations
       
       see [details](https://aka.ms/vs/csdevkit/license)
@@ -831,15 +782,14 @@ The following popular .NET extensions are available for VS Codium:
   * - [C#](https://open-vsx.org/extension/muhammad-sammy/csharp):
     - Base language support for C# 
     
-      (fork of the Microsoft extension that replaces the proprietary debugger
-      with Samsung's FOSS .NET debugger)
+      (fork of the Microsoft extension that replaces the proprietary debugger with Samsung's FOSS .NET debugger)
     - free
   * - [Ionide for F#](https://open-vsx.org/extension/Ionide/Ionide-fsharp)
     - F# language support
     - free
 ```
 
-To install [VS Codium](https://snapcraft.io/codium) run the following command:
+To install [VS Codium](https://snapcraft.io/codium), run the following command:
 
 ```text
 sudo snap install codium --classic

@@ -1,4 +1,7 @@
 import datetime
+import ast
+import os
+import yaml
 
 # Configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
@@ -113,7 +116,7 @@ html_context = {
 # leave them).
 
 html_static_path = [".sphinx/_static"]
-#templates_path = [".sphinx/_templates"]
+# templates_path = [".sphinx/_templates"]
 
 ############################################################
 ### Redirects
@@ -160,13 +163,18 @@ myst_enable_extensions = {"colon_fence"}
 # terminal-output, youtube-links
 # If you need more extensions, add them here (in addition to
 # canonical_sphinx).
-extensions = ["canonical_sphinx","sphinxcontrib.mermaid"]
+extensions = [
+    "canonical_sphinx",
+    "sphinxcontrib.cairosvgconverter",
+    "sphinx_last_updated_by_git",
+    "sphinx.ext.intersphinx",
+    "sphinxcontrib.mermaid",
+]
 
 myst_fence_as_directive = ["mermaid"]
 
 # Add files or directories that should be excluded from processing.
 exclude_patterns = [
-    "doc-cheat-sheet*",
     "reuse",
 ]
 
