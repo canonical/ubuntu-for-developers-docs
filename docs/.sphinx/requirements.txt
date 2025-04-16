@@ -1,3 +1,0 @@
-canonical-sphinx[full]
-sphinx-autobuild
-sphinxcontrib-mermaid

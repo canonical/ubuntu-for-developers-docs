@@ -1,9 +1,6 @@
 # Integrated developer environments
 
-An integrated development environment (IDE) is a software application that
-provides comprehensive facilities for software development. This article 
-references IDEs that you can use to develop software with the various toolchains
-found on Ubuntu.
+An integrated development environment (IDE) is a software application that provides comprehensive facilities for software development. This article references IDEs that you can use to develop software with the various toolchains found on Ubuntu.
 
 ::::{tab-set}
 :sync-group: category
