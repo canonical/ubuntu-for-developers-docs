@@ -1,10 +1,12 @@
 Autoinstall
+Backend
 CIL
 CLR
 CLion
 Codium
 DataGrip
 ECMA
+GUIs
 GitLab
 GoLand
 Golang
@@ -28,10 +30,13 @@ PyCharm
 RubyMine
 Runtime
 RustRover
+SCM
 SDK
 SDKs
 STS
 TCK
+TUIs
+Tig
 VSCode
 WSL
 WebAssembly
@@ -40,6 +45,10 @@ analyzer
 backports
 dotnet
 gdb
+gitg
+gitignore
+gitk
+gitworkflows
 gopls
 https
 integrations
@@ -55,4 +64,5 @@ rustup
 snapcraft
 toolchain
 toolchains
+unformatted
 wasm

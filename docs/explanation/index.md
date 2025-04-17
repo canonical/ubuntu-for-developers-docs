@@ -6,5 +6,6 @@
 :hidden: true
 
 Installing Ubuntu Desktop for developers <install-ubuntu.md>
-Introduction to the .NET toolchain<dotnet-introduction.md>
+Using Git version control <use-vcs.md>
+Introduction to .NET toolchain<dotnet-introduction.md>
 :::
