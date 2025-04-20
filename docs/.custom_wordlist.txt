@@ -51,6 +51,7 @@ WineHQ
 analyzer
 backports
 breakpoint
+breakpoints
 deadsnakes
 dotnet
 formatter
