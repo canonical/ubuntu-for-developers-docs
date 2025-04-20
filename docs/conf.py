@@ -169,6 +169,7 @@ extensions = [
     "sphinx_last_updated_by_git",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.mermaid",
+    "sphinx-prompt",
 ]
 
 myst_fence_as_directive = ["mermaid"]

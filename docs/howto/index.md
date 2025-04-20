@@ -6,6 +6,7 @@
 :maxdepth: 1
 :hidden: true
 
+Install and set up Python <python-setup.md>
 Install and set up .NET <dotnet-setup.md>
 Develop using .NET <dotnet-use.md>
 Install and set up Go <go-setup.md>
