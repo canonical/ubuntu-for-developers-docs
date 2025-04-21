@@ -146,7 +146,11 @@ redirects = {}
 ############################################################
 
 # Links to ignore when checking links
-linkcheck_ignore = ["http://127.0.0.1:8000", "https://crates.io"]
+linkcheck_ignore = [
+    "http://127.0.0.1:8000",
+    "https://crates.io",
+    "https://www.nongnu.org/cvs/",
+]
 
 # Pages on which to ignore anchors
 # (This list will be appended to linkcheck_anchors_ignore_for_url)
