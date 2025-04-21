@@ -107,6 +107,17 @@ html_context = {
     # "display_contributors_since": ""
 }
 
+# Enables the edit button on pages. Needs a link to a
+# public repository on GitHub or Launchpad. Any of the following link domains
+# are accepted:
+# - https://github.com/example-org/example"
+# - https://launchpad.net/example
+# - https://git.launchpad.net/example
+#
+html_theme_options = {
+    "source_edit_link": html_context["github_url"],
+}
+
 # If your project is on documentation.ubuntu.com, specify the project
 # slug (for example, "lxd") here.
 # slug = ""
