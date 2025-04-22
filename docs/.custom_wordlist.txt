@@ -14,6 +14,7 @@ Gradle
 I/O
 IDE
 IDEs
+IPython
 Integrations
 IntelliJ
 Ionide
@@ -23,6 +24,7 @@ Jupyter
 LLVM
 LSP
 Libera
+NetBeans
 NuGet
 OpenJDK
 PDB
@@ -50,6 +52,7 @@ analyzer
 backports
 deadsnakes
 dotnet
+formatter
 gdb
 gitg
 gitignore
@@ -59,12 +62,16 @@ gopls
 https
 integrations
 io
+ipdb
 javac
 lldb
+lsp
 macOS
 metapackage
 microservices
 mingw
+netbeansPython
+pytest
 runtime
 runtimes
 rustup
@@ -73,5 +80,6 @@ symlink
 symlinks
 toolchain
 toolchains
+tox
 unformatted
 wasm
