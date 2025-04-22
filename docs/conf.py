@@ -1,4 +1,7 @@
 import datetime
+import ast
+import os
+import yaml
 
 # Configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
@@ -80,7 +83,7 @@ html_context = {
     "discourse": "https://discourse.ubuntu.com/c/foundations/",
     # Change to the Mattermost channel you want to link to
     # (use an empty value if you don't want to link)
-    "mattermost": "https://chat.canonical.com/canonical/channels/documentation",
+    "mattermost": "",
     # Change to the Matrix channel you want to link to
     # (use an empty value if you don't want to link)
     "matrix": "https://matrix.to/#/#documentation:ubuntu.com",
@@ -91,7 +94,7 @@ html_context = {
     # 'github_version': 'main',
     # Change to the folder that contains the documentation
     # (usually "/" or "/docs/")
-    "github_folder": "/docs/",
+    "repo_folder": "/docs/",
     # Change to an empty value if your GitHub repo doesn't have issues enabled.
     # This will disable the feedback button and the issue link in the footer.
     "github_issues": "enabled",
@@ -104,6 +107,17 @@ html_context = {
     # "display_contributors_since": ""
 }
 
+# Enables the edit button on pages. Needs a link to a
+# public repository on GitHub or Launchpad. Any of the following link domains
+# are accepted:
+# - https://github.com/example-org/example"
+# - https://launchpad.net/example
+# - https://git.launchpad.net/example
+#
+html_theme_options = {
+    "source_edit_link": html_context["github_url"],
+}
+
 # If your project is on documentation.ubuntu.com, specify the project
 # slug (for example, "lxd") here.
 # slug = ""
@@ -113,7 +127,7 @@ html_context = {
 # leave them).
 
 html_static_path = [".sphinx/_static"]
-templates_path = [".sphinx/_templates"]
+# templates_path = [".sphinx/_templates"]
 
 ############################################################
 ### Redirects
@@ -132,7 +146,11 @@ redirects = {}
 ############################################################
 
 # Links to ignore when checking links
-linkcheck_ignore = ["http://127.0.0.1:8000", "https://crates.io"]
+linkcheck_ignore = [
+    "http://127.0.0.1:8000",
+    "https://crates.io",
+    "https://www.nongnu.org/cvs/",
+]
 
 # Pages on which to ignore anchors
 # (This list will be appended to linkcheck_anchors_ignore_for_url)
@@ -160,15 +178,23 @@ myst_enable_extensions = {"colon_fence"}
 # terminal-output, youtube-links
 # If you need more extensions, add them here (in addition to
 # canonical_sphinx).
-extensions = ["canonical_sphinx"]
+extensions = [
+    "canonical_sphinx",
+    "sphinxcontrib.cairosvgconverter",
+    "sphinx_last_updated_by_git",
+    "sphinx.ext.intersphinx",
+    "sphinxcontrib.mermaid",
+]
+
+myst_fence_as_directive = ["mermaid"]
 
 # Add files or directories that should be excluded from processing.
 exclude_patterns = [
-    "doc-cheat-sheet*",
+    "reuse",
 ]
 
 # Add custom CSS files (located in .sphinx/_static/)
-# html_css_files = []
+html_css_files = ["custom_header.css"]
 
 # Add custom JavaScript files (located in .sphinx/_static/)
 # html_js_files = []
@@ -187,7 +213,9 @@ rst_epilog = """
 
 # If you are using the :manpage: role, set this variable to the URL for the version
 # that you want to link to:
-# manpages_url = "https://manpages.ubuntu.com/manpages/noble/en/man{section}/{page}.{section}.html"
+manpages_url = (
+    "https://manpages.ubuntu.com/manpages/plucky/en/man{section}/{page}.{section}.html"
+)
 
 ############################################################
 ### Additional configuration
