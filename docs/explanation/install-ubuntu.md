@@ -45,7 +45,7 @@ This documentation provides guidance on how to install and set up the following 
 * Rust: [How to set up development environment for Rust on Ubuntu](../howto/rust-setup.md)
 * GCC
 * Golang: [How to set up development environment for Go on Ubuntu](../howto/go-setup.md)
-* .NET
+* .NET: [How to set up development environment for .NET on Ubuntu](../howto/dotnet-setup.md)
 
 
 ## Additional resources
