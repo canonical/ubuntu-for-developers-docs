@@ -212,7 +212,7 @@ Examples:
 
 - To install the runtime of the latest .NET release, run:
   ```text
-  dotnet-installer install dotnet-runtime latest
+  dotnet-installer install runtime latest
   ```
 - To install the SDK of the latest .NET LTS release, run:
   ```text
