@@ -19,7 +19,7 @@ Install the {pkg}`cargo` package, which automatically pulls required dependencie
 1. In a terminal, run:
 
     ```none
-    sudo apt-get install cargo
+    sudo apt install cargo
     ```
 
 
@@ -52,7 +52,7 @@ Many external Rust libraries on [crates.io](https://crates.io) contain C/C++ cod
 Use the following command to install them:
 
 ```none
-sudo apt-get install build-essential
+sudo apt install build-essential
 ```
 :::
 
@@ -92,7 +92,7 @@ Some targets on that list require installing additional packages or downloading 
 1. To target Windows, install the following packages:
 
     ```none
-    sudo apt-get install binutils-mingw-w64 g++-mingw-w64 gcc-mingw-w64
+    sudo apt install binutils-mingw-w64 g++-mingw-w64 gcc-mingw-w64
     ```
 
 2. Add the Windows target to the toolchain:
@@ -115,7 +115,7 @@ Many Rust applications can run inside a web browser. To build a Rust project for
 1. Install the required packages:
 
     ```none
-    sudo apt-get install clang lld
+    sudo apt install clang lld
     ```
 
 2. Add the `wasm` target to the toolchain:
@@ -142,7 +142,7 @@ The {pkg}`cargo` package conflicts with the {command}`rust-lldb` command. To use
 To install the corresponding debugging support packages, run:
 
 ```none
-sudo apt-get install gdb lldb
+sudo apt install gdb lldb
 ```
 
 You can then use {command}`rust-gdb` or {command}`rust-lldb` to debug your Rust applications.
