@@ -136,7 +136,7 @@ Many Rust applications can run inside a web browser. To build a Rust project for
 Your code editor or IDE probably already has debugging functionalities tailored for Rust applications. If not, you can also debug Rust applications on Ubuntu using familiar debugging tools such as [GDB](https://www.gnu.org/software/gdb/) and [LLDB](https://lldb.llvm.org/).
 
 :::{attention}
-The {pkg}`cargo` package conflicts with the {command}`rust-lldb` command. To use {command}`rust-lldb`, the Rustup snap should be installed as described [above](#rustup-install). Then, {pkg}`lldb` should be installed normally as described below.
+The {pkg}`cargo` package conflicts with the {command}`rust-lldb` command. To use {command}`rust-lldb`, install the Rustup snap as described in {ref}`rustup-install`. Then install {pkg}`lldb` normally as described below.
 :::
 
 To install the corresponding debugging support packages, run:
@@ -146,4 +146,3 @@ sudo apt install gdb lldb
 ```
 
 You can then use {command}`rust-gdb` or {command}`rust-lldb` to debug your Rust applications.
-
