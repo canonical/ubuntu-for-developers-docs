@@ -40,6 +40,10 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
     cargo run
     ```
 
+:::{attention}
+When building and running the program, if you get an error message related to a missing linker, then you are missing some essential build tools. They can be installed with `sudo apt install build-essential`.
+:::
+
 
 ## Building programs with nightly Rust
 

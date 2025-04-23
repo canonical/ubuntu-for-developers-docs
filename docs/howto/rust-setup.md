@@ -146,4 +146,3 @@ sudo apt install gdb lldb
 ```
 
 You can then use {command}`rust-gdb` or {command}`rust-lldb` to debug your Rust applications.
-
