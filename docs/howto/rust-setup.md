@@ -23,6 +23,7 @@ Install the {pkg}`cargo` package, which automatically pulls required dependencie
     ```
 
 
+(rustup-install)=
 ### Installing the latest Rust toolchain using Rustup
 
 Install the Rustup manager from the Snap Store [snapcraft.io: Rustup](https://snapcraft.io/rustup) and the Rust toolchain using {command}`rustup`.
@@ -134,10 +135,15 @@ Many Rust applications can run inside a web browser. To build a Rust project for
 
 Your code editor or IDE probably already has debugging functionalities tailored for Rust applications. If not, you can also debug Rust applications on Ubuntu using familiar debugging tools such as [GDB](https://www.gnu.org/software/gdb/) and [LLDB](https://lldb.llvm.org/).
 
+:::{attention}
+The {pkg}`cargo` package conflicts with the {command}`rust-lldb` command. To use {command}`rust-lldb`, install the Rustup snap as described in {ref}`rustup-install. Then install {pkg}`lldb` normally as described below.
+:::
+
 To install the corresponding debugging support packages, run:
 
 ```none
-sudo apt install gdb lldb rust-gdb rust-lldb
+sudo apt install gdb lldb
 ```
 
-You can then use {command}`gdb` or {command}`lldb` to debug your Rust applications.
+You can then use {command}`rust-gdb` or {command}`rust-lldb` to debug your Rust applications.
+
