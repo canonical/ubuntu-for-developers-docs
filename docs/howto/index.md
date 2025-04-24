@@ -7,6 +7,7 @@
 :hidden: true
 
 Install and set up Python <python-setup.md>
+Develop using Python <python-use.md>
 Install and set up .NET <dotnet-setup.md>
 Develop using .NET <dotnet-use.md>
 Install and set up Go <go-setup.md>
