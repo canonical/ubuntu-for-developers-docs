@@ -107,6 +107,17 @@ html_context = {
     # "display_contributors_since": ""
 }
 
+# Enables the edit button on pages. Needs a link to a
+# public repository on GitHub or Launchpad. Any of the following link domains
+# are accepted:
+# - https://github.com/example-org/example"
+# - https://launchpad.net/example
+# - https://git.launchpad.net/example
+#
+html_theme_options = {
+    "source_edit_link": html_context["github_url"],
+}
+
 # If your project is on documentation.ubuntu.com, specify the project
 # slug (for example, "lxd") here.
 # slug = ""
@@ -135,7 +146,11 @@ redirects = {}
 ############################################################
 
 # Links to ignore when checking links
-linkcheck_ignore = ["http://127.0.0.1:8000", "https://crates.io"]
+linkcheck_ignore = [
+    "http://127.0.0.1:8000",
+    "https://crates.io",
+    "https://www.nongnu.org/cvs/",
+]
 
 # Pages on which to ignore anchors
 # (This list will be appended to linkcheck_anchors_ignore_for_url)

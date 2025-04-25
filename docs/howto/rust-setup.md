@@ -1,29 +1,30 @@
-# How to set up development environment for Rust on Ubuntu
+# How to set up a development environment for Rust on Ubuntu
 
-Rust is a relatively new and secure programming language supported on many platforms. This article provides guidance on how to install the Rust toolchain and set up a development environment for Rust on Ubuntu.
+[Rust](https://www.rust-lang.org/) is a relatively new and secure programming language supported on many platforms. This article provides guidance on how to install the Rust toolchain and set up a development environment for Rust on Ubuntu.
 
 
 ## Installing Rust
 
 There are two (main) options for installing Rust on Ubuntu:
 
-* Using Ubuntu packages from the Ubuntu archive: Official packages maintained by the Ubuntu team and install through the Ubuntu package-management system. Use this method if you are an **Ubuntu package developer or maintainer** familiar with the archive toolchain model.
+* Using Ubuntu packages from the Ubuntu archive: Official packages maintained by the Ubuntu team and installed through the Ubuntu package-management system. Use this method if you are an **Ubuntu package developer or maintainer** familiar with the archive toolchain model.
 
-* Using Rustup, the Rust toolchain installer: Available as a snap package. Use this method if you **develop Rust applications for business or general use**. The Rustup snap allows for installing the latest releases of Rust ecosystem tools, as well as installing multiple versions of Rust in parallel.
+* Using [Rustup](https://snapcraft.io/rustup), the Rust toolchain installer: Available as a snap package. Use this method if you **develop Rust applications for business or general use**. The Rustup snap allows for installing the latest releases of Rust ecosystem tools, as well as installing multiple versions of Rust in parallel.
 
 
-### Installing Rust toolchain from Ubuntu packages
+### Installing the Rust toolchain from Ubuntu packages
 
 Install the {pkg}`cargo` package, which automatically pulls required dependencies, including the `rustc` compiler.
 
 1. In a terminal, run:
 
     ```none
-    sudo apt-get install cargo
+    sudo apt install cargo
     ```
 
 
-### Installing latest Rust toolchain using Rustup
+(rustup-install)=
+### Installing the latest Rust toolchain using Rustup
 
 Install the Rustup manager from the Snap Store [snapcraft.io: Rustup](https://snapcraft.io/rustup) and the Rust toolchain using {command}`rustup`.
 
@@ -51,7 +52,7 @@ Many external Rust libraries on [crates.io](https://crates.io) contain C/C++ cod
 Use the following command to install them:
 
 ```none
-sudo apt-get install build-essential
+sudo apt install build-essential
 ```
 :::
 
@@ -82,7 +83,7 @@ rustup target list
 ```
 
 :::{attention}
-Some targets on that list require installing additional packages or downloading SDKs from third-party websites. Refer to official [Rust documentation](https://doc.rust-lang.org/rustc/platform-support.html) for details.
+Some targets on that list require installing additional packages or downloading SDKs from third-party websites. Refer to the official [Rust documentation](https://doc.rust-lang.org/rustc/platform-support.html) for details.
 :::
 
 
@@ -91,7 +92,7 @@ Some targets on that list require installing additional packages or downloading 
 1. To target Windows, install the following packages:
 
     ```none
-    sudo apt-get install binutils-mingw-w64 g++-mingw-w64 gcc-mingw-w64
+    sudo apt install binutils-mingw-w64 g++-mingw-w64 gcc-mingw-w64
     ```
 
 2. Add the Windows target to the toolchain:
@@ -100,7 +101,7 @@ Some targets on that list require installing additional packages or downloading 
     rustup target add x86_64-pc-windows-gnu
     ```
 
-3. Build your project using the following command:
+3. Build your project:
 
     ```none
     cargo build --target x86_64-pc-windows-gnu
@@ -109,12 +110,12 @@ Some targets on that list require installing additional packages or downloading 
 
 ### Example: Setup for building for web browsers
 
-Many Rust applications can run inside a web browser. To build a Rust project for web browsers, use the WebAssembly (`wasm`) target.
+Many Rust applications can run inside a web browser. To build a Rust project for web browsers, use the [WebAssembly](https://webassembly.org/) (`wasm`) target.
 
 1. Install the required packages:
 
     ```none
-    sudo apt-get install clang lld
+    sudo apt install clang lld
     ```
 
 2. Add the `wasm` target to the toolchain:
@@ -132,12 +133,16 @@ Many Rust applications can run inside a web browser. To build a Rust project for
 
 ## Installing debugging tooling
 
-Your code editor or IDE probably already has debugging functionalities tailored for Rust applications. If not, you can also debug Rust applications on Ubuntu using familiar debugging tools, such as like GDB and LLDB.
+Your code editor or IDE probably already has debugging functionalities tailored for Rust applications. If not, you can also debug Rust applications on Ubuntu using familiar debugging tools such as [GDB](https://www.gnu.org/software/gdb/) and [LLDB](https://lldb.llvm.org/).
+
+:::{attention}
+The {pkg}`cargo` package conflicts with the {command}`rust-lldb` command. To use {command}`rust-lldb`, install the Rustup snap as described in {ref}`rustup-install`. Then install {pkg}`lldb` normally as described below.
+:::
 
 To install the corresponding debugging support packages, run:
 
 ```none
-sudo apt-get install gdb lldb rust-gdb rust-lldb
+sudo apt install gdb lldb
 ```
 
-You can then use {command}`gdb` or {command}`lldb` to debug your Rust applications.
+You can then use {command}`rust-gdb` or {command}`rust-lldb` to debug your Rust applications.
