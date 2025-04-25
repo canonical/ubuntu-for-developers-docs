@@ -7,6 +7,10 @@ Python is an ubiquitous, object-oriented scripting language with an extensive ec
 
 In the Ubuntu package repository, the {pkg}`python3` package always depends on the currently default version of Python (from the 3.x series) in Ubuntu. It is a part of the default system installation, and it ensures that your Python environment is continuously updated as new versions are introduced. The package installs the {pkg}`python3-minimal` dependency, which only includes the Python interpreter.
 
+:::{warning}
+Do not remove the default system installation of Python (the {pkg}`python3` package), as that would break system tooling.
+:::
+
 To get a more useful runtime environment, use the special dependency package, {pkg}`python3-full`, which automatically installs the interpreter with the complete class library, support for Python virtual environments (`venv`), and the basic Python IDE (IDLE). Similarly to {pkg}`python3`, the {pkg}`python3-full` is a metapackage that always depends on the currently default version of Python in Ubuntu.
 
 ```none
