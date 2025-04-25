@@ -43,9 +43,9 @@ sudo apt install -y python3-pip python3-pip-whl
 While it is possible to write and edit Python code using any plain-text editor, various integrated development environments (IDEs) offer features to simplify the development process.
 
 
-### Text editors and LSP
+### Text editors and Language Server Protocol (LSP)
 
-Advanced text editors can be extended using Language Server Protocol plugins to enhance the user experience with Python.
+Advanced text editors can be extended using LSP plugins to enhance the user experience with Python.
 
 [Vim with Python LSP](https://www.vim.org/)
 : A mode-driven text editor with powerful editing features. Combined with an LSP, such as [Python LSP Server](https://github.com/python-lsp/python-lsp-server), it offers code completion, linting, navigation, and others. It can also integrate with other tools, such as [Flake8](https://github.com/pycqa/flake8) for error checking.
@@ -177,7 +177,7 @@ Python has the built-in `pdb` debugger and `unittest` testing framework, but you
   sudo apt install python3-pytest
   ```
 
-[tox](https://pytest.org/)
+[tox](https://tox.wiki/)
 : A tool for automating running tests within the Python virtual environment using the {spellexception}`de facto` standard {file}`tox.ini` configuration.
 
   Install with:
