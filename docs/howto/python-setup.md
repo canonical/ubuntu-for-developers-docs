@@ -5,7 +5,7 @@ Python is an ubiquitous, object-oriented scripting language with an extensive ec
 
 ## Installing Python runtime environment
 
-In the Ubuntu package repository, the {pkg}`python3` package always depends on the currently default version of Python (from the 3.x series) in Ubuntu. Installing it ensures that your Python environment is continuously updated as new versions are introduced. The package installs the {pkg}`python3-minimal` dependency, which only includes the Python interpreter.
+In the Ubuntu package repository, the {pkg}`python3` package always depends on the currently default version of Python (from the 3.x series) in Ubuntu. It is a part of the default system installation, and it ensures that your Python environment is continuously updated as new versions are introduced. The package installs the {pkg}`python3-minimal` dependency, which only includes the Python interpreter.
 
 To get a more useful runtime environment, use the special dependency package, {pkg}`python3-full`, which automatically installs the interpreter with the complete class library, support for Python virtual environments (`venv`), and the basic Python IDE (IDLE). Similarly to {pkg}`python3`, the {pkg}`python3-full` is a metapackage that always depends on the currently default version of Python in Ubuntu.
 
@@ -159,15 +159,6 @@ Python has the built-in `pdb` debugger and `unittest` testing framework, but you
   pip install ipdb
   ```
 
-[nose2](https://github.com/nose-devs/nose2)
-: A testing library that extends the built-in `unittest` framework with more features.
-
-  Install within you Python virtual environment (`venv`) with:
-
-  ```none
-  pip install nose2
-  ```
-
 [pytest](https://pytest.org/)
 : A flexible testing framework for writing "small, readable" tests.
 
@@ -178,7 +169,7 @@ Python has the built-in `pdb` debugger and `unittest` testing framework, but you
   ```
 
 [tox](https://tox.wiki/)
-: A tool for automating running tests within the Python virtual environment using the {spellexception}`de facto` standard {file}`tox.ini` configuration.
+: A tool for automating running tests within Python virtual environments using either the {file}`tox.toml` or {file}`tox.ini` configuration files.
 
   Install with:
 
