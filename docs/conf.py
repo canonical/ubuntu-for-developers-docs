@@ -1,7 +1,7 @@
 import datetime
-import ast
-import os
-import yaml
+from docutils.parsers.rst import roles
+from sphinx.util.docutils import SphinxRole
+from docutils import nodes
 
 # Configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
@@ -16,7 +16,7 @@ import yaml
 # information" section.
 
 ############################################################
-### Project information
+# Project information
 ############################################################
 
 # Product name
@@ -51,8 +51,8 @@ html_title = "Ubuntu for Developers"
 
 copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 
-## Open Graph configuration - defines what is displayed as a link preview
-## when linking to the documentation from another website (see https://ogp.me/)
+# Open Graph configuration - defines what is displayed as a link preview
+# when linking to the documentation from another website (see https://ogp.me/)
 # The URL where the documentation will be hosted (leave empty if you
 # don't know yet)
 ogp_site_url = "https://canonical-ubuntu-for-developers.readthedocs-hosted.com/"
@@ -88,7 +88,8 @@ html_context = {
     # (use an empty value if you don't want to link)
     "matrix": "https://matrix.to/#/#documentation:ubuntu.com",
     # Change to the GitHub URL for your project
-    # This is used, for example, to link to the source files and allow creating GitHub issues directly from the documentation.
+    # This is used, for example, to link to the source files and allow creating
+    # GitHub issues directly from the documentation.
     "github_url": "https://github.com/canonical/ubuntu-for-developers-docs",
     # Change to the branch for this version of the documentation
     # 'github_version': 'main',
@@ -130,7 +131,7 @@ html_static_path = [".sphinx/_static"]
 # templates_path = [".sphinx/_templates"]
 
 ############################################################
-### Redirects
+# Redirects
 ############################################################
 
 # Set up redirects (https://documatt.gitlab.io/sphinx-reredirects/usage.html)
@@ -142,7 +143,7 @@ html_static_path = [".sphinx/_static"]
 redirects = {}
 
 ############################################################
-### Link checker exceptions
+# Link checker exceptions
 ############################################################
 
 # Links to ignore when checking links
@@ -161,11 +162,11 @@ linkcheck_anchors_ignore_for_url = [r"https://github\.com/.*"]
 linkcheck_retries = 3
 
 ############################################################
-### Additions to default configuration
+# Additions to default configuration
 ############################################################
 
-## The following settings are appended to the default configuration.
-## Use them to extend the default functionality.
+# The following settings are appended to the default configuration.
+# Use them to extend the default functionality.
 
 # By default, the following MyST extensions are enabled:
 # substitution, deflist, linkify
@@ -202,7 +203,7 @@ html_css_files = ["custom_header.css"]
 # Add custom JavaScript files (located in .sphinx/_static/)
 # html_js_files = []
 
-## The following settings override the default configuration.
+# The following settings override the default configuration.
 
 # Specify a reST string that is included at the end of each file.
 # The suggested value pulls the reuse/links.txt file into each reST file.
@@ -221,10 +222,10 @@ manpages_url = (
 )
 
 ############################################################
-### Additional configuration
+# Additional configuration
 ############################################################
 
-## Add any configuration that is not covered by the common conf.py file.
+# Add any configuration that is not covered by the common conf.py file.
 
 # Define a :center: role that can be used to center the content of table cells.
 rst_prolog = """
@@ -233,9 +234,6 @@ rst_prolog = """
 """
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
-from docutils.parsers.rst import roles
-from sphinx.util.docutils import SphinxRole
-from docutils import nodes
 
 
 class CommandRole(SphinxRole):
