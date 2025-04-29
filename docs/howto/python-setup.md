@@ -121,6 +121,7 @@ Some of the most common IDEs for Python are:
   Install with:
 
   ```none
+  sudo apt install default-jre
   sudo snap install netbeans --classic
   ```
 
@@ -153,15 +154,6 @@ To check and improve code style, formatting, and quality, use, for example, the 
 ### Testing and debugging tools
 
 Python has the built-in `pdb` debugger and `unittest` testing framework, but you can also install additional tools that provide more features and offer more user-friendly controls.
-
-[ipdb](https://github.com/gotcha/ipdb)
-: A replacement for the built-in `pdb` debugger. `ipdb` adds features offered by [IPython](https://ipython.org/), including code completion, syntax highlighting, and others.
-
-  Install within you Python virtual environment (`venv`) with:
-
-  ```none
-  pip install ipdb
-  ```
 
 [pytest](https://pytest.org/)
 : A flexible testing framework for writing "small, readable" tests.
