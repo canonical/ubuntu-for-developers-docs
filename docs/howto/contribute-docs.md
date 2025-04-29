@@ -1,3 +1,4 @@
+(contribute-docs)=
 # How to contribute documentation
 
 This guide provides information necessary to contribute to the Ubuntu for Developers documentation, especially if you're contributing for the first time.

@@ -80,6 +80,7 @@ pytest
 reformats
 runtime
 runtimes
+rustc
 rustup
 snapcraft
 symlink
@@ -87,5 +88,6 @@ symlinks
 toolchain
 toolchains
 tox
+ubuntu
 unformatted
 wasm

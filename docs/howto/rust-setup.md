@@ -1,3 +1,4 @@
+(install-rust)=
 # How to set up a development environment for Rust on Ubuntu
 
 [Rust](https://www.rust-lang.org/) is a relatively new and secure programming language supported on many platforms. This article provides guidance on how to install the Rust toolchain and set up a development environment for Rust on Ubuntu.

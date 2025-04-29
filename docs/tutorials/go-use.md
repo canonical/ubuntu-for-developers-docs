@@ -1,6 +1,7 @@
-# How to develop using Go on Ubuntu
+(use-golang)=
+# Develop with Go on Ubuntu
 
-This guide shows how to build, run, and debug Go programs on Ubuntu. For instructions on how to install Go and the Delve debugger, refer to our dedicated [install and set up Go](./go-setup.md) guide.
+This tutorial shows how to build, run, and debug Go programs on Ubuntu. For instructions on how to install Go and related tooling, including the Delve debugger, see the dedicated guide on {ref}`install-golang`. This article assumes that tooling suggested in that article has been installed.
 
 
 ## Creating a Go project
@@ -46,10 +47,14 @@ This guide shows how to build, run, and debug Go programs on Ubuntu. For instruc
 
    This outputs:
 
-    ```none
+    ```{terminal}
+    :dir: ~/heygo
+    :user: dev
+    :host: ubuntu
+    :input: go run .
+
     Hey Go!
     ```
-
 
 ## Improving Go code with the help of tooling
 

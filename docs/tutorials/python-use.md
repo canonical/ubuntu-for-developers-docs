@@ -1,6 +1,7 @@
-# How to develop using Python on Ubuntu
+(use-python)=
+# Develop with Python on Ubuntu
 
-This guide shows how to run, check, and debug Python scripts on Ubuntu. For instructions on how to install Python and related tooling, including IDEs, debuggers, and linters, see the dedicated guide on {ref}`python-setup`. This guide assumes that tooling suggested in that article has been installed.
+This tutorial shows how to run, check, and debug Python scripts on Ubuntu. For instructions on how to install Python and related tooling, including IDEs, debuggers, and linters, see the dedicated guide on {ref}`install-python`. This article assumes that tooling suggested in that article has been installed.
 
 :::{important}
 To separate the system installation of Python from your development and testing setup, only use virtual environments for installing development project dependencies and running the developed code. This guide uses the standard `venv` virtual environment.
@@ -30,9 +31,13 @@ To separate the system installation of Python from your development and testing 
 
 3. Check that the environment has been set up:
 
-    ```{prompt} text $ auto
-    $ which python3
-    /home/user/python/helloworld/.venv/bin/python3
+    ```{terminal}
+    :dir: ~/python/helloworld
+    :user: dev
+    :host: ubuntu
+    :input: which python3
+
+    /home/dev/python/helloworld/.venv/bin/python3
     ```
 
 ::::{note}
@@ -91,8 +96,12 @@ To illustrate the installation of a dependency confined to the Python virtual en
 
    Checking the list of Python packages installed within the virtual environment should show output similar to this:
 
-    ```{prompt} text $ auto
-    $ pip list
+    ```{terminal}
+    :dir: ~/python/helloworld
+    :user: dev
+    :host: ubuntu
+    :input: pip list
+
     Package  Version
     -------- -------
     certifi            2025.1.31
@@ -143,17 +152,20 @@ To illustrate the installation of a dependency confined to the Python virtual en
 
 4. Executing the program should result in the message you defined and sent using the `POST` method printed to standard output:
 
-    ```{prompt} text $ auto
-    $ python3 helloworld.py
+    ```{terminal}
+    :dir: ~/python/helloworld
+    :user: dev
+    :host: ubuntu
+    :input: python3 helloworld.py
+
     Hello, world!
     ```
-
 
 ## Improving Python code with the help of tooling
 
 Use linters and formatters to improve the quality and style of your Python code to achieve consistency and better readability.
 
-In this example, we use the [Flake8](https://flake8.pycqa.org/) code checker and [Black](https://github.com/psf/black) formatter to identify  areas for improvement and automatically format code. See {ref}`python-setup` for instructions on how to install these tools.
+In this example, we use the [Flake8](https://flake8.pycqa.org/) code checker and [Black](https://github.com/psf/black) formatter to identify  areas for improvement and automatically format code. See {ref}`install-python` for instructions on how to install these tools.
 
 
 ### Checking Python code with Flake8
@@ -196,20 +208,20 @@ if __name__ == "__main__":
 
 Running the Flake8 checker identifies the offense and informs us that it expects one more blank line on line number 27:
 
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">flake8 helloworld.py
+<div class="highlight-default notranslate"><div class="highlight"><pre>$ flake8 helloworld.py
 <span style="font-weight:bold;">helloworld.py</span><span style="color:teal;">:</span>27<span style="color:teal;">:</span>1<span style="color:teal;">:</span> <span style="font-weight:bold;"></span><span style="font-weight:bold;color:red;">E305</span> expected 2 blank lines after class
-                    or function definition, found 1</span></pre></div></div>
+                    or function definition, found 1</pre></div></div>
 
 
 ### Reformatting Python code with Black
 
 Running the Black formatter automatically reformats the code and fixes the problem:
 
-<div class="highlight-default notranslate"><div class="highlight"><pre><span class="prompt1">flake8 helloworld.py
+<div class="highlight-default notranslate"><div class="highlight"><pre>$ black helloworld.py
 <span style="font-weight:bold;">reformatted helloworld.py</span>
 
 <span style="font-weight:bold;">All done!</span> ✨ 🍰 ✨
-<span style="font-weight:bold;"><span style="color:blue;">1 file</span> reformatted.</span></pre></div></div>
+<span style="font-weight:bold;"><span style="color:blue;">1 file</span> reformatted.</pre></div></div>
 
 :::{admonition} Black is opinionated
 Note that Black proceeds to reformat the code without asking for a confirmation.
@@ -275,8 +287,7 @@ To allow for the possibility of inspecting the state of the script at different 
 4. Execute the script to interact with the `ipdb` debugger:
 
     :::{raw} html
-    <div class="highlight-default notranslate"><div class="highlight"><pre>
-    <span class="prompt1">python3 helloworld.py
+    <div class="highlight-default notranslate"><div class="highlight"><pre>$ python3 helloworld.py
 
     &gt; <span style="color:green">/home/rkratky/python/hw.py</span>(<span style="color:#52FF52">26</span>)<span style="color:teal">hello_world</span><span style="color:blue">()</span>
         <span style="color:green">25</span>         <span style="font-style:italic;color:grey"># Print the message</span>
@@ -293,8 +304,7 @@ To allow for the possibility of inspecting the state of the script at different 
     'User-Agent': 'python-requests/2.32.3',
     'X-Amzn-Trace-Id': 'Root=1-680a5186-49625c625bc31933473464b7'}
     ipdb&gt; response_data['headers']['Message']
-    'Hello, world!'
-    </span></pre></div></div>
+    'Hello, world!'</pre></div></div>
     :::
 
     In the above example, we query the `response_data` variable using the `pp` (pretty print) command and then by specifying the `Message` header directly.
@@ -341,8 +351,7 @@ The following example shows how to use the `pytest` testing tool. First we imple
 2. Run the unit test using `pytest`:
 
     :::{raw} html
-    <div class="highlight-default notranslate"><div class="highlight"><pre>
-    <span class="prompt1">pytest helloworld_test.py
+    <div class="highlight-default notranslate"><div class="highlight"><pre>$ pytest helloworld_test.py
     <span style="font-weight:bold;">================= test session starts =====================</span>
     platform linux -- Python 3.12.7, pytest-8.3.2, pluggy-1.5.0
     rootdir: /home/user/python
@@ -352,6 +361,5 @@ The following example shows how to use the `pytest` testing tool. First we imple
 
     helloworld_test.py <span style="color:green">.                                 [100%]</span>
 
-    <span style="color:green">====================</span> <span style="color:#52FF52">1 passed</span> <span style="color:green">in 0.01s ====================</span>
-    </span></pre></div></div>
+    <span style="color:green">====================</span> <span style="color:#52FF52">1 passed</span> <span style="color:green">in 0.01s ====================</span></pre></div></div>
     :::

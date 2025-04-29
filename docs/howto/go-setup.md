@@ -1,4 +1,5 @@
-# How to set up development environment for Go on Ubuntu
+(install-golang)=
+# How to set up a development environment for Go on Ubuntu
 
 Go is a popular language for back-end web development, microservices and CLI tools. This how-to guide outlines how to install a Go distribution and set up a development environment on Ubuntu.
 
@@ -163,7 +164,7 @@ To install Delve, run:
 sudo apt install delve
 ```
 
-An overview of basic Delve usage is included in our [how to develop with Go](./go-use.md) guide.
+An overview of basic Delve use is included in our {ref}`use-golang` tutorial.
 
 A Go language server, [gopls](https://pkg.go.dev/golang.org/x/tools/gopls), is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
 
@@ -209,7 +210,7 @@ To test the (Linux) binary, execute it by running:
 ```
 
 :::{note}
-For the basics of writing and testing a Hello World program in Go,see our [how to develop with Go](./go-use.md) guide.
+For the basics of writing and testing a 'Hello, world~' program in Go, see our {ref}`use-golang` tutorial.
 :::
 
 
