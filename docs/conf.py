@@ -150,6 +150,8 @@ linkcheck_ignore = [
     "http://127.0.0.1:8000",
     "https://crates.io",
     "https://www.nongnu.org/cvs/",
+    "https://www.gnu.org/software/gdb/",
+    r"https://matrix\.to/.*",
 ]
 
 # Pages on which to ignore anchors
