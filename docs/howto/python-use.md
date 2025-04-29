@@ -9,7 +9,7 @@ To separate the system installation of Python from your development and testing 
 
 ## Preparing a Python virtual environment
 
-0. (Optional) Create a directory for Python development, as well as directory for the new project:
+0. (Optional) Create a directory for Python development, as well as a directory for the new project:
 
     ```none
     mkdir -p ~/python/helloworld
@@ -32,7 +32,7 @@ To separate the system installation of Python from your development and testing 
 
     ```{prompt} text $ auto
     $ which python3
-    /home/user/python/.venv/bin/python3
+    /home/user/python/helloworld/.venv/bin/python3
     ```
 
 ::::{note}
@@ -121,7 +121,7 @@ To illustrate the installation of a dependency confined to the Python virtual en
         header = {"Message": "Hello, world!"}
 
         try:
-            # Send the defined heasder to the response service
+            # Send the defined header to the response service
             response = requests.post(url, headers=header)
 
             # Basic error handling
@@ -175,7 +175,7 @@ def hello_world():
     header = {"Message": "Hello, world!"}
 
     try:
-        # Send the defined heasder to the response service
+        # Send the defined header to the response service
         response = requests.post(url, headers=header)
 
         # Basic error handling
