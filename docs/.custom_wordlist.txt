@@ -6,6 +6,7 @@ CLion
 Codium
 DataGrip
 ECMA
+Fosstodon
 GUIs
 GitLab
 GoLand
@@ -30,7 +31,6 @@ OpenJDK
 PDB
 Precompiled
 PyCharm
-PyCharm
 PyDev
 RubyMine
 Runtime
@@ -50,9 +50,11 @@ WebAssembly
 WineHQ
 analyzer
 backports
+breakpoint
 deadsnakes
 dotnet
 formatter
+formatters
 gdb
 gitg
 gitignore
@@ -64,14 +66,17 @@ integrations
 io
 ipdb
 javac
+linters
 lldb
 lsp
 macOS
+mentorship
 metapackage
 microservices
 mingw
 netbeansPython
 pytest
+reformats
 runtime
 runtimes
 rustup
