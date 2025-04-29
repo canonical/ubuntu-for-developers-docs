@@ -1,4 +1,5 @@
-# How to set up development environment for Java on Ubuntu
+(install-java)=
+# How to set up a development environment for Java on Ubuntu
 
 Java is a popular programming language supported on many platforms. This article provides guidance on how to install the Java toolchain and development environment on Ubuntu.
 

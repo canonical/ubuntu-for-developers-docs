@@ -1,5 +1,5 @@
-(python-setup)=
-# How to set up development environment for Python on Ubuntu
+(install-python)=
+# How to set up a development environment for Python on Ubuntu
 
 Python is an ubiquitous, object-oriented scripting language with an extensive ecosystem. This guide outlines how to install the Python interpreter and developer tooling on Ubuntu.
 

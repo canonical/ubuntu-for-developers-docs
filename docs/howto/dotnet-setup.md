@@ -1,4 +1,5 @@
-# How to set up development environment for .NET on Ubuntu
+(install-dotnet)=
+# How to set up a development environment for .NET on Ubuntu
 
 ## Installing .NET
 

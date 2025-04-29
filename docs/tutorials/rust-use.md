@@ -1,12 +1,19 @@
-# How to develop using Rust on Ubuntu
+(use-rust)=
+# Develop with Rust on Ubuntu
 
-This article provides guidance on basic use of the Rust toolchain for development on Ubuntu. It shows how to create a 'Hello World' program and explains how to compile Rust programs using {command}`rustc` and build projects using {command}`cargo`.
+This tutorial provides guidance on basic use of the Rust toolchain for development on Ubuntu. It shows how to create a 'Hello, world!' program and explains how to compile Rust programs using {command}`rustc` and build projects using {command}`cargo`.
 
-[`rustc`](https://doc.rust-lang.org/stable/rustc/index.html) is the actual compiler, while [`cargo`](https://doc.rust-lang.org/stable/cargo/index.html) is the build system and project management tool.
+For instructions on how to install Rust and related tooling, including IDEs and debuggers, see the dedicated guide on {ref}`install-rust`. This article assumes that tooling suggested in that article has been installed.
+
+
+## `cargo` vs `rustc`
+
+[`rustc`](https://doc.rust-lang.org/stable/rustc/index.html) is the actual compiler, and [`cargo`](https://doc.rust-lang.org/stable/cargo/index.html) is the build system and project management tool.
 
 In most cases, there is no reason to use {command}`rustc` directly. Instead, use {command}`cargo` as the build system to call {command}`rustc` indirectly. Refer to the Rust documentation for an explanation: [Why Cargo Exists](https://doc.rust-lang.org/stable/cargo/guide/why-cargo-exists.html)
 
-If you want to use {command}`rustc` without {command}`cargo`, refer to the example [Using `rustc` directly](#using-rustc-directly).
+If you want to use {command}`rustc` without {command}`cargo`, refer to the example {ref}`using-rustc-directly`.
+
 
 ## Creating a Rust project using Cargo
 
@@ -36,12 +43,20 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
 
 3. Build and run the program:
 
-    ```none
-    cargo run
+    ```{terminal}
+    :input: cargo run
+    :user: dev
+    :host: ubuntu
+
+    Hello, world!
     ```
 
 :::{attention}
-When building and running the program, if you get an error message related to a missing linker, then you are missing some essential build tools. They can be installed with `sudo apt install build-essential`.
+When building and running the program, if you get an error message related to a missing linker, then you are missing some essential build tools. Install them with:
+
+```none
+sudo apt install build-essential
+```
 :::
 
 
@@ -103,7 +118,10 @@ gcc -O3 c_main.c answer.o -o main
 
 When you execute this program, you should see the following:
 
-```none
-./main
+```{terminal}
+:input: ./main
+:user: dev
+:host: ubuntu
+
 The answer is 42
 ```

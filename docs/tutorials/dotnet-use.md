@@ -1,25 +1,25 @@
-# How to develop using .NET on Ubuntu
+(use-dotnet)=
+# Develop with .NET on Ubuntu
 
-This article provides basic guidance on how to use the .NET toolchain for development on Ubuntu. It shows how to create a ‘Hello World’ program and how to create, build, test, run, and publish .NET projects using the `dotnet`
-command-line interface (CLI).
+This tutorial provides basic guidance on how to use the .NET toolchain for development on Ubuntu. It shows how to create a ‘Hello, world!’ program and how to create, build, test, run, and publish .NET projects using the `dotnet` command-line interface (CLI).
 
-## Prerequisites
+For instructions on how to install .NET and related tooling, including the .NET SDK, see the dedicated guide on {ref}`install-dotnet`. This article assumes that tooling suggested in that article has been installed.
 
-This article assumes that **you have installed the .NET SDK**. If you need guidance on that, see the dedicated article: {doc}`/howto/dotnet-setup`.
 
 ## The .NET CLI
 
-The `dotnet` command can handle multiple installed .NET SDKs/runtimes and selects the right version of the .NET SDK or runtime when invoked. This has the advantage that you can use one command to interact with multiple versions of .NET.
+The `dotnet` command can handle multiple installed .NET SDKs and runtimes. It selects the right version of the .NET SDK or runtime when invoked. This has the advantage that you can use one command to interact with multiple versions of .NET.
 
-Any .NET SDK provides sub-commands like `new`, `run`, `build`, and `publish`, which we'll use shortly to develop the 'Hello World' application.
+Any .NET SDK provides sub-commands including `new`, `run`, `build`, and `publish`, which we use to develop the 'Hello, world!' application.
 
 Run `dotnet --help` to see all available sub-commands.
+
 
 ## Creating a .NET project
 
 Create a directory where the project should be located and change into it:
 
-```text
+```none
 mkdir "HelloWorld" && cd "HelloWorld"
 ```
 
@@ -34,7 +34,7 @@ Use the `dotnet new` command to create a .NET project from a template. Select th
 <!-- Content for C# -->
 Run the following command to create a ‘Hello World’ console application written in C#:
 
-```text
+```none
 dotnet new console
 ```
 
@@ -49,9 +49,9 @@ This creates the following files:
 :sync: fsharp
 
 <!-- Content for F# -->
-Run the following command to create a ‘Hello World’ console application written in F#:
+Run the following command to create a ‘Hello, world!’ console application written in F#:
 
-```text
+```none
 dotnet new console -lang F#
 ```
 
@@ -68,7 +68,7 @@ This creates the following files:
 <!-- Content for VB -->
 Run the following command to create a ‘Hello World’ console application written in Visual Basic:
 
-```text
+```none
 dotnet new console -lang VB
 ```
 
@@ -84,7 +84,7 @@ This creates the following files:
 ````{tip}
 Run the following command in a terminal to see a list of available templates:
 
-```text
+```none
 dotnet new list
 ```
 ````
@@ -92,7 +92,7 @@ dotnet new list
 ````{tip}
 If you use {manpage}`git(1)` as you version control system, you can generate a `.gitignore` file for .NET projects by using the template with the same name:
 
-```text
+```none
 dotnet new .gitignore
 ```
 ````
@@ -103,7 +103,10 @@ Let's see the application in action. Use the `dotnet run` command to restore dep
 
 ```{terminal}
 :dir: ~/HelloWorld
+:user: dev
+:host: ubuntu
 :input: dotnet run
+
 Hello, World!
 ```
 
@@ -117,6 +120,8 @@ The `dotnet run` command is useful for development when you have a .NET SDK inst
 
 ```{terminal}
 :dir: ~/HelloWorld
+:user: dev
+:host: ubuntu
 :input: dotnet publish 
 
 Restore complete (0.7s)
@@ -127,12 +132,12 @@ Build succeeded in 2.7s
 
 As shown by the terminal output, in this case (using .NET 9) the build output is located in `bin/Release/net9.0/publish/`. This directory would also contain all dependencies (but in this case, there aren't any). You can copy this directory to the target system and run the application with:
 
-```
+```none
 dotnet HelloWorld.dll
 ```
 
 This directory also contains a `HelloWorld` directory. This is a wrapper that is able to search for a compatible .NET runtime on the target system and use that to invoke the `HelloWorld.dll` binary. So, you can also run your application just by executing:
 
-```
+```none
 HelloWorld
 ```

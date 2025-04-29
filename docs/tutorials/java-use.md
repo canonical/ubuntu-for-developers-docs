@@ -1,6 +1,12 @@
-# How to develop using Java on Ubuntu
+(use-java)=
+# Develop with Java on Ubuntu
 
-This article provides basic guidance on how to use of the Java toolchain for development on Ubuntu. It shows how to create a 'Hello World' program and explains how to build projects using Gradle or Maven.
+This tutorial provides basic guidance on how to use of the Java toolchain for development on Ubuntu. It shows how to create a 'Hello, world!' program and explains how to build projects using Gradle or Maven.
+
+For instructions on how to install Java and related tooling, including IDEs, see the dedicated guide on {ref}`install-java`. This article assumes that tooling suggested in that article has been installed.
+
+
+## `javac` vs build systems
 
 [`javac` is the actual compiler](https://docs.oracle.com/en/java/javase/21/docs/specs/man/javac.html), but developers usually use build systems to compile, build, and package Java projects. [Gradle](https://gradle.org/) and [Maven](https://maven.apache.org/) are popular tools for building Java projects.
 
