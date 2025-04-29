@@ -9,30 +9,30 @@ To separate the system installation of Python from your development and testing 
 
 ## Preparing a Python virtual environment
 
-0. (Optional) Create a directory for Python development:
+0. (Optional) Create a directory for Python development, as well as directory for the new project:
 
     ```none
-    mkdir ~/python
-    cd ~/python
+    mkdir -p ~/python/helloworld
+    cd ~/python/helloworld
     ```
 
-1. Create a separate virtual environment for the new project:
+1. Create a separate virtual environment for the new project (specifying `.venv` as the directory for it):
 
     ```none
-    python3 -m venv helloworld
+    python3 -m venv .venv
     ```
 
 2. Activate the virtual environment by sourcing the `activate` script:
 
     ```none
-    source helloworld/bin/activate
+    source .venv/bin/activate
     ```
 
 3. Check that the environment has been set up:
 
     ```{prompt} text $ auto
     $ which python3
-    /home/user/python/helloworld/bin/python3
+    /home/user/python/.venv/bin/python3
     ```
 
 ::::{note}
@@ -89,7 +89,7 @@ To illustrate the installation of a dependency confined to the Python virtual en
     pip install -r requirements.txt
     ```
 
-   Checking the list of Python packages installed within `venv` should show output similar to this:
+   Checking the list of Python packages installed within the virtual environment should show output similar to this:
 
     ```{prompt} text $ auto
     $ pip list
@@ -102,6 +102,8 @@ To illustrate the installation of a dependency confined to the Python virtual en
     requests           2.32.3
     urllib3            2.4.0
     ```
+
+    (The version numbers can differ based on your environment.)
 
 3. Write a Python script that uses the installed dependency. For example, create a {file}`helloworld.py` file with the following contents:
 
@@ -248,7 +250,7 @@ To allow for the possibility of inspecting the state of the script at different 
             header = {"Message": "Hello, world!"}
 
             try:
-                # Send the defined heasder to the response service
+                # Send the defined header to the response service
                 response = requests.post(url, headers=header)
 
                 # Basic error handling
