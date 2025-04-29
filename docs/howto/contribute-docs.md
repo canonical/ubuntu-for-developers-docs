@@ -98,3 +98,22 @@ Test the documentation before submitting a pull request. Run the following comma
 :::{note}
 For the `make spelling` command to work, you must have the `aspell` spellchecker installed. You can install it with `sudo apt-get install aspell`.
 :::
+
+
+## Canonical Open Documentation Academy
+
+If you've never contributed to an open source project before, the [Canonical Open Documentation Academy](https://documentationacademy.org/) (CODA) is a great way to begin.
+
+The Canonical Open Documentation Academy (CODA) is an initiative led by the documentation team at Canonical to encourage open source contributions from the community, and to provide help, advice and mentorship within a friendly and welcoming environment.
+
+A key aim of the initiative is to lower the barrier to successful open-source software contributions by making documentation into the gateway, and it’s a great way to make your first open source contributions to projects like ours. Contributors gain real experience, structured support and recognition, while we benefit from improvements to our documentation and community feedback.
+
+The best way to get started is to take a look at our [project-related documentation tasks](https://github.com/canonical/open-documentation-academy/issues) and read our [Getting started](https://discourse.ubuntu.com/t/getting-started/42769) guide. Tasks typically include testing and fixing tutorials, updating outdated pages, restructuring large documents and anything else you may want to suggest. We'll help you see those tasks through to completion.
+
+Stay in touch either through the task list, or through one of the following locations:
+
+* [Discussion forum](https://discourse.ubuntu.com/t/about-the-open-documentation-academy/39615) on the Ubuntu Community Hub.
+* [Matrix](https://matrix.to/#/#documentation:ubuntu.com) for interactive chat.
+* [Fosstodon](https://fosstodon.org/@CanonicalDocumentation) for the latest updates and events.
+
+In addition to the above, we have a weekly [Open Documentation Hour](https://discourse.ubuntu.com/t/open-documentation-hour-schedule/45291) at 16:00 UTC each Friday. Everyone is welcome.
