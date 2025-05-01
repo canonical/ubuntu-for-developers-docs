@@ -208,20 +208,24 @@ if __name__ == "__main__":
 
 Running the Flake8 checker identifies the offense and informs us that it expects one more blank line on line number 27:
 
+:::{raw} html
 <div class="highlight-default notranslate"><div class="highlight"><pre>$ flake8 helloworld.py
 <span style="font-weight:bold;">helloworld.py</span><span style="color:teal;">:</span>27<span style="color:teal;">:</span>1<span style="color:teal;">:</span> <span style="font-weight:bold;"></span><span style="font-weight:bold;color:red;">E305</span> expected 2 blank lines after class
                     or function definition, found 1</pre></div></div>
+:::
 
 
 ### Reformatting Python code with Black
 
 Running the Black formatter automatically reformats the code and fixes the problem:
 
+:::{raw} html
 <div class="highlight-default notranslate"><div class="highlight"><pre>$ black helloworld.py
 <span style="font-weight:bold;">reformatted helloworld.py</span>
 
 <span style="font-weight:bold;">All done!</span> ✨ 🍰 ✨
 <span style="font-weight:bold;"><span style="color:blue;">1 file</span> reformatted.</pre></div></div>
+:::
 
 :::{admonition} Black is opinionated
 Note that Black proceeds to reformat the code without asking for a confirmation.
