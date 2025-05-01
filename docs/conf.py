@@ -150,8 +150,8 @@ redirects = {}
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
     "https://crates.io",
-    "https://www.nongnu.org/cvs/",
-    "https://www.gnu.org/software/gdb/",
+    r"https://www\.nongnu\.org/.*",
+    r"https://www\.gnu\.org/.*",
     r"https://matrix\.to/.*",
 ]
 

@@ -4,6 +4,7 @@ CIL
 CLR
 CLion
 Codium
+Ctrl
 DataGrip
 ECMA
 Fosstodon
@@ -76,6 +77,7 @@ metapackage
 microservices
 mingw
 netbeansPython
+preprocessing
 pytest
 reformats
 runtime
