@@ -87,3 +87,8 @@ A number of IDEs are available for Java development on Ubuntu:
 : ```none
   sudo snap install android-studio --classic
   ```
+
+  
+## What next
+
+See the tutorial introducing the use of Java and related tooling: {ref}`use-java`.

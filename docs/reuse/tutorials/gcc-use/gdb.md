@@ -19,6 +19,6 @@
 </span><br><span style="color:#b2b2b2;">(gdb) print number</span><span style="color:#b2b2b2;">
 </span><br><span style="color:#18b2b2;">$2</span><span style="color:#b2b2b2;"> = 42</span><span style="color:#b2b2b2;">
 </span><br><span style="color:#b2b2b2;">(gdb)</span><span style="color:#b2b2b2;">
-</span><br><br>
+</span>
 <br></span></div></div>
 :::

@@ -795,3 +795,8 @@ To install [VS Codium](https://snapcraft.io/codium), run the following command:
 ```text
 sudo snap install codium --classic
 ```
+
+
+## What next
+
+See the tutorial introducing the use of .NET and related tooling: {ref}`use-dotnet`.
