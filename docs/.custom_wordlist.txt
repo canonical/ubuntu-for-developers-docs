@@ -3,10 +3,12 @@ Backend
 CIL
 CLR
 CLion
+CMake
 Codium
 Ctrl
 DataGrip
 ECMA
+Fortran
 Fosstodon
 GUIs
 GitLab
@@ -46,6 +48,7 @@ TUIs
 Tig
 VSCode
 VSX
+Valgrind
 WSL
 WebAssembly
 WineHQ
@@ -53,6 +56,7 @@ analyzer
 backports
 breakpoint
 breakpoints
+ccls
 deadsnakes
 dotnet
 formatter
@@ -63,6 +67,7 @@ gitignore
 gitk
 gitworkflows
 gopls
+gprof
 https
 integrations
 io
@@ -78,6 +83,7 @@ microservices
 mingw
 netbeansPython
 preprocessing
+profilers
 pytest
 reformats
 runtime

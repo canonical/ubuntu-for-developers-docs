@@ -20,8 +20,11 @@ sudo apt install -y python3-full
 
 When installed, the {file}`/usr/bin/python3` file is a symbolic link always pointing to the currently default version of the Python interpreter binary. For example:
 
-```{prompt} text $ auto
-$ ls -l /usr/bin/python3
+```{terminal}
+:user: dev
+:host: ubuntu
+:input: ls -l /usr/bin/python3
+
 lrwxrwxrwx 1 root root 10 Sep 12  2024 /usr/bin/python3 -> python3.12
 ```
 
@@ -173,3 +176,8 @@ Python has the built-in `pdb` debugger and `unittest` testing framework, but you
   ```none
   sudo apt install tox
   ```
+
+
+## What next
+
+See the tutorial introducing the use of Python and related tooling: {ref}`use-python`.

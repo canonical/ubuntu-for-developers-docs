@@ -19,7 +19,7 @@ This documentation provides guidance for using the [Ubuntu Desktop](https://ubun
 | Toolchain | How to install | Get started coding |
 | --- | --- | --- |
 | Python | {ref}`Install Python <install-python>` | {ref}`Develop with Python <use-python>` |
-| Golang | {ref}`Install Golang <install-golang>` | {ref}`Develop with Golang <use-golang>` |
+| Golang | {ref}`Install Golang <install-golang>` | {ref}`Develop with Golang <use-go>` |
 | Rust | {ref}`Install Rust <install-rust>` | {ref}`Develop with Rust <use-rust>` |
 | GCC | {ref}`Install GCC <install-gcc>` | {ref}`Develop with GCC <use-gcc>` |
 | .NET | {ref}`Install .NET <install-dotnet>` | {ref}`Develop with .NET <use-dotnet>` |
@@ -78,7 +78,7 @@ The Ubuntu Desktop Linux distribution is part of the Ubuntu family of projects. 
 [Read our code of conduct](https://ubuntu.com/community/ethos/code-of-conduct)
 : As a community, we adhere to the Ubuntu code of conduct.
 
-[Get support](https://askubuntu.com/questions/tagged/ubuntu)
+[Get support](https://askubuntu.com/)
 : Ask Ubuntu is a question and answer site for Ubuntu users and developers.
 
 Join our online chat

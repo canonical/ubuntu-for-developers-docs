@@ -1,7 +1,7 @@
 (use-gcc)=
 # Develop with GCC on Ubuntu
 
-This tutorial shows how to build and debug C programs on Ubuntu using GNU GCC and GDB. For instructions on how to install GCC and related tooling, including IDEs, debuggers, and the build system, see the dedicated guide on {ref}`install-gcc`. This article assumes that tooling suggested in that article has been installed.
+This tutorial shows how to build and debug C programs on Ubuntu using GCC and GDB. For instructions on how to install GCC and related tooling, including IDEs, debuggers, and the build system, see the dedicated guide on {ref}`install-gcc`. This article assumes that tooling suggested in that article has been installed.
 
 The GNU Compiler Collection (GCC) provides support for a number of programming languages. Working with the GCC toolchain in Ubuntu is straightforward, so this tutorial is limited to showing a basic 'Hello, world!' program using the C language and a basic debugging session.
 

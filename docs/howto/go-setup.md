@@ -164,7 +164,7 @@ To install Delve, run:
 sudo apt install delve
 ```
 
-An overview of basic Delve use is included in our {ref}`use-golang` tutorial.
+An overview of basic Delve use is included in our {ref}`use-go` tutorial.
 
 A Go language server, [gopls](https://pkg.go.dev/golang.org/x/tools/gopls), is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
 
@@ -210,7 +210,7 @@ To test the (Linux) binary, execute it by running:
 ```
 
 :::{note}
-For the basics of writing and testing a 'Hello, world~' program in Go, see our {ref}`use-golang` tutorial.
+For the basics of writing and testing a 'Hello, world~' program in Go, see our {ref}`use-go` tutorial.
 :::
 
 
@@ -258,3 +258,8 @@ Generate the builds and test the Linux build:
 make all
 ./hello_linux_amd64
 ```
+
+
+## What next
+
+See the tutorial introducing the use of Go and related tooling: {ref}`use-go`.
