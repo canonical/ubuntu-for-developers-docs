@@ -217,7 +217,7 @@ Examples:
   ```
 - To install the SDK of the latest .NET LTS release, run:
   ```text
-  dotnet-installer remove sdk lts
+  dotnet-installer install sdk lts
   ```
 - To install the .NET 8 ASP\.NET Core runtime, run:
   ```text
