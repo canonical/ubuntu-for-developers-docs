@@ -250,43 +250,43 @@ To allow for the possibility of inspecting the state of the script at different 
 
 3. Add `ipdb` module import, and insert a breakpoint in the code (see line 23):
 
-    ```{code-block} python
-        :caption: `helloworld.py`
-        :linenos:
+```{code-block} python
+    :caption: `helloworld.py`
+    :linenos:
 
-        import requests
-        import ipdb
+    import requests
+    import ipdb
 
 
-        def hello_world():
-            # Use the example HTTP response service
-            url = "https://httpbin.org/post"
+    def hello_world():
+        # Use the example HTTP response service
+        url = "https://httpbin.org/post"
 
-            # Define a custom header for the POST method
-            header = {"Message": "Hello, world!"}
+        # Define a custom header for the POST method
+        header = {"Message": "Hello, world!"}
 
-            try:
-                # Send the defined header to the response service
-                response = requests.post(url, headers=header)
+        try:
+            # Send the defined header to the response service
+            response = requests.post(url, headers=header)
 
-                # Basic error handling
-                response.raise_for_status()
+            # Basic error handling
+            response.raise_for_status()
 
-                # Parse the response
-                response_data = response.json()
+            # Parse the response
+            response_data = response.json()
 
-                # Set a breakpoint to check response data
-                ipdb.set_trace()
+            # Set a breakpoint to check response data
+            ipdb.set_trace()
 
-                # Print the message
-                print(response_data["headers"]["Message"])
+            # Print the message
+            print(response_data["headers"]["Message"])
 
-            except requests.exceptions.RequestException as e:
-                print(f"An error occurred: {e}")
+        except requests.exceptions.RequestException as e:
+            print(f"An error occurred: {e}")
 
-        if __name__ == "__main__":
-            hello_world()
-    ```
+    if __name__ == "__main__":
+        hello_world()
+```
 
 4. Execute the script to interact with the `ipdb` debugger:
 
