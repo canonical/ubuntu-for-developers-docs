@@ -251,8 +251,8 @@ To allow for the possibility of inspecting the state of the script at different 
 3. Add `ipdb` module import, and insert a breakpoint in the code (see line 23):
 
     ```{code-block} python
-        :caption: `helloworld.py`
-        :linenos:
+    :caption: `helloworld.py`
+    :linenos:
 
     import requests
     import ipdb
