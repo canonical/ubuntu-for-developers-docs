@@ -1,5 +1,5 @@
 (llvm-toolchain-availability)=
-# Availabile LLVM/Clang versions
+# Available LLVM/Clang versions
 
 ```{raw} html
 <style>

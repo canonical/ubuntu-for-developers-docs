@@ -1,5 +1,5 @@
 (dotnet-toolchain-availability)=
-# Availabile .NET versions
+# Available .NET versions
 
 ```{raw} html
 <style>
@@ -13,7 +13,7 @@ This article lists Canonical maintained .NET builds.
 
 ## .NET Snap
 
-The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET SDK's and runtimes of the following versions on Ubuntu 22.04+ for `amd64` and `arm64` architectures:
+The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET SDKs and runtimes of the following versions on Ubuntu 22.04+ for `amd64` and `arm64` architectures:
 
 | .NET version | End of Life (Upstream) |
 |--------------|------------------------|
@@ -63,7 +63,7 @@ See: {ref}`dotnet-installation-ubuntu-packages`
 (dotnet-backports-ppa)=
 ### Backports PPA
 
-.NET versions which Canonical is not commited to maintain for the entire lifetime of an Ubuntu release will be provided via the [.NET backports PPA](https://launchpad.net/~dotnet/+archive/ubuntu/backports).
+.NET versions which Canonical is not committed to maintain for the entire lifetime of an Ubuntu release will be provided via the [.NET backports PPA](https://launchpad.net/~dotnet/+archive/ubuntu/backports).
 
 Canonical provides best-effort maintenance for packages contained in this archive, which is limited to the upstream lifespan of the .NET version or the support period of the particular Ubuntu series. See the [upstream support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) for more information about the upstream support lifespan of .NET releases or the [Ubuntu Releases Wiki entry](https://wiki.ubuntu.com/Releases) for more information about the support period of any Ubuntu series.
 

@@ -99,3 +99,8 @@ tox
 ubuntu
 unformatted
 wasm
+Quokka
+llvm
+Tahr
+Xenial
+Xerus
