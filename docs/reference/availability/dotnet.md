@@ -37,9 +37,9 @@ See: {ref}`dotnet-installation-snap`
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
-¹ -- available in the Backports PPA only    
+¹ -- available in the {ref}`dotnet-backports-ppa` only    
 ² -- version is no longer maintained by Canonical (End of Life)    
-³ -- available in the Previews PPA only until final release    
+³ -- available in the {ref}`dotnet-previews-ppa` only until final release    
 
 ```{note}
 .NET 10 will be available in the Ubuntu archive for Ubuntu 24.04+ and included in main upon its official release. For Ubuntu 22.04, it will be provided via the Backports PPA.
@@ -59,3 +59,19 @@ LTS -- Long Term Support (Upstream patches bugs for 36 months after release)
 STS -- Standard Term Support (Upstream patches bugs for 18 month after release)
 
 See: {ref}`dotnet-installation-ubuntu-packages`
+
+(dotnet-backports-ppa)=
+### Backports PPA
+
+.NET versions which Canonical is not commited to maintain for the entire lifetime of an Ubuntu release will be provided via the [.NET backports PPA](https://launchpad.net/~dotnet/+archive/ubuntu/backports).
+
+Canonical provides best-effort maintenance for packages contained in this archive, which is limited to the upstream lifespan of the .NET version or the support period of the particular Ubuntu series. See the [upstream support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) for more information about the upstream support lifespan of .NET releases or the [Ubuntu Releases Wiki entry](https://wiki.ubuntu.com/Releases) for more information about the support period of any Ubuntu series.
+
+(dotnet-previews-ppa)=
+### Previews PPA
+
+Before each major .NET release, Microsoft publishes multiple previews for public testing. We package and test these previews in the [.NET previews PPA](https://launchpad.net/~dotnet/+archive/ubuntu/previews) to prepare for the final release. We encourage you to try them out and share your feedback.
+
+```{important}
+These builds are not intended for production environments. Neither Microsoft nor Canonical provides warranties or support for these preview versions.
+```
