@@ -205,12 +205,6 @@ html_css_files = ["custom_header.css"]
 
 # The following settings override the default configuration.
 
-# Specify a reST string that is included at the end of each file.
-# The suggested value pulls the reuse/links.txt file into each reST file.
-rst_epilog = """
-.. include:: /reuse/links.txt
-"""
-
 # By default, the documentation includes a feedback button at the top.
 # You can disable it by setting the following configuration to True.
 # disable_feedback_button = False
