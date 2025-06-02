@@ -194,20 +194,7 @@ To install a .NET component, run the following command:
 dotnet-installer install [<component> [<versison>]]
 ```
 
-Valid values for the `<component>` parameter are:
-- `runtime`: installs the .NET runtime (without the components needed to run ASP\.NET Core apps)
-- `aspnetcore-runtime`: installs the ASP\.NET Core runtime
-- `sdk` (default): installs the .NET SDK (including the .NET runtime with the components needed to run ASP\.NET Core apps)
-
-Valid values for the `<version>` parameter are:
-- `lts`: installs the latest .NET LTS release
-- `latest` (default): installs the latest .NET release
-- `9.0`: installs .NET 9.0
-- `9`:  installs .NET 9.0
-- `8.0`:  installs .NET 8.0
-- `8`:  installs .NET 8.0
-- `6.0`:  installs .NET 6.0
-- `6`:  installs .NET 6.0
+See valid {ref}`dotnet-snap-components` and {ref}`dotnet-snap-versions` values.
 
 Examples:
 

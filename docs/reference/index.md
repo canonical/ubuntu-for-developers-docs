@@ -11,7 +11,7 @@ Reference material to help you orient in what toolchain versions are available i
 :::{toctree}
 :maxdepth: 1
 
-availability
+availability/index.md
 :::
 
 
