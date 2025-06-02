@@ -1,34 +1,22 @@
 (llvm-toolchain-availability)=
 # Available LLVM/Clang versions
 
-```{raw} html
-<style>
-.default-package {
-    color: #E95420;
-}
-</style>
-```
-
-```{role} default-package
-```
-
 ## Ubuntu (deb) packages
 
-| Ubuntu version              | available LLVM/Clang versions |
-|-----------------------------|-------------------------------|
-| 25.10 (Questing Quokka)     | 14, 15, 17, **18**, **19**, **{default-package}`20`**, 21 |
-| 25.04 (Plucky Puffin)       | 14, 15, 17, **18**, **19**, **{default-package}`20`** |
-| 24.10 (Oracular Oriole)     | 14, 15, 16, 17, **18**, **{default-package}`19`** |
-| 24.04 LTS (Noble Numbat)    | 14, 15, 16, **17**, **{default-package}`18`**, 19 |
-| 22.04 LTS (Jammy Jellyfish) | 11, 12, **13**, **{default-package}`14`**, **15** |
-| 20.04 LTS (Focal Fossa)     | 6, 7, 8, **9**, **{default-package}`10`**, **11**, **12**, 18 |
-| 18.04 LTS (Bionic Beaver)   | 3.7, **3.9**, 4, 5, **{default-package}`6`**, **7**, **8**, **9**, **10** |
-| 16.04 LTS (Xenial Xerus)    | **3.6**, 3.7, **{default-package}`3.8`**, 3.9, **4**, **5**, **6**, 8 |
-| 14.04 LTS (Trusty Tahr)     | 3.3, **{default-package}`3.4`**, 3.5, **3.6**, **3.8**, 3.9 |
+| Ubuntu version              | available LLVM/Clang versions | [llvm-defaults](https://launchpad.net/ubuntu/+source/llvm-defaults) version | 
+| --- | --- | --- |
+| 25.10 (Questing Quokka)     | 14, 15, 17, **18**, **19**, **20**, 21 | 20 |
+| 25.04 (Plucky Puffin)       | 14, 15, 17, **18**, **19**, **20** | 20 |
+| 24.10 (Oracular Oriole)     | 14, 15, 16, 17, **18**, **19** | 19 |
+| 24.04 LTS (Noble Numbat)    | 14, 15, 16, **17**, **18**, 19 | 18 |
+| 22.04 LTS (Jammy Jellyfish) | 11, 12, **13**, **14**, **15** | 14 |
+| 20.04 LTS (Focal Fossa)     | 6, 7, 8, **9**, **10**, **11**, **12**, 18 | 10 |
+| 18.04 LTS (Bionic Beaver)   | 3.7, **3.9**, 4, 5, **6**, **7**, **8**, **9**, **10** | 6 |
+| 16.04 LTS (Xenial Xerus)    | **3.6**, 3.7, **3.8**, 3.9, **4**, **5**, **6**, 8 | 3.8 |
+| 14.04 LTS (Trusty Tahr)     | 3.3, **3.4**, 3.5, **3.6**, **3.8**, 3.9 | 3.4 |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
-{default-package}`orange` -- [llvm-defaults](https://launchpad.net/ubuntu/+source/llvm-defaults) version    
 
 | LLVM Version | Source package | 
 |--------------|----------------|
