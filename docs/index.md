@@ -16,14 +16,13 @@ Contribute documentation <howto/contribute-docs.md>
 This documentation provides guidance for using the [Ubuntu Desktop](https://ubuntu.com/desktop) Linux distribution as a development platform. The guides focus on setting up and using the Ubuntu system as a workstation for developers, with an emphasis on the following toolchains:
 
 :::{table} Toolchain overview
-| Toolchain | How to install | Get started coding | Available versions |
-| --- | --- | --- | --- |
+| Toolchain | How to install | Get started coding |
+| --- | --- | --- |
 | Python | {ref}`Install Python <install-python>` | {ref}`Develop with Python <use-python>` |
 | Golang | {ref}`Install Golang <install-golang>` | {ref}`Develop with Golang <use-go>` |
 | Rust | {ref}`Install Rust <install-rust>` | {ref}`Develop with Rust <use-rust>` |
 | GCC | {ref}`Install GCC <install-gcc>` | {ref}`Develop with GCC <use-gcc>` |
-| LLVM/Clang | | | {ref}`llvm-toolchain-availability` |
-| .NET | {ref}`Install .NET <install-dotnet>` | {ref}`Develop with .NET <use-dotnet>` | {ref}`dotnet-toolchain-availability`
+| .NET | {ref}`Install .NET <install-dotnet>` | {ref}`Develop with .NET <use-dotnet>`
 | Java | {ref}`Install Java <install-java>` | {ref}`Develop with Java <use-java>` |
 :::
 
