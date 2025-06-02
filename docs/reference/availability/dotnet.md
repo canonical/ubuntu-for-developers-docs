@@ -13,15 +13,82 @@ This article lists Canonical maintained .NET builds.
 
 ## .NET Snap
 
-The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET SDKs and runtimes of the following versions on Ubuntu 22.04+ for `amd64` and `arm64` architectures:
+The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET components of the following versions on Ubuntu 22.04+ for `amd64` and `arm64` architectures.
 
-| .NET version | End of Life (Upstream) |
-|--------------|------------------------|
-| .NET 10 preview | (not yet supported) |
-| .NET 9 (STS) | 12 May 2026 |
-| .NET 8 (LTS) | 10 November 2026 |
-| .NET 7 (STS) | 14 May 2024 |
-| .NET 6 (LTS) | 12 November 2024 |
+(dotnet-snap-components)=
+### Components
+
+````{list-table}
+:header-rows: 1
+
+* - .NET component
+  - identifier
+  - description
+* - .NET SDK 
+  - ```none
+    sdk
+    ```
+  - let's you build and run .NET apps
+* - ASP\.NET Core Runtime
+  - ```none
+    aspnetcore-runtime
+    ```
+  - let's you run .NET apps (including ASP\.NET Core apps)
+* - .NET Runtime
+  - ```none
+    runtime
+    ```
+  - let's you to run .NET apps (without the components needed to run ASP\.NET Core apps)
+````
+
+(dotnet-snap-versions)=
+### Versions
+
+````{list-table}
+:header-rows: 1
+
+* - .NET version
+  - identifiers
+  - End of Life
+* - .NET 9 (STS)
+  - ```none
+    latest
+    ```
+    ```none
+    9
+    ```
+    ```none
+    9.0
+    ```
+  - 12 May 2026
+* - .NET 8 (LTS)
+  - ```none
+    lts
+    ```
+    ```none
+    8
+    ```
+    ```none
+    8.0
+    ```
+  - 10 November 2026
+* - .NET 7 (STS)
+  - ```none
+    7
+    ```
+    ```none
+    7.0
+    ```
+  - 14 May 2024
+* - .NET 6 (LTS)
+  - ```none
+    6
+    ```
+    ```none
+    6.0
+    ```
+  - 12 November 2024
+````
 
 See: {ref}`dotnet-installation-snap`
 
