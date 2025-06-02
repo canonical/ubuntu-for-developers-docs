@@ -22,7 +22,7 @@ This documentation provides guidance for using the [Ubuntu Desktop](https://ubun
 | Golang | {ref}`Install Golang <install-golang>` | {ref}`Develop with Golang <use-go>` |
 | Rust | {ref}`Install Rust <install-rust>` | {ref}`Develop with Rust <use-rust>` |
 | GCC | {ref}`Install GCC <install-gcc>` | {ref}`Develop with GCC <use-gcc>` |
-| .NET | {ref}`Install .NET <install-dotnet>` | {ref}`Develop with .NET <use-dotnet>`
+| .NET | {ref}`Install .NET <install-dotnet>` | {ref}`Develop with .NET <use-dotnet>` |
 | Java | {ref}`Install Java <install-java>` | {ref}`Develop with Java <use-java>` |
 :::
 
