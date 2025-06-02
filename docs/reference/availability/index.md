@@ -8,4 +8,5 @@ Reference material to help you orient in what toolchain versions are available i
 
 .NET <dotnet.md>
 LLVM/Clang <llvm.md>
+Java <java.md>
 :::
