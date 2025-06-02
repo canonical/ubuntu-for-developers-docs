@@ -5,32 +5,34 @@
 <style>
 .default-package {
     color: #E95420;
-    fon
 }
 </style>
 ```
 
+```{role} default-package
+```
+
+## Ubuntu (deb) packages
+
 | Ubuntu version              | available LLVM/Clang versions |
 |-----------------------------|-------------------------------|
-| 25.10 (Questing Quokka)     | 14, 15, 17, **18**, **19**, <span class="default-package">**20**</span>, 21 |
-| 25.04 (Plucky Puffin)       | 14, 15, 17, **18**, **19**, <span class="default-package">**20**</span> |
-| 24.10 (Oracular Oriole)     | 14, 15, 16, 17, **18**, <span class="default-package">**19**</span> |
-| 24.04 LTS (Noble Numbat)    | 14, 15, 16, **17**, <span class="default-package">**18**</span>, 19 |
-| 22.04 LTS (Jammy Jellyfish) | 11, 12, **13**, <span class="default-package">**14**</span>, **15** |
-| 20.04 LTS (Focal Fossa)     | 6, 7, 8, **9**, <span class="default-package">**10**</span>, **11**, **12**, 18 |
-| 18.04 LTS (Bionic Beaver)   | 3.7, **3.9**, 4, 5, <span class="default-package">**6**</span>, **7**, **8**, **9**, **10** |
-| 16.04 LTS (Xenial Xerus)    | **3.6**, 3.7, <span class="default-package">**3.8**</span>, 3.9, **4**, **5**, **6**, 8 |
-| 14.04 LTS (Trusty Tahr)     | 3.3, <span class="default-package">**3.4**</span>, 3.5, **3.6**, **3.8**, 3.9 |
+| 25.10 (Questing Quokka)     | 14, 15, 17, **18**, **19**, **{default-package}`20`**, 21 |
+| 25.04 (Plucky Puffin)       | 14, 15, 17, **18**, **19**, **{default-package}`20`** |
+| 24.10 (Oracular Oriole)     | 14, 15, 16, 17, **18**, **{default-package}`19`** |
+| 24.04 LTS (Noble Numbat)    | 14, 15, 16, **17**, **{default-package}`18`**, 19 |
+| 22.04 LTS (Jammy Jellyfish) | 11, 12, **13**, **{default-package}`14`**, **15** |
+| 20.04 LTS (Focal Fossa)     | 6, 7, 8, **9**, **{default-package}`10`**, **11**, **12**, 18 |
+| 18.04 LTS (Bionic Beaver)   | 3.7, **3.9**, 4, 5, **{default-package}`6`**, **7**, **8**, **9**, **10** |
+| 16.04 LTS (Xenial Xerus)    | **3.6**, 3.7, **{default-package}`3.8`**, 3.9, **4**, **5**, **6**, 8 |
+| 14.04 LTS (Trusty Tahr)     | 3.3, **{default-package}`3.4`**, 3.5, **3.6**, **3.8**, 3.9 |
 
+<!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
-<span class="default-package">orange</span> -- `llvm-defaults` version    
+{default-package}`orange` -- [llvm-defaults](https://launchpad.net/ubuntu/+source/llvm-defaults) version    
 
-## Packages
-
-| LLVM Version      | Source package                                          | 
-|--------------|---------------------------------------------------------|
-| (see table above) | [llvm-defaults](https://launchpad.net/ubuntu/+source/llvm-defaults) |
-| (close to the latest snapshot) | [llvm-toolchain-snapshot](https://launchpad.net/ubuntu/+source/llvm-toolchain-snapshot) | 
+| LLVM Version | Source package | 
+|--------------|----------------|
+| (close to the latest upstream snapshot) | [llvm-toolchain-snapshot](https://launchpad.net/ubuntu/+source/llvm-toolchain-snapshot) | 
 | 20 | [llvm-toolchain-20](https://launchpad.net/ubuntu/+source/llvm-toolchain-20) |
 | 19 | [llvm-toolchain-19](https://launchpad.net/ubuntu/+source/llvm-toolchain-19) |
 | 18 | [llvm-toolchain-18](https://launchpad.net/ubuntu/+source/llvm-toolchain-18) |

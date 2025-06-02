@@ -9,6 +9,9 @@
 </style>
 ```
 
+```{role} dim
+```
+
 This article lists Canonical maintained .NET builds.
 
 ## .NET Snap
@@ -96,11 +99,11 @@ See: {ref}`dotnet-installation-snap`
 
 | Ubuntu version              | `amd64` | `arm64` | `s390x` | `ppc64el` |
 |-----------------------------|---------|---------|---------|-----------|
-| 25.10 (Questing Quokka)     | **8**, 9, 10<span class="dim">³</span> | **8**, 9, 10<span class="dim">³</span> | **8**, 9 | **8**, 9 |
-| 25.04 (Plucky Puffin)       | **8**, 9, 10<span class="dim">³</span> | **8**, 9, 10<span class="dim">³</span> | **8**, 9 | **8**, 9 |
+| 25.10 (Questing Quokka)     | **8**, 9, 10{dim}`³` | **8**, 9, 10{dim}`³` | **8**, 9 | **8**, 9 |
+| 25.04 (Plucky Puffin)       | **8**, 9, 10{dim}`³` | **8**, 9, 10{dim}`³` | **8**, 9 | **8**, 9 |
 | 24.10 (Oracular Oriole)     | **8**, 9 | **8**, 9 | **8**, 9 | **8**, 9 |
-| 24.04 LTS (Noble Numbat)    | 6<span class="dim">¹ ²</span>, 7<span class="dim">¹ ²</span>, **8**, 9<span class="dim">¹</span>, 10<span class="dim">³</span> | 6<span class="dim">¹ ²</span>, 7<span class="dim">¹ ²</span>, **8**, 9<span class="dim">¹</span>, 10<span class="dim">³</span> | **8**, 9<span class="dim">¹</span> | **8**, 9<span class="dim">¹</span> |
-| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9<span class="dim">¹</span>, 10<span class="dim">³</span> | **6**, 7, **8**, 9<span class="dim">¹</span>, 10<span class="dim">³</span> | **8**, 9<span class="dim">¹</span> | **8**, 9<span class="dim">¹</span> |
+| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10{dim}`³` | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10{dim}`³` | **8**, 9{dim}`¹` | **8**, 9{dim}`¹` |
+| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`³` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`³` | **8**, 9{dim}`¹` | **8**, 9{dim}`¹` |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
@@ -114,13 +117,13 @@ See: {ref}`dotnet-installation-snap`
 Additionally, .NET 10 will be available for the `ppc64el` and `s390x` architectures until the final release.
 ```
 
-| .NET Version      | Source package                                          | End of Life (Upstream) | 
-|--------------|---------------------------------------------------------|------------------------|
-| .NET 10 preview | [dotnet10](https://launchpad.net/~dotnet/+archive/ubuntu/previews) | (not yet supported)          |
-| .NET 9 (STS) | [dotnet9](https://launchpad.net/ubuntu/+source/dotnet9) | 12 May 2026          |
-| .NET 8 (LTS) | [dotnet8](https://launchpad.net/ubuntu/+source/dotnet8) | 10 November 2026     |
-| .NET 7 (STS) | [dotnet7](https://launchpad.net/ubuntu/+source/dotnet7) | 14 May 2024          |
-| .NET 6 (LTS) | [dotnet6](https://launchpad.net/ubuntu/+source/dotnet6) | 12 November 2024     |
+| .NET Version | Source package | End of Life (Upstream) | 
+|--------------|----------------|------------------------|
+| .NET 10 preview | [dotnet10](https://launchpad.net/~dotnet/+archive/ubuntu/previews) | (not yet supported) |
+| .NET 9 (STS) | [dotnet9](https://launchpad.net/ubuntu/+source/dotnet9) | 12 May 2026 |
+| .NET 8 (LTS) | [dotnet8](https://launchpad.net/ubuntu/+source/dotnet8) | 10 November 2026 |
+| .NET 7 (STS) | [dotnet7](https://launchpad.net/ubuntu/+source/dotnet7) | 14 May 2024 |
+| .NET 6 (LTS) | [dotnet6](https://launchpad.net/ubuntu/+source/dotnet6) | 12 November 2024 |
 
 LTS -- Long Term Support (Upstream patches bugs for 36 months after release)    
 STS -- Standard Term Support (Upstream patches bugs for 18 month after release)
