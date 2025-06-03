@@ -51,7 +51,7 @@ The [`go` snap](https://snapcraft.io/go) let's you install the following Golang 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
 
-| Golang Version | Source package | 
+| Golang version | Source package | 
 |----------------|----------------|
 | 1.24 | [golang-1.24](https://launchpad.net/ubuntu/+source/golang-1.24) |
 | 1.23 | [golang-1.23](https://launchpad.net/ubuntu/+source/golang-1.23) |
