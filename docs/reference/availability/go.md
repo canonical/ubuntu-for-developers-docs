@@ -9,17 +9,17 @@ The [`go` snap](https://snapcraft.io/go) let's you install the following Golang 
 | --- | --- |
 | 1.25 | `latest/edge` |
 | 1.24 | `1.24/stable`, `latest/stable`  |
-| 1.23 (fips certified) | `1.23-fips/stable` |
+| 1.23 (FIPS certified) | `1.23-fips/stable` |
 | 1.23 | `1.23/stable` |
-| 1.22 (fips certified) | `1.22-fips/stable` |
+| 1.22 (FIPS certified) | `1.22-fips/stable` |
 | 1.22 | `1.22/stable` |
-| 1.21 (fips certified) | `1.21-fips/stable` |
+| 1.21 (FIPS certified) | `1.21-fips/stable` |
 | 1.21 | `1.21/stable` |
-| 1.20 (fips certified) | `1.20-fips/stable` |
+| 1.20 (FIPS certified) | `1.20-fips/stable` |
 | 1.20 | `1.20/stable` |
-| 1.19 (fips certified) | `1.19-fips/stable` |
+| 1.19 (FIPS certified) | `1.19-fips/stable` |
 | 1.19 | `1.19/stable` |
-| 1.18 (fips certified) | `1.18-fips/stable` |
+| 1.18 (FIPS certified) | `1.18-fips/stable` |
 | 1.18 | `1.18/stable` |
 | 1.17 | `1.17/stable` |
 | 1.16 | `1.16/stable` |
