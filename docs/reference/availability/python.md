@@ -36,11 +36,11 @@
 
 | Ubuntu version | available Python 2 versions | [python-defaults](https://launchpad.net/ubuntu/+source/python-defaults) version |
 | --- | --- | --- |
-| 22.04 LTS (Jammy Jellyfish) | <span class="default-package">2.7</span> | 2.7 |
-| 20.04 LTS (Focal Fossa)     | <span class="default-package">2.7</span> | 2.7 |
-| 18.04 LTS (Bionic Beaver)   | <span class="default-package">**2.7**</span> | 2.7 |
-| 16.04 LTS (Xenial Xerus)    | <span class="default-package">**2.7**</span> | 2.7 |
-| 14.04 LTS (Trusty Tahr)     | <span class="default-package">**2.7**</span> | 2.7 |
+| 22.04 LTS (Jammy Jellyfish) | 2.7 | 2.7 |
+| 20.04 LTS (Focal Fossa)     | 2.7 | 2.7 |
+| 18.04 LTS (Bionic Beaver)   | **2.7** | 2.7 |
+| 16.04 LTS (Xenial Xerus)    | **2.7** | 2.7 |
+| 14.04 LTS (Trusty Tahr)     | **2.7** | 2.7 |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
