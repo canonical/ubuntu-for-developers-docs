@@ -18,7 +18,7 @@
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
 
-| GCC Version | Source package | 
+| GCC version | Source package | 
 |-------------|----------------|
 | 15 | [gcc-15](https://launchpad.net/ubuntu/+source/gcc-15) |
 | 14 | [gcc-14](https://launchpad.net/ubuntu/+source/gcc-14) |
