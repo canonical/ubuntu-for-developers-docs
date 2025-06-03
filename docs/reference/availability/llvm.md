@@ -3,7 +3,7 @@
 
 ## Ubuntu (deb) packages
 
-| Ubuntu version              | available LLVM/Clang versions | [llvm-defaults](https://launchpad.net/ubuntu/+source/llvm-defaults) version | 
+| Ubuntu version              | available LLVM/Clang versions | {lpsrc}`llvm-defaults` |
 | --- | --- | --- |
 | 25.10 (Questing Quokka)     | 14, 15, 17, **18**, **19**, **20**, 21 | 20 |
 | 25.04 (Plucky Puffin)       | 14, 15, 17, **18**, **19**, **20** | 20 |
@@ -20,28 +20,28 @@
 
 | LLVM Version | Source package | 
 |--------------|----------------|
-| (close to the latest upstream snapshot) | [llvm-toolchain-snapshot](https://launchpad.net/ubuntu/+source/llvm-toolchain-snapshot) | 
-| 20 | [llvm-toolchain-20](https://launchpad.net/ubuntu/+source/llvm-toolchain-20) |
-| 19 | [llvm-toolchain-19](https://launchpad.net/ubuntu/+source/llvm-toolchain-19) |
-| 18 | [llvm-toolchain-18](https://launchpad.net/ubuntu/+source/llvm-toolchain-18) |
-| 17 | [llvm-toolchain-17](https://launchpad.net/ubuntu/+source/llvm-toolchain-17)  |
-| 16 | [llvm-toolchain-16](https://launchpad.net/ubuntu/+source/llvm-toolchain-16)  |
-| 15 | [llvm-toolchain-15](https://launchpad.net/ubuntu/+source/llvm-toolchain-15)  |
-| 14 | [llvm-toolchain-14](https://launchpad.net/ubuntu/+source/llvm-toolchain-14)  |
-| 13 | [llvm-toolchain-13](https://launchpad.net/ubuntu/+source/llvm-toolchain-13)  |
-| 12 | [llvm-toolchain-12](https://launchpad.net/ubuntu/+source/llvm-toolchain-12)  |
-| 11 | [llvm-toolchain-11](https://launchpad.net/ubuntu/+source/llvm-toolchain-11)  |
-| 10 | [llvm-toolchain-10](https://launchpad.net/ubuntu/+source/llvm-toolchain-10)  |
-| 9 | [llvm-toolchain-9](https://launchpad.net/ubuntu/+source/llvm-toolchain-9)  |
-| 8 | [llvm-toolchain-8](https://launchpad.net/ubuntu/+source/llvm-toolchain-8)  |
-| 7 | [llvm-toolchain-7](https://launchpad.net/ubuntu/+source/llvm-toolchain-7)  |
-| 6 | [llvm-toolchain-6.0](https://launchpad.net/ubuntu/+source/llvm-toolchain-6.0)  |
-| 5 | [llvm-toolchain-5.0](https://launchpad.net/ubuntu/+source/llvm-toolchain-5.0)  |
-| 4 | [llvm-toolchain-4.0](https://launchpad.net/ubuntu/+source/llvm-toolchain-4.0) |
-| 3.9 | [llvm-toolchain-3.9](https://launchpad.net/ubuntu/+source/llvm-toolchain-3.9) |
-| 3.8 | [llvm-toolchain-3.8](https://launchpad.net/ubuntu/+source/llvm-toolchain-3.8) |
-| 3.7 | [llvm-toolchain-3.7](https://launchpad.net/ubuntu/+source/llvm-toolchain-3.7) |
-| 3.6 | [llvm-toolchain-3.6](https://launchpad.net/ubuntu/+source/llvm-toolchain-3.6) |
-| 3.5 | [llvm-toolchain-3.5](https://launchpad.net/ubuntu/+source/llvm-toolchain-3.5) |
-| 3.4 | [llvm-toolchain-3.4](https://launchpad.net/ubuntu/+source/llvm-toolchain-3.4) |
-| 3.3 | [llvm-toolchain-3.3](https://launchpad.net/ubuntu/+source/llvm-toolchain-3.3) |
+| (close to the latest upstream snapshot) | {lpsrc}`llvm-toolchain-snapshot` | 
+| 20 | {lpsrc}`llvm-toolchain-20` |
+| 19 | {lpsrc}`llvm-toolchain-19` |
+| 18 | {lpsrc}`llvm-toolchain-18` |
+| 17 | {lpsrc}`llvm-toolchain-17`  |
+| 16 | {lpsrc}`llvm-toolchain-16`  |
+| 15 | {lpsrc}`llvm-toolchain-15`  |
+| 14 | {lpsrc}`llvm-toolchain-14`  |
+| 13 | {lpsrc}`llvm-toolchain-13`  |
+| 12 | {lpsrc}`llvm-toolchain-12`  |
+| 11 | {lpsrc}`llvm-toolchain-11`  |
+| 10 | {lpsrc}`llvm-toolchain-10`  |
+| 9 | {lpsrc}`llvm-toolchain-9`  |
+| 8 | {lpsrc}`llvm-toolchain-8`  |
+| 7 | {lpsrc}`llvm-toolchain-7`  |
+| 6 | {lpsrc}`llvm-toolchain-6.0`  |
+| 5 | {lpsrc}`llvm-toolchain-5.0`  |
+| 4 | {lpsrc}`llvm-toolchain-4.0` |
+| 3.9 | {lpsrc}`llvm-toolchain-3.9` |
+| 3.8 | {lpsrc}`llvm-toolchain-3.8` |
+| 3.7 | {lpsrc}`llvm-toolchain-3.7` |
+| 3.6 | {lpsrc}`llvm-toolchain-3.6` |
+| 3.5 | {lpsrc}`llvm-toolchain-3.5` |
+| 3.4 | {lpsrc}`llvm-toolchain-3.4` |
+| 3.3 | {lpsrc}`llvm-toolchain-3.3` |

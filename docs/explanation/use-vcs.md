@@ -79,7 +79,7 @@ See the reference documentation for the {command}`git config` command (including
 
 To collaborate with others using Git, connect your local Git instance to a remote Git-hosting provider. This can be a Git server instance provided by your organization, or one of the publicly available Git-hosting services, such as GitLab, GitHub, or Launchpad.
 
-A commonly used method of facilitating secure repository authentication is based on SSH keys. See [SSH Key Authentication](https://help.ubuntu.com/community/SSH/OpenSSH/Keys) for instructions on how to work with SSH keys on Ubuntu.
+A commonly used method of facilitating secure repository authentication is based on SSH keys. See {ref}`Ubuntu Server documentation on using SSH <openssh-server>` for instructions on how to work with SSH keys on Ubuntu.
 
 To generate and use an SSH key pair:
 
