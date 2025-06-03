@@ -14,12 +14,12 @@ to it.
 
 Each documentation page rendered on the web contains an **Edit this page** link in the top-right corner. Clicking this button leads you to the GitHub web editor where you can propose changes to the corresponding page.
 
-Remember to first check the [latest version](https://netplan.readthedocs.io/en/latest/) of our documentation and make your proposal based on that revision.
+Remember to first check the {ref}`latest version <ubuntu-for-developers>` of our documentation and make your proposal based on that revision.
 
 
 ## Contributing on GitHub
 
-To follow a Git development workflow, `checkout` the [Ubuntu for Developers repository](https://github.com/canonical/ubuntu-for-developers-docs/) and contribute your changes as [pull requests](https://github.com/canonical/netplan/pulls).
+To follow a Git development workflow, `checkout` the [Ubuntu for Developers repository](https://github.com/canonical/ubuntu-for-developers-docs/) and contribute your changes as [pull requests](https://github.com/canonical/ubuntu-for-developers-docs/pulls).
 
 
 ## Directory structure
@@ -82,7 +82,16 @@ Follow these steps to build the documentation on your local machine.
 
 ## Documentation format
 
-The Ubuntu for Developers documentation is built with Sphinx using the MyST flavor of the Markdown mark-up language. If you're new to Markdown or MyST, read our [MyST style guide](https://canonical-documentation-with-sphinx-and-readthedocscom.readthedocs-hosted.com/style-guide-myst/).
+The Ubuntu for Developers documentation is built with Sphinx using the MyST flavor of the Markdown mark-up language. If you're new to Markdown or MyST, read our {ref}`myst_style_guide`.
+
+
+## Launchpad links
+
+To shorten link syntax when linking to Ubuntu packages on Launchpad, use the predefined `lpsrc` role. For example, to generate a link to `https://launchpad.net/ubuntu/+source/package` with the link text of `package`, use:
+
+:::{code-block}
+{lpsrc}`package`
+:::
 
 
 ## Testing the documentation
