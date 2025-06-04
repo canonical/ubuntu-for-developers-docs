@@ -1,7 +1,7 @@
 # Ubuntu for Developers
 
 This repository contains the sources for the [Ubuntu Desktop as a Developer Platform](https://canonical-ubuntu-for-developers.readthedocs-hosted.com/) documentation. The docs are hosted on Read the Docs:
-[![Documentation Status](https://readthedocs.com/projects/canonical-ubuntu-for-developers/badge/?version=latest&token=ae4c8bdbc71f35a45391fafc678f48a9b47121fcba6ed3033520f60542114dd2)](https://canonical-ubuntu-for-developers.readthedocs-hosted.com/en/latest/?badge=latest)
+[![Documentation Status](https://app.readthedocs.com/projects/canonical-ubuntu-for-developers/badge/?version=latest](https://app.readthedocs.com/projects/canonical-ubuntu-for-developers/builds/?version__slug=latest)
 
 
 ## About the documentation
