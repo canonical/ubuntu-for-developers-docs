@@ -3,7 +3,7 @@
 
 ## Ubuntu OpenJDK (deb) packages
 
-| Ubuntu version | available Java versions | [java-common](https://launchpad.net/ubuntu/+source/java-common) version |
+| Ubuntu version | available Java versions | {lpsrc}`java-common` version |
 | --- | --- | --- |
 | 25.10 (Questing Quokka)     | 8, 11, 17, **21**, 24, 25 | 21 |
 | 25.04 (Plucky Puffin)       | 8, 11, 17, **21**, 24, 25 | 21 |
@@ -20,21 +20,21 @@
 
 | Java Version | Source package | 
 | --- | --- |
-| 25 | [openjdk-25](https://launchpad.net/ubuntu/+source/openjdk-25) |
-| 24 | [openjdk-24](https://launchpad.net/ubuntu/+source/openjdk-24) |
-| 23 | [openjdk-23](https://launchpad.net/ubuntu/+source/openjdk-23) |
-| 22 | [openjdk-22](https://launchpad.net/ubuntu/+source/openjdk-22) |
-| 21 | [openjdk-21](https://launchpad.net/ubuntu/+source/openjdk-21) |
-| 19 | [openjdk-19](https://launchpad.net/ubuntu/+source/openjdk-19) |
-| 18 | [openjdk-18](https://launchpad.net/ubuntu/+source/openjdk-18) |
-| 17 | [openjdk-17](https://launchpad.net/ubuntu/+source/openjdk-17) |
-| 16 | [openjdk-16](https://launchpad.net/ubuntu/+source/openjdk-16) |
-| 13 | [openjdk-13](https://launchpad.net/ubuntu/+source/openjdk-13) |
-| 11 | [openjdk-lts](https://launchpad.net/ubuntu/+source/openjdk-lts) |
-| 9 | [openjdk-9](https://launchpad.net/ubuntu/+source/openjdk-9) |
-| 8 | [openjdk-8](https://launchpad.net/ubuntu/+source/openjdk-8) |
-| 7 | [openjdk-7](https://launchpad.net/ubuntu/+source/openjdk-7) |
-| 6 | [openjdk-6](https://launchpad.net/ubuntu/+source/openjdk-6) |
+| 25 | {lpsrc}`openjdk-25` |
+| 24 | {lpsrc}`openjdk-24` |
+| 23 | {lpsrc}`openjdk-23` |
+| 22 | {lpsrc}`openjdk-22` |
+| 21 | {lpsrc}`openjdk-21` |
+| 19 | {lpsrc}`openjdk-19` |
+| 18 | {lpsrc}`openjdk-18` |
+| 17 | {lpsrc}`openjdk-17` |
+| 16 | {lpsrc}`openjdk-16` |
+| 13 | {lpsrc}`openjdk-13` |
+| 11 | {lpsrc}`openjdk-lts` |
+| 9 | {lpsrc}`openjdk-9` |
+| 8 | {lpsrc}`openjdk-8` |
+| 7 | {lpsrc}`openjdk-7` |
+| 6 | {lpsrc}`openjdk-6` |
 
 ## Ubuntu OpenJDK: {abbr}`CRaC (Coordinated Restore at Checkpoint)` (deb) packages
 
@@ -46,8 +46,8 @@
 
 | Java Version | Source package | 
 | --- | --- |
-| 21 | [openjdk-21-crac](https://launchpad.net/ubuntu/+source/openjdk-21-crac) |
-| 17 | [openjdk-17-crac](https://launchpad.net/ubuntu/+source/openjdk-17-crac) |
+| 21 | {lpsrc}`openjdk-21-crac` |
+| 17 | {lpsrc}`openjdk-17-crac` |
 
 
 ## GraalVM snap
