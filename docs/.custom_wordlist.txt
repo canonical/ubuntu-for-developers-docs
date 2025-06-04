@@ -104,6 +104,12 @@ llvm
 Tahr
 Xenial
 Xerus
+GraalVM
+CRaC
+crac
+JDK
+openjdk
+lts
 gcc
 golang
 fips
