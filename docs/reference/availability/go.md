@@ -36,7 +36,7 @@ The [`go` snap](https://snapcraft.io/go) let's you install the following Golang 
 
 ## Ubuntu Golang (deb) packages
 
-| Ubuntu version | available Golang versions | [golang-defaults](https://launchpad.net/ubuntu/+source/golang-defaults) version | 
+| Ubuntu version | available Golang versions | {lpsrc}`golang-defaults` version | 
 | --- | --- | --- |
 | 25.10 (Questing Quokka)     | 1.23, **1.24** | 1.24 |
 | 25.04 (Plucky Puffin)       | 1.23, **1.24** | 1.24 |
@@ -53,17 +53,17 @@ The [`go` snap](https://snapcraft.io/go) let's you install the following Golang 
 
 | Golang version | Source package | 
 |----------------|----------------|
-| 1.24 | [golang-1.24](https://launchpad.net/ubuntu/+source/golang-1.24) |
-| 1.23 | [golang-1.23](https://launchpad.net/ubuntu/+source/golang-1.23) |
-| 1.22 | [golang-1.22](https://launchpad.net/ubuntu/+source/golang-1.22) |
-| 1.21 | [golang-1.21](https://launchpad.net/ubuntu/+source/golang-1.21) |
-| 1.20 | [golang-1.20](https://launchpad.net/ubuntu/+source/golang-1.20) |
-| 1.18 | [golang-1.18](https://launchpad.net/ubuntu/+source/golang-1.18) |
-| 1.17 | [golang-1.17](https://launchpad.net/ubuntu/+source/golang-1.17) |
-| 1.16 | [golang-1.16](https://launchpad.net/ubuntu/+source/golang-1.16) |
-| 1.14 | [golang-1.14](https://launchpad.net/ubuntu/+source/golang-1.14) |
-| 1.13 | [golang-1.13](https://launchpad.net/ubuntu/+source/golang-1.13) |
-| 1.10 | [golang-1.10](https://launchpad.net/ubuntu/+source/golang-1.10) |
-| 1.9 | [golang-1.9](https://launchpad.net/ubuntu/+source/golang-1.9) |
-| 1.8 | [golang-1.8](https://launchpad.net/ubuntu/+source/golang-1.8) |
-| 1.6 | [golang-1.6](https://launchpad.net/ubuntu/+source/golang-1.6) |
+| 1.24 | {lpsrc}`golang-1.24` |
+| 1.23 | {lpsrc}`golang-1.23` |
+| 1.22 | {lpsrc}`golang-1.22` |
+| 1.21 | {lpsrc}`golang-1.21` |
+| 1.20 | {lpsrc}`golang-1.20` |
+| 1.18 | {lpsrc}`golang-1.18` |
+| 1.17 | {lpsrc}`golang-1.17` |
+| 1.16 | {lpsrc}`golang-1.16` |
+| 1.14 | {lpsrc}`golang-1.14` |
+| 1.13 | {lpsrc}`golang-1.13` |
+| 1.10 | {lpsrc}`golang-1.10` |
+| 1.9 | {lpsrc}`golang-1.9` |
+| 1.8 | {lpsrc}`golang-1.8` |
+| 1.6 | {lpsrc}`golang-1.6` |
