@@ -25,6 +25,7 @@ This documentation provides guidance for using the [Ubuntu Desktop](https://ubun
 | GCC | {ref}`Install GCC <install-gcc>` | {ref}`Develop with GCC <use-gcc>` |
 | .NET | {ref}`Install .NET <install-dotnet>` | {ref}`Develop with .NET <use-dotnet>` |
 | Java | {ref}`Install Java <install-java>` | {ref}`Develop with Java <use-java>` |
+| Powershell | {ref}`Install Powershell <install-powershell>` | {ref}`Use Powershell <use-powershell>` |
 :::
 
 For each of the toolchains, there is a {ref}`tutorial <tutorials>` that shows a quick path to a 'Hello, world!' program and demonstrates the use of supporting tooling, including debuggers and linters, on Ubuntu Desktop.
