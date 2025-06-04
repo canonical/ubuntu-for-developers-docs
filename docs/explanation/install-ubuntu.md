@@ -20,7 +20,7 @@ Use Autoinstall to configure a custom installation of the system that is easy to
 
 ### Authentication with Active Directory
 
-The **Create login details** screen of the Ubuntu Desktop installer allows to link the system to an existing Active Directory domain and use a domain account for logging in. Refer to [Join machine to AD during installation](https://documentation.ubuntu.com/adsys/en/stable/how-to/join-ad-installation/#join-at-installation-time) for detailed instructions.
+The **Create login details** screen of the Ubuntu Desktop installer allows to link the system to an existing Active Directory domain and use a domain account for logging in. Refer to {external+adsys:doc}`Join machine to AD during installation <how-to/join-ad-installation>` for detailed instructions.
 
 
 ## Post installation tasks

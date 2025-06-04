@@ -120,10 +120,10 @@ Additionally, .NET 10 will be available for the `ppc64el` and `s390x` architectu
 | .NET Version | Source package | End of Life (Upstream) | 
 |--------------|----------------|------------------------|
 | .NET 10 preview | [dotnet10](https://launchpad.net/~dotnet/+archive/ubuntu/previews) | (not yet supported) |
-| .NET 9 (STS) | [dotnet9](https://launchpad.net/ubuntu/+source/dotnet9) | 12 May 2026 |
-| .NET 8 (LTS) | [dotnet8](https://launchpad.net/ubuntu/+source/dotnet8) | 10 November 2026 |
-| .NET 7 (STS) | [dotnet7](https://launchpad.net/ubuntu/+source/dotnet7) | 14 May 2024 |
-| .NET 6 (LTS) | [dotnet6](https://launchpad.net/ubuntu/+source/dotnet6) | 12 November 2024 |
+| .NET 9 (STS) | {lpsrc}`dotnet9` | 12 May 2026 |
+| .NET 8 (LTS) | {lpsrc}`dotnet8` | 10 November 2026 |
+| .NET 7 (STS) | {lpsrc}`dotnet7` | 14 May 2024 |
+| .NET 6 (LTS) | {lpsrc}`dotnet6` | 12 November 2024 |
 
 LTS -- Long Term Support (Upstream patches bugs for 36 months after release)    
 STS -- Standard Term Support (Upstream patches bugs for 18 month after release)
