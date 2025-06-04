@@ -104,5 +104,6 @@ llvm
 Tahr
 Xenial
 Xerus
+gcc
 golang
 fips
