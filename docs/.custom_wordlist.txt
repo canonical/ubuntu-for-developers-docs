@@ -110,5 +110,6 @@ crac
 JDK
 openjdk
 lts
+gcc
 golang
 fips
