@@ -30,7 +30,7 @@ See the [user guide for rustup](https://rust-lang.github.io/rustup/concepts/chan
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
 
-| Rust Version | Source package | 
+| Rust version | Source package | 
 |--------------|----------------|
 | 1.84 | {lpsrc}`rustc-1.84` |
 | 1.83 | {lpsrc}`rustc-1.83` |
