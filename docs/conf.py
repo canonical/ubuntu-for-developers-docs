@@ -188,6 +188,7 @@ extensions = [
     "sphinx.ext.intersphinx",
     "sphinxcontrib.mermaid",
     "sphinx-prompt",
+    "sphinx.ext.extlinks",
 ]
 
 myst_fence_as_directive = ["mermaid"]
@@ -226,6 +227,22 @@ rst_prolog = """
 .. role:: center
    :class: align-center
 """
+
+
+# Allow for use of link substitutions
+extlinks = {"lpsrc": ("https://launchpad.net/ubuntu/+source/%s", "%s")}
+
+
+# Define intersphinx mapping
+intersphinx_mapping = {
+    "ubuntu-server": ("https://documentation.ubuntu.com/server/", None),
+    "adsys": ("https://documentation.ubuntu.com/adsys/stable/", None),
+    "starter-pack": (
+        "https://canonical-starter-pack.readthedocs-hosted.com/latest/",
+        None,
+    ),
+}
+
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
 

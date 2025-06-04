@@ -156,7 +156,7 @@ TODO
 Install the `dotnet` snap:
 
 ```text
-sudo snap install --classic --edge dotnet
+sudo snap install --classic dotnet
 ```
 
 Now you are effectively done. If you run the `dotnet` command without any .NET component installed, the snap automatically installs the latest .NET LTS SDK before proceeding with the invoked command. 
