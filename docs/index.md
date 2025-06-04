@@ -1,3 +1,4 @@
+(ubuntu-for-developers)=
 # Ubuntu for Developers
 
 :::{toctree}
