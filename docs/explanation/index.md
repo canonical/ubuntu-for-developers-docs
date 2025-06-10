@@ -28,10 +28,11 @@ use-vcs
 
 ## .NET basics
 
-.NET history and how it impacts the toolchain on Ubuntu.
+The history of .NET, its impact on the toolchain in Ubuntu, and key concepts in debugging with .NET.
 
 :::{toctree}
 :maxdepth: 1
 
 dotnet-introduction
+debugging-with-dotnet
 :::

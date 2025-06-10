@@ -713,6 +713,7 @@ Microsoft.AspNetCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft
 Microsoft.NETCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.NETCore.App]
 ```
 
+(setting-up-dotnet-ide)=
 ## Setting up a .NET IDE
 
 Many editors and IDEs (Integrated Development Environment) come with various degrees of support for .NET workloads. Here are some popular ones:
