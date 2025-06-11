@@ -51,7 +51,7 @@ The execution environment of .NET that manages memory, handles garbage collectio
 
 The .NET host (the `dotnet` command) contains the logic to resolve and select the right version of the .NET SDK or runtime to use. This has the advantage that you can use one command to interact with multiple versions of .NET.
 
-
+(nuget-package-manager)=
 ## NuGet Package Manager
 
 ```{figure} /images/NuGet_project_logo.svg.png

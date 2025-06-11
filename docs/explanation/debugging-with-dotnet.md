@@ -7,39 +7,34 @@ There are many ways to debug a piece of code. Still, the most common one is to u
 (pdb-files)=
 ## PDB files
 
-PDB files, which stand for Program Database files, are essential for debugging .NET applications. These files hold debugging and project state information that allow a debugger to link the compiled code back to the original source code.
+`dotnet build` produces two key artifacts, an application binary (`.exe` or `.dll`) and a debugging "symbol" file (`.pdb`). PDB files, which stand for Program Database files, are essential for debugging .NET applications. Critically, PDB files contain a mapping of each operation in the application binaries to the source lines that produced them, including the names of variables, function names, and the layout of data structures, which the debugger uses to provide a meaningful debugging experience.
 
-Without them, when an error occurs, the debugger can only show the machine code being executed, not the original lines of source code that caused the issue. This makes it incredibly challenging to understand and fix bugs. PDB files contain vital information such as the mapping of compiled instructions to source lines, the names of variables, function names, and the layout of data structures, which the debugger uses to provide a meaningful debugging experience. Without these debug symbols, the debugger treats functions as black boxes, only allowing stepping over them, not into them, as it lacks the necessary information to trace their internal execution.
+Without them, the debugger treats functions as black boxes, only allowing stepping over them, not into them, as it lacks the necessary information to trace their internal execution. Also, when an error occurs, the debugger can only show the machine code being executed, not the original lines of source code that caused the issue. This makes it incredibly challenging to understand and fix bugs.
 
-To obtain PDB files for their own software, developers need to ensure they are generated during the build process. Typically, when compiling a .NET application in debug mode, PDB files are automatically created. However, in release builds, they can be omitted to reduce file size and make it more difficult to reverse engineer the code.
+To obtain PDB files for their own software, developers need to ensure they are generated during the build process, as shown in the {ref}`Hello World example<publishing-dotnet-project>`. Typically, when compiling a .NET application, PDB files are automatically created. However, in release builds, they can be omitted to reduce the overall program size.
 
-Building an application with the .NET CLI should output the program’s PDB files by default, regardless of the build configuration. As an example, running `dotnet build` for an application called “HelloWorld” should output the program’s PDB file under `bin/Debug/HelloWorld.pdb` relative to the project root directory.
+On the other hand, developers typically rely on package managers to obtain both libraries and symbols. For .NET projects, {ref}`NuGet<nuget-package-manager>` is the primary source for packages, and many package authors publish symbol packages along with their library packages. These symbol packages, ending with `.snupkg`, contain the PDB files needed for debugging.
 
-On the other hand, to obtain PDB files for third-party libraries, developers often rely on the package managers through which those libraries are distributed. For .NET projects, NuGet.org is the primary source for packages, and many package authors publish symbol packages along with their library packages. These symbol packages, ending with ".snupkg", contain the PDB files needed for debugging.
-
-NuGet has a centralized repository called the NuGet Symbol Server where all these symbols become available on-demand, and all the major .NET code editors and IDEs support pulling symbols from this server during debug sessions.
+NuGet has a centralized repository called the NuGet Symbol Server where symbols are available on-demand. .NET code editors and IDEs typically support pulling symbols from this server to enable a good debugging experience.
 
 (dotnet-debug-symbols-packages)=
 ## .NET Debug Symbols packages
 
 When stepping into framework functions provided by .NET in a debug session, the debugger needs to have access to the PDB files that contain debug symbols for the libraries that define these functions. For that, .NET Debug Symbols packages are available in the Ubuntu archive starting with .NET 8. These packages contain PDB debug symbols for the .NET Runtime, the ASP\.NET Core Runtime, and the .NET SDK DLLs.
 
-| .NET Version     | Symbol packages available                                                         |
-|------------------|-----------------------------------------------------------------------------------|
-| .NET 8           | `dotnet-sdk-dbg-8.0`<br/>`dotnet-runtime-dbg-8.0`<br/>`aspnetcore-runtime-dbg-8.0`|
-| .NET 9           | `dotnet-sdk-dbg-9.0`<br/>`dotnet-runtime-dbg-9.0`<br/>`aspnetcore-runtime-dbg-9.0`|
+See available {ref}`dotnet-debug-packages`.
 
 ```{important}
 The symbols available in these packages are meant to be used only with the .NET builds available through the Ubuntu archive packages, as they only strictly match the DLLs in these builds.
 ```
 
-The .NET Debug Symbols packages can be installed with `apt` just like any other regular Ubuntu package, e.g.
+The .NET Debug Symbols packages can be installed with `apt` just like any other regular Ubuntu package, for example:
 
 ```none
 sudo apt install dotnet-sdk-dbg-9.0 dotnet-runtime-dbg-9.0 aspnetcore-runtime-dbg-9.0
 ```
 
-It is also possible to install them automatically when installing the .NET SDK and Runtime packages by including `--install-suggests` in the install command, e.g.
+It is also possible to install them automatically when installing the .NET SDK and Runtime packages by including `--install-suggests` with the `install` command:
 
 ```none
 sudo apt install dotnet9 --install-suggests
