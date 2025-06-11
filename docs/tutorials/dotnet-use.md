@@ -117,7 +117,7 @@ The actual output you see depends on the programming language chosen because the
 (publishing-dotnet-project)=
 ## Publishing the .NET project
 
-The `dotnet run` command is useful for development when you have a .NET SDK installed. But realistically, you want to distribute your application and run it on a system where just a .NET runtime is installed. To do that, use the `dotnet publish command`:
+The `dotnet run` command is useful for development when you have a .NET SDK installed. But realistically, you want to distribute your application and run it on a system where just a .NET runtime is installed. To do that, use the `dotnet publish` command:
 
 ```{terminal}
 :dir: ~/HelloWorld
@@ -137,7 +137,7 @@ As shown by the terminal output, in this case (using .NET 9) the build output is
 dotnet HelloWorld.dll
 ```
 
-This directory also contains a `HelloWorld` directory. This is a wrapper that is able to search for a compatible .NET runtime on the target system and use that to invoke the `HelloWorld.dll` binary. So, you can also run your application just by executing:
+This directory also contains a `HelloWorld` file. This is a wrapper that is able to search for a compatible .NET runtime on the target system and use that to invoke the `HelloWorld.dll` binary. So, you can also run your application just by executing:
 
 ```none
 HelloWorld
