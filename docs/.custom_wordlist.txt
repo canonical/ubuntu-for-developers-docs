@@ -7,6 +7,8 @@ CMake
 Codium
 Ctrl
 DataGrip
+DLL
+DLLs
 ECMA
 Fortran
 Fosstodon
@@ -15,6 +17,7 @@ GitLab
 GoLand
 Golang
 Gradle
+HelloWorld
 I/O
 IDE
 IDEs
@@ -69,6 +72,7 @@ gitworkflows
 gopls
 gprof
 https
+incrementing
 integrations
 io
 ipdb
@@ -91,6 +95,7 @@ runtimes
 rustc
 rustup
 snapcraft
+snupkg
 symlink
 symlinks
 toolchain
@@ -98,6 +103,8 @@ toolchains
 tox
 ubuntu
 unformatted
+unhandled
+vlatest
 wasm
 Quokka
 llvm

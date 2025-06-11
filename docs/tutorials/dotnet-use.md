@@ -195,7 +195,7 @@ Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range.
    at Program.<Main>$(String[] args) in /home/ubuntu/HelloWorld/Program.cs:line 8
 ```
 
-A couple problems appeard:
+A couple problems appeared:
 
 1. We see that the first name of the list, Alice, is skipped, followed by a “Hello, Bob”, then “Hello, Charlie”.
 2. Right after that, an unhandled exception of type `System.ArgumentOutOfRangeException` happens. According to the error message, we are trying to access an index that does not exist in the collection.
