@@ -35,3 +35,14 @@ use-vcs
 
 dotnet-introduction
 :::
+
+
+## Powershell basics
+
+Powershell history, differences to Windows Powershell and fundamental concepts.
+
+:::{toctree}
+:maxdepth: 1
+
+powershell-introduction
+:::

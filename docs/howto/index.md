@@ -12,6 +12,7 @@ Install and set up Rust <rust-setup>
 Install and set up GCC <gcc-setup>
 Install and set up .NET <dotnet-setup>
 Install and set up Java <java-setup>
+Install and set up Powershell <powershell-setup.md>
 :::
 
 Follow up with 'Hello, world!' {ref}`tutorials` for each of the toolchains.

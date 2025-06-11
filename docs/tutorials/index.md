@@ -14,6 +14,7 @@ Develop with Rust <rust-use>
 Develop with GCC <gcc-use>
 Develop with .NET <dotnet-use>
 Develop with Java <java-use>
+Use Powershell <powershell-use>
 :::
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.
