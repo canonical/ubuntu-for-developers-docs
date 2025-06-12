@@ -102,6 +102,7 @@ toolchain
 toolchains
 tox
 ubuntu
+uncheck
 unformatted
 unhandled
 vlatest

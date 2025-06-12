@@ -309,6 +309,12 @@ Let’s set a breakpoint at `Console.WriteLine` on line 12. Make sure to disable
    :alt: The launch profile is open with the line disabling JustMyCode highlighted
 ```
 
+Alternatively, you can also disable {guilabel}`Just My Code` globally in the VS Code {guilabel}`Settings`. Look for the `csharp.debug.justMyCode` option and uncheck it.
+
+```{figure} /images/debug-dotnet/16-justmycode-setting.png
+   :alt: The launch profile is open with the line disabling JustMyCode highlighted
+```
+
 Now, run the debugger:
 
 ```{figure} /images/debug-dotnet/13-writeline-breakpoint.png
