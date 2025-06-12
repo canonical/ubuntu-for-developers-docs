@@ -11,9 +11,9 @@ There are many ways to debug a piece of code. Still, the most common one is to u
 
 Without them, the debugger treats functions as black boxes, only allowing stepping over them, not into them, as it lacks the necessary information to trace their internal execution. Also, when an error occurs, the debugger can only show the machine code being executed, not the original lines of source code that caused the issue. This makes it incredibly challenging to understand and fix bugs.
 
-To obtain PDB files for their own software, developers need to ensure they are generated during the build process, as shown in the {ref}`Hello World example<publishing-dotnet-project>`. Typically, when compiling a .NET application, PDB files are automatically created. However, in release builds, they can be omitted to reduce the overall program size.
+To obtain PDB files for their own software, developers need to ensure they are generated during the build process, as shown in the {ref}`Hello World example <publishing-dotnet-project>`. Typically, when compiling a .NET application, PDB files are automatically created. However, in release builds, they can be omitted to reduce the overall program size.
 
-On the other hand, developers typically rely on package managers to obtain both libraries and symbols. For .NET projects, {ref}`NuGet<nuget-package-manager>` is the primary source for packages, and many package authors publish symbol packages along with their library packages. These symbol packages, ending with `.snupkg`, contain the PDB files needed for debugging.
+On the other hand, developers typically rely on package managers to obtain both libraries and symbols. For .NET projects, {ref}`NuGet <nuget-package-manager>` is the primary source for packages, and many package authors publish symbol packages along with their library packages. These symbol packages, ending with `.snupkg`, contain the PDB files needed for debugging.
 
 NuGet has a centralized repository called the NuGet Symbol Server where symbols are available on-demand. .NET code editors and IDEs typically support pulling symbols from this server to enable a good debugging experience.
 

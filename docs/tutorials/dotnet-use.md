@@ -143,7 +143,7 @@ This directory also contains a `HelloWorld` file. This is a wrapper that is able
 HelloWorld
 ```
 
-Finally, there is also a file called `HelloWorld.pdb` available in the publish directory. This is the {ref}`PDB debug symbol file<pdb-files>` for your application, which is not a required file to run the application, but is useful when an error happens and you need to debug your code.
+Finally, there is also a file called `HelloWorld.pdb` available in the publish directory. This is the {ref}`PDB debug symbol file <pdb-files>` for your application, which is not a required file to run the application, but is useful when an error happens and you need to debug your code.
 
 ## Debugging the .NET project
 
@@ -301,7 +301,7 @@ When debugging, stepping into functions within your own code is straightforward,
 
 This is the case if you want to step into `Console.WriteLine` itself, for example. Clicking {guilabel}`Step Into` when the debugger hits that line simply steps over it, as the debugger does not have the necessary symbols for the library that provides that function.
 
-However, if you install .NET from the Ubuntu archive packages, you can also install matching {ref}`.NET debug symbols packages<dotnet-debug-symbols-packages>` that contain PDB files for the .NET SDK, Runtime, and ASP\.NET Core Runtime. With these packages installed, debuggers are able to step into functions defined within .NET itself.
+However, if you install .NET from the Ubuntu archive packages, you can also install matching {ref}`.NET debug symbols packages <dotnet-debug-symbols-packages>` that contain PDB files for the .NET SDK, Runtime, and ASP\.NET Core Runtime. With these packages installed, debuggers are able to step into functions defined within .NET itself.
 
 Let’s set a breakpoint at `Console.WriteLine` on line 12. Make sure to disable {guilabel}`Just My Code` in your debug launcher; otherwise, the debugger would not step into framework code. To do that, add `"justMyCode": false` to your `launch.json` profile.
 
