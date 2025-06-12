@@ -36,7 +36,7 @@ The .NET Debug Symbols packages can be installed with `apt` just like any other 
 sudo apt install dotnet-sdk-dbg-9.0 dotnet-runtime-dbg-9.0 aspnetcore-runtime-dbg-9.0
 ```
 
-It is also possible to install them automatically when installing the .NET SDK and Runtime packages by including `--install-suggests` with the `install` command:
+It is also possible to install them automatically when installing the .NET SDK and Runtime packages by including `--install-suggests` in the `apt install` command:
 
 ```none
 sudo apt install dotnet9 --install-suggests
