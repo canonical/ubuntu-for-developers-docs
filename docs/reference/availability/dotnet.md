@@ -130,6 +130,46 @@ STS -- Standard Term Support (Upstream patches bugs for 18 month after release)
 
 See: {ref}`dotnet-installation-ubuntu-packages`
 
+(dotnet-debug-packages)=
+### .NET Debug Symbols packages
+
+:::{list-table}
+   :header-rows: 1
+
+  * - .NET Version
+    - available Debug Symbols packages
+  * - .NET 8
+    - ```text
+      dotnet-sdk-dbg-8.0
+      ```
+      ```text
+      dotnet-runtime-dbg-8.0
+      ```
+      ```text
+      aspnetcore-runtime-dbg-8.0
+      ```
+  * - .NET 9
+    - ```text
+      dotnet-sdk-dbg-9.0
+      ```
+      ```text
+      dotnet-runtime-dbg-9.0
+      ```
+      ```text
+      aspnetcore-runtime-dbg-9.0
+      ```
+  * - .NET 10
+    - ```text
+      dotnet-sdk-dbg-10.0
+      ```
+      ```text
+      dotnet-runtime-dbg-10.0
+      ```
+      ```text
+      aspnetcore-runtime-dbg-10.0
+      ```
+:::
+
 (dotnet-backports-ppa)=
 ### Backports PPA
 
