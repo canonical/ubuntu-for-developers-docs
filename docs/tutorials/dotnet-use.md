@@ -153,7 +153,7 @@ Regardless of your choice, once you learn to use a debugger in one environment, 
 
 ### Preparing a debugging session
 
-First, install Visual Studio Code.
+First, install Visual Studio Code:
 
 ```none
 sudo snap install --classic code
@@ -237,7 +237,7 @@ Another great use of debuggers is the ability to step through code line by line.
 
 To set a breakpoint in Visual Studio Code, hover the mouse over the blank space to the left of the line numbers and click the line you want to set the breakpoint in. A red dot should appear indicating that a breakpoint is now set.
 
-Let's go ahead and set a breakpoint on line 6.
+Let's go ahead and set a breakpoint on line 6:
 
 ```{figure} /images/debug-dotnet/06-breakpoint-set.png
    :alt: A breakpoint is set on the line that contains the WriteLine function
@@ -303,13 +303,13 @@ This is the case if you want to step into `Console.WriteLine` itself, for exampl
 
 However, if you install .NET from the Ubuntu archive packages, you can also install matching {ref}`.NET debug symbols packages <dotnet-debug-symbols-packages>` that contain PDB files for the .NET SDK, Runtime, and ASP\.NET Core Runtime. With these packages installed, debuggers are able to step into functions defined within .NET itself.
 
-Let’s set a breakpoint at `Console.WriteLine` on line 12. Make sure to disable {guilabel}`Just My Code` in your debug launcher; otherwise, the debugger would not step into framework code. To do that, add `"justMyCode": false` to your `launch.json` profile.
+Let’s set a breakpoint at `Console.WriteLine` on line 12. Make sure to disable {guilabel}`Just My Code` in your debug launcher; otherwise, the debugger would not step into framework code. To do that, add `"justMyCode": false` to your `launch.json` profile:
 
 ```{figure} /images/debug-dotnet/12-disable-justmycode.png
    :alt: The launch profile is open with the line disabling JustMyCode highlighted
 ```
 
-Now, run the debugger.
+Now, run the debugger:
 
 ```{figure} /images/debug-dotnet/13-writeline-breakpoint.png
    :alt: The debugger steps into SayHello and lands in the WriteLine function call
@@ -321,7 +321,7 @@ If we step **into** that function, or {kbd}`F11`, we go into the `Concat` functi
    :alt: The debugger steps into the first line of the Concat function of .NET
 ```
 
-Let’s go ahead and step out of this function, since we want to look into the implementation of `Console.WriteLine` instead. Click {guilabel}`Step Out`, or {kbd}`Shift + F11`, and the debugger takes us back to `Console.WriteLine` again – stepping out means “execute the rest of this function and go back to where its value is returned”.
+Let’s go ahead and step out of this function, since we want to look into the implementation of `Console.WriteLine` instead. Click {guilabel}`Step Out`, or {kbd}`Shift+F11`, and the debugger takes us back to `Console.WriteLine` again – stepping out means “execute the rest of this function and go back to where its value is returned”.
 
 Now, {guilabel}`Step Into` it again, and the debugger should take us right to the implementation of the `WriteLine` function itself. 
 

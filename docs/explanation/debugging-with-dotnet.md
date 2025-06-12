@@ -1,13 +1,15 @@
 # Debugging with .NET
 
-Sometimes, the code you write may not behave as intended, and the process of identifying and removing errors, also known as “bugs”, from your code is called **debugging**. It involves systematically testing, analyzing, and modifying code to ensure it functions correctly.
-
-There are many ways to debug a piece of code. Still, the most common one is to use a software called a **debugger**, which allows you to go through each line of code and understand what happens at each step, such as which values are stored in variables and which path the execution is taking whenever it hits a conditional statement.
+This article introduces you to key concepts when debugging .NET applications on Ubuntu.
 
 (pdb-files)=
 ## PDB files
 
-`dotnet build` produces two key artifacts, an application binary (`.exe` or `.dll`) and a debugging "symbol" file (`.pdb`). PDB files, which stand for Program Database files, are essential for debugging .NET applications. Critically, PDB files contain a mapping of each operation in the application binaries to the source lines that produced them, including the names of variables, function names, and the layout of data structures, which the debugger uses to provide a meaningful debugging experience.
+When building a .NET project, two key artifacts are produced:
+- an application binary (`.exe` or `.dll`) and
+- a **debugging "symbol" file (`.pdb`)**.
+
+PDB files, which stand for *Program Database files*, are essential for debugging .NET applications. Critically, PDB files contain a mapping of each operation in the application binaries to the source lines that produced them, including the names of variables, function names, and the layout of data structures, which the debugger uses to provide a meaningful debugging experience.
 
 Without them, the debugger treats functions as black boxes, only allowing stepping over them, not into them, as it lacks the necessary information to trace their internal execution. Also, when an error occurs, the debugger can only show the machine code being executed, not the original lines of source code that caused the issue. This makes it incredibly challenging to understand and fix bugs.
 
@@ -25,7 +27,7 @@ When stepping into framework functions provided by .NET in a debug session, the 
 See available {ref}`dotnet-debug-packages`.
 
 ```{important}
-The symbols available in these packages are meant to be used only with the .NET builds available through the Ubuntu archive packages, as they only strictly match the DLLs in these builds.
+The symbols available in these packages are meant to be used only with the .NET builds available through the Ubuntu packages, as they only strictly match the DLLs in these builds.
 ```
 
 The .NET Debug Symbols packages can be installed with `apt` just like any other regular Ubuntu package, for example:
