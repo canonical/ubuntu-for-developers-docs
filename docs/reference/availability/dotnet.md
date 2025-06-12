@@ -41,7 +41,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
   - ```none
     runtime
     ```
-  - let's you to run .NET apps (without the components needed to run ASP\.NET Core apps)
+  - let's you run .NET apps (without the components needed to run ASP\.NET Core apps)
 ````
 
 (dotnet-snap-versions)=
