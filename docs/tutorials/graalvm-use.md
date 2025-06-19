@@ -62,7 +62,7 @@ If you are building a Gradle project, use this command:
 
 The last step builds the application using the typical Maven/Gradle workflow, subsequently invoking GraalVM native-image to compile it into a native executable. For a Maven project, the native executable will be created under the target directory in the project. The application may be launched by simply executing this file on the command line.
 
-[This](https://drive.google.com/file/d/1ZqSMvyhjia4T5MuJa1IcbWNDDkC5xJbD/view?usp=sharing) screen-cast captures the workflow mentioned above for the Spring Boot Pet Clinic sample application.
+[This](https://drive.google.com/file/d/1ZqSMvyhjia4T5MuJa1IcbWNDDkC5xJbD/view?usp=sharing) screen-cast captures the workflow mentioned above for the [Spring Boot Pet Clinic](https://github.com/spring-projects/spring-petclinic) sample application.
 
 ::: {note}
 If you have Maven or Gradle installed, you may use `mvn` or `gradle` command in the last step, instead of the wrapper scripts, `mvnw` and `gradlew`, used here.
