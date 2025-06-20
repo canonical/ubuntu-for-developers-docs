@@ -15,6 +15,7 @@ Develop with GCC <gcc-use>
 Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Native compile with GraalVM <graalvm-use>
+Checkpoint/Restore with OpenJDK CRaC <crac-use>
 :::
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.
