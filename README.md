@@ -1,6 +1,6 @@
 # Ubuntu for Developers
 
-This repository contains the sources for the [Ubuntu Desktop as a Developer Platform](https://canonical-ubuntu-for-developers.readthedocs-hosted.com/) documentation. The docs are hosted on Read the Docs:
+This repository contains the sources for the [Ubuntu for Developers](https://documentation.ubuntu.com/ubuntu-for-developers/) documentation. The docs are hosted on Read the Docs:
 [![Documentation Status](https://app.readthedocs.com/projects/canonical-ubuntu-for-developers/badge/?version=latest)](https://app.readthedocs.com/projects/canonical-ubuntu-for-developers/builds/?version__slug=latest)
 
 
@@ -44,4 +44,4 @@ To contribute to the documentation, follow these steps to get started:
 
 6. Push your contribution to GitHub and create a pull request against the original repository.
 
-For more details, refer to the [comprehensive contribution guide](https://canonical-ubuntu-for-developers.readthedocs-hosted.com/en/latest/howto/contribute-docs/).
+For more details, refer to the [comprehensive contribution guide](https://documentation.ubuntu.com/ubuntu-for-developers/howto/contribute-docs/).
