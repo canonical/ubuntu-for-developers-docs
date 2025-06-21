@@ -189,6 +189,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinx-prompt",
     "sphinx.ext.extlinks",
+    "sphinx_sitemap",
 ]
 
 myst_fence_as_directive = ["mermaid"]
@@ -242,6 +243,12 @@ intersphinx_mapping = {
         None,
     ),
 }
+
+
+## Sitemap configuration
+
+html_baseurl = "https://documentation.ubuntu.com/ubuntu-for-developers/"
+#sitemap_url_scheme = "{link}"
 
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
