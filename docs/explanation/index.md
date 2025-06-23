@@ -36,3 +36,14 @@ The history of .NET, its impact on the toolchain in Ubuntu, and key concepts in 
 dotnet-introduction
 debugging-with-dotnet
 :::
+
+
+## Powershell basics
+
+Powershell history, differences to Windows Powershell and fundamental concepts.
+
+:::{toctree}
+:maxdepth: 1
+
+powershell-introduction
+:::
