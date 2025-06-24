@@ -187,7 +187,6 @@ extensions = [
     "sphinx_last_updated_by_git",
     "sphinx.ext.intersphinx",
     "sphinxcontrib.mermaid",
-    "sphinx_prompt",
     "sphinx.ext.extlinks",
     "sphinx_sitemap",
 ]
