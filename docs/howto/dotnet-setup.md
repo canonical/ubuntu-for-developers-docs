@@ -24,7 +24,6 @@ It's recommended to install the .NET toolchain from.**Do not mix multiple instal
 With the many options available to install .NET on Ubuntu, it can seem overwhelming at first, which method to choose. Below you find an overview and more details for specific cases that should help you select an installation method:
 
 ```{mermaid}
-:zoom:
 
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD
