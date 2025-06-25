@@ -1,6 +1,6 @@
 **Registering the .NET backports PPA**
 
-This version of .NET is not available in the Ubuntu archive because Canonical is not committed to maintaining this version of .NET for the lifetime of this Ubuntu version. But Canonical maintains builds in the .NET backports PPA. The maintenance is on a best-effort basis and limited to the upstream lifetime of this .NET version: [.NET Support Policy](https://dotnet.microsoft.com/en-us/platform/support/policy).
+This version of .NET is not available in the Ubuntu archive because Canonical is not committed to maintaining this version of .NET for the lifetime of this Ubuntu version. But Canonical maintains builds in the {ref}`.NET backports PPA <dotnet-backports-ppa>`. The maintenance is on a best-effort basis and limited to the upstream lifetime of this .NET version: [.NET Support Policy](https://dotnet.microsoft.com/en-us/platform/support/policy).
 
 Add the .NET backports PPA as a source for APT:
 
