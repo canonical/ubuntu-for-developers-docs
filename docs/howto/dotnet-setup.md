@@ -28,11 +28,11 @@ With the many options available to install .NET on Ubuntu, it can seem overwhelm
 %%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart TD
     NeedNewerFeatureBands{{"`Do you need a higher<br>SDK feature band?<br>(higher than x.x.1xx)`"}}
-    NeedPreviewsOrOlderVersions{{"`Do you need preview or older (unsupported) versions?`"}}
+    NeedOlderVersions{{"`Do you need older (unsupported) versions?`"}}
     WhichArch1{{"`What is the architecture of your system you want to install .NET on?`"}}
     WhichArch2{{"`What is the architecture of your system you want to install .NET on?`"}}
     WhichArch3{{"`What is the architecture of your system you want to install .NET on?`"}}
-    NeedAPT{{"`Do you prefer to use APT?`"}}
+    NeedAPTOrPreview{{"`Do you prefer to use APT<br>*or*<br>need a preview version?`"}}
     UsesAmd64JammyOrNewer{{"`Do you want to install .NET on Ubuntu 22.04 or newer?`"}}
     UsesArm64JammyOrNewer{{"`Do you want to install .NET on Ubuntu 22.04 or newer?`"}}
     UsesS390xOrPowerJammyOrNewer{{"`Do you want to install .NET on Ubuntu 22.04 or newer?`"}}
@@ -49,13 +49,13 @@ flowchart TD
     NoInstallation3["`Unfortunately there exists no supported installation method for this case`"]
 
     NeedNewerFeatureBands -- Yes --> WhichArch1
-    NeedNewerFeatureBands -- No --> NeedPreviewsOrOlderVersions
+    NeedNewerFeatureBands -- No --> NeedOlderVersions
     WhichArch1 -- x64 --> MicrosoftPackagesInstallation1
     WhichArch1 -- arm64 or arm32 --> MicrosoftScriptInstallation1
     WhichArch1 -- other --> NoInstallation1
 
-    NeedPreviewsOrOlderVersions -- No ----> WhichArch3
-    NeedPreviewsOrOlderVersions -- Yes --> WhichArch2
+    NeedOlderVersions -- No ----> WhichArch3
+    NeedOlderVersions -- Yes --> WhichArch2
     WhichArch2 -- x64, arm64 or arm32 --> MicrosoftScriptInstallation2
     WhichArch2 -- other --> NoInstallation2
     
@@ -67,16 +67,16 @@ flowchart TD
     WhichArch3 -- other --> NoInstallation3
 
     UsesAmd64JammyOrNewer -- No --> MicrosoftPackagesInstallation2
-    UsesAmd64JammyOrNewer -- Yes --> NeedAPT
+    UsesAmd64JammyOrNewer -- Yes --> NeedAPTOrPreview
 
-    UsesArm64JammyOrNewer -- Yes --> NeedAPT
+    UsesArm64JammyOrNewer -- Yes --> NeedAPTOrPreview
     UsesArm64JammyOrNewer -- No --> MicrosoftScriptInstallation3
 
     UsesS390xOrPowerJammyOrNewer -- Yes --> UbuntuPackagesInstallation
     UsesS390xOrPowerJammyOrNewer -- No ---> NoInstallation3
 
-    NeedAPT -- No --> SnapInstallation
-    NeedAPT -- Yes --> UbuntuPackagesInstallation
+    NeedAPTOrPreview -- No --> SnapInstallation
+    NeedAPTOrPreview -- Yes --> UbuntuPackagesInstallation
 ```
 
 ```{list-table}
@@ -88,22 +88,23 @@ flowchart TD
 * -  [`dotnet` snap](#dotnet-installation-snap)
   - - **easy & simple installation experience**
   - - currently only supports `x64` and `arm64` system architectures
-    - currently only supports Ubuntu 22.04+
+    - currently only supports Ubuntu 22.04 or newer
 * - [Ubuntu packages](dotnet-installation-ubuntu-packages)
-  - - supports IBM System Z and POWER system architectures for .NET 8+
+  - - preview releases are available
+    - supports IBM System Z and POWER system architectures for .NET 8+
   - - some .NET versions are only available after installing an 
       APT repository
     - by default, non-security updates are made available with a
       delay of 1+ week(s); APT can be configured to install them
       as soon as they are available
-    - only supports Ubuntu 22.04+
+    - only supports Ubuntu 22.04 or newer
 * - [Microsoft packages](dotnet-installation-microsoft-packages)
   - - supports Ubuntu 16.04, 18.04, 20.04
     - higher SDK feature bands are available (> x.x.1xx)
   - - requires installing an APT repository
     - APT may needs to be configure to resolve conflicts with
       Ubuntu packages
-    - no support for Ubuntu 24.04+¹
+    - no support for Ubuntu 24.04 or newer¹
     - only supports the `x64` system architecture
 * - Microsoft's [scripted](#dotnet-installation-microsoft-script) / 
     [manual](dotnet-installation-microsoft-manual) installation
@@ -248,6 +249,80 @@ lsb_release -rs
 ::::::{tab-set}
 :sync-group: series
 
+:::::{tab-item} 25.10
+:sync: questing
+
+Choose the .NET version you want to install:
+
+::::{tab-set}
+:sync-group: dotnet-version
+
+:::{tab-item} .NET 10
+:sync: 10.0
+
+<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 10 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
+
+:::
+
+:::{tab-item} .NET 9
+:sync: 9.0
+
+<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 9 -->
+
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet9-apt-install-ubuntu-package.md
+```
+:::
+
+:::{tab-item} .NET 8
+:sync: 8.0
+
+<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 8 -->
+
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet8-apt-install-ubuntu-package.md
+```
+:::
+
+:::{tab-item} .NET 7
+:sync: 7.0
+
+<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 7 -->
+
+.NET 7 isn't supported on Ubuntu 25.10 (Questing Quokka).
+:::
+
+:::{tab-item} .NET 6
+:sync: 6.0
+
+
+<!-- Content for 25.10 (Questing Quokka) and .NET 6 -->
+
+.NET 6 isn't supported on Ubuntu 25.10 (Questing Quokka).
+:::
+
+::::
+
+:::::
+
 :::::{tab-item} 25.04
 :sync: plucky
 
@@ -255,6 +330,21 @@ Choose the .NET version you want to install:
 
 ::::{tab-set}
 :sync-group: dotnet-version
+
+:::{tab-item} .NET 10
+:sync: 10.0
+
+<!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 10 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
+
+:::
 
 :::{tab-item} .NET 9
 :sync: 9.0
@@ -291,7 +381,7 @@ Available for architectures:
 
 <!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 7 -->
 
-.NET 7 isn't supported on 25.04 (Plucky Puffin).
+.NET 7 isn't supported on Ubuntu 25.04 (Plucky Puffin).
 :::
 
 :::{tab-item} .NET 6
@@ -300,7 +390,7 @@ Available for architectures:
 
 <!-- Content for 25.04 (Plucky Puffin) and .NET 6 -->
 
-.NET 6 isn't supported on 25.04 (Plucky Puffin).
+.NET 6 isn't supported on Ubuntu 25.04 (Plucky Puffin).
 :::
 
 ::::
@@ -314,6 +404,17 @@ Choose the .NET version you want to install:
 
 ::::{tab-set}
 :sync-group: dotnet-version
+
+:::{tab-item} .NET 10
+:sync: 10.0
+
+<!-- Content for Ubuntu 24.10 (Oracular Oriole) and .NET 10 -->
+
+.NET 10 isn't supported on Ubuntu 24.10 (Oracular Oriole).
+
+*We decided against building .NET 10 for Ubuntu 24.10, because the final release of .NET 10 in November 2025 will be after the Ubuntu 24.10 end of support in July 2025.*
+
+:::
 
 :::{tab-item} .NET 9
 :sync: 9.0
@@ -350,7 +451,7 @@ Available for architectures:
 
 <!-- Content for Ubuntu 24.10 (Oracular Oriole) and .NET 7 -->
 
-.NET 7 isn't supported on 24.10 (Oracular Oriole).
+.NET 7 isn't supported on Ubuntu 24.10 (Oracular Oriole).
 :::
 
 :::{tab-item} .NET 6
@@ -359,7 +460,7 @@ Available for architectures:
 
 <!-- Content for 24.10 (Oracular Oriole) and .NET 6 -->
 
-.NET 6 isn't supported on 24.10 (Oracular Oriole).
+.NET 6 isn't supported on Ubuntu 24.10 (Oracular Oriole).
 :::
 
 ::::
@@ -373,6 +474,21 @@ Choose the .NET version you want to install:
 
 ::::{tab-set}
 :sync-group: dotnet-version
+
+:::{tab-item} .NET 10
+:sync: 10.0
+
+<!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 10 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
+
+:::
 
 :::{tab-item} .NET 9
 :sync: 9.0
@@ -451,6 +567,21 @@ Choose the .NET version you want to install:
 
 ::::{tab-set}
 :sync-group: dotnet-version
+
+:::{tab-item} .NET 10
+:sync: 10.0
+
+<!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 10 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
+
+:::
 
 :::{tab-item} .NET 9
 :sync: 9.0
@@ -532,7 +663,7 @@ Every .NET release that does not contain security fixes has to follow the Ubuntu
 If you want to install new .NET releases as soon as they are available, you can configure APT to install the proposed updates to skip this delay.
 
 ```{note}
-Canonical is collaborating with Microsoft and other .NET partners..NET releases are thoroughly tested before they are uploaded to the Ubuntu archive. Historically, no significant regressions were reported for .NET proposed updates. Therefore, the risk of installing proposed updates for .NET can be considered minimal or at least insignificantly small compared to waiting for the SRU completion.
+Canonical is collaborating with Microsoft and other .NET partners. .NET releases are thoroughly tested before they are uploaded to the Ubuntu archive. Historically, no significant regressions were reported for .NET proposed updates. Therefore, the risk of installing proposed updates for .NET can be considered minimal or at least insignificantly small compared to waiting for the SRU completion.
 ```
 
 ##### Adding the Ubuntu proposed updates APT repository
