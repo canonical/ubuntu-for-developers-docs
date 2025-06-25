@@ -10,10 +10,10 @@ sudo add-apt-repository ppa:dotnet/backports
 
 If you later want to remove the .NET backports PPA, run the above command with the `--remove` flag.
 
-````{tip}
+:::{dropdown} Command {command}`add-apt-repository` could not be found?
 {manpage}`add-apt-repository(1)` is a command provided by the `software-properties-common` package. On most Ubuntu systems, this package is installed by default. If your system reports that the command `add-apt-repository` could not be found, install the `software-properties-common` package:
 
 ```text
 sudo apt update && sudo apt install software-properties-common
 ```
-````
+:::
