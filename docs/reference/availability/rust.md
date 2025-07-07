@@ -17,7 +17,7 @@ See the [user guide for rustup](https://rust-lang.github.io/rustup/concepts/chan
 
 | Ubuntu version | available Rust versions | {lpsrc}`rust-defaults` version | 
 | --- | --- | --- |
-| 25.10 (Questing Quokka)     | 1.81, 1.82, 1.83, **1.84** | 1.84 |
+| 25.10 (Questing Quokka)     | 1.81, 1.82, 1.83, 1.84, **1.85** | 1.85 |
 | 25.04 (Plucky Puffin)       | 1.81, 1.82, 1.83, **1.84** | 1.84 |
 | 24.10 (Oracular Oriole)     | 1.74, **1.80**, 1.81, 1.82 | 1.80 |
 | 24.04 LTS (Noble Numbat)    | 1.74, **1.75**, 1.76, 1.77, 1.78, 1.79, 1.80, 1.81, 1.82 | - |
@@ -32,6 +32,7 @@ See the [user guide for rustup](https://rust-lang.github.io/rustup/concepts/chan
 
 | Rust version | Source package | 
 |--------------|----------------|
+| 1.85 | {lpsrc}`rustc-1.85` |
 | 1.84 | {lpsrc}`rustc-1.84` |
 | 1.83 | {lpsrc}`rustc-1.83` |
 | 1.82 | {lpsrc}`rustc-1.82` |
