@@ -128,7 +128,7 @@ html_theme_options = {
 # leave them).
 
 html_static_path = [".sphinx/_static"]
-# templates_path = [".sphinx/_templates"]
+templates_path = [".sphinx/_templates"]
 
 ############################################################
 # Redirects
@@ -200,10 +200,10 @@ exclude_patterns = [
 ]
 
 # Add custom CSS files (located in .sphinx/_static/)
-html_css_files = ["custom_header.css"]
+html_css_files = ["custom_header.css", "cookie_banner.css"]
 
 # Add custom JavaScript files (located in .sphinx/_static/)
-# html_js_files = []
+html_js_files = ["js/bundle.js"]
 
 # The following settings override the default configuration.
 
@@ -248,7 +248,7 @@ intersphinx_mapping = {
 ## Sitemap configuration
 
 html_baseurl = "https://documentation.ubuntu.com/ubuntu-for-developers/"
-#sitemap_url_scheme = "{link}"
+# sitemap_url_scheme = "{link}"
 
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
