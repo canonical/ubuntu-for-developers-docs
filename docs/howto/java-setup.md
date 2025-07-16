@@ -66,15 +66,15 @@ sudo apt install openjdk-21-jdk
 (graalvm-install)=
 ### GraalVM Community Edition for Ubuntu
 
-GraalVM Community Edition is now available and supported on Ubuntu 24.04 and above, through a [snap package](https://snapcraft.io/graalvm-jdk). To install the latest GraalVM version, run:
+GraalVM Community Edition is available and supported on Ubuntu 24.04 and above, through a [snap package](https://snapcraft.io/graalvm-jdk). To install the latest GraalVM version, run:
 
-```shell
+```none
 sudo snap install graalvm-jdk
 ```
 
-Currently, the snap also provides for GraalVM Community Edition for JDK 21, which is an LTS release:
+The snap also provides for GraalVM Community Edition for JDK 21, which is an LTS release:
 
-```shell
+```none
 sudo snap install graalvm-jdk --channel=v21
 ```
 
