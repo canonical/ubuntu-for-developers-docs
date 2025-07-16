@@ -102,7 +102,7 @@ To generate and use an SSH key pair:
 
     * GitHub: [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux)
 
-    * Launchpad: [Registering an SSH key with Launchpad](https://help.launchpad.net/YourAccount/CreatingAnSSHKeyPair#Registering_the_key_with_Launchpad)
+    * Launchpad: {ref}`Registering an SSH key with Launchpad <import-your-ssh-keys>`
 
 
 ### Launchpad considerations
