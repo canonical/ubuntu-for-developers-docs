@@ -36,3 +36,13 @@ The history of .NET, its impact on the toolchain in Ubuntu, and key concepts in 
 dotnet-introduction
 debugging-with-dotnet
 :::
+
+## GraalVM Native Image
+
+An introduction to GraalVM and native-image technology, its advantages and limitations.
+
+:::{toctree}
+:maxdepth: 1
+
+graalvm-introduction
+:::
