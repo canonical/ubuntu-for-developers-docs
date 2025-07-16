@@ -1,5 +1,5 @@
 (graalvm-introduction)=
-# GraalVM Native Compile
+# GraalVM Native Compilation
 This tutorial introduces the GraalVM and native-image technology and talks about how Java applications can benefit from native compilation.
 
 ## GraalVM Native Image
@@ -15,7 +15,7 @@ There is no JIT compiler. So, there is no runtime profiling and optimization. Al
 In short, GraalVM trades Java’s dynamic/runtime features for an improved application startup performance, more efficient use of resources, and better scaling.
 
 ## GraalVM Community Edition for Ubuntu
-GraalVM Community Edition is available, and supported, on Ubuntu 24.04 and above, through a snap package: [graalvm-jdk](https://snapcraft.io/graalvm-jdk), which is built from source. Refer to the installation instructions: {ref}`graalvm-use <graalvm-install>`.
+GraalVM Community Edition is available, and supported, on Ubuntu 24.04 and above, through a snap package: [`graalvm-jdk`](https://snapcraft.io/graalvm-jdk), which is built from source. Refer to the installation instructions: {ref}`use-graalvm <graalvm-install>`.
 
 Please report issues int the [graalvm-jdk-snap repository](https://github.com/canonical/graalvm-jdk-snap/issues).
 
@@ -31,4 +31,4 @@ For fast start of long-running Java applications, [OpenJDK CRaC](https://launchp
 
 ## Further reading
 
-Refer to the {ref}`graalvm-use` guide for instructions to native compile a Spring Boot application using GraalVM Community Edition on Ubuntu.
+Refer to the {ref}`use-graalvm` guide for instructions to native compile a Spring Boot application using GraalVM Community Edition on Ubuntu.
