@@ -31,4 +31,4 @@ For fast start of long-running Java applications, [OpenJDK CRaC](https://launchp
 
 ## Further reading
 
-Refer to the {ref}`use-graalvm` guide for instructions to native compile a Spring Boot application using GraalVM Community Edition on Ubuntu.
+Refer to the {ref}`graalvm-use` guide for instructions to native compile a Spring Boot application using GraalVM Community Edition on Ubuntu.
