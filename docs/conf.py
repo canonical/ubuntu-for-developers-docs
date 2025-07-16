@@ -245,10 +245,9 @@ intersphinx_mapping = {
 }
 
 
-## Sitemap configuration
-
+# Sitemap configuration
 html_baseurl = "https://documentation.ubuntu.com/ubuntu-for-developers/"
-# sitemap_url_scheme = "{link}"
+sitemap_url_scheme = "{link}"
 
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
