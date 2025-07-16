@@ -1,5 +1,5 @@
 (use-graalvm)=
-## Compiling Spring Boot applications to native executables 
+# Native compilation of Spring Boot applications using GraalVM
 Spring Boot 3+ provides official support for compiling a Java application to a native executable. The documentation is found at [GraalVM Native Images](https://docs.spring.io/spring-boot/reference/packaging/native-image/index.html) in the Spring Boot references.
 
 1. To support native compilation with a Maven project, the [native-maven-plugin](https://graalvm.github.io/native-build-tools/latest/maven-plugin.html) declaration needs to be added to the `pom.xml` file:
@@ -35,6 +35,7 @@ Spring Boot 3+ provides official support for compiling a Java application to a n
    ```
 
 To build a Gradle project, use this command:
+
    ```none
    ./gradlew nativeCompile
    ```
