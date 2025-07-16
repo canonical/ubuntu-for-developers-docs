@@ -1,5 +1,4 @@
 (use-graalvm)=
-
 ## Compiling Spring Boot applications to native executables 
 Spring Boot 3+ provides official support for compiling a Java application to a native executable. The documentation is found at [GraalVM Native Images](https://docs.spring.io/spring-boot/reference/packaging/native-image/index.html) in the Spring Boot references.
 
