@@ -237,6 +237,7 @@ extlinks = {"lpsrc": ("https://launchpad.net/ubuntu/+source/%s", "%s")}
 # Define intersphinx mapping
 intersphinx_mapping = {
     "ubuntu-server": ("https://documentation.ubuntu.com/server/", None),
+    "launchpad": ("https://documentation.ubuntu.com/launchpad/en/latest/", None),
     "adsys": ("https://documentation.ubuntu.com/adsys/stable/", None),
     "starter-pack": (
         "https://canonical-starter-pack.readthedocs-hosted.com/latest/",
