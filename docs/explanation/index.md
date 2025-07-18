@@ -37,7 +37,7 @@ dotnet-introduction
 debugging-with-dotnet
 :::
 
-## GraalVM Native Image
+## GraalVM native image
 
 An introduction to GraalVM and native-image technology, its advantages and limitations.
 

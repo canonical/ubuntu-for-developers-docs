@@ -1,6 +1,6 @@
 (graalvm-introduction)=
-# GraalVM Native Compilation
-This tutorial introduces the GraalVM and native-image technology and talks about how Java applications can benefit from native compilation.
+# GraalVM native compilation
+This article introduces the GraalVM and native-image technology and talks about how Java applications can benefit from native compilation.
 
 ## GraalVM Native Image
 [GraalVM](https://www.graalvm.org/) is a high-performance JDK distribution that compiles Java applications into standalone, native binaries using ahead-of-time compilation of Java byte-code to native machine code. These binaries start instantly, perform well right from the start, use fewer resources, and scale very well. GraalVM may be used like any other JDK, with your favorite IDE.
