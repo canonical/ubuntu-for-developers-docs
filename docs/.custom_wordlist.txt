@@ -121,3 +121,7 @@ lts
 gcc
 golang
 fips
+jdk
+graalvm
+screencast
+executables
