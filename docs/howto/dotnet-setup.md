@@ -593,7 +593,7 @@ Every .NET release that does not contain security fixes has to follow the Ubuntu
 If you want to install new .NET releases as soon as they are available, you can configure APT to install the proposed updates to skip this delay.
 
 ```{note}
-Canonical is collaborating with Microsoft and other .NET partners. .NET releases are thoroughly tested before they are uploaded to the Ubuntu archive. Historically, no significant regressions were reported for .NET proposed updates. Therefore, the risk of installing proposed updates for .NET can be considered minimal or at least insignificantly small compared to waiting for the SRU completion.
+Canonical is collaborating with Microsoft and other .NET partners. .NET releases are thoroughly tested before they are uploaded to the Ubuntu archive. Historically, no significant regressions have been reported for .NET proposed updates. Therefore, the risk of installing proposed updates for .NET can be considered minimal or at least insignificantly small compared to waiting for the SRU completion.
 ```
 
 ##### Adding the Ubuntu proposed updates APT repository
