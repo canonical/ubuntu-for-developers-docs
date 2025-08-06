@@ -138,15 +138,15 @@ See: {ref}`dotnet-installation-ubuntu-packages`
 
   * - .NET Version
     - available Debug Symbols packages
-  * - .NET 8
+  * - .NET 10
     - ```text
-      dotnet-sdk-dbg-8.0
+      dotnet-sdk-dbg-10.0
       ```
       ```text
-      dotnet-runtime-dbg-8.0
+      dotnet-runtime-dbg-10.0
       ```
       ```text
-      aspnetcore-runtime-dbg-8.0
+      aspnetcore-runtime-dbg-10.0
       ```
   * - .NET 9
     - ```text
@@ -158,15 +158,15 @@ See: {ref}`dotnet-installation-ubuntu-packages`
       ```text
       aspnetcore-runtime-dbg-9.0
       ```
-  * - .NET 10
+  * - .NET 8
     - ```text
-      dotnet-sdk-dbg-10.0
+      dotnet-sdk-dbg-8.0
       ```
       ```text
-      dotnet-runtime-dbg-10.0
+      dotnet-runtime-dbg-8.0
       ```
       ```text
-      aspnetcore-runtime-dbg-10.0
+      aspnetcore-runtime-dbg-8.0
       ```
 :::
 

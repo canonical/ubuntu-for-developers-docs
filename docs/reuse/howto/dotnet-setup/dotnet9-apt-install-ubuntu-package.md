@@ -1,15 +1,20 @@
 **Installing the SDK**
 
-The .NET SDK allows you to develop apps with .NET. To install the .NET SDK, run the following command:
+The .NET SDK allows you to develop apps with .NET. To install the .NET SDK:
 
 ```text
 sudo apt update && sudo apt install --install-suggests dotnet-sdk-9.0
 ```
 
 ```{note}
-Additionally the package `dotnet-sdk-aot-9.0` is installed as a recommended dependency. This package contains components to build your .NET application as native ahead-of-time compiled code. You can instruct APT to not install this package by adding the `--no-install-recommends` flag.
+Additionally, the package `dotnet-sdk-aot-9.0` is installed as a recommended dependency. This package contains components to build your .NET application as native ahead-of-time compiled code. To not install this package, add the `--no-install-recommends` flag.
 
-The flag `--install-suggests` instructs APT to install the suggested dependencies `dotnet-sdk-dbg-9.0`, `aspnetcore-runtime-dbg-9.0` and `dotnet-runtime-dbg-9.0`. These packages provide PDB debug symbols. Remove this flag if you do not want to install these packages.
+The flag `--install-suggests` instructs APT to install the suggested dependencies:
+ * `dotnet-sdk-dbg-9.0`
+ * `aspnetcore-runtime-dbg-9.0`
+ * `dotnet-runtime-dbg-9.0`
+ 
+These packages provide PDB debug symbols. Remove this flag if you do not want to install them.
 ```
 
 ```{tip}
@@ -29,15 +34,19 @@ sudo apt update && sudo apt install --install-suggests aspnetcore-runtime-9.0
 ```
 
 ```{note}
-The flag `--install-suggests` instructs APT to install the suggested dependencies `aspnetcore-runtime-dbg-9.0` and `dotnet-runtime-dbg-9.0`. These packages provide PDB debug symbols. Remove this flag if you do not want to install these packages.
+The flag `--install-suggests` instructs APT to install the suggested dependencies:
+ * `aspnetcore-runtime-dbg-9.0`
+ * `dotnet-runtime-dbg-9.0`
+ 
+These packages provide PDB debug symbols. Remove this flag if you do not want to install them.
 ```
 
-Alternatively, you can just install the .NET runtime without the ASP\.NET Core components:
+Alternatively, you can install the .NET runtime without the ASP\.NET Core components:
 
 ```text
 sudo apt update && sudo apt install --install-suggests dotnet-runtime-9.0
 ```
 
 ```{note}
-The flag `--install-suggests` instructs APT to install the suggested dependency `dotnet-runtime-dbg-9.0`. These packages provide PDB debug symbols. Remove this flag if you do not want to install this package.
+The flag `--install-suggests` instructs APT to install the suggested dependency `dotnet-runtime-dbg-9.0`. This package provides PDB debug symbols. Remove this flag if you do not want to install this package.
 ```
