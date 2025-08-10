@@ -1,6 +1,7 @@
 canonical-sphinx[full]
+packaging
+sphinxcontrib-mermaid
 sphinxcontrib-svg2pdfconverter[CairoSVG]
 sphinx-last-updated-by-git
-sphinxcontrib-mermaid
 sphinx-prompt
 sphinx-sitemap

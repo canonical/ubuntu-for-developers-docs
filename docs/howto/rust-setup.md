@@ -62,7 +62,7 @@ sudo apt install build-essential
 
 Many editors and IDEs (Integrated Development Environment) come with various degrees of Rust support. Here are some popular ones:
 
-- [Visual Studio Code](https://snapcraft.io/code): Install the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension from the VSCode Marketplace.
+- [Visual Studio Code](https://snapcraft.io/code): Install the [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer) extension from the VS Code Marketplace.
 
 - [Helix Editor](https://helix-editor.com/) and [Zed Editor](https://zed.dev/): Install rust-analyzer using Rustup:
 
