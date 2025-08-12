@@ -55,7 +55,7 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 # when linking to the documentation from another website (see https://ogp.me/)
 # The URL where the documentation will be hosted (leave empty if you
 # don't know yet)
-ogp_site_url = "https://canonical-ubuntu-for-developers.readthedocs-hosted.com/"
+ogp_site_url = "https://documentation.ubuntu.com/ubuntu-for-developers/"
 # The documentation website name (usually the same as the product name)
 ogp_site_name = project
 # The URL of an image or logo that is used in the preview
@@ -121,7 +121,7 @@ html_theme_options = {
 
 # If your project is on documentation.ubuntu.com, specify the project
 # slug (for example, "lxd") here.
-# slug = ""
+slug = "ubuntu-for-developers"
 
 # These paths are needed if you want to override any default assets.
 # You can comment them out if you don't need this (but you can also just
