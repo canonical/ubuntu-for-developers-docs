@@ -105,9 +105,6 @@ Test the documentation before submitting a pull request. Run the following comma
 | `make woke` | Check for non-inclusive language |
 | `make pa11y` | Check for accessibility issues |
 
-:::{note}
-For the `make spelling` command to work, you must have the `aspell` spellchecker installed. You can install it with `sudo apt-get install aspell`.
-:::
 
 
 ## Canonical Open Documentation Academy
