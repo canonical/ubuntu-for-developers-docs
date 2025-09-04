@@ -68,8 +68,10 @@ $JAVA_HOME/bin/java -XX:CRaCCheckpointTo=$HOME/cr-image -jar target/spring-petcl
 The `-XX:CRaCCheckpointTo` option lets you configure the directory where the snapshot image is saved, on checkpoint.
 
 The PetClinic application typically becomes available for requests within 5-7 seconds of startup.
-```{figure} /images/crac-use/01-normal-startup.png
-   :alt: Screenshot displaying a normal `PetClinic` application startup
+```
+...
+2025-09-04T06:50:25.842Z  INFO 7522 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T06:50:25.851Z  INFO 7522 --- [           main] o.s.s.petclinic.PetClinicApplication     : Started PetClinicApplication in 4.657 seconds (process running for 5.157)
 ```
 
     The web-app should now be accessible at `http://localhost:8080`.
@@ -92,14 +94,30 @@ jcmd 4146 JDK.checkpoint
 ```
 The `PetClinic` application should now crash with a message reading "Killed".
 
-```{figure} /images/crac-use/02-app-killed.png
-   :alt: Screenshot displaying the `PetClinic` application killed on checkpoint.
+```
+...
+2025-09-04T06:53:56.670Z  INFO 7522 --- [Attach Listener] jdk.crac                                 : Starting checkpoint
+2025-09-04T06:53:56.677Z  INFO 7522 --- [Attach Listener] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-09-04T06:53:56.695Z  INFO 7522 --- [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-09-04T06:53:56.700Z  WARN 7522 --- [Attach Listener] o.s.b.j.HikariCheckpointRestoreLifecycle : HikariDataSource (HikariPool-1) is not configured to allow pool suspension. This will cause problems when the application is checkpointed. Please configure allow-pool-suspension to fix this!
+2025-09-04T06:53:56.700Z  INFO 7522 --- [Attach Listener] o.s.b.j.HikariCheckpointRestoreLifecycle : Evicting Hikari connections
+Killed
 ```
 
 The snapshot, which is a set of `.img` files, should be located in the configured directory. We used `$HOME/cr-data` as an example:
 
-```{figure} /images/crac-use/03-snapshot-dir.png
-   :alt: Screenshot showing the contents of the snapshot directory.
+```
+$ ls $HOME/cr-data
+core-3445.img  core-3455.img  core-3467.img  core-3479.img  core-3551.img  core-7531.img  core-7543.img  core-7555.img  core-7632.img  mm-3445.img
+core-3446.img  core-3456.img  core-3468.img  core-3480.img  core-7522.img  core-7532.img  core-7544.img  core-7556.img  core-7633.img  mm-7522.img
+core-3447.img  core-3457.img  core-3469.img  core-3481.img  core-7523.img  core-7533.img  core-7545.img  core-7557.img  dump4.log      pagemap-3445.img
+core-3448.img  core-3458.img  core-3472.img  core-3482.img  core-7524.img  core-7534.img  core-7546.img  core-7558.img  fdinfo-2.img   pagemap-7522.img
+core-3449.img  core-3459.img  core-3473.img  core-3483.img  core-7525.img  core-7535.img  core-7549.img  core-7559.img  files.img      pages-1.img
+core-3450.img  core-3460.img  core-3474.img  core-3545.img  core-7526.img  core-7536.img  core-7550.img  core-7560.img  fs-3445.img    pstree.img
+core-3451.img  core-3461.img  core-3475.img  core-3546.img  core-7527.img  core-7537.img  core-7551.img  core-7627.img  fs-7522.img    seccomp.img
+core-3452.img  core-3462.img  core-3476.img  core-3547.img  core-7528.img  core-7538.img  core-7552.img  core-7628.img  ids-3445.img   stats-dump
+core-3453.img  core-3463.img  core-3477.img  core-3549.img  core-7529.img  core-7539.img  core-7553.img  core-7629.img  ids-7522.img   timens-0.img
+core-3454.img  core-3466.img  core-3478.img  core-3550.img  core-7530.img  core-7540.img  core-7554.img  core-7631.img  inventory.img  tty-info.img
 ```
 
 ## Restoring the Spring Boot application at checkpoint
@@ -113,8 +131,12 @@ $JAVA_HOME/bin/java -XX:CRaCRestoreFrom=$HOME/cr-data
 
 This should bring up the `PetClinic` application in less than a second.
 
-```{figure} /images/crac-use/04-restore-app.png
-   :alt: Screen showing the application startup through CRaC restore.
+```
+$ java -XX:CRaCRestoreFrom=$HOME/cr-data
+2025-09-04T06:57:58.872Z  WARN 7522 --- [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m5s281ms870µs908ns).
+2025-09-04T06:57:58.896Z  INFO 7522 --- [Attach Listener] o.s.c.support.DefaultLifecycleProcessor  : Restarting Spring-managed lifecycle beans after JVM restore
+2025-09-04T06:57:58.961Z  INFO 7522 --- [Attach Listener] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2025-09-04T06:57:58.975Z  INFO 7522 --- [Attach Listener] o.s.c.support.DefaultLifecycleProcessor  : Spring-managed lifecycle restart completed (restored JVM running for 225 ms)
 ```
 
 ## Practical considerations
