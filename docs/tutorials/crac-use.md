@@ -144,4 +144,4 @@ $ java -XX:CRaCRestoreFrom=$HOME/cr-data
 
  - OpenJDK CRaC mostly benefits applications that are long-running and `stateful`.
  - Ideally, the checkpoint process is carried out in a staging environment with a load that is representative of the real-world load. The snapshot may then be used in production to rapidly spin-up application instances.
- - CRaC also presents a [Java API](https://crac.github.io/jdk/jdk-crac/api/java.base/jdk/crac/package-summary.html) for the CRaC enablement of application classes. If done right, this should lead to further gains in the startup performance.
+ - CRaC also presents a [Java API](https://crac.github.io/jdk/jdk-crac/api/java.base/jdk/crac/package-summary.html) for CRaC-enabling application classes. If done right, this should lead to further gains in the startup performance.
