@@ -37,13 +37,14 @@ cd spring-petclinic
 ```
 
 2. Add the `org.crac` dependency into the `pom.xml` file:
-```xml
-<dependency>
-    <groupId>org.crac</groupId>
-    <artifactId>crac</artifactId>
-    <version>1.4.0</version>
-</dependency>
-```
+
+   ```xml
+   <dependency>
+       <groupId>org.crac</groupId>
+       <artifactId>crac</artifactId>
+       <version>1.4.0</version>
+   </dependency>
+   ```
 
 3. Point the JAVA_HOME environment variable to the OpenJDK CRaC installation:
 ```none
