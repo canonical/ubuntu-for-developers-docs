@@ -191,7 +191,7 @@ Example output:
 To install a .NET component, run the following command:
 
 ```text
-dotnet-installer install [<component> [<versison>]]
+dotnet-installer install [<component> [<version>]]
 ```
 
 See valid {ref}`dotnet-snap-components` and {ref}`dotnet-snap-versions` values.
