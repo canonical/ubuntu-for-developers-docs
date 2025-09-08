@@ -73,7 +73,7 @@ Upon a successful build, a JAR file is generated in the target directory.
     The `-XX:CRaCCheckpointTo` option lets you configure the directory where the snapshot image is saved, on checkpoint.
 
     The PetClinic application typically becomes available for requests within 5-7 seconds of startup.
-    ```
+    ```none
     ...
     2025-09-04T06:50:25.842Z  INFO 7522 --- [           main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
     2025-09-04T06:50:25.851Z  INFO 7522 --- [           main] o.s.s.petclinic.PetClinicApplication     : Started PetClinicApplication in 4.657 seconds (process running for 5.157)
@@ -90,7 +90,7 @@ Upon a successful build, a JAR file is generated in the target directory.
 
     This produces output like:
 
-    ```
+    ```none
     4146 target/spring-petclinic-3.5.0-SNAPSHOT.jar
     4206 jdk.jcmd/sun.tools.jcmd.JCmd
     ```
@@ -104,7 +104,7 @@ Upon a successful build, a JAR file is generated in the target directory.
     ```
     The `PetClinic` application should now crash with a message reading "Killed".
 
-    ```
+    ```none
     ...
     2025-09-04T06:53:56.670Z  INFO 7522 --- [Attach Listener] jdk.crac                                 : Starting checkpoint
     2025-09-04T06:53:56.677Z  INFO 7522 --- [Attach Listener] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
@@ -116,7 +116,7 @@ Upon a successful build, a JAR file is generated in the target directory.
 
     The snapshot, which is a set of `.img` files, should be located in the configured directory. We used `$HOME/cr-data` as an example:
 
-    ```
+    ```none
     $ ls $HOME/cr-data
     core-3445.img  core-3455.img  core-3467.img  core-3479.img  core-3551.img  core-7531.img  core-7543.img  core-7555.img  core-7632.img  mm-3445.img
     core-3446.img  core-3456.img  core-3468.img  core-3480.img  core-7522.img  core-7532.img  core-7544.img  core-7556.img  core-7633.img  mm-7522.img
@@ -142,7 +142,7 @@ $JAVA_HOME/bin/java -XX:CRaCRestoreFrom=$HOME/cr-data
 
 This should bring up the `PetClinic` application in less than a second.
 
-```
+```none
 $ java -XX:CRaCRestoreFrom=$HOME/cr-data
 2025-09-04T06:57:58.872Z  WARN 7522 --- [l-1:housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=4m5s281ms870µs908ns).
 2025-09-04T06:57:58.896Z  INFO 7522 --- [Attach Listener] o.s.c.support.DefaultLifecycleProcessor  : Restarting Spring-managed lifecycle beans after JVM restore
