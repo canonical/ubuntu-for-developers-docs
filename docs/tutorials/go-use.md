@@ -56,6 +56,122 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     Hey Go!
     ```
 
+5. To build a binary of your program that can run on its own, use the `go build` command:
+
+    ```none
+    go build .
+    ```
+
+    This creates a new executable file called `heygo` in the current directory:
+
+    ```{terminal}
+    :dir: ~/heygo
+    :user: dev
+    :host: ubuntu
+    :input: ls
+
+    go.mod  heygo  heygo.go
+    ```
+
+    The `heygo` binary can be run on its own:
+
+
+    ```{terminal}
+    :dir: ~/heygo
+    :user: dev
+    :host: ubuntu
+    :input: ./heygo
+
+    Hey Go!
+    ```
+
+
+## Cross-compilation
+
+Go has excellent cross-platform build capabilities.  
+
+By default, running `go build` as shown above builds a binary that can be run on your Ubuntu system. Different target systems can be set for the compiler.
+
+To set the environment for a Windows AMD64 build, first set the `GOOS` and `GOARCH` environment variables by running:
+
+```none
+export GOOS=windows GOARCH=amd64
+```
+
+This causes `go build` to create a `hello.exe` binary that runs on Windows:
+
+```none
+go build .
+```
+
+```{terminal}
+:dir: ~/heygo
+:user: dev
+:host: ubuntu
+:input: ls
+
+go.mod  heygo  heygo.exe  heygo.go
+```
+
+### Building for multiple targets
+
+For a full list of targets, run:
+
+```none
+go tool dist list
+```
+
+For this example, filter the output to Windows and Linux on `amd`:
+
+```none
+go tool dist list | grep 'amd' | grep -E 'windows|linux'
+```
+
+Create a `Makefile` that automatically sets the build environment and creates executable binaries for both Windows and Linux platforms:
+
+```{code-block} make
+:caption: `Makefile`
+:linenos:
+EXE=heygo
+WINDOWS=$(EXE)_win_amd64.exe
+LINUX=$(EXE)_linux_amd64
+
+.PHONY: all clean
+
+all: windows linux
+
+windows: $(WINDOWS)
+linux: $(LINUX)
+
+$(WINDOWS):
+	env GOOS=windows GOARCH=amd64 go build -v -o $(WINDOWS) -ldflags="-s -w" ./heygo.go
+
+$(LINUX):
+	env GOOS=linux GOARCH=amd64 go build -v -o $(LINUX) -ldflags="-s -w" ./heygo.go
+
+clean:
+	rm -f $(WINDOWS) $(LINUX)
+```
+
+Generate the builds and test the Linux build:
+
+```none
+make all
+./heygo_linux_amd64
+```
+
+:::{note}
+If you encounter a `Command 'make' not found` error, install [make](https://www.gnu.org/software/make/) by running:
+
+```none
+sudo apt install make -y
+```
+
+Then run `make all` again.
+
+:::
+
+
 ## Improving Go code with the help of tooling
 
 Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and format code. Delve is recommended for advanced debugging.
@@ -82,23 +198,23 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
 2. Run `go vet` on the file:
 
     ```none
-    got vet heygoV2.go
+    go vet heygoV2.go
     vet: ./heygoV2.go:6:14: undefined: greeting
     ```
 
 3. Fix the error by defining the `greeting` variable:
 
-    ```{code-block} diff
+    ```{code-block} go 
     :caption: `heygoV2.go`
     :linenos:
     package main
 
     import "fmt";
 
-    +var greeting="Hey Go!"
+    var greeting="Hey Go!" // define a greeting
 
     func main() {
-    fmt.Println(greeting)
+    fmt.Println(greeting);
     }
     ```
 
@@ -118,10 +234,10 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
     - import "fmt";
     + import "fmt"
 
-    var greeting="Hey Go!"
+    var greeting="Hey Go!" // define a greeting
 
     func main() {
-    -fmt.Println(greeting)
+    -fmt.Println(greeting);
     +	fmt.Println(greeting)
     }
     ```
@@ -155,7 +271,7 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
       numbers := []int{10, 45, 30}
       average := calculateAverage(numbers)
 
-      fmt.Printf("Average value of  is: %.2f\n", average)
+      fmt.Printf("Average value of numbers is: %.2f\n", average)
     }
     ```
 
@@ -180,16 +296,16 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
 
    Delve is used in this example to debug the `calculateAverage` function. You need to be in a debugging session, indicated by the `(dlv)` prompt.
 
-3. Set a break point at line 6:
+3. Set a break point at line 7:
 
     ```none
-    (dlv) break main.go:6
+    (dlv) break main.go:7
     ```
 
-   If the break point is set successfully, you get the following message:
+   If the break point is set successfully, you get a message similar to this:
 
     ```none
-    Breakpoint 1 set at 0x49cee9 for main.calculateAverage() ./main.go:6
+    Breakpoint 1 set at 0x49cee9 for main.calculateAverage() ./main.go:7
     ```
 
 4. Continue to the `for` loop:
@@ -207,7 +323,7 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
         4:
         5:  func calculateAverage(numbers []int) float64 {
         6:    sum := 0
-    =>   7:   for i := 0; i <= len(numbers); i++ {
+    =>  7:    for i := 0; i <= len(numbers); i++ {
         8:      sum += numbers[i]
         9:    }
         10:   return float64(sum) / float64(len(numbers))
@@ -238,7 +354,7 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
         5:  func calculateAverage(numbers []int) float64 {
         6:    sum := 0
         7:    for i := 0; i <= len(numbers); i++ {
-    =>   8:     sum += numbers[i]
+    =>  8:      sum += numbers[i]
         9:    }
         10:   return float64(sum) / float64(len(numbers))
         11: }
@@ -326,3 +442,5 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
       return float64(sum) / float64(len(numbers))
     }
     ```
+
+A debugger like Delve is very useful to help you find and fix errors in your code.
