@@ -62,7 +62,7 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     go build .
     ```
 
-    This will create a new executable file called `heygo` in the current directory:
+    This creates a new executable file called `heygo` in the current directory:
 
     ```{terminal}
     :dir: ~/heygo
@@ -161,7 +161,7 @@ make all
 ```
 
 :::{note}
-If you encounter a "`Command 'make' not found`" error, install [make](https://www.gnu.org/software/make/) by running:
+If you encounter a `Command 'make' not found` error, install [make](https://www.gnu.org/software/make/) by running:
 
 ```none
 sudo apt install make -y
