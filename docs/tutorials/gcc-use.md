@@ -39,7 +39,7 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
     This command incorporates the intermediate steps of preprocessing, compiling, and linking to generate an executable in one go. Use the `-v` option to display detailed information on how {command}`gcc` invokes the individual tools that handle the intermediate steps.
 
     :::{note}
-    The {command}`gcc` command can be used to compile source code in many programming languages, including C, C++, and assembler. The compiler guesses the language used based on the file extension (for example, `.c`, `.cpp`, or `.s`). You can explicitly specify the language using the `-x` option.
+    {command}`gcc` can compile source code in many programming languages, including C, C++, and Assembly. The compiler guesses the language based on the file extension (for example, `.c`, `.cpp`, or `.s`). You can explicitly specify the language using the `-x` option as well.
     :::
 
 4. Run the program executable:
