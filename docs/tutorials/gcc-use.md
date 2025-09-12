@@ -192,7 +192,7 @@ See below for a simple example of using the GNU Make build system to build the '
 
 ## Debugging with GDB
 
-GDB is the standard debugger accompanying GNU GCC. While you can use debugging capabilities of your preferred IDE, GDB offers adequate debugging support for the command line.
+GDB is the standard debugger accompanying GNU GCC. While you can use the debugging capabilities of your preferred IDE, GDB offers adequate debugging support for the command line.
 
 See the example below for a quick introduction to GDB use with the 'Hello, world!' program from {ref}`writing-a-sample-c-program`.
 
@@ -233,9 +233,9 @@ See the example below for a quick introduction to GDB use with the 'Hello, world
     In the above example:
 
     1. Line 6: the {command}`hello` program is started.
-    2. Line 15: the `number` variable is queried before being assigned.
-    3. Line 17: the program execution is stepped forward.
-    4. Line 19: the `number` variable is queried again after being assigned.
+    2. Line 15: `number` is queried before being assigned.
+    3. Line 17: program execution is stepped forward.
+    4. Line 19: `number` is queried again after being assigned.
 
 3. Press {kbd}`Ctrl+X+A` to switch to the text user interface (TUI) of GDB for a more interactive experience:
 
@@ -244,4 +244,4 @@ See the example below for a quick introduction to GDB use with the 'Hello, world
 
     Type `help` at any point to see available commands.
 
-4. Press {kbd}`Ctrl+D` to quit the debugging session.
+4. Press {kbd}`Ctrl+D` to quit GDB.
