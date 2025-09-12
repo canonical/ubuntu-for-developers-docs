@@ -57,7 +57,7 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
 
 ## Fixing simple bugs
 
-The {command}`gcc` compiler provides helpful output when it encounters a problematic part of the source code.
+The {command}`gcc` compiler provides helpful output when encountering a problematic part of the source code.
 
 1. Modify the 'Hello, world!' program source to omit an expected argument. Note the missing `number` argument on line 5:
 
@@ -86,9 +86,9 @@ The {command}`gcc` compiler provides helpful output when it encounters a problem
           |                                                         <span style="font-weight:bold;color:purple;">int</span></pre></div></div>
     :::
 
-    {command}`gcc` displays a warning, but it still compiles the source code.
+    {command}`gcc` displays a warning, but still compiles the source code.
 
-3. Run the program to see how it misbehaves without the integer argument specified:
+3. Run the program to see how it behaves without the integer argument specified:
 
     ```{terminal}
     :dir: ~/projects/hello-world
