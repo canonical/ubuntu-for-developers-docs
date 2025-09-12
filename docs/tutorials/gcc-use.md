@@ -103,12 +103,12 @@ The {command}`gcc` compiler provides helpful output when encountering a problema
 
 ## Using the Make build system
 
-Compiling manually by invoking {command}`gcc` directly can be useful to understand the build process or for simple projects like 'Hello, world!'. For larger projects, use a build system to simplify and automate the process.
+Compiling manually by invoking {command}`gcc` directly can help understand the build process, or for simple projects like 'Hello, world!'. However, a build system can be used to simplify and automate the process.
 
-See below for a simple example of the use of the GNU Make build system to build the 'Hello, world!' program from {ref}`writing-a-sample-c-program`.
+See below for a simple example of using the GNU Make build system to build the 'Hello, world!' program from {ref}`writing-a-sample-c-program`.
 
 
-1. Create a basic Makefile (a file named {file}`Makefile` in the project directory) with the following content:
+1. Create a basic Makefile (a file named {file}`Makefile` in the project directory) with the following contents:
 
     ```makefile
     ## Variables:
@@ -145,7 +145,7 @@ See below for a simple example of the use of the GNU Make build system to build 
     .PHONY: all clean
     ```
 
-    Note that the {file}`Makefile` divides the build process into separate compilation and linking steps. It also makes use of "automatic variables" that allow for writing the compilation rules without specifying absolute file names. For an overview, see [Automatic Variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html) in the GNU Make manual.
+    The {file}`Makefile` divides the build process into separate compilation and linking steps. It also uses "automatic variables" that allow for writing the compilation rules without specifying absolute file names. For an overview, see [Automatic Variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html) in the GNU Make manual.
 
     :::{important}
     Makefile rules must start with the tab character. See [Rule Syntax](https://www.gnu.org/software/make/manual/html_node/Rule-Syntax.html).
