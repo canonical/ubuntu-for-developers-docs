@@ -25,7 +25,7 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
 
     int main() {
         int number = 42;
-        printf("Hello, world!\nThe answer to everything is %d.", number);
+        printf("Hello, world!\nThe answer to everything is %d.\n", number);
         return 0;
     }
     ```
@@ -69,7 +69,7 @@ The {command}`gcc` compiler provides helpful output when it encounters a problem
 
     int main() {
         int number = 42;
-        printf("Hello, world!\nThe answer to everything is %d.");
+        printf("Hello, world!\nThe answer to everything is %d.\n");
         return 0;
     }
     ```
