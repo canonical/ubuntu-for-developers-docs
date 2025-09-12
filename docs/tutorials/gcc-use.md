@@ -81,9 +81,9 @@ The {command}`gcc` compiler provides helpful output when it encounters a problem
     <span style="font-weight:bold;">hello.c:</span> In function ‘<span style="font-weight:bold;">main</span>’:
     <span style="font-weight:bold;">hello.c:5:57:</span> <span style="font-weight:bold;color:purple;">warning: </span>format ‘<span style="font-weight:bold;">%d</span>’ expects a matching ‘<span style="font-weight:bold;">int</span>’ argument [<span style="font-weight:bold;color:purple;">-Wformat=</span>]
         5 |     printf(&quot;Hello, world!\nThe answer to everything is <span style="font-weight:bold;color:purple;">%d</span>.\n&quot;);
-        |                                                        <span style="font-weight:bold;color:purple;">~^</span>
-        |                                                         <span style="font-weight:bold;color:purple;">|</span>
-        |                                                         <span style="font-weight:bold;color:purple;">int</span></pre></div></div>
+          |                                                        <span style="font-weight:bold;color:purple;">~^</span>
+          |                                                         <span style="font-weight:bold;color:purple;">|</span>
+          |                                                         <span style="font-weight:bold;color:purple;">int</span></pre></div></div>
     :::
 
     {command}`gcc` displays a warning, but it still compiles the source code.
