@@ -54,7 +54,6 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
     The answer to everything is 42.
     ```
 
-
 ## Fixing simple bugs
 
 The {command}`gcc` compiler provides helpful output when encountering a problematic part of the source code.
@@ -99,7 +98,6 @@ The {command}`gcc` compiler provides helpful output when encountering a problema
     Hello, world!
     The answer to everything is -1350680728.
     ```
-
 
 ## Using the Make build system
 
@@ -188,7 +186,6 @@ See below for a simple example of using the GNU Make build system to build the '
     Hello, world!
     The answer to everything is 42.
     ```
-
 
 ## Debugging with GDB
 
