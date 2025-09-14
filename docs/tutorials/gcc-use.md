@@ -101,7 +101,7 @@ The {command}`gcc` compiler provides helpful output when encountering a problema
 
 ## Using the Make build system
 
-Compiling manually by invoking {command}`gcc` directly can help understand the build process, or for simple projects like 'Hello, world!'. However, a build system can be used to simplify and automate the process.
+Compiling manually by invoking {command}`gcc` directly can help understand the build process. It is also adequate for simple projects like 'Hello, world!'. A build system simplifies and automates the process.
 
 See below for a simple example of using the GNU Make build system to build the 'Hello, world!' program from {ref}`writing-a-sample-c-program`.
 
