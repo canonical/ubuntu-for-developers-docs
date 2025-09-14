@@ -85,7 +85,7 @@ The {command}`gcc` compiler provides helpful output when encountering a problema
           |                                                         <span style="font-weight:bold;color:purple;">int</span></pre></div></div>
     :::
 
-    {command}`gcc` displays a warning, but still compiles the source code.
+    {command}`gcc` displays a warning but still compiles the source code.
 
 3. Run the program to see how it behaves without the integer argument specified:
 
