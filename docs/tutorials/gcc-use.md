@@ -1,9 +1,9 @@
 (use-gcc)=
 # Develop with GCC on Ubuntu
 
-This tutorial shows how to build and debug C programs on Ubuntu using GCC and GDB. For instructions on how to install GCC and related tooling, including IDEs, debuggers, and the build system, see the dedicated guide on {ref}`install-gcc`. This article assumes that tooling suggested in that article has been installed.
+This tutorial shows how to build and debug C programs on Ubuntu using GCC and GDB. For instructions on installing GCC and related tooling (including IDEs, debuggers, and the build system), see the dedicated guide on {ref}`install-gcc`. This article assumes that the tooling suggested in that article has been installed.
 
-The GNU Compiler Collection (GCC) provides support for a number of programming languages. Working with the GCC toolchain in Ubuntu is straightforward, so this tutorial is limited to showing a basic 'Hello, world!' program using the C language and a basic debugging session.
+The GNU Compiler Collection (GCC) provides support for several programming languages. Working with the GCC toolchain in Ubuntu is straightforward, so this tutorial is limited to showing a basic 'Hello, world!' program in the C language and an introductory debugging session.
 
 
 (writing-a-sample-c-program)=
@@ -25,7 +25,7 @@ The GNU Compiler Collection (GCC) provides support for a number of programming l
 
     int main() {
         int number = 42;
-        printf("Hello, world!\nThe answer to everything is %d.", number);
+        printf("Hello, world!\nThe answer to everything is %d.\n", number);
         return 0;
     }
     ```
@@ -39,7 +39,7 @@ The GNU Compiler Collection (GCC) provides support for a number of programming l
     This command incorporates the intermediate steps of preprocessing, compiling, and linking to generate an executable in one go. Use the `-v` option to display detailed information on how {command}`gcc` invokes the individual tools that handle the intermediate steps.
 
     :::{note}
-    The {command}`gcc` command can be used to compile source code in many programming languages, including C, C++, and assembler. The compiler guesses the language used based on the file extension (for example, `.c`, `.cpp`, or `.s`). You can explicitly specify the language using the `-x` option.
+    {command}`gcc` can compile source code in many programming languages, including C, C++, and Assembly. The compiler guesses the language based on the file extension (for example, `.c`, `.cpp`, or `.s`). You can explicitly specify the language using the `-x` option as well.
     :::
 
 4. Run the program executable:
@@ -54,10 +54,9 @@ The GNU Compiler Collection (GCC) provides support for a number of programming l
     The answer to everything is 42.
     ```
 
-
 ## Fixing simple bugs
 
-The {command}`gcc` compiler provides helpful output when it encounters a problematic part of the source code.
+The {command}`gcc` compiler provides helpful output when encountering a problematic part of the source code.
 
 1. Modify the 'Hello, world!' program source to omit an expected argument. Note the missing `number` argument on line 5:
 
@@ -69,7 +68,7 @@ The {command}`gcc` compiler provides helpful output when it encounters a problem
 
     int main() {
         int number = 42;
-        printf("Hello, world!\nThe answer to everything is %d.");
+        printf("Hello, world!\nThe answer to everything is %d.\n");
         return 0;
     }
     ```
@@ -81,14 +80,14 @@ The {command}`gcc` compiler provides helpful output when it encounters a problem
     <span style="font-weight:bold;">hello.c:</span> In function ‘<span style="font-weight:bold;">main</span>’:
     <span style="font-weight:bold;">hello.c:5:57:</span> <span style="font-weight:bold;color:purple;">warning: </span>format ‘<span style="font-weight:bold;">%d</span>’ expects a matching ‘<span style="font-weight:bold;">int</span>’ argument [<span style="font-weight:bold;color:purple;">-Wformat=</span>]
         5 |     printf(&quot;Hello, world!\nThe answer to everything is <span style="font-weight:bold;color:purple;">%d</span>.\n&quot;);
-        |                                                        <span style="font-weight:bold;color:purple;">~^</span>
-        |                                                         <span style="font-weight:bold;color:purple;">|</span>
-        |                                                         <span style="font-weight:bold;color:purple;">int</span></pre></div></div>
+          |                                                        <span style="font-weight:bold;color:purple;">~^</span>
+          |                                                         <span style="font-weight:bold;color:purple;">|</span>
+          |                                                         <span style="font-weight:bold;color:purple;">int</span></pre></div></div>
     :::
 
-    {command}`gcc` displays a warning, but it still compiles the source code.
+    {command}`gcc` displays a warning but still compiles the source code.
 
-3. Run the program to see how it misbehaves without the integer argument specified:
+3. Run the program to see how it behaves without the integer argument specified:
 
     ```{terminal}
     :dir: ~/projects/hello-world
@@ -100,15 +99,14 @@ The {command}`gcc` compiler provides helpful output when it encounters a problem
     The answer to everything is -1350680728.
     ```
 
-
 ## Using the Make build system
 
-Compiling manually by invoking {command}`gcc` directly can be useful to understand the build process or for simple projects like 'Hello, world!'. For larger projects, use a build system to simplify and automate the process.
+Compiling manually by invoking {command}`gcc` directly can help understand the build process. It is also adequate for simple projects like 'Hello, world!'. A build system simplifies and automates the process.
 
-See below for a simple example of the use of the GNU Make build system to build the 'Hello, world!' program from {ref}`writing-a-sample-c-program`.
+See below for a simple example of using the GNU Make build system to build the 'Hello, world!' program from {ref}`writing-a-sample-c-program`.
 
 
-1. Create a basic Makefile (a file named {file}`Makefile` in the project directory) with the following content:
+1. Create a basic Makefile (a file named {file}`Makefile` in the project directory) with the following contents:
 
     ```makefile
     ## Variables:
@@ -145,7 +143,7 @@ See below for a simple example of the use of the GNU Make build system to build 
     .PHONY: all clean
     ```
 
-    Note that the {file}`Makefile` divides the build process into separate compilation and linking steps. It also makes use of "automatic variables" that allow for writing the compilation rules without specifying absolute file names. For an overview, see [Automatic Variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html) in the GNU Make manual.
+    The {file}`Makefile` divides the build process into separate compilation and linking steps. It also uses "automatic variables" that allow for writing the compilation rules without specifying absolute file names. For an overview, see [Automatic Variables](https://www.gnu.org/software/make/manual/html_node/Automatic-Variables.html) in the GNU Make manual.
 
     :::{important}
     Makefile rules must start with the tab character. See [Rule Syntax](https://www.gnu.org/software/make/manual/html_node/Rule-Syntax.html).
@@ -189,10 +187,9 @@ See below for a simple example of the use of the GNU Make build system to build 
     The answer to everything is 42.
     ```
 
-
 ## Debugging with GDB
 
-GDB is the standard debugger accompanying GNU GCC. While you can use debugging capabilities of your preferred IDE, GDB offers adequate debugging support for the command line.
+GDB is the standard debugger accompanying GNU GCC. While you can use the debugging capabilities of your preferred IDE, GDB offers adequate debugging support for the command line.
 
 See the example below for a quick introduction to GDB use with the 'Hello, world!' program from {ref}`writing-a-sample-c-program`.
 
@@ -233,9 +230,9 @@ See the example below for a quick introduction to GDB use with the 'Hello, world
     In the above example:
 
     1. Line 6: the {command}`hello` program is started.
-    2. Line 15: the `number` variable is queried before being assigned.
-    3. Line 17: the program execution is stepped forward.
-    4. Line 19: the `number` variable is queried again after being assigned.
+    2. Line 15: `number` is queried before being assigned.
+    3. Line 17: program execution is stepped forward.
+    4. Line 19: `number` is queried again after being assigned.
 
 3. Press {kbd}`Ctrl+X+A` to switch to the text user interface (TUI) of GDB for a more interactive experience:
 
@@ -244,4 +241,4 @@ See the example below for a quick introduction to GDB use with the 'Hello, world
 
     Type `help` at any point to see available commands.
 
-4. Press {kbd}`Ctrl+D` to quit the debugging session.
+4. Press {kbd}`Ctrl+D` to quit GDB.
