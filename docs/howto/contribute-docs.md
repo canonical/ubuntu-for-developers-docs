@@ -44,7 +44,7 @@ Follow these steps to build the documentation on your local machine.
 * Git
 * The `make` tool
     :::{note}
-    The `make` command is compatible with Unix systems. On Windows, [install Ubuntu with WSL](https://documentationacademy.org/docs/howto/get-started/using_wsl/).
+    The `make` command is compatible with Unix systems. On Windows, [install Ubuntu with WSL](https://documentation.ubuntu.com/wsl/latest/howto/install-ubuntu-wsl2/).
     :::
 
 
