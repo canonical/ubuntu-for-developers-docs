@@ -295,7 +295,7 @@ To allow for the possibility of inspecting the state of the script at different 
     :::{raw} html
     <div class="highlight-default notranslate"><div class="highlight"><pre>$ python3 helloworld.py
 
-    &gt; <span style="color:green">/home/rkratky/python/hw.py</span>(<span style="color:#52FF52">26</span>)<span style="color:teal">hello_world</span><span style="color:blue">()</span>
+    &gt; <span style="color:green">/home/dev/python/hw.py</span>(<span style="color:#52FF52">26</span>)<span style="color:teal">hello_world</span><span style="color:blue">()</span>
         <span style="color:green">25</span>         <span style="font-style:italic;color:grey"># Print the message</span>
     <span style="color:green">---&gt; 26</span>         print(response_data[<span style="color:brown">"headers"</span>][<span style="color:brown">"Message"</span>])
         <span style="color:green">27</span>
