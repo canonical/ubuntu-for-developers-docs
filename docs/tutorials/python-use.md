@@ -13,20 +13,20 @@ To separate the system installation of Python from your development and testing 
 0. (Optional) Create a directory for Python development, as well as a directory for the new project:
 
     ```none
-    mkdir -p ~/python/helloworld
-    cd ~/python/helloworld
+    $ mkdir -p ~/python/helloworld
+    $ cd ~/python/helloworld
     ```
 
 1. Create a separate virtual environment for the new project (specifying `.venv` as the directory for it):
 
     ```none
-    python3 -m venv .venv
+    $ python3 -m venv .venv
     ```
 
 2. Activate the virtual environment by sourcing the `activate` script:
 
     ```none
-    source .venv/bin/activate
+    $ source .venv/bin/activate
     ```
 
 3. Check that the environment has been set up:
@@ -85,13 +85,13 @@ To illustrate the installation of a dependency confined to the Python virtual en
 1. Create a `requirements.txt` file with the list of dependencies. For example:
 
     ```none
-    echo "requests" > requirements.txt
+    $ echo "requests" > requirements.txt
     ```
 
 2. Install the dependencies:
 
     ```none
-    pip install -r requirements.txt
+    $ pip install -r requirements.txt
     ```
 
    Checking the list of Python packages installed within the virtual environment should show output similar to this:
@@ -239,13 +239,13 @@ To allow for the possibility of inspecting the state of the script at different 
 1. Add `ipdb` to the list of dependencies:
 
     ```none
-    echo "ipdb" >> requirements.txt
+    $ echo "ipdb" >> requirements.txt
     ```
 
 2. Install the dependencies:
 
     ```none
-    pip install -r requirements.txt
+    $ pip install -r requirements.txt
     ```
 
 3. Add `ipdb` module import, and insert a breakpoint in the code (see line 23):
