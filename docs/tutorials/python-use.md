@@ -175,6 +175,7 @@ Consider the 'Hello, world!' script shown in {ref}`creating-a-basic-python-progr
 ```{code-block} python
     :caption: `helloworld.py`
     :linenos:
+    :emphasize-lines: 26
 
 import requests
 
@@ -253,6 +254,7 @@ To allow for the possibility of inspecting the state of the script at different 
     ```{code-block} python
     :caption: `helloworld.py`
     :linenos:
+    :emphasize-lines: 2,22,23
 
     import requests
     import ipdb
