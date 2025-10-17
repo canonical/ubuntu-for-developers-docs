@@ -233,6 +233,7 @@ Note that Black proceeds to reformat the code without asking for a confirmation.
 :::
 
 
+(debugging-python-code)=
 ## Debugging Python code
 
 To allow for the possibility of inspecting the state of the script at different points of execution, add breakpoints. In this example, we use the `ipdb` debugger, which is an enhanced version of the built-in `pdb` debugger.
@@ -321,7 +322,55 @@ To allow for the possibility of inspecting the state of the script at different 
 
 The following example shows how to use the `pytest` testing tool. First we implement a simple unit test that supplies mock data in place of querying the remote service and compares the output with the expected return value from the `hello_world()` function. Then we run `pytest` to perform the test.
 
-1. Create a unit-test file, {file}`helloworld_test.py`, with the following contents:
+1. Ensure that `pytest` and `pytest-mock` are installed:
+
+    ```none
+    $ apt install python3-pytest python3-pytest-mock
+    ```
+
+2. If you added debugging lines when {ref}`debugging-python-code`, comment them out:
+
+    ```{code-block} python
+    :caption: `helloworld.py`
+    :linenos:
+    :emphasize-lines: 2,22,23
+
+    import requests
+    # import ipdb
+
+
+    def hello_world():
+        # Use the example HTTP response service
+        url = "https://httpbin.org/post"
+
+        # Define a custom header for the POST method
+        header = {"Message": "Hello, world!"}
+
+        try:
+            # Send the defined header to the response service
+            response = requests.post(url, headers=header)
+
+            # Basic error handling
+            response.raise_for_status()
+
+            # Parse the response
+            response_data = response.json()
+
+            # # Set a breakpoint to check response data
+            # ipdb.set_trace()
+
+            # Print the message
+            print(response_data["headers"]["Message"])
+
+        except requests.exceptions.RequestException as e:
+            print(f"An error occurred: {e}")
+
+
+    if __name__ == "__main__":
+        hello_world()
+    ```
+
+3. Create a unit-test file, {file}`helloworld_test.py`, with the following contents:
 
     ```{code-block} python
         :caption: `helloworld_test.py`
@@ -355,7 +404,7 @@ The following example shows how to use the `pytest` testing tool. First we imple
         assert captured.out.strip() == "Hello, world!"
     ```
 
-2. Run the unit test using `pytest`:
+4. Run the unit test using `pytest`:
 
     :::{raw} html
     <div class="highlight-default notranslate"><div class="highlight"><pre>$ pytest helloworld_test.py
