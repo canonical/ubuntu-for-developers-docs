@@ -41,7 +41,7 @@ To separate the system installation of Python from your development and testing 
     ```
 
 ::::{note}
-If you attempt to install a Python package using `pip` outside of a Python virtual environment, such as `venv`, on an Ubuntu (Debian) system, you receive a warning that explains that you should keep the system installation of Python (installed using `.deb` packages from Ubuntu repositories) separate from Python packages installed using `pip`:
+If you attempt to install a Python package using `pip` outside of a Python virtual environment, such as `venv`, on an Ubuntu (Debian) system, you will receive a warning that explains that you should keep the system installation of Python (installed using `.deb` packages from Ubuntu repositories) separate from Python packages installed using `pip`:
 
 :::{raw} html
 <div class="highlight-default notranslate"><div class="highlight"><pre>
@@ -165,12 +165,12 @@ To illustrate the installation of a dependency confined to the Python virtual en
 
 Use linters and formatters to improve the quality and style of your Python code to achieve consistency and better readability.
 
-In this example, we use the [Flake8](https://flake8.pycqa.org/) code checker and [Black](https://github.com/psf/black) formatter to identify  areas for improvement and automatically format code. See {ref}`install-python` for instructions on how to install these tools.
+In this example, we use the [Flake8](https://flake8.pycqa.org/) code checker and [Black](https://github.com/psf/black) formatter to identify areas for improvement and automatically format code. See {ref}`install-python` for instructions on how to install these tools.
 
 
 ### Checking Python code with Flake8
 
-Consider the 'Hello, world!' script shown in {ref}`creating-a-basic-python-program`. Let's introduce a simple style transgression into the code:
+Consider the 'Hello, world!' script shown in {ref}`creating-a-basic-python-program`. Let's introduce a simple style transgression into the code by deleting one of the blank lines after the `hello_world()` function:
 
 ```{code-block} python
     :caption: `helloworld.py`
