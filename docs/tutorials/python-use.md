@@ -41,7 +41,7 @@ To separate the system installation of Python from your development and testing 
     ```
 
 ::::{note}
-If you attempt to install a Python package using `pip` outside of a Python virtual environment, such as `venv`, on an Ubuntu (Debian) system, you will receive a warning that explains that you should keep the system installation of Python (installed using `.deb` packages from Ubuntu repositories) separate from Python packages installed using `pip`:
+If you attempt to install a Python package using `pip` outside of a Python virtual environment, such as `venv`, on an Ubuntu (Debian) system, you receive a warning that explains that you should keep the system installation of Python (installed using `.deb` packages from Ubuntu repositories) separate from Python packages installed using `pip`:
 
 :::{raw} html
 <div class="highlight-default notranslate"><div class="highlight"><pre>
