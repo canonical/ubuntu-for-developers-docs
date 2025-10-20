@@ -109,7 +109,7 @@ Test the documentation before submitting a pull request. Run the following comma
 
 ## Canonical Open Documentation Academy
 
-If you've never contributed to an open source project before, the [Canonical Open Documentation Academy](https://canonical.com/documentation/open-documentation-academy) (CODA) is a great way to begin.
+If you've never contributed to an open source project before, the [Canonical Open Documentation Academy](https://documentation.academy) (CODA) is a great way to begin.
 
 The Canonical Open Documentation Academy (CODA) is an initiative led by the documentation team at Canonical to encourage open source contributions from the community, and to provide help, advice and mentorship within a friendly and welcoming environment.
 
