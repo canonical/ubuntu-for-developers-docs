@@ -13,20 +13,20 @@ To separate the system installation of Python from your development and testing 
 0. (Optional) Create a directory for Python development, as well as a directory for the new project:
 
     ```none
-    mkdir -p ~/python/helloworld
-    cd ~/python/helloworld
+    $ mkdir -p ~/python/helloworld
+    $ cd ~/python/helloworld
     ```
 
 1. Create a separate virtual environment for the new project (specifying `.venv` as the directory for it):
 
     ```none
-    python3 -m venv .venv
+    $ python3 -m venv .venv
     ```
 
 2. Activate the virtual environment by sourcing the `activate` script:
 
     ```none
-    source .venv/bin/activate
+    $ source .venv/bin/activate
     ```
 
 3. Check that the environment has been set up:
@@ -85,13 +85,13 @@ To illustrate the installation of a dependency confined to the Python virtual en
 1. Create a `requirements.txt` file with the list of dependencies. For example:
 
     ```none
-    echo "requests" > requirements.txt
+    $ echo "requests" > requirements.txt
     ```
 
 2. Install the dependencies:
 
     ```none
-    pip install -r requirements.txt
+    $ pip install -r requirements.txt
     ```
 
    Checking the list of Python packages installed within the virtual environment should show output similar to this:
@@ -165,16 +165,17 @@ To illustrate the installation of a dependency confined to the Python virtual en
 
 Use linters and formatters to improve the quality and style of your Python code to achieve consistency and better readability.
 
-In this example, we use the [Flake8](https://flake8.pycqa.org/) code checker and [Black](https://github.com/psf/black) formatter to identify  areas for improvement and automatically format code. See {ref}`install-python` for instructions on how to install these tools.
+In this example, we use the [Flake8](https://flake8.pycqa.org/) code checker and [Black](https://github.com/psf/black) formatter to identify areas for improvement and automatically format code. See {ref}`install-python` for instructions on how to install these tools.
 
 
 ### Checking Python code with Flake8
 
-Consider the 'Hello, world!' script shown in {ref}`creating-a-basic-python-program`. Let's introduce a simple style transgression into the code:
+Consider the 'Hello, world!' script shown in {ref}`creating-a-basic-python-program`. Let's introduce a simple style transgression into the code by deleting one of the blank lines after the `hello_world()` function:
 
 ```{code-block} python
     :caption: `helloworld.py`
     :linenos:
+    :emphasize-lines: 26
 
 import requests
 
@@ -232,6 +233,7 @@ Note that Black proceeds to reformat the code without asking for a confirmation.
 :::
 
 
+(debugging-python-code)=
 ## Debugging Python code
 
 To allow for the possibility of inspecting the state of the script at different points of execution, add breakpoints. In this example, we use the `ipdb` debugger, which is an enhanced version of the built-in `pdb` debugger.
@@ -239,13 +241,13 @@ To allow for the possibility of inspecting the state of the script at different 
 1. Add `ipdb` to the list of dependencies:
 
     ```none
-    echo "ipdb" >> requirements.txt
+    $ echo "ipdb" >> requirements.txt
     ```
 
 2. Install the dependencies:
 
     ```none
-    pip install -r requirements.txt
+    $ pip install -r requirements.txt
     ```
 
 3. Add `ipdb` module import, and insert a breakpoint in the code (see line 23):
@@ -253,6 +255,7 @@ To allow for the possibility of inspecting the state of the script at different 
     ```{code-block} python
     :caption: `helloworld.py`
     :linenos:
+    :emphasize-lines: 2,22,23
 
     import requests
     import ipdb
@@ -284,6 +287,7 @@ To allow for the possibility of inspecting the state of the script at different 
         except requests.exceptions.RequestException as e:
             print(f"An error occurred: {e}")
 
+
     if __name__ == "__main__":
         hello_world()
     ```
@@ -293,7 +297,7 @@ To allow for the possibility of inspecting the state of the script at different 
     :::{raw} html
     <div class="highlight-default notranslate"><div class="highlight"><pre>$ python3 helloworld.py
 
-    &gt; <span style="color:green">/home/rkratky/python/hw.py</span>(<span style="color:#52FF52">26</span>)<span style="color:teal">hello_world</span><span style="color:blue">()</span>
+    &gt; <span style="color:green">/home/dev/python/hw.py</span>(<span style="color:#52FF52">26</span>)<span style="color:teal">hello_world</span><span style="color:blue">()</span>
         <span style="color:green">25</span>         <span style="font-style:italic;color:grey"># Print the message</span>
     <span style="color:green">---&gt; 26</span>         print(response_data[<span style="color:brown">"headers"</span>][<span style="color:brown">"Message"</span>])
         <span style="color:green">27</span>
@@ -318,7 +322,55 @@ To allow for the possibility of inspecting the state of the script at different 
 
 The following example shows how to use the `pytest` testing tool. First we implement a simple unit test that supplies mock data in place of querying the remote service and compares the output with the expected return value from the `hello_world()` function. Then we run `pytest` to perform the test.
 
-1. Create a unit-test file, {file}`helloworld_test.py`, with the following contents:
+1. Ensure that `pytest` and `pytest-mock` are installed:
+
+    ```none
+    $ apt install python3-pytest python3-pytest-mock
+    ```
+
+2. If you added debugging lines when {ref}`debugging-python-code`, comment them out:
+
+    ```{code-block} python
+    :caption: `helloworld.py`
+    :linenos:
+    :emphasize-lines: 2,22,23
+
+    import requests
+    # import ipdb
+
+
+    def hello_world():
+        # Use the example HTTP response service
+        url = "https://httpbin.org/post"
+
+        # Define a custom header for the POST method
+        header = {"Message": "Hello, world!"}
+
+        try:
+            # Send the defined header to the response service
+            response = requests.post(url, headers=header)
+
+            # Basic error handling
+            response.raise_for_status()
+
+            # Parse the response
+            response_data = response.json()
+
+            # # Set a breakpoint to check response data
+            # ipdb.set_trace()
+
+            # Print the message
+            print(response_data["headers"]["Message"])
+
+        except requests.exceptions.RequestException as e:
+            print(f"An error occurred: {e}")
+
+
+    if __name__ == "__main__":
+        hello_world()
+    ```
+
+3. Create a unit-test file, {file}`helloworld_test.py`, with the following contents:
 
     ```{code-block} python
         :caption: `helloworld_test.py`
@@ -352,7 +404,7 @@ The following example shows how to use the `pytest` testing tool. First we imple
         assert captured.out.strip() == "Hello, world!"
     ```
 
-2. Run the unit test using `pytest`:
+4. Run the unit test using `pytest`:
 
     :::{raw} html
     <div class="highlight-default notranslate"><div class="highlight"><pre>$ pytest helloworld_test.py
