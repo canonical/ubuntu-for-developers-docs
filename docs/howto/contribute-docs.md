@@ -44,7 +44,7 @@ Follow these steps to build the documentation on your local machine.
 * Git
 * The `make` tool
     :::{note}
-    The `make` command is compatible with Unix systems. On Windows, [install Ubuntu with WSL](https://documentationacademy.org/docs/howto/get-started/using_wsl/).
+    The `make` command is compatible with Unix systems. On Windows, [install Ubuntu with WSL](https://documentation.ubuntu.com/wsl/latest/howto/install-ubuntu-wsl2/).
     :::
 
 
@@ -109,7 +109,7 @@ Test the documentation before submitting a pull request. Run the following comma
 
 ## Canonical Open Documentation Academy
 
-If you've never contributed to an open source project before, the [Canonical Open Documentation Academy](https://documentationacademy.org/) (CODA) is a great way to begin.
+If you've never contributed to an open source project before, the [Canonical Open Documentation Academy](https://documentation.academy) (CODA) is a great way to begin.
 
 The Canonical Open Documentation Academy (CODA) is an initiative led by the documentation team at Canonical to encourage open source contributions from the community, and to provide help, advice and mentorship within a friendly and welcoming environment.
 
