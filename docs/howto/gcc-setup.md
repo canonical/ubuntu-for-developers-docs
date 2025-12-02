@@ -94,8 +94,7 @@ Other developers enjoy the full support offered by Integrated Development Enviro
 
 
 [Apache NetBeans](https://netbeans.apache.org/front/main/index.html)
-: The [NetBeans C/C++ Development Pack](https://netbeans.info/products/cplusplus.html) adds support for C/C++ to NetBeans.
-
+: The [NetBeans C/C++ Development Pack](https://www.netbeans.info/products/cplusplus.html) adds support for C/C++ to NetBeans.
   Install with:
 
   ```none

@@ -123,4 +123,4 @@ Stay in touch either through the task list, or through one of the following loca
 * [Matrix](https://matrix.to/#/#documentation:ubuntu.com) for interactive chat.
 * [Fosstodon](https://fosstodon.org/@CanonicalDocumentation) for the latest updates and events.
 
-In addition to the above, we have a weekly [Open Documentation Hour](https://discourse.ubuntu.com/t/open-documentation-hour-schedule/45291) at 16:00 UTC each Friday. Everyone is welcome.
+In addition to the above, we have a weekly [Open Documentation Hour](https://discourse.ubuntu.com/t/community-hour-schedule/45291) at 16:00 UTC each Friday. Everyone is welcome.

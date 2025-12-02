@@ -98,7 +98,7 @@ To generate and use an SSH key pair:
 
    For information on how to add an SSH key to various Git-hosting providers, see:
 
-    * GitLab: [Adding an SSH key to your GitLab account](https://docs.gitlab.com/ee/user/ssh.html#add-an-ssh-key-to-your-gitlab-account)
+    * GitLab: [Adding an SSH key to your GitLab account](https://docs.gitlab.com/user/ssh/#add-an-ssh-key-to-your-gitlab-account)
 
     * GitHub: [Adding a new SSH key to your GitHub account](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account?platform=linux)
 
@@ -112,7 +112,7 @@ Launchpad is suite of tools for collaborating on software projects. Among other 
 * Backend services for processes critical to the development of the Ubuntu Linux distribution.
 * Git-hosting service for teams and individuals.
 
-To participate in the development and maintenance of the Ubuntu Linux distribution, Launchpad is essential. See the official documentation at [Launchpad Help](https://help.launchpad.net/).
+To participate in the development and maintenance of the Ubuntu Linux distribution, Launchpad is essential. See the official [Launchpad documentation](https://documentation.ubuntu.com/launchpad/user/).
 
 
 ### Suggestions for using Git
