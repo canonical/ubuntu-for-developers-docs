@@ -9,7 +9,7 @@ Go is a popular language for back-end web development, microservices and CLI too
 Go includes the `go` command, a compiler and other tools. You can install Go as a Debian package or as a snap. Snap provides a larger number of Go versions but — unlike a Debian package — these cannot be installed in a Docker container.
 
 :::{note}
-See [Precompiled Go binaries](#precompiled-go-binaries) for instructions on how to install Go without a package manager.
+See [Pre-compiled Go binaries](#precompiled-go-binaries) for instructions on how to install Go without a package manager.
 :::
 
 
@@ -87,9 +87,9 @@ The files to modify and commands to use when modifying the `$PATH` may vary depe
 
 
 (precompiled-go-binaries)=
-### Precompiled Go binaries
+### Pre-compiled Go binaries
 
-Precompiled Go binaries are available in a compressed format on the [release page](https://go.dev/dl/) of the official Go website.
+Pre-compiled Go binaries are available in a compressed format on the [release page](https://go.dev/dl/) of the official Go website.
 
 1. Fetch a specific Go version with `wget`:
 
@@ -166,9 +166,9 @@ sudo apt install delve
 
 An overview of basic Delve use is included in our {ref}`use-go` tutorial.
 
-A Go language server, [gopls](https://pkg.go.dev/golang.org/x/tools/gopls), is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
+A Go language server, [{spellexception}`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls), is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
 
-To install gopls from the Ubuntu archive:
+To install {spellexception}`gopls` from the Ubuntu archive:
 
 ```none
 sudo apt install gopls

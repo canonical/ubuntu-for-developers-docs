@@ -49,7 +49,7 @@ Latest or early-access releases are also available through the community maintai
 
 ### Long Term Support Java releases
 
-The Ubuntu Archive provides packages for all supported LTS releases of [OpenJDK](https://openjdk.org/) - an open-source implementation of [Java Platform, Standard Edition](https://www.oracle.com/technetwork/java/javase/overview/index.html). OpenJDK 17 and 21 TCK (Technology Compatibility Kit) is certified on Ubuntu 24.04.
+The Ubuntu Archive provides packages for all supported LTS releases of [OpenJDK](https://openjdk.org/) - an open-source implementation of [Java Platform, Standard Edition](https://www.oracle.com/java/technologies/java-se-glance.html). OpenJDK 17 and 21 TCK (Technology Compatibility Kit) is certified on Ubuntu 24.04.
 
 To install OpenJDK, run:
 

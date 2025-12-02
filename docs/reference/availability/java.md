@@ -8,8 +8,8 @@
 | 25.10 (Questing Quokka)     | 8, 11, 17, **21**, 24, 25 | 21 |
 | 25.04 (Plucky Puffin)       | 8, 11, 17, **21**, 24, 25 | 21 |
 | 24.10 (Oracular Oriole)     | 8, 11, 17, **21**, 22, 23, 24 | 21 |
-| 24.04 LTS (Noble Numbat)    | 8, 11, **17**, **21** | 21 |
-| 22.04 LTS (Jammy Jellyfish) | 8, **11**, 17, 18, 19, 21 | 11 |
+| 24.04 LTS (Noble Numbat)    | 8, 11, **17**, **21**, 25 | 21 |
+| 22.04 LTS (Jammy Jellyfish) | 8, **11**, 17, 18, 21, 25 | 11 |
 | 20.04 LTS (Focal Fossa)     | 8, **11**, 13, 16, 17, 21 | 11 |
 | 18.04 LTS (Bionic Beaver)   | 8, **11**, 17 | 11 |
 | 16.04 LTS (Xenial Xerus)    | **8**, 9 | 8 |

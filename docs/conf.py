@@ -153,6 +153,7 @@ linkcheck_ignore = [
     r"https://www\.nongnu\.org/.*",
     r"https://www\.gnu\.org/.*",
     r"https://matrix\.to/.*",
+    "https://blog.local-optimum.net/getting-started-with-autoinstall-on-ubuntu-desktop-24-04-lts-147a1defb2de", # Server returns 403 Forbidden for linkcheck client, but works with a browser
 ]
 
 # Pages on which to ignore anchors
