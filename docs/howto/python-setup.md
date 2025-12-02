@@ -12,7 +12,7 @@ In the Ubuntu package repository, the {pkg}`python3` package always depends on t
 Do not remove the default system installation of Python (the {pkg}`python3` package), as that would break system tooling.
 :::
 
-To get a more useful runtime environment, use the special dependency package, {pkg}`python3-full`, which automatically installs the interpreter with the complete class library, support for Python virtual environments (`venv`), and the basic Python IDE (IDLE). Similarly to {pkg}`python3`, the {pkg}`python3-full` is a metapackage that always depends on the currently default version of Python in Ubuntu.
+To get a more useful runtime environment, use the special dependency package, {pkg}`python3-full`, which automatically installs the interpreter with the complete class library, support for Python virtual environments (`venv`), and the basic Python IDE (IDLE). Similarly to {pkg}`python3`, the {pkg}`python3-full` is a meta package that always depends on the currently default version of Python in Ubuntu.
 
 ```none
 sudo apt install -y python3-full
@@ -90,7 +90,7 @@ Some of the most common IDEs for Python are:
 [IDLE (Integrated Development and Learning Environment)](https://docs.python.org/3/library/idle.html)
 : The Python editor and shell is maintained by the Python project and bundled as a dependency of the {pkg}`python3-full` package. It is basic but can serve for learning purposes. It includes a simple debugger and a **Stack Viewer** for tracing errors or exceptions.
 
-[Spyder](https://www.spyder-ide.org/)
+[{spellexception}`Spyder`](https://www.spyder-ide.org/)
 : A community-developed IDE (written in Python) with a special focus on scientific applications.
 
   Install with:
@@ -120,7 +120,7 @@ Some of the most common IDEs for Python are:
   From within Eclipse, install PyDev by going to {menuselection}`Help --> Install New Software...` and use `http://www.pydev.org/updates` for the {guilabel}`Work with:` field. See [Installing](https://www.pydev.org/manual_101_install.html) in the PyDev [Getting started guide](https://www.pydev.org/manual_101_root.html).
 
 [Apache NetBeans](https://netbeans.apache.org/front/main/index.html)
-: The [netbeansPython plugin](https://github.com/albilu/netbeansPython) adds support for Python to NetBeans (it is based on the [python-lsp-server](https://github.com/python-lsp/python-lsp-server).
+: The [{spellexception}`netbeansPython` plugin](https://github.com/albilu/netbeansPython) adds support for Python to NetBeans (it is based on the [python-lsp-server](https://github.com/python-lsp/python-lsp-server).
 
   Install with:
 
@@ -129,7 +129,7 @@ Some of the most common IDEs for Python are:
   sudo snap install netbeans --classic
   ```
 
-  From within NetBeans, install netbeansPython by going to {menuselection}` Tools --> Plugins --> Available Plugins --> Install`.
+  From within NetBeans, install {spellexception}`netbeansPython` by going to {menuselection}` Tools --> Plugins --> Available Plugins --> Install`.
 
 
 ### Linting and code-quality tools

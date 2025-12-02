@@ -140,10 +140,10 @@ Git shell helpers
 : Using a Git shell helper, such as the bundled `git-prompt.sh`, can improve your Git workflow with features including auto-completion and branch names with repository status displayed as part of the command prompt in the terminal. To set it up, read the instructions in the {file}`/usr/lib/git-core/git-sh-prompt` file. See also [Git in Other Environments - Git in Bash](https://git-scm.com/book/id/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash).
 
 Text user interfaces (TUI)
-: Git TUIs, such as [Tig](https://jonas.github.io/tig/), provide a visual way to interact with Git in the terminal, making it easier to navigate commits and branches. Install with {command}`sudo apt install -y tig`.
+: Git TUIs, such as [{spellexception}`Tig`](https://jonas.github.io/tig/), provide a visual way to interact with Git in the terminal, making it easier to navigate commits and branches. Install with {command}`sudo apt install -y tig`.
 
 Graphical user interfaces (GUI)
-: Git GUIs, such as the basic [gitk](https://git-scm.com/docs/gitk) or GNOME-native [gitg](https://wiki.gnome.org/Apps/Gitg/), provide a graphical interface to manage repositories instead of using the command line. Install with {command}`sudo apt install -y gitk gitg`. See [GUI Clients](https://git-scm.com/downloads/guis?os=linux) for an overview of available applications (includes TUIs).
+: Git GUIs, such as the basic [{spellexception}`gitk`](https://git-scm.com/docs/gitk) or GNOME-native [{spellexception}`gitg`](https://wiki.gnome.org/Apps/Gitg/), provide a graphical interface to manage repositories instead of using the command line. Install with {command}`sudo apt install -y gitk gitg`. See [GUI Clients](https://git-scm.com/downloads/guis?os=linux) for an overview of available applications (includes TUIs).
 
 Git hooks
 : Git hooks are scripts that trigger actions at specific Git events (e.g., before a commit, after a push). This enables you to enforce coding standards, prevent commits with errors or unformatted code, and automate tasks such as linting, formatting, and commit-message validation. See [Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks).
