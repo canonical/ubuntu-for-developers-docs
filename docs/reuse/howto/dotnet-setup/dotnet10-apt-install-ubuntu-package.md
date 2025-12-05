@@ -1,10 +1,5 @@
 **Installing the SDK**
 
-```{caution}
-Do not install the `dotnet-sdk-9.0` and `dotnet-sdk-10.0` packages on the same system. There is a known conflict that arises when APT tries to install both. See the GitHub issue [dotnet/source-build #5049](https://github.com/dotnet/source-build/issues/5049) for more details.
-
-```
-
 The .NET SDK allows you to develop apps with .NET. To install the .NET SDK:
 
 ```text
