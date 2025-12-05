@@ -166,28 +166,14 @@ Setting up and building a new Java project using the Gradle build tool.
 
 - Gradle:
 
-    Download Gradle from the [Gradle Releases](https://gradle.org/releases) page and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
-
-    :::{note}
-    Gradle introduced Java 21 support in version 8.5.
-    :::
-
-    Alternatively, to install the community-maintained Gradle snap, run:
+    Install the Gradle snap:
 
     ```none
     sudo snap install gradle
     ```
 
-    The snap provides Gradle version 7, which does not support Java 21.
-
-    :::{note}
-    The snap requires setting up the `JAVA_HOME` variable. For example:
-
-    ```bash
-    export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-    ```
-    :::
-
+    Alternatively, download Gradle from the [Gradle Releases](https://gradle.org/releases) page and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
+   
 
 :::
 ### Gradle project
