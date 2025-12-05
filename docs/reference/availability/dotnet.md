@@ -53,22 +53,30 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
 * - .NET version
   - identifiers
   - End of Life
-* - .NET 9 (STS)
+* - .NET 10 (LTS)
   - ```none
     latest
     ```
     ```none
+    lts
+    ```
+    ```none
+    10
+    ```
+    ```none
+    10.0
+    ```
+  - 14 November, 2028
+* - .NET 9 (STS)
+  - ```none
     9
     ```
     ```none
     9.0
     ```
-  - 12 May 2026
+  - 10 November, 2026
 * - .NET 8 (LTS)
   - ```none
-    lts
-    ```
-    ```none
     8
     ```
     ```none
@@ -99,34 +107,28 @@ See: {ref}`dotnet-installation-snap`
 
 | Ubuntu version              | `amd64` | `arm64` | `s390x` | `ppc64el` |
 |-----------------------------|---------|---------|---------|-----------|
-| 25.10 (Questing Quokka)     | **8**, 9, 10{dim}`³` | **8**, 9, 10{dim}`³` | **8**, 9 | **8**, 9 |
-| 25.04 (Plucky Puffin)       | **8**, 9, 10{dim}`³` | **8**, 9, 10{dim}`³` | **8**, 9 | **8**, 9 |
-| 24.10 (Oracular Oriole)     | **8**, 9 | **8**, 9 | **8**, 9 | **8**, 9 |
-| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10{dim}`³` | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10{dim}`³` | **8**, 9{dim}`¹` | **8**, 9{dim}`¹` |
-| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`³` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`³` | **8**, 9{dim}`¹` | **8**, 9{dim}`¹` |
+| 26.04 (Resolute Raccoon)    | 8{dim}`¹`, 9, 10 | 8{dim}`¹`, 9, 10 | 8{dim}`¹`, 9, 10 | 8{dim}`¹`, 9, 10 |
+| 25.10 (Questing Quokka)     | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 |
+| 25.04 (Plucky Puffin)       | **8**, 9, 10{dim}`³` | **8**, 9, 10{dim}`³` | **8**, 9, 10{dim}`³` | **8**, 9, 10{dim}`³` |
+| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10{dim}`³` | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10{dim}`³` | **8**, 9{dim}`¹`, 10{dim}`³` | **8**, 9{dim}`¹`, 10{dim}`³` |
+| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
 ¹ -- available in the {ref}`dotnet-backports-ppa` only    
 ² -- version is no longer maintained by Canonical (End of Life)    
-³ -- available in the {ref}`dotnet-previews-ppa` only until final release    
-
-```{note}
-.NET 10 will be available in the Ubuntu archive for Ubuntu 24.04+ and included in main upon its official release. For Ubuntu 22.04, it will be provided via the Backports PPA.
-
-Additionally, .NET 10 will be available for the `ppc64el` and `s390x` architectures until the final release.
-```
+³ -- .NET 10 RC2 is available in the {ref}`dotnet-previews-ppa`. We are working on getting the final release in the Ubuntu package archive. In the meantime we recommend {ref}`dotnet-installation-snap`.    
 
 | .NET Version | Source package | End of Life (Upstream) | 
 |--------------|----------------|------------------------|
-| .NET 10 preview | [dotnet10](https://launchpad.net/~dotnet/+archive/ubuntu/previews) | (not yet supported) |
-| .NET 9 (STS) | {lpsrc}`dotnet9` | 12 May 2026 |
+| .NET 10 (LTS) | {lpsrc}`dotnet10` | 14 November, 2028 |
+| .NET 9 (STS) | {lpsrc}`dotnet9` | 10 November, 2026 |
 | .NET 8 (LTS) | {lpsrc}`dotnet8` | 10 November 2026 |
 | .NET 7 (STS) | {lpsrc}`dotnet7` | 14 May 2024 |
 | .NET 6 (LTS) | {lpsrc}`dotnet6` | 12 November 2024 |
 
-LTS -- Long Term Support (Upstream patches bugs for 36 months after release)    
-STS -- Standard Term Support (Upstream patches bugs for 18 month after release)
+LTS -- Long Term Support (Upstream patches bugs for 3 years after release)    
+STS -- Standard Term Support (Upstream patches bugs for 2 years after release)
 
 See: {ref}`dotnet-installation-ubuntu-packages`
 
@@ -175,7 +177,7 @@ See: {ref}`dotnet-installation-ubuntu-packages`
 
 .NET versions which Canonical is not committed to maintain for the entire lifetime of an Ubuntu release will be provided via the [.NET backports PPA](https://launchpad.net/~dotnet/+archive/ubuntu/backports).
 
-Canonical provides best-effort maintenance for packages contained in this archive, which is limited to the upstream lifespan of the .NET version or the support period of the particular Ubuntu series. See the [upstream support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) for more information about the upstream support lifespan of .NET releases or the [Ubuntu Releases Wiki entry](https://wiki.ubuntu.com/Releases) for more information about the support period of any Ubuntu series.
+Canonical provides best-effort maintenance for packages contained in this archive, which is limited to the upstream lifespan of the .NET version or the support period of the particular Ubuntu series. See the [upstream support policy](https://dotnet.microsoft.com/en-us/platform/support/policy/dotnet-core) for more information about the upstream support lifespan of .NET releases or the [list of Ubuntu releases](https://documentation.ubuntu.com/project/release-team/list-of-releases) for more information about the support period of any Ubuntu series.
 
 (dotnet-previews-ppa)=
 ### Previews PPA

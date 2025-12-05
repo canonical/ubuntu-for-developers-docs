@@ -249,6 +249,80 @@ lsb_release -rs
 ::::::{tab-set}
 :sync-group: series
 
+:::::{tab-item} 26.04 LTS
+:sync: resolute
+
+Choose the .NET version you want to install:
+
+::::{tab-set}
+:sync-group: dotnet-version
+
+:::{tab-item} .NET 10
+:sync: 10.0
+
+<!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 10 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
+
+:::
+
+:::{tab-item} .NET 9
+:sync: 9.0
+
+<!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 9 -->
+
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet9-apt-install-ubuntu-package.md
+```
+:::
+
+:::{tab-item} .NET 8
+:sync: 8.0
+
+<!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 8 -->
+
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet8-apt-install-ubuntu-package.md
+```
+:::
+
+:::{tab-item} .NET 7
+:sync: 7.0
+
+<!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 7 -->
+
+.NET 7 isn't supported on Ubuntu 26.04 (Resolute Raccoon).
+:::
+
+:::{tab-item} .NET 6
+:sync: 6.0
+
+
+<!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 6 -->
+
+.NET 6 isn't supported on Ubuntu 26.04 (Resolute Raccoon).
+:::
+
+::::
+
+:::::
+
 :::::{tab-item} 25.10
 :sync: questing
 
@@ -262,9 +336,9 @@ Choose the .NET version you want to install:
 
 <!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 10 -->
 Available for architectures:
-: `amd64` (aka `x64`), `arm64`
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
-```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
 ```
 
 ```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
@@ -335,14 +409,7 @@ Choose the .NET version you want to install:
 :sync: 10.0
 
 <!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 10 -->
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
-```
+We are working on getting this version of .NET in the Ubuntu archive. In the meantime we recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
 
 :::
 
@@ -409,14 +476,7 @@ Choose the .NET version you want to install:
 :sync: 10.0
 
 <!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 10 -->
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
-```
+We are working on getting this version of .NET in the Ubuntu archive. In the meantime we recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
 
 :::
 
@@ -503,9 +563,9 @@ Choose the .NET version you want to install:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 10 -->
 Available for architectures:
-: `amd64` (aka `x64`), `arm64`
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
-```{include} /reuse/howto/dotnet-setup/dotnet-install-previews-ppa.md
+```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
 ```
 
 ```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
