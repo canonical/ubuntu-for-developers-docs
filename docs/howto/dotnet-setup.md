@@ -177,7 +177,8 @@ Example output:
 
 ```{terminal}
 :scroll:
-:input: dotnet-installer list
+
+dotnet-installer list
 ┌────────────┬────────────────────┬──────────────────────┬─────────────────────┬─────────────┐
 │ Version    │ .NET Runtime       │ ASP.NET Core Runtime │ SDK                 │ End of Life │
 ├────────────┼────────────────────┼──────────────────────┼─────────────────────┼─────────────┤
@@ -781,7 +782,8 @@ dotnet --list-runtimes
 Example output:
 
 ```{terminal}
-:input: dotnet --info
+
+dotnet --info
 .NET SDK:
  Version:           8.0.113
  Commit:            67977f6ab7
@@ -825,10 +827,12 @@ Learn more:
 Download .NET:
   https://aka.ms/dotnet/download
 
-:input: dotnet --list-sdks
+
+dotnet --list-sdks
 8.0.113 [/var/snap/dotnet/common/dotnet/sdk]
 
-:input: dotnet --list-runtimes
+
+dotnet --list-runtimes
 Microsoft.AspNetCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.NETCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.NETCore.App]
 ```

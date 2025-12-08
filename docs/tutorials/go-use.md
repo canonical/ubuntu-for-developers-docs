@@ -51,7 +51,8 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
-    :input: go run .
+
+    go run .
 
     Hey Go!
     ```
@@ -68,7 +69,8 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
-    :input: ls
+
+    ls
 
     go.mod  heygo  heygo.go
     ```
@@ -80,7 +82,8 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
-    :input: ./heygo
+
+    ./heygo
 
     Hey Go!
     ```
@@ -108,7 +111,8 @@ go build .
 :dir: ~/heygo
 :user: dev
 :host: ubuntu
-:input: ls
+
+ls
 
 go.mod  heygo  heygo.exe  heygo.go
 ```

@@ -35,7 +35,8 @@ To separate the system installation of Python from your development and testing 
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
-    :input: which python3
+
+    which python3
 
     /home/dev/python/helloworld/.venv/bin/python3
     ```
@@ -100,7 +101,8 @@ To illustrate the installation of a dependency confined to the Python virtual en
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
-    :input: pip list
+
+    pip list
 
     Package  Version
     -------- -------
@@ -156,7 +158,8 @@ To illustrate the installation of a dependency confined to the Python virtual en
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
-    :input: python3 helloworld.py
+
+    python3 helloworld.py
 
     Hello, world!
     ```

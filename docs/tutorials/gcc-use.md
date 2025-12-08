@@ -48,7 +48,8 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ./hello
+
+    ./hello
 
     Hello, world!
     The answer to everything is 42.
@@ -93,7 +94,8 @@ The {command}`gcc` compiler provides helpful output when encountering a problema
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ./hello
+
+    ./hello
 
     Hello, world!
     The answer to everything is -1350680728.
@@ -155,7 +157,8 @@ See below for a simple example of using the GNU Make build system to build the '
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: make
+
+    make
 
     gcc -c hello.c -o hello.o
     gcc -o hello hello.o
@@ -167,7 +170,8 @@ See below for a simple example of using the GNU Make build system to build the '
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ls -1
+
+    ls -1
 
     hello
     hello.c
@@ -181,7 +185,8 @@ See below for a simple example of using the GNU Make build system to build the '
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ./hello
+
+    ./hello
 
     Hello, world!
     The answer to everything is 42.

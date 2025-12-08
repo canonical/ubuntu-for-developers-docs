@@ -44,7 +44,8 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
 3. Build and run the program:
 
     ```{terminal}
-    :input: cargo run
+
+    cargo run
     :user: dev
     :host: ubuntu
 
@@ -119,7 +120,8 @@ gcc -O3 c_main.c answer.o -o main
 When you execute this program, you should see the following:
 
 ```{terminal}
-:input: ./main
+
+./main
 :user: dev
 :host: ubuntu
 

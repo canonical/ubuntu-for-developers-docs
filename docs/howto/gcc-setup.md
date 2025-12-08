@@ -21,7 +21,8 @@ The GCC toolchain, including past versions and cross-compilers for different arc
     ```{terminal}
     :user: dev
     :host: ubuntu
-    :input: gcc --version
+
+    gcc --version
 
     gcc (Ubuntu 14.2.0-4ubuntu2) 14.2.0
     Copyright (C) 2024 Free Software Foundation, Inc.
