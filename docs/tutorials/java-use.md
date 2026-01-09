@@ -166,27 +166,13 @@ Setting up and building a new Java project using the Gradle build tool.
 
 - Gradle:
 
-    Download Gradle from the [Gradle Releases](https://gradle.org/releases) page and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
-
-    :::{note}
-    Gradle introduced Java 21 support in version 8.5.
-    :::
-
-    Alternatively, to install the community-maintained Gradle snap, run:
+    Install the Gradle snap:
 
     ```none
-    sudo snap install gradle
+    sudo snap install gradle --classic
     ```
 
-    The snap provides Gradle version 7, which does not support Java 21.
-
-    :::{note}
-    The snap requires setting up the `JAVA_HOME` variable. For example:
-
-    ```bash
-    export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
-    ```
-    :::
+    Alternatively, download Gradle from the [Gradle Releases](https://gradle.org/releases) page and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
 
 
 :::
@@ -197,7 +183,6 @@ Setting up and building a new Java project using the Gradle build tool.
 
     ```none
     mkdir helloworld
-    cd helloworld
     cd helloworld
     gradle init \
         --type java-application \
@@ -286,21 +271,31 @@ Setting up and building a new Java project using the Gradle build tool.
     }
     ```
 
+    Gradle generates `gradlew` - a script that manages Gradle download
+    and installation for your project. It requires `java` binary to be
+    present in the path, or `JAVA_HOME` environment variable set.
+    For example:
+    ```bash
+    export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
+    ```
+
 2. Build and run the project using the generated Gradle Wrapper:
 
     ```{terminal}
-    :input: ./gradlew run
+    :input: gradle run
     :user: dev
     :host: ubuntu
 
-    Downloading https://services.gradle.org/distributions/gradle-8.10.1-bin.zip
-    .............10%.............20%.............30%.............40%.............50%.............60%.............70%.............80%.............90%.............100%
+    gradle run
+    Calculating task graph as no cached configuration is available for tasks: run
 
     > Task :app:run
     Hello World!
 
-    BUILD SUCCESSFUL in 31s
-    2 actionable tasks: 2 executed
+    BUILD SUCCESSFUL in 424ms
+    2 actionable tasks: 1 executed, 1 up-to-date
+    Configuration cache entry stored.
+
     ```
 
 
