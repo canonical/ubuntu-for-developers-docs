@@ -346,7 +346,7 @@ You can keep stepping into the many functions that make up `Console.WriteLine` t
 
 The Samsung .NET debugger (NetCoreDbg) is an open-source managed code debugger that implements GDB/MI and VSCode Debug Adapter Protocol in a unified framework, allowing the debugging of .NET applications under the .NET runtime as well as facilitating debugging from the command line (such as in GDB).
 
-If you are using a VS Code-based editor, such as VS Codium, you will not able to use the Microsoft .NET Core Debugger (VsDbg) due to its [license](https://aka.ms/vscode-dotnet-dbglicense), which states that ".NET Debugging is supported only in Microsoft versions of VS Code". In that scenario, you will need to use another debugger, like NetCoreDbg.
+If you are using a VS Code-based editor, such as VS Codium, you will not be able to use the Microsoft .NET Core Debugger (VsDbg) due to its [license](https://aka.ms/vscode-dotnet-dbglicense), which states that ".NET Debugging is supported only in Microsoft versions of VS Code". In that scenario, you will need to use another debugger, like NetCoreDbg.
 
 We will use VS Codium for the purposes of this tutorial, but the steps should translate very similarly to any other VS Code-based code editor.
 
@@ -502,6 +502,6 @@ Notice an exception is thrown on line 7, during the `Console.WriteLine` call.
 
 We can fix the code by moving `index++` to the correct place, after the `Console.WriteLine` call, as explained in {ref}`debugging-with-vscode` and use the Codium interface to debug the application, set breakpoints, and inspect variables, with NetCoreDbg just like we did with the VS Code debugger.
 
-Please, refer to {ref}`stepping-over-code` and {ref}`stepping-into-code` for more details on how to use the debugger features.
+Please refer to {ref}`stepping-over-code` and {ref}`stepping-into-code` for more details on how to use the debugger features.
 
 To learn more about NetCoreDbg and its features, visit the [official GitHub repository](https://github.com/samsung/netcoredbg).
