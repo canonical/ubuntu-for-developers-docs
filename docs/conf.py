@@ -190,6 +190,7 @@ extensions = [
     "sphinxcontrib.mermaid",
     "sphinx_prompt",
     "sphinx.ext.extlinks",
+    "sphinx_llm.txt",
     "sphinx_sitemap",
 ]
 
