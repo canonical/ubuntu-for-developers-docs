@@ -15,6 +15,7 @@ Any .NET SDK provides sub-commands including `new`, `run`, `build`, and `publish
 Run `dotnet --help` to see all available sub-commands.
 
 
+(creating-dotnet-project)=
 ## Creating a .NET project
 
 Create a directory where the project should be located and change into it:
@@ -123,7 +124,7 @@ The `dotnet run` command is useful for development when you have a .NET SDK inst
 :dir: ~/HelloWorld
 :user: dev
 :host: ubuntu
-:input: dotnet publish 
+:input: dotnet publish
 
 Restore complete (0.7s)
   HelloWorld succeeded (1.7s) → bin/Release/net9.0/publish/
@@ -147,11 +148,12 @@ Finally, there is also a file called `HelloWorld.pdb` available in the publish d
 
 ## Debugging the .NET project
 
-The .NET tooling does not include a debugger; therefore, to debug a .NET application, you need to either use a development environment that includes a .NET debugger, such as Visual Studio Code or JetBrains Rider (see {ref}`setting-up-dotnet-ide` for a list of available development environments for .NET), or install a compatible standalone debugger, such as the open-source [Samsung .NET debugger](https://github.com/Samsung/netcoredbg).
+The .NET tooling does not include a debugger; therefore, to debug a .NET application, you need to either use a development environment that includes a .NET debugger, such as Visual Studio Code or JetBrains Rider (see {ref}`setting-up-dotnet-ide` for a list of available development environments for .NET), or install a compatible standalone debugger, such as the open-source [Samsung .NET debugger](https://github.com/samsung/netcoredbg), NetCoreDbg (see {ref}`debugging-with-netcoredbg`).
 
 Regardless of your choice, once you learn to use a debugger in one environment, the knowledge should transfer to whichever other environment you might encounter in the future. For the purposes of this tutorial, we will walk through how to use the .NET debugger available in Visual Studio Code.
 
-### Preparing a debugging session
+(debugging-with-vscode)=
+### Debugging with VS Code
 
 First, install Visual Studio Code:
 
@@ -179,7 +181,7 @@ var index = 0;
 
 while (index < names.Count)
 {
-    index++; 
+    index++;
     Console.WriteLine($"Hello, {names[index]}");
 }
 ```
@@ -205,7 +207,7 @@ Two problems appeared:
 
 Let’s debug.
 
-### Debugging with VS Code
+#### Setting up the debugger
 
 To debug a .NET application with Visual Studio Code, we need to create a launch profile. VS Code can create one automatically by clicking the {guilabel}`Run and Debug` icon, then the {guilabel}`Run and Debug` button, and selecting the {guilabel}`.NET 5+ and .NET Core` item from the menu that pops up.
 
@@ -231,6 +233,7 @@ The issue is that we are incrementing the index variable *before* accessing the 
    :alt: A highlight that the program exited successfully with exit code 0
 ```
 
+(stepping-over-code)=
 #### Stepping over code
 
 Another great use of debuggers is the ability to step through code line by line. This is possible by setting breakpoints in the code. A breakpoint indicates to the debugger that, when running the program, it should pause execution at that specific line. This is especially useful when you, as the developer, want to understand the behavior of your code at one specific point.
@@ -263,6 +266,7 @@ The index variable holds the value 0 at that specific point in time. Stepping ov
 
 To continue execution as usual, click the {guilabel}`Continue` button, or {kbd}`F5`, and the program should now execute until it hits the next breakpoint. As we’ve set one inside the `while` loop, it stops again at the next iteration. To remove the breakpoint, clicking the red dot again, then click {guilabel}`Continue` to let the program resume and finish execution.
 
+(stepping-into-code)=
 #### Stepping into code
 
 Another feature of debuggers is the ability to step into functions as they are called. As an example, let’s create a function called `SayHello`, which prints a greeting for whichever name is passed as a parameter. Then, instead of calling `Console.WriteLine` from within the `while` loop, we call `SayHello`.
@@ -329,10 +333,175 @@ If we step **into** that function, or {kbd}`F11`, we go into the `Concat` functi
 
 Let’s go ahead and step out of this function, since we want to look into the implementation of `Console.WriteLine` instead. Click {guilabel}`Step Out`, or {kbd}`Shift+F11`, and the debugger takes us back to `Console.WriteLine` again – stepping out means “execute the rest of this function and go back to where its value is returned”.
 
-Now, {guilabel}`Step Into` it again, and the debugger should take us right to the implementation of the `WriteLine` function itself. 
+Now, {guilabel}`Step Into` it again, and the debugger should take us right to the implementation of the `WriteLine` function itself.
 
 You can keep stepping into the many functions that make up `Console.WriteLine` to better understand how it works internally.
 
 ```{figure} /images/debug-dotnet/15-writeline.png
    :alt: The debugger steps into the first line of the WriteLine function of .NET
 ```
+
+(debugging-with-netcoredbg)=
+### Debugging with NetCoreDbg
+
+The Samsung .NET debugger (NetCoreDbg) is an open-source managed code debugger that implements GDB/MI and VSCode Debug Adapter Protocol in a unified framework, allowing the debugging of .NET applications under the .NET runtime as well as facilitating debugging from the command line (such as in GDB).
+
+If you are using a VS Code-based editor, such as VS Codium, you will not be able to use the Microsoft .NET Core Debugger (VsDbg) due to its [license](https://aka.ms/vscode-dotnet-dbglicense), which states that ".NET Debugging is supported only in Microsoft versions of VS Code". In that scenario, you will need to use another debugger, like NetCoreDbg.
+
+We will use VS Codium for the purposes of this tutorial, but the steps should translate very similarly to any other VS Code-based code editor.
+
+First, install VS Codium:
+
+```none
+sudo snap install --classic codium
+```
+
+Now, open the Hello World project created in {ref}`creating-dotnet-project` with VS Codium:
+
+```none
+codium HelloWorld
+```
+
+Install a C# language support extension from the Extensions store. For this tutorial, we will use [`dotnetdev-kr-custom.csharp`](https://open-vsx.org/vscode/item?itemName=dotnetdev-kr-custom.csharp).
+
+```{figure} /images/debug-dotnet/17-codium-csharp-extension.png
+   :alt: The C# language support extension's store page
+```
+
+And replace the content of `Program.cs` with the following code block:
+
+```csharp
+var names = new List<string> { "Alice", "Bob", "Charlie" };
+var index = 0;
+
+while (index < names.Count)
+{
+    index++;
+    Console.WriteLine($"Hello, {names[index]}");
+}
+```
+
+This is the same code block used in {ref}`debugging-with-vscode`. The goal of this program is to build a list of names – Alice, Bob, and Charlie – then greet each one with “Hello” within the `while` loop. However, running this code shows that it is not working as expected:
+
+```{terminal}
+:dir: ~/HelloWorld
+:user: dev
+:host: ubuntu
+:input: dotnet run
+Hello, Bob
+Hello, Charlie
+Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Program.<Main>$(String[] args) in /home/ubuntu/HelloWorld/Program.cs:line 8
+```
+
+Two problems appeared:
+
+1. The first name of the list, Alice, is skipped, followed by a `Hello, Bob`, then `Hello, Charlie`.
+2. An unhandled exception of type `System.ArgumentOutOfRangeException` happens. According to the error message, we are trying to access an index that does not exist in the collection.
+
+Let’s debug.
+
+#### Setting up the debugger
+
+The NetCoreDbg debugger is available as a snap in the Snap Store. To install it, run:
+
+```none
+sudo snap install --classic netcoredbg
+```
+
+We need to create a `launch.json` file inside the `.vscode` directory, which is a file used to configure debugging in a VS Code-based editor. In your project's root directory, run:
+
+```none
+mkdir .vscode
+touch .vscode/launch.json
+```
+
+Open the `launch.json` file and fill it in with the following content:
+
+```json
+{
+   "version": "0.2.0",
+   "configurations": [
+      {
+         "name": "netcoredbg",
+         "type": "coreclr",
+         "request": "launch",
+         "program": "${workspaceFolder}/bin/Debug/net10.0/HelloWorld.dll",
+         "args": [],
+         "cwd": "${workspaceFolder}",
+         "pipeTransport": {
+            "pipeCwd": "${workspaceFolder}",
+            "pipeProgram": "sh",
+            "pipeArgs": ["-c"],
+            "debuggerPath": "netcoredbg",
+            "debuggerArgs": ["--interpreter=vscode"],
+            "quoteArgs": true
+         },
+         "env": {
+            "DOTNET_ENVIRONMENT": "Development"
+         }
+      }
+   ]
+}
+```
+
+Let's break down the important parts of this configuration:
+
+- `"program"`: This specifies the path to the compiled .NET application that we want to debug. Make sure to adjust the path according to your .NET version and project name.
+- `"pipeTransport"`: This section configures how to launch the NetCoreDbg debugger.
+   - `"debuggerPath"`: This specifies the command to run the NetCoreDbg debugger. Here, we are using `netcoredbg`, which is the command provided by the snap package we installed earlier.
+   - `"debuggerArgs"`: This specifies the arguments to pass to the NetCoreDbg debugger. Here, we are using the `--interpreter=vscode` argument to put the debugger into VS Code Debugger mode.
+
+Now, we want to make sure that we are always debugging the latest version of our application. To do that, we need to build the project before starting a debugging session.
+
+Let's create a build task. Create a new file called `tasks.json` inside the `.vscode` directory:
+
+```none
+touch .vscode/tasks.json
+```
+
+Open the `tasks.json` file and fill it in with the following content:
+
+```json
+{
+   "version": "2.0.0",
+   "tasks": [
+      {
+         "label": "build",
+         "command": "dotnet",
+         "type": "process",
+         "args": [
+            "build",
+            "${workspaceFolder}/HelloWorld.csproj"
+         ]
+      }
+   ]
+}
+```
+
+Now, add `preLaunchTask` to the `launch.json` file. Update the configuration to include the following line:
+
+```diff
+         "cwd": "${workspaceFolder}",
++        "preLaunchTask": "build",
+         "pipeTransport": {
+```
+
+With the `launch.json` and `tasks.json` files created, go to the {guilabel}`Run and Debug` section in VS Codium and click the little {guilabel}`Play` icon to start debugging the application.
+
+```{figure} /images/debug-dotnet/18-build-and-debug-play.png
+   :alt: The Run and Debug section with the play button highlighted
+```
+
+Notice an exception is thrown on line 7, during the `Console.WriteLine` call.
+
+```{figure} /images/debug-dotnet/19-netcoredbg-exception.png
+   :alt: An ArgumentOutOfRangeException thrown during a NetCoreDbg debugging session
+```
+
+We can fix the code by moving `index++` to the correct place, after the `Console.WriteLine` call, as explained in {ref}`debugging-with-vscode` and use the Codium interface to debug the application, set breakpoints, and inspect variables, with NetCoreDbg just like we did with the VS Code debugger.
+
+Please refer to {ref}`stepping-over-code` and {ref}`stepping-into-code` for more details on how to use the debugger features.
+
+To learn more about NetCoreDbg and its features, visit the [official GitHub repository](https://github.com/samsung/netcoredbg).
