@@ -52,3 +52,9 @@ See the [user guide for rustup](https://rust-lang.github.io/rustup/concepts/chan
 Before the current devel series gets released, certain Rust toolchain packages may be removed from the devel archive.
 
 Currently, the policy is to keep the **three most recent** Rust toolchain versions in a given Ubuntu series' archive. However, if specific older releases are needed by kernels or important packages in main, then older toolchain versions may be retained.
+
+## Ubuntu Rust package backport policy
+
+The Rust team prepares backports for the previous two LTS releases. Currently, they are not uploaded to the backports pocket unless they are required by something specific.
+
+For example, Rust 1.90 was added during the 26.04 development cycle, and backports to 24.04 and 22.04 have been built and tested, but the backports won't be added to the 24.04 and 22.04 archives unless something else requires them.
