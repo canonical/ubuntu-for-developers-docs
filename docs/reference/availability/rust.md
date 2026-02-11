@@ -51,7 +51,7 @@ See the [user guide for rustup](https://rust-lang.github.io/rustup/concepts/chan
 
 Before the current devel series gets released, certain Rust toolchain packages may be removed from the devel archive.
 
-Currently, the policy is to keep the **three most recent** Rust toolchain versions in a given Ubuntu series' archive. However, if specific older releases are needed by kernels or important packages in main, then older toolchain versions may be retained.
+Currently, the policy is to keep the **three most recent** Rust toolchain versions in a given Ubuntu series' archive. However, if specific older releases are needed by kernels or important packages in the [main](https://documentation.ubuntu.com/project/how-ubuntu-is-made/concepts/package-archive/#archive-components-main) component, then older toolchain versions may be retained.
 
 ## Ubuntu Rust package backport policy
 
