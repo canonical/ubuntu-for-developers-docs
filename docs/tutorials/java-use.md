@@ -172,7 +172,7 @@ Setting up and building a new Java project using the Gradle build tool.
     sudo snap install gradle --classic
     ```
 
-    Alternatively, download Gradle from the [Gradle Releases](https://gradle.org/releases) page and follow the provided instructions: [Installing manually](https://gradle.org/install/#manually).
+    Alternatively, download Gradle from the [Gradle Releases](https://gradle.org/releases) page and follow the provided instructions: [Installing manually](https://gradle.org/install).
 
 
 :::

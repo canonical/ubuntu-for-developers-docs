@@ -1,4 +1,5 @@
 import datetime
+import os
 from docutils.parsers.rst import roles
 from sphinx.util.docutils import SphinxRole
 from docutils import nodes
@@ -216,7 +217,7 @@ html_js_files = ["js/bundle.js"]
 # If you are using the :manpage: role, set this variable to the URL for the version
 # that you want to link to:
 manpages_url = (
-    "https://manpages.ubuntu.com/manpages/plucky/en/man{section}/{page}.{section}.html"
+    "https://manpages.ubuntu.com/manpages/questing/en/man{section}/{page}.{section}.html"
 )
 
 ############################################################
@@ -249,7 +250,7 @@ intersphinx_mapping = {
 
 
 # Sitemap configuration
-html_baseurl = "https://documentation.ubuntu.com/ubuntu-for-developers/"
+html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
 sitemap_url_scheme = "{link}"
 
 

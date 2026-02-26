@@ -5,7 +5,7 @@
 
 | Ubuntu version              | available GCC versions | {lpsrc}`gcc-defaults` version | 
 | --- | --- | --- |
-| 25.10 (Questing Quokka)     | 11, 12, 13, **14**, **15** | 14 |
+| 25.10 (Questing Quokka)     | 11, 12, 13, **14**, **15** | 15 |
 | 25.04 (Plucky Puffin)       | 11, 12, 13, **14**, **15** | 14 |
 | 24.10 (Oracular Oriole)     | 11, 12, 13, **14** | 14 |
 | 24.04 LTS (Noble Numbat)    | 9, 10, 11, 12, **13**, **14** | 13 |
