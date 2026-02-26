@@ -350,57 +350,23 @@ If you use a VS Code-based editor, such as VS Codium, you cannot use the Microso
 
 We use VS Codium for the purposes of this tutorial, but the steps should translate very similarly to any other VS Code-based code editor.
 
-First, install VS Codium:
+1. Install VS Codium:
 
 ```none
 sudo snap install --classic codium
 ```
 
-Now, open the Hello World project created in {ref}`creating-dotnet-project` with VS Codium:
-
-```none
-codium HelloWorld
-```
-
-Install a C# language support extension from the Extensions store. For this tutorial, we use [`dotnetdev-kr-custom.csharp`](https://open-vsx.org/vscode/item?itemName=dotnetdev-kr-custom.csharp).
+2. Open VS Codium and install a C# language support extension from the Extensions store. For this tutorial, we use [`dotnetdev-kr-custom.csharp`](https://open-vsx.org/vscode/item?itemName=dotnetdev-kr-custom.csharp).
 
 ```{figure} /images/debug-dotnet/17-codium-csharp-extension.png
    :alt: The C# language support extension's store page
 ```
 
-And replace the content of `Program.cs` with the following code block:
+3. Open the Hello World project created in {ref}`creating-dotnet-project` with VS Codium:
 
-```csharp
-var names = new List<string> { "Alice", "Bob", "Charlie" };
-var index = 0;
-
-while (index < names.Count)
-{
-    index++;
-    Console.WriteLine($"Hello, {names[index]}");
-}
+```none
+codium HelloWorld
 ```
-
-This is the same code block used in {ref}`debugging-with-vscode`. The goal of this program is to build a list of names – Alice, Bob, and Charlie – then greet each one with “Hello” within the `while` loop. However, running this code shows that it is not working as expected:
-
-```{terminal}
-:dir: ~/HelloWorld
-:user: dev
-:host: ubuntu
-:input: dotnet run
-Hello, Bob
-Hello, Charlie
-Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
-   at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Program.<Main>$(String[] args) in /home/ubuntu/HelloWorld/Program.cs:line 8
-```
-
-Two problems appeared:
-
-1. The first name of the list, Alice, is skipped, followed by a `Hello, Bob`, then `Hello, Charlie`.
-2. An unhandled exception of type `System.ArgumentOutOfRangeException` happens. According to the error message, we are trying to access an index that does not exist in the collection.
-
-Let’s debug.
 
 #### Setting up the debugger
 
@@ -488,7 +454,45 @@ Now, add `preLaunchTask` to the `launch.json` file. Update the configuration to 
          "pipeTransport": {
 ```
 
-With the `launch.json` and `tasks.json` files created, go to the {guilabel}`Run and Debug` section in VS Codium and click the little {guilabel}`Play` icon to start debugging the application.
+#### Running the Application
+
+Replace the content of `Program.cs` with the following code block:
+
+```csharp
+var names = new List<string> { "Alice", "Bob", "Charlie" };
+var index = 0;
+
+while (index < names.Count)
+{
+    index++;
+    Console.WriteLine($"Hello, {names[index]}");
+}
+```
+
+This is the same code block used in {ref}`debugging-with-vscode`. The goal of this program is to build a list of names – Alice, Bob, and Charlie – then greet each one with “Hello” within the `while` loop. However, running this code shows that it is not working as expected:
+
+```{terminal}
+:dir: ~/HelloWorld
+:user: dev
+:host: ubuntu
+:input: dotnet run
+Hello, Bob
+Hello, Charlie
+Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
+   at System.Collections.Generic.List`1.get_Item(Int32 index)
+   at Program.<Main>$(String[] args) in /home/ubuntu/HelloWorld/Program.cs:line 8
+```
+
+Two problems appeared:
+
+1. The first name of the list, Alice, is skipped, followed by a `Hello, Bob`, then `Hello, Charlie`.
+2. An unhandled exception of type `System.ArgumentOutOfRangeException` happens. According to the error message, we are trying to access an index that does not exist in the collection.
+
+Let’s debug.
+
+#### Debugging the Application
+
+Go to the {guilabel}`Run and Debug` section in VS Codium and click the {guilabel}`Play` icon to start debugging the application.
 
 ```{figure} /images/debug-dotnet/18-build-and-debug-play.png
    :alt: The Run and Debug section with the play button highlighted
