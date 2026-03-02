@@ -2,7 +2,7 @@
 
 There are different ways to distribute an application. It is possible to directly send
 the source code to users, who will then have to build it themselves. It is also possible
-to give out precompiled binaries that the users will download, copy to the right place and use.
+to give out pre-compiled binaries that the users will download, copy to the right place and use.
 Those methods are not very convenient.
 
 The best way to distribute an application is to have it
