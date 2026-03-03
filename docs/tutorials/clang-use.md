@@ -56,7 +56,7 @@ clang -o hello src/hello.cpp
 
 And now you should be able to run your program!
 
-```bash
+```none
 ./hello
 ```
 
