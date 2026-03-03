@@ -5,7 +5,7 @@ This tutorial provides basic guidance on developing C and C++ projects using Cla
 
 ## Clang vs build systems
 
-Clang itself is a compiler, but building complex C and C++ projects typically requires more sophisticated steps to cache builds, track file dependencies, handle data files, and more. Rather than doing that manually, most developers make use of a build system that knows how to invoke Clang to handle those additional steps.
+Clang itself is a compiler, but building complex C and C++ projects typically requires more sophisticated steps to cache builds, track file dependencies, handle data files, and more. Rather than doing that manually, most developers use a build system that knows how to invoke Clang to handle those additional steps.
 
 Popular build system choices for C and C++ include these, all of which can be configured to use Clang:
 - **CMake** - Cross-platform build generator, most popular for modern C/C++ (`sudo apt install cmake`)
