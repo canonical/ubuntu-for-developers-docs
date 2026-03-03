@@ -104,7 +104,7 @@ In the output, you should be able to spot a line that shows which compiler CMake
 -- The CXX compiler identification is Clang 18.1.3
 ```
 
-This will have placed the build files in the `build` directory, nicely isolated from your project files. You can now execute the actual build with another `cmake` command:
+This places the build files in the {file}`build/` directory, nicely isolated from your project files. Now execute the actual build with another {command}`cmake` command:
 
 ```bash
 cmake --build build
