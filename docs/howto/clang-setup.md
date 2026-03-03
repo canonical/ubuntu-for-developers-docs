@@ -44,7 +44,7 @@ There are also a number of IDEs available for C and C++ programming on Ubuntu, a
 [Qt Creator](https://www.qt.io/development/tools/qt-creator-ide)
 : `sudo apt install qt-creator`
 
-For developers who prefer a text editor to an IDE, you can set up `clangd` as an LSP server for your project. The full setup of that is out of scope here. Install it with:
+For developers who prefer a text editor to an IDE, you can set up `clangd` as an LSP server for your project. Install it with:
 
 ```bash
 sudo apt install clangd
