@@ -106,7 +106,7 @@ In the output, you should be able to spot a line that shows which compiler CMake
 
 This places the build files in the {file}`build/` directory, nicely isolated from your project files. Now execute the actual build with another {command}`cmake` command:
 
-```bash
+```none
 cmake --build build
 ```
 
