@@ -50,7 +50,7 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
 
 From within the {file}`hello-world/` directory you created, run:
 
-```bash
+```none
 clang -o hello src/hello.cpp
 ```
 
