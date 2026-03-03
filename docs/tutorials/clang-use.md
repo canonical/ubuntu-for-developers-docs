@@ -48,7 +48,7 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
 
 ### Building with Clang directly
 
-With clang installed, you can build your hello world program easily. From within the `hello-world` directory you created, run:
+From within the {file}`hello-world/` directory you created, run:
 
 ```bash
 clang -o hello src/hello.cpp
