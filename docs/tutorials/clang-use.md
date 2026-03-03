@@ -76,11 +76,16 @@ add_executable(hello
 )
 ```
 
-There are three commands we're using in this definition. The first sets a minimum version of CMake that your project is compatible with. Using version 3.10 is a reasonable starting point, because it's sufficiently modern to have newer CMake features, but not so modern that developers you work with won't have access to it. You may need to adjust this as you choose to use particular features.
+There are three commands we're using in this definition:
 
-The next line defines your project name, and you can optionally specify some other helpful information. In this case we tell CMake that the implementation language is C++, so it will not bother checking for any tooling related to C.
+`cmake_minimum_required`
+: Sets a minimum version of CMake that your project is compatible with. Using version 3.10 is a reasonable starting point, because it's sufficiently modern to have newer CMake features, but not so modern that developers you work with won't have access to it. You may need to adjust this as you choose to use particular features.
 
-Finally, we define an executable output of our project by calling `add_executable`. The first argument is the name of the executable we want to produce. Following that is a list of the source files that need to be compiled to create it.
+`project`
+: Defines the project name. Uou can optionally specify other helpful information. In this case, we tell CMake that the implementation language is C++, so it doesn't bother checking for any tooling related to C.
+
+`add_executable`
+: Defines the executable output of the project. The first argument is the name of the executable to produce. Following that is a list of the source files that need to be compiled to create it.
 
 We're just about ready to run the build, but notice that we have not yet mentioned Clang anywhere. By default, the order that CMake uses when searching for compilers will result in GCC being detected first. Since we want to use clang, we can specify that directly when we configure the build.
 
