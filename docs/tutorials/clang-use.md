@@ -64,7 +64,7 @@ And now you should be able to run your program!
 
 Suppose you plan to grow your `hello-world` project into something significant. You can use CMake right from the start to orchestrate your builds.
 
-Start by creating a file named `CMakeLists.txt` inside the `hello-world` directory. Add the following contents:
+Start by creating a file named {file}`CMakeLists.txt` inside the {file}`hello-world/` directory. Add the following contents:
 
 ```{code-block} cpp
 :caption: `hello-world/CMakeLists.txt`
