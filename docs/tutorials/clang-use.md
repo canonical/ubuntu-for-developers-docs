@@ -31,7 +31,7 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
 
 1. Create a source directory within your project:
 
-   ```bash
+   ```none
    mkdir src
    ```
 
