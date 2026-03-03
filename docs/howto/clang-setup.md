@@ -46,7 +46,7 @@ There are also a number of IDEs available for C and C++ programming on Ubuntu, a
 
 For developers who prefer a text editor to an IDE, you can set up `clangd` as an LSP server for your project. Install it with:
 
-```bash
+```none
 sudo apt install clangd
 ```
 
