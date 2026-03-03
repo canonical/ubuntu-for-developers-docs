@@ -23,7 +23,7 @@ sudo apt search -n ^clang-[0-9]+
 
 The output is a list of {pkg}`clang` packages with explicit version numbers as part of their names, such as {pkg}`clang-20`. You can install one of these the same way you would the default version, for example:
 
-```bash
+```none
 sudo apt install clang-20
 ```
 
