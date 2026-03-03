@@ -95,7 +95,7 @@ CMake is a two-stage build system, where the first stage generates lower-level b
 cmake -DCMAKE_CXX_COMPILER=clang++ -B build
 ```
 
-In the output, you should be able to spot a line that shows which compiler CMake found, something like this:
+In the output, you should be able to spot a line that shows which compiler CMake found. For example, something like this:
 
 ```none
 -- The CXX compiler identification is Clang 18.1.3
