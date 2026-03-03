@@ -112,6 +112,6 @@ cmake --build build
 
 You should now have your {file}`hello` executable, and can run it directly:
 
-```bash
+```none
 ./build/hello
 ```
