@@ -91,7 +91,7 @@ By default, the order that CMake uses when searching for compilers results in {r
 
 CMake is a two-stage build system, where the first stage generates lower-level build files (by default, GNU {spellexception}`makefiles` on Ubuntu), and the second executes those. During the first stage we can specify extra configuration options for the build. To instruct CMake to use Clang, run:
 
-```bash
+```none
 cmake -DCMAKE_CXX_COMPILER=clang++ -B build
 ```
 
