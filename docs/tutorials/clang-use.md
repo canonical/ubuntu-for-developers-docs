@@ -13,7 +13,7 @@ Popular build system choices for C and C++ include these, all of which can be co
 - **Make** - Traditional build automation (`sudo apt install make`)
 - **{spellexception}`Autotools`** - Traditional GNU build system for legacy projects (`sudo apt install autoconf automake libtool`)
 
-For brevity, this tutorial shows how to use Clang directly as well as a simple CMake project.
+This tutorial shows how to use Clang directly, as well as a simple CMake project.
 
 :::
 ### Preequisites
