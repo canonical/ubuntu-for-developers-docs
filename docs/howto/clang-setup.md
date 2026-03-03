@@ -27,7 +27,9 @@ The output is a list of {pkg}`clang` packages with explicit version numbers as p
 sudo apt install clang-20
 ```
 
-However, in order to support parallel installations of multiple clang versions without conflicts, packages other than the default will not install a `clang` nor `clang++` executable. Instead, they will contain the explicit version number that you selected, such as `clang-20` or `clang++-20`. For the sake of stability, changing the default via something like `update-alternatives` is not recommended.
+:::{note}
+To support parallel installations of multiple Clang versions without conflicts, packages other than the default do not install a {command}`clang` nor {command}`clang++` executable. Instead, they contain the explicit version number that you selected, such as {command}`clang-20` or {command}`clang++-20`. For the sake of stability, changing the default via amechanism like {command}`update-alternatives` is not recommended.
+:::
 
 ## C and C++ IDEs
 
