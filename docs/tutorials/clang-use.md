@@ -60,9 +60,7 @@ And now you should be able to run your program!
 ./hello
 ```
 
-:::
 ### Building with CMake
-:::
 
 Suppose you plan to grow your `hello-world` project into something significant. You can use CMake right from the start to orchestrate your builds.
 
