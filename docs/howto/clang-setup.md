@@ -7,7 +7,7 @@ Clang is a popular C and C++ compiler, and a part of the [LLVM project](https://
 
 To compile C and C++ code, you don't need to install all of the LLVM tooling, just Clang itself. Each Ubuntu release has a designated default version of Clang, which can be installed by running:
 
-```bash
+```none
 sudo apt install clang
 ```
 
