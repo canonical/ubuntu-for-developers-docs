@@ -15,7 +15,7 @@ This installs the {command}`clang` and {command}`clang++` executables and the co
 
 ### Alternative Clang versions
 
-If the default version does not meet your needs, you can find which other versions have already been packaged for your Ubuntu release by doing a package search:
+To find which other versions have been packaged for your Ubuntu release, do a package search:
 
 ```bash
 sudo apt search -n ^clang-[0-9]+
