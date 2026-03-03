@@ -11,7 +11,7 @@ To compile C and C++ code, you don't need to install all of the LLVM tooling, ju
 sudo apt install clang
 ```
 
-This will give you access to the `clang` and `clang++` executables and the corresponding documentation.
+This installs the {command}`clang` and {command}`clang++` executables and the corresponding documentation.
 
 ### Alternative Clang versions
 
