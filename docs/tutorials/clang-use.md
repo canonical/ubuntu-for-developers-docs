@@ -21,9 +21,7 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
 - CMake: `sudo apt install cmake`
 - Any text editor or IDE
 
-:::
 ### Creating your source file
-:::
 
 1. Create a project directory:
 
