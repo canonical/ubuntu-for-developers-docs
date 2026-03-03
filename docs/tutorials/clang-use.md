@@ -35,7 +35,7 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
    mkdir src
    ```
 
-1. Create a new source file using your preferred editor or IDE. For this example, we'll be using C++, so name your file `hello.cpp` and add the following contents:
+1. Create a new source file using your preferred editor or IDE. For this example, we're using C++, so name your file {file}`hello.cpp`, and add the following contents:
 
    ```{code-block} cpp
    :caption: `hello-world/src/hello.cpp`
