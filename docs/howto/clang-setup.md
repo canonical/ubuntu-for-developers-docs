@@ -28,7 +28,7 @@ sudo apt install clang-20
 ```
 
 :::{note}
-To support parallel installations of multiple Clang versions without conflicts, packages other than the default do not install a {command}`clang` nor {command}`clang++` executable. Instead, they contain the explicit version number that you selected, such as {command}`clang-20` or {command}`clang++-20`. For the sake of stability, changing the default via amechanism like {command}`update-alternatives` is not recommended.
+To support parallel installations of multiple Clang versions without conflicts, packages other than the default do not install a {command}`clang` nor {command}`clang++` executable. Instead, they contain the explicit version number that you selected, such as {command}`clang-20` or {command}`clang++-20`. For the sake of stability, changing the default via a mechanism like {command}`update-alternatives` is not recommended.
 :::
 
 ## C and C++ IDEs

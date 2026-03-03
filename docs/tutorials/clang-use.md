@@ -82,7 +82,7 @@ There are three commands we're using in this definition:
 : Sets a minimum version of CMake that your project is compatible with. Using version 3.10 is a reasonable starting point, because it's sufficiently modern to have newer CMake features, but not so modern that developers you work with won't have access to it. You may need to adjust this as you choose to use particular features.
 
 `project`
-: Defines the project name. Uou can optionally specify other helpful information. In this case, we tell CMake that the implementation language is C++, so it doesn't bother checking for any tooling related to C.
+: Defines the project name. You can optionally specify other helpful information. In this case, we tell CMake that the implementation language is C++, so it doesn't bother checking for any tooling related to C.
 
 `add_executable`
 : Defines the executable output of the project. The first argument is the name of the executable to produce. Following that is a list of the source files that need to be compiled to create it.
