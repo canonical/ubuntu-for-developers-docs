@@ -17,7 +17,7 @@ This installs the {command}`clang` and {command}`clang++` executables and the co
 
 To find which other versions have been packaged for your Ubuntu release, do a package search:
 
-```bash
+```none
 sudo apt search -n ^clang-[0-9]+
 ```
 
