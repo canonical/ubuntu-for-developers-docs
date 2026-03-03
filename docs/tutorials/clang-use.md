@@ -25,7 +25,7 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
 
 1. Create a project directory:
 
-   ```bash
+   ```none
    mkdir hello-world && cd hello-world
    ```
 
