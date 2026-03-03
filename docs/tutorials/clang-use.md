@@ -87,7 +87,7 @@ There are three commands we're using in this definition:
 `add_executable`
 : Defines the executable output of the project. The first argument is the name of the executable to produce. Following that is a list of the source files that need to be compiled to create it.
 
-We're just about ready to run the build, but notice that we have not yet mentioned Clang anywhere. By default, the order that CMake uses when searching for compilers will result in GCC being detected first. Since we want to use clang, we can specify that directly when we configure the build.
+By default, the order that CMake uses when searching for compilers results in {ref}`GCC <develop-with-gcc-on-ubuntu>`being detected first. To use Clang, specify that directly when we configure the build.
 
 CMake is a two-stage build system, where the first stage generates lower-level build files (by default, GNU {spellexception}`makefiles` on Ubuntu), and the second executes those. During the first stage is when we can specify extra configuration options for the build. To tell CMake to use Clang, do the following.
 
