@@ -110,7 +110,7 @@ This places the build files in the {file}`build/` directory, nicely isolated fro
 cmake --build build
 ```
 
-You should now have your `hello` executable, and can run it directly:
+You should now have your {file}`hello` executable, and can run it directly:
 
 ```bash
 ./build/hello
