@@ -100,7 +100,7 @@ cmake -DCMAKE_CXX_COMPILER=clang++ -B build
 
 In the output, you should be able to spot a line that shows which compiler CMake found, something like this:
 
-```bash
+```none
 -- The CXX compiler identification is Clang 18.1.3
 ```
 
