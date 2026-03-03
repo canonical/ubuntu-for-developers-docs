@@ -54,6 +54,8 @@ To configure the LSP, follow instructions in the official [`clangd` documentatio
 
 To configure the LSP, follow instructions in the official [`clangd` documentation](https://clangd.llvm.org/config).
 
+To configure the LSP, follow instructions in the official [`clangd` documentation](https://clangd.llvm.org/config).
+
 ## What next
 
 See the tutorial introducing the use of C/C++ and related tooling: {ref}`use-clang`.
