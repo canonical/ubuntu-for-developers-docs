@@ -15,9 +15,7 @@ Popular build system choices for C and C++ include these, all of which can be co
 
 This tutorial shows how to use Clang directly, as well as a simple CMake project.
 
-:::
-### Preequisites
-:::
+### Prerequisites
 
 - Clang itself: refer to {ref}`install-clang`.
 - CMake: `sudo apt install cmake`
