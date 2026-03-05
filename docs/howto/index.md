@@ -10,6 +10,7 @@ Install and set up Python <python-setup>
 Install and set up Go <go-setup>
 Install and set up Rust <rust-setup>
 Install and set up GCC <gcc-setup>
+Install and set up Clang <clang-setup>
 Install and set up .NET <dotnet-setup>
 Install and set up Java <java-setup>
 :::

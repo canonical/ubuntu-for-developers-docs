@@ -12,6 +12,7 @@ Develop with Python <python-use>
 Develop with Go <go-use>
 Develop with Rust <rust-use>
 Develop with GCC <gcc-use>
+Develop with Clang <clang-use>
 Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Native compile with GraalVM <graalvm-use>
