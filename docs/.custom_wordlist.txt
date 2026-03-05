@@ -19,6 +19,7 @@ html
 Makefile
 PhpStorm
 PyCharm
+pyenv
 pytest
 reformats
 RubyMine

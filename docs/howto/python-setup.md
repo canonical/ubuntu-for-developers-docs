@@ -45,6 +45,53 @@ Install with:
 sudo apt install -y python3-pip python3-pip-whl
 ```
 
+## Managing multiple Python versions with pyenv
+
+To use multiple Python versions on the same system and switch between them, you can use [pyenv](https://github.com/pyenv/pyenv). It allows you to set specific Python versions for projects or change the global Python version without interfering with the system Python. 
+
+To enable pyenv, complete the following steps:    
+
+1. Install `pyenv`
+
+   :::{note}
+   This is a fairly large installation because it includes the build dependencies required to compile Python from source locally. 
+   :::
+
+   ```none 
+   sudo apt install pyenv
+   ```
+
+2. Configure the shell environment. To ensure pyenv works reliably in all environments, configure both your interactive shell (`~/.bashrc`) and your login shell (`~/.profile`). 
+
+    Add the following lines to the respective shell configuration files:
+    
+    * {file}`~/.bashrc`:
+    
+      ```{code-block} bash
+      export PYENV_ROOT="$HOME/.pyenv"
+      [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+      eval "$(pyenv init - bash)"
+      ```
+      
+    * {file}`~/.profile`:
+
+      ```{code-block} bash
+      export PYENV_ROOT="$HOME/.pyenv"
+      [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+      eval "$(pyenv init -)"
+      ```
+   
+    :::{note} 
+    Refer to the upstream documentation for [instructions on other shell environments configuration](https://github.com/pyenv/pyenv?tab=readme-ov-file#b-set-up-your-shell-environment-for-pyenv). 
+    :::
+
+3. For the changes to the `PATH` to work immediately, restart your shell: 
+
+   ```none 
+   exec "$SHELL"
+   ```
+
+
 
 ## Installing editing and debugging tools
 
