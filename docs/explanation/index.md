@@ -25,6 +25,15 @@ Context and advice for configuring Git, the {spellexception}`de facto` standard 
 use-vcs
 :::
 
+## Packaging on Ubuntu
+
+Information on packaging your application from an Ubuntu system, to distribute it to users.
+
+:::{toctree}
+:maxdepth: 1
+
+packaging
+:::
 
 ## .NET basics
 
