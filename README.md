@@ -13,6 +13,7 @@ The documentation provides guidance for using the [Ubuntu Desktop](https://ubunt
 * Golang
 * Python
 * Rust
+* Clang
 * GCC
 
 
