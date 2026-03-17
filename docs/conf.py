@@ -154,7 +154,7 @@ linkcheck_ignore = [
     r"https://www\.nongnu\.org/.*",
     r"https://www\.gnu\.org/.*",
     r"https://matrix\.to/.*",
-    "https://blog.local-optimum.net/getting-started-with-autoinstall-on-ubuntu-desktop-24-04-lts-147a1defb2de", # Server returns 403 Forbidden for linkcheck client, but works with a browser
+    "https://blog.local-optimum.net/getting-started-with-autoinstall-on-ubuntu-desktop-24-04-lts-147a1defb2de",  # Server returns 403 Forbidden for linkcheck client, but works with a browser
 ]
 
 # Pages on which to ignore anchors
@@ -216,15 +216,24 @@ html_js_files = ["js/bundle.js"]
 
 # If you are using the :manpage: role, set this variable to the URL for the version
 # that you want to link to:
-manpages_url = (
-    "https://manpages.ubuntu.com/manpages/questing/en/man{section}/{page}.{section}.html"
-)
+manpages_url = "https://manpages.ubuntu.com/manpages/questing/en/man{section}/{page}.{section}.html"
 
 ############################################################
 # Additional configuration
 ############################################################
 
 # Add any configuration that is not covered by the common conf.py file.
+
+# sphinx-llm config
+llms_txt_full_build = False
+llms_txt_suffix_mode = "url-suffix"
+llms_txt_description = (
+    "This documentation provides guidance for using the Ubuntu Desktop "
+    "Linux distribution as a development platform. The guides focus on "
+    "setting up and using the Ubuntu system as a workstation for developers, "
+    "with an emphasis on the following toolchains: Python, Golang, Rust, "
+    "GCC, Clang, .NET, and Java."
+)
 
 # Define a :center: role that can be used to center the content of table cells.
 rst_prolog = """
