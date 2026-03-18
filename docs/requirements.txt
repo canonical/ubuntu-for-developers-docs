@@ -3,6 +3,6 @@ packaging
 sphinxcontrib-mermaid
 sphinxcontrib-svg2pdfconverter[CairoSVG]
 sphinx-last-updated-by-git
-sphinx-llm
+sphinx-llm @ git+https://github.com/NVIDIA/sphinx-llm
 sphinx-prompt
 sphinx-sitemap
