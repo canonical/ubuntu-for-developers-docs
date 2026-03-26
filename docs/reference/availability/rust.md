@@ -1,6 +1,8 @@
 (rust-toolchain-availability)=
 # Available Rust versions
 
+This page lists Rust versions available via the Rustup snap and Ubuntu packages.
+
 ## Rustup snap
 
 The [`rustup` snap](https://snapcraft.io/rustup) provides an installer for the programming language Rust. It releases Rust to three different "channels": `stable`, `beta`, and `nightly`.

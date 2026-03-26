@@ -1,6 +1,8 @@
 (tutorials)=
 # Tutorials
 
+These tutorials guide you through writing a 'Hello, world!' program with each toolchain on Ubuntu.
+
 Each of these tutorials teaches a quick way to your first 'Hello, world!' application using the respective programming language and development toolchain on Ubuntu. In addition, the tutorials show how to use supporting tooling, including Integrated Development Environments (IDE), debuggers, code checkers, linters, and formatters on the Ubuntu platform.
 
 The tutorials do not intend to teach programming with the languages -- instead, they offer guidance on getting started using them on Ubuntu Desktop.

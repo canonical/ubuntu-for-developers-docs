@@ -1,7 +1,7 @@
 (install-clang)=
 # How to set up a development environment for Clang on Ubuntu
 
-Clang is a popular C and C++ compiler, and a part of the [LLVM project](https://llvm.org/). This article guides you in getting it installed on Ubuntu.
+This guide explains how to install Clang and the LLVM toolchain on Ubuntu. Clang is a popular C and C++ compiler, and a part of the [LLVM project](https://llvm.org/).
 
 ## Install the default version of Clang
 

@@ -1,6 +1,8 @@
 (java-toolchain-availability)=
 # Available Java versions
 
+This page lists Java versions available in Ubuntu releases, including CRaC and GraalVM.
+
 ## Ubuntu OpenJDK (deb) packages
 
 | Ubuntu version | available Java versions | {lpsrc}`java-common` version |

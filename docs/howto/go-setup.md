@@ -1,7 +1,7 @@
 (install-golang)=
 # How to set up a development environment for Go on Ubuntu
 
-Go is a popular language for back-end web development, microservices and CLI tools. This how-to guide outlines how to install a Go distribution and set up a development environment on Ubuntu.
+This guide explains how to install Go and set up a development environment on Ubuntu. Go is a popular language for back-end web development, microservices and CLI tools.
 
 
 ## Installing and setting up Go

@@ -1,6 +1,8 @@
 (install-dotnet)=
 # How to set up a development environment for .NET on Ubuntu
 
+This guide covers the available methods for installing .NET on Ubuntu and how to choose between them.
+
 ## Installing .NET
 
 There are multiple methods for installing the .NET toolchain on Ubuntu:

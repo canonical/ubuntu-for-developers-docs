@@ -1,6 +1,8 @@
 (go-toolchain-availability)=
 # Available Golang versions
 
+This page lists Go versions available via the snap store and as Ubuntu packages.
+
 ## Go snap
 
 The [`go` snap](https://snapcraft.io/go) let's you install the following Golang versions:

@@ -1,6 +1,8 @@
 (gcc-toolchain-availability)=
 # Available GCC versions
 
+This page lists GCC versions available in Ubuntu releases.
+
 ## Ubuntu GCC (deb) packages
 
 | Ubuntu version              | available GCC versions | {lpsrc}`gcc-defaults` version | 

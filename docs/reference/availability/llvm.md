@@ -1,6 +1,8 @@
 (llvm-toolchain-availability)=
 # Available LLVM/Clang versions
 
+This page lists LLVM/Clang versions available in Ubuntu releases.
+
 ## Ubuntu (deb) packages
 
 | Ubuntu version              | available LLVM/Clang versions | {lpsrc}`llvm-defaults` |
