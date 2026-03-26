@@ -235,6 +235,9 @@ llms_txt_description = (
     "GCC, Clang, .NET, and Java."
 )
 
+# markdown-builder config
+markdown_http_base = "https://documentation.ubuntu.com/ubuntu-for-developers"
+
 # Define a :center: role that can be used to center the content of table cells.
 rst_prolog = """
 .. role:: center
