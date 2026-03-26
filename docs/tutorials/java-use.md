@@ -1,7 +1,7 @@
 (use-java)=
 # Develop with Java on Ubuntu
 
-This tutorial provides basic guidance on how to use of the Java toolchain for development on Ubuntu. It shows how to create a 'Hello, world!' program and explains how to build projects using Gradle or Maven.
+This tutorial provides basic guidance on using the Java toolchain for development on Ubuntu. It shows how to create a 'Hello, world!' program and explains how to build projects using Gradle or Maven.
 
 For instructions on how to install Java and related tooling, including IDEs, see the dedicated guide on {ref}`install-java`. This article assumes that tooling suggested in that article has been installed.
 

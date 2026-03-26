@@ -1,5 +1,7 @@
 # Introduction to the .NET toolchain
 
+This article introduces the .NET platform, its components, supported languages, and release cycle.
+
 The .NET platform (pronounced "dot net") is a fast, lightweight, and modular framework, enabling the creation of cross-platform applications that work on GNU/Linux, macOS, and Windows.
 
 It particularly focuses on creating console applications, web applications, and micro-services.

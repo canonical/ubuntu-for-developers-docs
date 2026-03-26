@@ -1,6 +1,6 @@
 # Installing Ubuntu Desktop for developers
 
-Ubuntu Desktop is an open-source operating system designed for a range of tasks, including development. This article explains considerations for installing the system to serve as a platform for software development.
+This article covers considerations for installing Ubuntu Desktop as a development platform. Ubuntu Desktop is an open-source operating system designed for a range of tasks, including development.
 
 
 :::{note}

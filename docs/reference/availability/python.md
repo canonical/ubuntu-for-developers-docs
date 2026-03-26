@@ -1,6 +1,8 @@
 (python-toolchain-availability)=
 # Available Python versions
 
+This page lists Python versions available in Ubuntu releases.
+
 ## Ubuntu Python 3 (deb) packages
 
 | Ubuntu version | available Python 3 versions | {lpsrc}`python3-defaults` version |

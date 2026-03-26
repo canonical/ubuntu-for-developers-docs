@@ -1,7 +1,7 @@
 (reference)=
 # Reference
 
-Toolchain version matrices and a list of Integrated Development Environments (IDEs) with quick installation reference.
+This section contains toolchain version matrices and a reference list of IDEs available on Ubuntu.
 
 
 ## Toolchain versions in Ubuntu

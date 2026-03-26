@@ -2,7 +2,7 @@
 
 # Fast start for Spring Boot apps using OpenJDK CRaC 
 
-This post introduces OpenJDK with the Coordinated Restore at Checkpoint (CRaC) capability. It guides the reader to checkpoint and restore a Spring Boot application and helps appreciate the start-up performance gains CRaC brings to Java applications.
+This tutorial introduces OpenJDK with the Coordinated Restore at Checkpoint (CRaC) capability. It guides the reader to checkpoint and restore a Spring Boot application and helps appreciate the start-up performance gains CRaC brings to Java applications.
 
 ## Background
 

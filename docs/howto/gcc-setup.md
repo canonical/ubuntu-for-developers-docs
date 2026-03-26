@@ -1,7 +1,7 @@
 (install-gcc)=
 # How to set up a development environment for GCC on Ubuntu
 
-The [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a set of compilers for programming languages, including C, C++, Assembly, and many more. It is the {spellexception}`de facto` standard in Linux environments and is used to compile both the GNU toolchain and the Linux kernel.
+This guide explains how to install GCC and related tooling on Ubuntu Desktop. The [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a set of compilers for programming languages, including C, C++, Assembly, and many more. It is the {spellexception}`de facto` standard in Linux environments and is used to compile both the GNU toolchain and the Linux kernel.
 
 This guide shows how to install GCC and related tooling, including a build system and debuggers, on Ubuntu Desktop.
 

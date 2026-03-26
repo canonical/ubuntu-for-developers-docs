@@ -1,7 +1,7 @@
 (explanation)=
 # Explanation
 
-These explanatory articles offer context useful for understanding various aspects of using and configuring Ubuntu Desktop to develop applications.
+These explanatory articles offer context for using and configuring Ubuntu Desktop for development.
 
 
 ## Ubuntu installation for development

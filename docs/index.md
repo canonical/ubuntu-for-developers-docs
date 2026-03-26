@@ -14,7 +14,7 @@ explanation/index
 Contribute documentation <howto/contribute-docs.md>
 :::
 
-This documentation provides guidance for using the [Ubuntu Desktop](https://ubuntu.com/desktop) Linux distribution as a development platform. The guides focus on setting up and using the Ubuntu system as a workstation for developers, with an emphasis on the following toolchains:
+This documentation provides guidance on using Ubuntu Desktop as a development platform. The guides focus on setting up and using the Ubuntu system as a workstation for developers, with an emphasis on the following toolchains:
 
 :::{table} Toolchain overview
 | Toolchain | How to install | Get started coding |

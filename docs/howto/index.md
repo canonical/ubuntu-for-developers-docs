@@ -1,7 +1,7 @@
 (howto)=
 # How-to guides
 
-Follow straightforward instructions to install the toolchains and supporting tooling for setting up an efficient development environment. The aim is to prepare your Ubuntu Desktop system to enable you to get started coding with the respective programming languages.
+These guides cover installing development toolchains and supporting tooling on Ubuntu Desktop. The aim is to prepare your Ubuntu Desktop system to enable you to get started coding with the respective programming languages.
 
 :::{toctree}
 :maxdepth: 1

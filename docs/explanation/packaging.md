@@ -1,5 +1,7 @@
 # Packaging software
 
+This article describes how to package software as a Debian package, snap, or container image.
+
 There are different ways to distribute an application. It is possible to directly send
 the source code to users, who will then have to build it themselves. It is also possible
 to give out pre-compiled binaries that the users will download, copy to the right place and use.
