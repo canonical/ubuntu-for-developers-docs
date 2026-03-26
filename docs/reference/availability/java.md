@@ -40,12 +40,13 @@
 
 | Ubuntu version | available Java versions |
 | --- | --- |
-| 25.10 (Questing Quokka) | 17, 21 |
+| 25.10 (Questing Quokka) | 17, 21, 25 |
 | 25.04 (Plucky Puffin)   | 17, 21 |
 | 24.10 (Oracular Oriole) | 17, 21 |
 
 | Java Version | Source package | 
 | --- | --- |
+| 25 | {lpsrc}`openjdk-25-crac` |
 | 21 | {lpsrc}`openjdk-21-crac` |
 | 17 | {lpsrc}`openjdk-17-crac` |
 
@@ -57,5 +58,4 @@ The [`graalvm-jdk` snap](https://snapcraft.io/graalvm-jdk) provides an advanced 
 | Java Version | Snap Channel |
 | --- | --- |
 | 25 | latest/stable |
-| 24 | latest/edge |
 | 21 | v21/stable |
