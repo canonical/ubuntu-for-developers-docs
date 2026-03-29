@@ -1,5 +1,5 @@
 (ubuntu-for-developers)=
-# Ubuntu for Developers
+# Ubuntu for developers
 
 :::{toctree}
 ---
@@ -14,83 +14,93 @@ explanation/index
 Contribute documentation <howto/contribute-docs.md>
 :::
 
-This documentation provides guidance on using Ubuntu Desktop as a development platform. The guides focus on setting up and using the Ubuntu system as a workstation for developers, with an emphasis on the following toolchains:
+**Ubuntu is a Linux-based operating system that provides a complete development platform supporting multiple programming languages and toolchains.**
 
-:::{table} Toolchain overview
-| Toolchain | How to install | Get started coding |
-| --- | --- | --- |
-| Python | {ref}`Install Python <install-python>` | {ref}`Develop with Python <use-python>` |
-| Golang | {ref}`Install Golang <install-golang>` | {ref}`Develop with Golang <use-go>` |
-| Rust | {ref}`Install Rust <install-rust>` | {ref}`Develop with Rust <use-rust>` |
-| GCC | {ref}`Install GCC <install-gcc>` | {ref}`Develop with GCC <use-gcc>` |
-| Clang | {ref}`Install Clang <install-clang>` | {ref}`Develop with Clang <use-clang>` |
-| .NET | {ref}`Install .NET <install-dotnet>` | {ref}`Develop with .NET <use-dotnet>` |
-| Java | {ref}`Install Java <install-java>` | {ref}`Develop with Java <use-java>` |
-:::
+**Each supported toolchain integrates with Ubuntu's package management and tooling ecosystem.** Python, Go, Rust, GCC, Clang, .NET, and Java are available through Ubuntu repositories and snaps, together with build tools, debuggers, linters, formatters, and IDEs (integrated development environments).
 
-For each of the toolchains, there is a {ref}`tutorial <tutorials>` that shows a quick path to a 'Hello, world!' program and demonstrates the use of supporting tooling, including debuggers and linters, on Ubuntu Desktop.
+**This documentation reduces the time needed to configure a working development environment on Ubuntu.** It covers toolchain installation, first-program tutorials, version-reference data, and background context, providing a path from a fresh Ubuntu Desktop install to a productive development setup.
 
-The documentation doesn't teach coding skills -- it shows developers how to make the most of Ubuntu Desktop with their toolchain of choice. Even if you haven't used Ubuntu before, you can follow this guidance to set up a development environment that suits your purposes.
+**The documentation is for developers who use or plan to use Ubuntu Desktop as their workstation.** It does not teach programming; it shows how to install toolchains, build first programs, and use supporting tools on Ubuntu Desktop. No prior Ubuntu experience is required.
 
 
 ## In this documentation
 
-::::{grid} 1 1 2 2
+The following sections group all major pages by topic, organizing the documentation along subject lines rather than by documentation type.
 
-:::{grid-item-card} {ref}`tutorials`
-:link: tutorials
-:link-type: ref
 
-**Get started** - hands-on introduction to developing on Ubuntu Desktop for new users, including a path to developing a 'Hello, world!' application with each of the toolchains.
-:::
+### Getting to 'Hello, world!'
 
-:::{grid-item-card} {ref}`howto`
-:link: howto/index
-:link-type: doc
+Tutorials guide you through writing a first program and using supporting tooling with each toolchain on Ubuntu Desktop.
 
-**Step-by-step guides** covering basic system setup for the individual toolchains and installation of supporting tooling.
-:::
+* **Python**: {ref}`Develop with Python <use-python>`
+* **Go**: {ref}`Develop with Go <use-go>`
+* **Rust**: {ref}`Develop with Rust <use-rust>`
+* **GCC**: {ref}`Develop with GCC <use-gcc>`
+* **Clang**: {ref}`Develop C and C++ with Clang <use-clang>`
+* **.NET**: {ref}`Develop with .NET <use-dotnet>`
+* **Java**: {ref}`Develop with Java <use-java>` • {ref}`Compile Spring Boot apps to native executables <use-graalvm>` • {ref}`Fast start for Spring Boot apps with CRaC <use-crac>`
 
-::::
 
-::::{grid} 1 1 2 2
-:reverse:
+### Installing and configuring toolchains
 
-:::{grid-item-card} {ref}`reference`
-:link: reference/index
-:link-type: doc
+How-to guides cover installation and setup for each toolchain and its supporting tooling.
 
-**Overview** of supported versions of all toolchains on different Ubuntu releases. An overview of available IDEs.
-:::
+* **Python**: {ref}`Install and set up Python <install-python>`
+* **Go**: {ref}`Install and set up Go <install-golang>`
+* **Rust**: {ref}`Install and set up Rust <install-rust>`
+* **GCC**: {ref}`Install and set up GCC <install-gcc>`
+* **Clang**: {ref}`Install and set up Clang <install-clang>`
+* **.NET**: {ref}`Install and set up .NET <install-dotnet>`
+* **Java**: {ref}`Install and set up Java <install-java>`
 
-:::{grid-item-card} {ref}`explanation`
-:link: explanation/index
-:link-type: doc
 
-**Discussion and clarification** of key topics, including considerations for Ubuntu installation and version control.
-:::
+### Toolchain availability
 
-::::
+Toolchain versions are tied to Ubuntu releases — these pages show which versions ship with each release and what IDEs are available on Ubuntu.
+
+* **Versions**: {ref}`Python <python-toolchain-availability>` • {ref}`Go <go-toolchain-availability>` • {ref}`Rust <rust-toolchain-availability>` • {ref}`GCC <gcc-toolchain-availability>` • {ref}`LLVM/Clang <llvm-toolchain-availability>` • {ref}`.NET <dotnet-toolchain-availability>` • {ref}`Java <java-toolchain-availability>`
+* **IDEs**: {ref}`Integrated developer environments <ides>`
+
+
+### Background and context
+
+These pages explain the concepts and context behind the steps, from Ubuntu installation choices to how specific toolchains and technologies work.
+
+* **Ubuntu**: {ref}`Installing Ubuntu Desktop for developers <install-ubuntu>`
+* **Version control**: {ref}`Using Git version control on Ubuntu <use-git>`
+* **Packaging**: {ref}`Packaging software <packaging>`
+* **.NET**: {ref}`Introduction to the .NET toolchain <dotnet-introduction>` • {ref}`Debugging with .NET <debugging-with-dotnet>`
+* **GraalVM**: {ref}`GraalVM native compilation <graalvm-introduction>`
+
+
+## How this documentation is organized
+
+This documentation follows the [Diátaxis documentation framework](https://diataxis.fr/).
+
+* {ref}`Tutorials <tutorials>` guide you through developing a 'Hello, world!' application with each toolchain on Ubuntu Desktop, and demonstrate the use of debuggers, linters, and other supporting tools.
+* {ref}`How-to guides <howto>` provide step-by-step instructions for installing and setting up each toolchain and its supporting tooling on Ubuntu Desktop.
+* {ref}`Reference <reference>` covers toolchain version availability across Ubuntu releases and lists supported integrated development environments.
+* {ref}`Explanation <explanation>` discusses Ubuntu installation considerations, version-control setup, packaging, and toolchain-specific background.
 
 
 ## Project and community
 
-The Ubuntu Desktop Linux distribution is part of the Ubuntu family of projects. It's an open-source project that warmly welcomes community contributions, suggestions, fixes, and constructive feedback.
+Ubuntu Desktop is part of the Ubuntu family of open-source projects, developed and maintained by Canonical and a worldwide community of contributors.
 
-[Read our code of conduct](https://ubuntu.com/community/ethos/code-of-conduct)
-: As a community, we adhere to the Ubuntu code of conduct.
 
-[Get support](https://askubuntu.com/)
-: Ask Ubuntu is a question and answer site for Ubuntu users and developers.
+### Get involved
 
-Join our online chat
-: - IRC: [#ubuntu](https://web.libera.chat/gamja/?channels=%23ubuntu)
-  - Matrix: [Discuss Ubuntu](https://matrix.to/#/#discuss:ubuntu.com)
+* [Ask Ubuntu](https://askubuntu.com/)
+* Matrix: [Discuss Ubuntu](https://matrix.to/#/#discuss:ubuntu.com)
+* [Report issues in this documentation](https://github.com/canonical/ubuntu-for-developers-docs/issues/new)
+* {ref}`Contribute to this documentation <contribute-docs>`
 
-[Report bugs](https://github.com/canonical/ubuntu-for-developers-docs/issues/new)
-: We want to know about the problems so we can fix them.
 
-[Contribute docs on GitHub](https://github.com/canonical/ubuntu-for-developers-docs)
-: The source is open, and we welcome contributions. See {ref}`contribute-docs`.
+### Governance and policies
 
-Thinking about using Ubuntu Desktop as your development platform? [Get it!](https://ubuntu.com/desktop/developers)
+* [Code of conduct](https://ubuntu.com/community/ethos/code-of-conduct)
+
+
+### Commercial support
+
+Thinking about using Ubuntu Desktop as your development platform? [Get it](https://ubuntu.com/desktop/developers).

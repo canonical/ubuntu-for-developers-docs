@@ -1,3 +1,4 @@
+(dotnet-introduction)=
 # Introduction to the .NET toolchain
 
 This article introduces the .NET platform, its components, supported languages, and release cycle.

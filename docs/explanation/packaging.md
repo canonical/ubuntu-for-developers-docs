@@ -1,3 +1,4 @@
+(packaging)=
 # Packaging software
 
 This article describes how to package software as a Debian package, snap, or container image.

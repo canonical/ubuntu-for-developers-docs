@@ -1,3 +1,4 @@
+(install-ubuntu)=
 # Installing Ubuntu Desktop for developers
 
 This article covers considerations for installing Ubuntu Desktop as a development platform. Ubuntu Desktop is an open-source operating system designed for a range of tasks, including development.
