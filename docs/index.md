@@ -75,10 +75,10 @@ These pages explain the concepts and context behind the steps, from Ubuntu insta
 
 ## How this documentation is organized
 
-This documentation follows the [Diátaxis documentation framework](https://diataxis.fr/).
+This documentation uses the [Diátaxis documentation structure](https://diataxis.fr/).
 
 * {ref}`Tutorials <tutorials>` guide you through developing a 'Hello, world!' application with each toolchain on Ubuntu Desktop, and demonstrate the use of debuggers, linters, and other supporting tools.
-* {ref}`How-to guides <howto>` provide step-by-step instructions for installing and setting up each toolchain and its supporting tooling on Ubuntu Desktop.
+* {ref}`How-to guides <howto>` cover the installation and configuration of each toolchain and its supporting tooling on Ubuntu Desktop.
 * {ref}`Reference <reference>` covers toolchain version availability across Ubuntu releases and lists supported integrated development environments.
 * {ref}`Explanation <explanation>` discusses Ubuntu installation considerations, version-control setup, packaging, and toolchain-specific background.
 
@@ -91,9 +91,9 @@ Ubuntu Desktop is part of the Ubuntu family of open-source projects, developed a
 ### Get involved
 
 * [Ask Ubuntu](https://askubuntu.com/)
-* Matrix: [Discuss Ubuntu](https://matrix.to/#/#discuss:ubuntu.com)
-* [Report issues in this documentation](https://github.com/canonical/ubuntu-for-developers-docs/issues/new)
-* {ref}`Contribute to this documentation <contribute-docs>`
+* [Matrix channel](https://matrix.to/#/#discuss:ubuntu.com)
+* [Issue tracker](https://github.com/canonical/ubuntu-for-developers-docs/issues/new)
+* {ref}`Contribution guide <contribute-docs>`
 
 
 ### Governance and policies
@@ -103,4 +103,4 @@ Ubuntu Desktop is part of the Ubuntu family of open-source projects, developed a
 
 ### Commercial support
 
-Thinking about using Ubuntu Desktop as your development platform? [Get it](https://ubuntu.com/desktop/developers).
+Thinking about using Ubuntu Desktop as your development platform? See [Ubuntu Desktop for developers](https://ubuntu.com/desktop/developers).
