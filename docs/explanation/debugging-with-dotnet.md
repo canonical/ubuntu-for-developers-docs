@@ -1,3 +1,4 @@
+(debugging-with-dotnet)=
 # Debugging with .NET
 
 This article introduces you to key concepts when debugging .NET applications on Ubuntu.
