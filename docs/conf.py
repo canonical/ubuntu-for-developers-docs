@@ -225,7 +225,6 @@ manpages_url = "https://manpages.ubuntu.com/manpages/questing/en/man{section}/{p
 # Add any configuration that is not covered by the common conf.py file.
 
 # sphinx-llm config
-llms_txt_full_build = False
 llms_txt_suffix_mode = "url-suffix"
 llms_txt_description = (
     "This documentation provides guidance for using the Ubuntu Desktop "
