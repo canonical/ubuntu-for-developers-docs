@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install Python, pip, pyenv, and development tooling on Ubuntu Desktop."
+---
+
 (install-python)=
 # How to set up a development environment for Python on Ubuntu
 

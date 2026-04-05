@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install the Rust toolchain via Ubuntu packages or the Rustup snap on Ubuntu Desktop."
+---
+
 (install-rust)=
 # How to set up a development environment for Rust on Ubuntu
 

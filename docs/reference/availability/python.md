@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Python versions available in Ubuntu releases from 14.04 to the current development series."
+---
+
 (python-toolchain-availability)=
 # Available Python versions
 

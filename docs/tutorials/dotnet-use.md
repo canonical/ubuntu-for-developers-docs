@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Create, build, test, and publish .NET applications on Ubuntu using the dotnet CLI."
+---
+
 (use-dotnet)=
 # Develop with .NET on Ubuntu
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Introduction to the .NET platform: components, supported languages, and release cycle."
+---
+
 (dotnet-introduction)=
 # Introduction to the .NET toolchain
 

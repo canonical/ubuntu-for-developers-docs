@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Tutorials for 'Hello, world!' with Python, Go, Rust, GCC, Clang, .NET, and Java on Ubuntu."
+---
+
 (tutorials)=
 # Tutorials
 

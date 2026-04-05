@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Checkpoint and restore Spring Boot apps on Ubuntu using OpenJDK CRaC."
+---
+
 (use-crac)=
 
 # Fast start for Spring Boot apps using OpenJDK CRaC 

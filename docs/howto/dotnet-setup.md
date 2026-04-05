@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install .NET on Ubuntu using snap, Ubuntu packages, or Microsoft packages."
+---
+
 (install-dotnet)=
 # How to set up a development environment for .NET on Ubuntu
 

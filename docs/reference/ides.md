@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "IDEs available for Ubuntu Desktop development: VS Code, IntelliJ, CLion, Eclipse, and more."
+---
+
 (ides)=
 # Integrated developer environments
 

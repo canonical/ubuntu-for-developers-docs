@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Introduction to GraalVM native-image: ahead-of-time compilation for Java applications."
+---
+
 (graalvm-introduction)=
 # GraalVM native compilation
 This article introduces GraalVM native-image technology and its benefits for Java applications.

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Rust versions available via Rustup snap and Ubuntu packages across Ubuntu releases."
+---
+
 (rust-toolchain-availability)=
 # Available Rust versions
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install GCC, GDB, Make, CMake, and editor tooling on Ubuntu Desktop."
+---
+
 (install-gcc)=
 # How to set up a development environment for GCC on Ubuntu
 

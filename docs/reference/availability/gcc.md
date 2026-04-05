@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "GCC versions available in Ubuntu releases from 14.04 to the current development series."
+---
+
 (gcc-toolchain-availability)=
 # Available GCC versions
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install OpenJDK, Maven, Gradle, and Java IDEs on Ubuntu Desktop."
+---
+
 (install-java)=
 # How to set up a development environment for Java on Ubuntu
 

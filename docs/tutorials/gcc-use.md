@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Compile and debug C programs on Ubuntu using GCC and GDB."
+---
+
 (use-gcc)=
 # Develop with GCC on Ubuntu
 

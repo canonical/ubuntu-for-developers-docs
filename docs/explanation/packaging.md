@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Package software as a Debian package, snap, or container image on Ubuntu."
+---
+
 (packaging)=
 # Packaging software
 

@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Build Java applications on Ubuntu using Maven and Gradle build tools."
+---
+
 (use-java)=
 # Develop with Java on Ubuntu
 

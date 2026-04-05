@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Report issues, edit pages, and contribute to Ubuntu for Developers documentation."
+---
+
 (contribute-docs)=
 # How to contribute documentation
 

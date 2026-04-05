@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Compile Spring Boot applications to native executables on Ubuntu using GraalVM."
+---
+
 (use-graalvm)=
 # Compiling Spring Boot applications to native executables
 This tutorial shows how to compile a Spring Boot application to a native executable using GraalVM.

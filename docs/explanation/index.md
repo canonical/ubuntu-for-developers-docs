@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Background on Ubuntu Desktop as a development platform, Git, packaging, and toolchains."
+---
+
 (explanation)=
 # Explanation
 
