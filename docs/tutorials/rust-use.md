@@ -50,10 +50,11 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
 3. Build and run the program:
 
     ```{terminal}
-    :input: cargo run
     :user: dev
     :host: ubuntu
 
+    cargo run
+    
     Hello, world!
     ```
 
@@ -125,9 +126,10 @@ gcc -O3 c_main.c answer.o -o main
 When you execute this program, you should see the following:
 
 ```{terminal}
-:input: ./main
 :user: dev
 :host: ubuntu
+
+./main
 
 The answer is 42
 ```

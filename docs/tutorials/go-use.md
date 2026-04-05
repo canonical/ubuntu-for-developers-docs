@@ -57,7 +57,6 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
-    :input: go run .
 
     Hey Go!
     ```
@@ -74,7 +73,6 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
-    :input: ls
 
     go.mod  heygo  heygo.go
     ```
@@ -86,7 +84,6 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
-    :input: ./heygo
 
     Hey Go!
     ```
@@ -114,7 +111,6 @@ go build .
 :dir: ~/heygo
 :user: dev
 :host: ubuntu
-:input: ls
 
 go.mod  heygo  heygo.exe  heygo.go
 ```
@@ -438,6 +434,7 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
 
 10. Change the code as follows to fix the error:
 
+    ls
     ```diff
     func calculateAverage(numbers []int) float64 {
       sum := 0

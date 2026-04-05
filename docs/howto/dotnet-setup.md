@@ -185,7 +185,6 @@ Example output:
 
 ```{terminal}
 :scroll:
-:input: dotnet-installer list
 ┌────────────┬────────────────────┬──────────────────────┬─────────────────────┬─────────────┐
 │ Version    │ .NET Runtime       │ ASP.NET Core Runtime │ SDK                 │ End of Life │
 ├────────────┼────────────────────┼──────────────────────┼─────────────────────┼─────────────┤
@@ -315,7 +314,7 @@ Available for architectures:
 
 <!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 7 -->
 
-.NET 7 isn't supported on Ubuntu 26.04 (Resolute Raccoon).
+.NET 7 isn't supported on Ubuntu 26.04 LTS (Resolute Raccoon).
 :::
 
 :::{tab-item} .NET 6
@@ -324,7 +323,7 @@ Available for architectures:
 
 <!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 6 -->
 
-.NET 6 isn't supported on Ubuntu 26.04 (Resolute Raccoon).
+.NET 6 isn't supported on Ubuntu 26.04 LTS (Resolute Raccoon).
 :::
 
 ::::
@@ -664,9 +663,9 @@ If you want to install new .NET releases as soon as they are available, you can 
 Canonical is collaborating with Microsoft and other .NET partners. .NET releases are thoroughly tested before they are uploaded to the Ubuntu archive. Historically, no significant regressions have been reported for .NET proposed updates. Therefore, the risk of installing proposed updates for .NET can be considered minimal or at least insignificantly small compared to waiting for the SRU completion.
 ```
 
-##### Adding the Ubuntu proposed updates APT repository
+##### Adding the proposed Ubuntu updates APT repository
 
-First add the Ubuntu proposed updates APT repository as a source for APT to install updates from.
+First add the proposed Ubuntu updates APT repository as a source for APT to install updates from.
 
 If the file `/etc/apt/sources.list.d/ubuntu.sources` exists on your system, add `<release>-proposed` to the `Suites:` line. For example:
 
@@ -789,7 +788,6 @@ dotnet --list-runtimes
 Example output:
 
 ```{terminal}
-:input: dotnet --info
 .NET SDK:
  Version:           8.0.113
  Commit:            67977f6ab7
@@ -833,10 +831,8 @@ Learn more:
 Download .NET:
   https://aka.ms/dotnet/download
 
-:input: dotnet --list-sdks
 8.0.113 [/var/snap/dotnet/common/dotnet/sdk]
 
-:input: dotnet --list-runtimes
 Microsoft.AspNetCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.AspNetCore.App]
 Microsoft.NETCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.NETCore.App]
 ```
@@ -908,6 +904,7 @@ The following popular .NET extensions are available for VS Codium:
 
 To install [VS Codium](https://snapcraft.io/codium), run the following command:
 
+dotnet --list-runtimes
 ```text
 sudo snap install codium --classic
 ```

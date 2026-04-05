@@ -29,7 +29,6 @@ When installed, the {file}`/usr/bin/python3` file is a symbolic link always poin
 ```{terminal}
 :user: dev
 :host: ubuntu
-:input: ls -l /usr/bin/python3
 
 lrwxrwxrwx 1 root root 10 Sep 12  2024 /usr/bin/python3 -> python3.12
 ```
@@ -225,7 +224,8 @@ Python has the built-in `pdb` debugger and `unittest` testing framework, but you
 
   Install with:
 
-  ```none
+ls -l /usr/bin/python3
+```none
   sudo apt install tox
   ```
 

@@ -50,7 +50,7 @@ html_title = "Ubuntu for Developers"
 #   -H 'Accept: application/vnd.github.v3.raw' \
 #   https://api.github.com/repos/canonical/<REPO> | jq '.created_at'
 
-copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
+copyright = f"{datetime.date.today().year}"
 
 # Open Graph configuration - defines what is displayed as a link preview
 # when linking to the documentation from another website (see https://ogp.me/)
@@ -59,8 +59,6 @@ copyright = "%s CC-BY-SA, %s" % (datetime.date.today().year, author)
 ogp_site_url = "https://documentation.ubuntu.com/ubuntu-for-developers/"
 # The documentation website name (usually the same as the product name)
 ogp_site_name = project
-# The URL of an image or logo that is used in the preview
-ogp_image = "https://assets.ubuntu.com/v1/253da317-image-document-ubuntudocs.svg"
 
 # Update with the local path to the favicon for your product
 # (default is the circle of friends)
@@ -135,13 +133,13 @@ templates_path = [".sphinx/_templates"]
 # Redirects
 ############################################################
 
-# Set up redirects (https://documatt.gitlab.io/sphinx-reredirects/usage.html)
+# Set up redirects (https://github.com/sphinx-contrib/rediraffe)
 # For example: 'explanation/old-name.html': '../how-to/prettify.html',
 # You can also configure redirects in the Read the Docs project dashboard
 # (see https://docs.readthedocs.io/en/stable/guides/redirects.html).
-# NOTE: If this variable is not defined, set to None, or the dictionary is empty,
-# the sphinx_reredirects extension will be disabled.
-redirects = {}
+# To enable redirect generation, add 'sphinx_rerediraffe' to extensions
+# and uncomment the following:
+# rediraffe_redirects = {}
 
 ############################################################
 # Link checker exceptions
@@ -176,23 +174,20 @@ linkcheck_retries = 3
 myst_enable_extensions = {"colon_fence"}
 
 # You must include the canonical_sphinx extension here.
-# This extension automatically enables the following Sphinx extensions:
-# custom-rst-roles, myst_parser, notfound.extension, related-links,
-# sphinx_copybutton, sphinx_design, sphinx_tabs.tabs,
-# sphinx_reredirects, sphinxcontrib.jquery, sphinxext.opengraph,
-# terminal-output, youtube-links
-# If you need more extensions, add them here (in addition to
-# canonical_sphinx).
+# If you need more extensions, add them here (in addition to canonical_sphinx).
 extensions = [
+    # Upstream extensions (loaded explicitly — previously auto-bundled)
     "canonical_sphinx",
+    "sphinx_roles",
+    "sphinx_terminal",
     "sphinxcontrib.cairosvgconverter",
     "sphinx_last_updated_by_git",
     "sphinx.ext.intersphinx",
-    "sphinxcontrib.mermaid",
-    "sphinx_prompt",
-    "sphinx.ext.extlinks",
-    "sphinx_llm.txt",
     "sphinx_sitemap",
+    # Project-specific extensions
+    "sphinx.ext.extlinks",
+    "sphinxcontrib.mermaid",
+    "sphinx_llm.txt",
 ]
 
 myst_fence_as_directive = ["mermaid"]
@@ -200,6 +195,7 @@ myst_fence_as_directive = ["mermaid"]
 # Add files or directories that should be excluded from processing.
 exclude_patterns = [
     "reuse",
+    ".venv",
 ]
 
 # Add custom CSS files (located in .sphinx/_static/)
@@ -236,34 +232,30 @@ llms_txt_description = (
 
 # markdown-builder config
 markdown_http_base = "https://documentation.ubuntu.com/ubuntu-for-developers"
-
-# Define a :center: role that can be used to center the content of table cells.
 rst_prolog = """
 .. role:: center
    :class: align-center
+.. role:: h2
+    :class: hclass2
+.. role:: woke-ignore
+    :class: woke-ignore
+.. role:: vale-ignore
+    :class: vale-ignore
 """
-
-
-# Allow for use of link substitutions
-extlinks = {"lpsrc": ("https://launchpad.net/ubuntu/+source/%s", "%s")}
-
-
-# Define intersphinx mapping
-intersphinx_mapping = {
-    "ubuntu-server": ("https://documentation.ubuntu.com/server/", None),
-    "launchpad": ("https://documentation.ubuntu.com/launchpad/en/latest/", None),
-    "adsys": ("https://documentation.ubuntu.com/adsys/stable/", None),
-    "starter-pack": (
-        "https://canonical-starter-pack.readthedocs-hosted.com/latest/",
-        None,
-    ),
-}
 
 
 # Sitemap configuration
 html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
-sitemap_url_scheme = "{link}"
 
+# Allow for use of link substitutions
+extlinks = {"lpsrc": ("https://launchpad.net/ubuntu/+source/%s", "%s")}
+
+# Cross-documentation reference mapping
+intersphinx_mapping = {
+    "ubuntu-server": ("https://documentation.ubuntu.com/server/", None),
+    "launchpad": ("https://documentation.ubuntu.com/launchpad/en/latest/", None),
+    "adsys": ("https://documentation.ubuntu.com/adsys/stable/", None),
+}
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
 
@@ -277,6 +269,14 @@ class CommandRole(SphinxRole):
 
 def setup(app):
     roles.register_local_role("command", CommandRole())
+    # Workaround for https://github.com/canonical/canonical-sphinx/issues/34
+    if (
+        "discourse_prefix" not in app.config.html_context
+        and "discourse" in app.config.html_context
+    ):
+        app.config.html_context["discourse_prefix"] = (
+            f"{app.config.html_context['discourse']}/t/"
+        )
 
 
 # Define a custom role for package-name formatting

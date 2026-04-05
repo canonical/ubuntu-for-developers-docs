@@ -112,7 +112,6 @@ Let's see the application in action. Use the `dotnet run` command to restore dep
 :dir: ~/HelloWorld
 :user: dev
 :host: ubuntu
-:input: dotnet run
 
 Hello, World!
 ```
@@ -130,7 +129,6 @@ The `dotnet run` command is useful for development when you have a .NET SDK inst
 :dir: ~/HelloWorld
 :user: dev
 :host: ubuntu
-:input: dotnet publish
 
 Restore complete (0.7s)
   HelloWorld succeeded (1.7s) → bin/Release/net9.0/publish/
@@ -198,7 +196,6 @@ Our goal with this piece of code is to build a list of names – Alice, Bob, and
 :dir: ~/HelloWorld
 :user: dev
 :host: ubuntu
-:input: dotnet run
 Hello, Bob
 Hello, Charlie
 Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
@@ -481,7 +478,6 @@ This is the same code block used in {ref}`debugging-with-vscode`. The goal of th
 :dir: ~/HelloWorld
 :user: dev
 :host: ubuntu
-:input: dotnet run
 Hello, Bob
 Hello, Charlie
 Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
@@ -506,6 +502,7 @@ Go to the {guilabel}`Run and Debug` section in VS Codium and click the {guilabel
 
 Notice an exception is thrown on line 7, during the `Console.WriteLine` call.
 
+dotnet run
 ```{figure} /images/debug-dotnet/19-netcoredbg-exception.png
    :alt: An ArgumentOutOfRangeException thrown during a NetCoreDbg debugging session
 ```
