@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install Go, the Delve debugger, and editor tooling on Ubuntu Desktop."
+---
+
 (install-golang)=
 # How to set up a development environment for Go on Ubuntu
 

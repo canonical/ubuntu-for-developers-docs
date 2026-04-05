@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Set up Python, Go, Rust, GCC, Clang, .NET, and Java toolchains on Ubuntu Desktop."
+---
+
 (ubuntu-for-developers)=
 # Ubuntu for developers
 

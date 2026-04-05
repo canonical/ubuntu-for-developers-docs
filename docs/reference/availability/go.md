@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Go versions available via snap and Ubuntu packages across Ubuntu releases."
+---
+
 (go-toolchain-availability)=
 # Available Golang versions
 

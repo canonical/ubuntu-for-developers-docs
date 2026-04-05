@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Considerations for installing Ubuntu Desktop as a development platform."
+---
+
 (install-ubuntu)=
 # Installing Ubuntu Desktop for developers
 

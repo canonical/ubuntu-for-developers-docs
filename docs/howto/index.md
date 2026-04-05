@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install Python, Go, Rust, GCC, Clang, .NET, and Java toolchains on Ubuntu Desktop."
+---
+
 (howto)=
 # How-to guides
 

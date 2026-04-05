@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install, configure, and use Git for version control on Ubuntu Desktop."
+---
+
 (use-git)=
 # Using Git version control on Ubuntu
 

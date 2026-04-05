@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Develop C and C++ on Ubuntu with Clang using direct compilation and CMake builds."
+---
+
 (use-clang)=
 # Develop C and C++ with Clang on Ubuntu
 

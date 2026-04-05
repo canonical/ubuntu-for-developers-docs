@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Build, run, and debug Go programs on Ubuntu using the Go CLI and Delve debugger."
+---
+
 (use-go)=
 # Develop with Go on Ubuntu
 

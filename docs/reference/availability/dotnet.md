@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: ".NET versions available in Ubuntu releases, with source packages and support status."
+---
+
 (dotnet-toolchain-availability)=
 # Available .NET versions
 

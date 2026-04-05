@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Install Clang and LLVM toolchain versions on Ubuntu Desktop."
+---
+
 (install-clang)=
 # How to set up a development environment for Clang on Ubuntu
 

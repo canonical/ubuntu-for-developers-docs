@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Toolchain versions available across Ubuntu releases for Python, Go, Rust, GCC, and more."
+---
+
 (toolchain-availability)=
 # Toolchain availability
 

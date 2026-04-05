@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "LLVM and Clang versions available in Ubuntu releases across all supported series."
+---
+
 (llvm-toolchain-availability)=
 # Available LLVM/Clang versions
 

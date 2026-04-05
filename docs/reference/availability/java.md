@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Java versions available in Ubuntu releases, including CRaC and GraalVM variants."
+---
+
 (java-toolchain-availability)=
 # Available Java versions
 

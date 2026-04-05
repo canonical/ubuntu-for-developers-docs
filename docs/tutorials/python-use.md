@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Run, test, and debug Python scripts on Ubuntu using venv, pytest, pylint, and VS Code."
+---
+
 (use-python)=
 # Develop with Python on Ubuntu
 

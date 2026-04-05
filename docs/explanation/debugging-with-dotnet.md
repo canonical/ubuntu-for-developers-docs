@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Understand PDB files and debug symbol packages for .NET applications on Ubuntu."
+---
+
 (debugging-with-dotnet)=
 # Debugging with .NET
 

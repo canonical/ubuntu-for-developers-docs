@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Reference for toolchain version availability and IDEs on Ubuntu."
+---
+
 (reference)=
 # Reference
 

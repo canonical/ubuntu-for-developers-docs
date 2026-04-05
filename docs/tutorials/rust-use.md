@@ -1,3 +1,9 @@
+---
+myst:
+  html_meta:
+    description: "Build and debug Rust programs on Ubuntu using cargo and rustc."
+---
+
 (use-rust)=
 # Develop with Rust on Ubuntu
 
