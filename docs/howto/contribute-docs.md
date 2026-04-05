@@ -88,7 +88,7 @@ Follow these steps to build the documentation on your local machine.
 
 ## Documentation format
 
-The Ubuntu for Developers documentation is built with Sphinx using the MyST flavor of the Markdown mark-up language. If you're new to Markdown or MyST, read our {ref}`myst_style_guide`.
+The Ubuntu for Developers documentation is built with Sphinx using the MyST flavor of the Markdown mark-up language. If you're new to Markdown or MyST, read the [MyST syntax guide](https://myst-parser.readthedocs.io/en/latest/syntax/typography.html).
 
 
 ## Launchpad links

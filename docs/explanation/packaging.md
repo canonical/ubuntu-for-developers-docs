@@ -41,7 +41,7 @@ Distributing the Debian package using your own channels
 
 ### Packaging
 
-[Create a new package](https://documentation.ubuntu.com/project/contributors/new-package/create-a-new-package/) from the Ubuntu project documentation explains the process. There are many ways of creating a Debian/Ubuntu package; the Debian documentation, as well as external tutorials and how-tos, are available, each presenting different tools and methods.
+[Create a new package](https://documentation.ubuntu.com/project/contributors/new-package/create-a-new-package/) from the Ubuntu contributor documentation explains the process. There are many ways of creating a Debian/Ubuntu package; the Debian documentation, as well as external tutorials and how-tos, are available, each presenting different tools and methods.
 
 ### Building and distributing with a PPA
 

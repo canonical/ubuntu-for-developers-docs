@@ -63,7 +63,6 @@ Setting up and building a new Java project using the Apache Maven tool.
     Maven sets up a basic project structure:
 
     ```{terminal}
-    :input: tree
     :user: dev
     :host: ubuntu
 
@@ -151,7 +150,6 @@ Setting up and building a new Java project using the Apache Maven tool.
     Run the application:
 
     ```{terminal}
-    :input: java -cp target/helloworld-1.0-SNAPSHOT.jar com.yourcompany.helloworld.App
     :user: dev
     :host: ubuntu
 
@@ -205,7 +203,6 @@ Setting up and building a new Java project using the Gradle build tool.
     Gradle sets up a basic project structure:
 
     ```{terminal}
-    :input: tree
     :user: dev
     :host: ubuntu
 
@@ -288,7 +285,6 @@ Setting up and building a new Java project using the Gradle build tool.
 2. Build and run the project using the generated Gradle Wrapper:
 
     ```{terminal}
-    :input: gradle run
     :user: dev
     :host: ubuntu
 
@@ -345,7 +341,6 @@ Compiling a Java application directly using the {command}`javac` tool.
 3. Execute the program:
 
     ```{terminal}
-    :input: java -cp out/ App
     :user: dev
     :host: ubuntu
 
@@ -400,9 +395,10 @@ Running a Java application as a script with the {command}`java` interpreter spec
 3. Run the application:
 
     ```{terminal}
-    :input: ./App
     :user: dev
     :host: ubuntu
 
+    ./App
+    
     Hello World!
     ```

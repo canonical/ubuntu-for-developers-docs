@@ -41,7 +41,6 @@ To separate the system installation of Python from your development and testing 
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
-    :input: which python3
 
     /home/dev/python/helloworld/.venv/bin/python3
     ```
@@ -106,7 +105,6 @@ To illustrate the installation of a dependency confined to the Python virtual en
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
-    :input: pip list
 
     Package  Version
     -------- -------
@@ -162,7 +160,6 @@ To illustrate the installation of a dependency confined to the Python virtual en
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
-    :input: python3 helloworld.py
 
     Hello, world!
     ```
@@ -191,7 +188,6 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
     ```{terminal}
         :user: dev
         :host: ubuntu
-        :input: pyenv install 3.12
 
         Downloading Python-3.12.9.tar.xz...
     -> https://www.python.org/ftp/python/3.12.9/Python-3.12.9.tar.xz
@@ -215,7 +211,6 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
     :dir: ~/my-python-project
     :user: dev
     :host: ubuntu
-    :input: python3 --version
 
     Python 3.13.7
     ```
@@ -235,7 +230,6 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
     :dir: ~/my-python-project
     :user: dev
     :host: ubuntu
-    :input: pyenv versions
 
     system
     * 3.12.9 (set by /home/ubuntu/my-python-project/.python-version)
@@ -249,7 +243,6 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
     :dir: ~/my-python-project
     :user: dev
     :host: ubuntu
-    :input: pyenv which python3
 
     home/ubuntu/.pyenv/versions/3.12.9/bin/python3
     ```
@@ -291,7 +284,6 @@ Follow these steps to uninstall the Python version installed in {ref}`installing
     :dir: ~/my-python-project
     :user: dev
     :host: ubuntu
-    :input: pyenv versions
 
     system
     ```
@@ -536,6 +528,8 @@ The following example shows how to use the `pytest` testing tool. First we imple
         # Get the printed output
         captured = capsys.readouterr()
 
+    pyenv versions
+    
         # Check that the output is as expected
         assert captured.out.strip() == "Hello, world!"
     ```

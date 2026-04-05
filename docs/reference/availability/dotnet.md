@@ -22,7 +22,7 @@ This article lists Canonical maintained .NET builds.
 
 ## .NET Snap
 
-The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET components of the following versions on Ubuntu 22.04+ for `amd64` and `arm64` architectures.
+The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET components of the following versions on Ubuntu 22.04 LTS and above for `amd64` and `arm64` architectures.
 
 (dotnet-snap-components)=
 ### Components

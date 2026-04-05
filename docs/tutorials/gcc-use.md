@@ -54,7 +54,6 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ./hello
 
     Hello, world!
     The answer to everything is 42.
@@ -99,7 +98,6 @@ The {command}`gcc` compiler provides helpful output when encountering a problema
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ./hello
 
     Hello, world!
     The answer to everything is -1350680728.
@@ -161,7 +159,6 @@ See below for a simple example of using the GNU Make build system to build the '
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: make
 
     gcc -c hello.c -o hello.o
     gcc -o hello hello.o
@@ -173,7 +170,6 @@ See below for a simple example of using the GNU Make build system to build the '
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ls -1
 
     hello
     hello.c
@@ -187,7 +183,6 @@ See below for a simple example of using the GNU Make build system to build the '
     :dir: ~/projects/hello-world
     :user: dev
     :host: ubuntu
-    :input: ./hello
 
     Hello, world!
     The answer to everything is 42.
@@ -222,6 +217,8 @@ See the example below for a quick introduction to GDB use with the 'Hello, world
     [Thread debugging using libthread_db enabled]
     Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
 
+    ./hello
+    
     Temporary breakpoint 1, main () at hello.c:4
     4     int number = 42;
     (gdb) print number

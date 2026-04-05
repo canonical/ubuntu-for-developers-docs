@@ -21,7 +21,7 @@ There is no JIT compiler. So, there is no runtime profiling and optimization. Al
 In short, GraalVM trades Java’s dynamic/runtime features for an improved application startup performance, more efficient use of resources, and better scaling.
 
 ## GraalVM Community Edition for Ubuntu
-GraalVM Community Edition is available, and supported, on Ubuntu 24.04 and above, through a snap package: [`graalvm-jdk`](https://snapcraft.io/graalvm-jdk), which is built from source. Refer to the installation instructions: {ref}`use-graalvm <graalvm-install>`.
+GraalVM Community Edition is available, and supported, on Ubuntu 24.04 LTS and above, through a snap package: [`graalvm-jdk`](https://snapcraft.io/graalvm-jdk), which is built from source. Refer to the installation instructions: {ref}`use-graalvm <graalvm-install>`.
 
 Please report issues int the [graalvm-jdk-snap repository](https://github.com/canonical/graalvm-jdk-snap/issues).
 
