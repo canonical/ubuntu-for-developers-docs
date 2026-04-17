@@ -113,9 +113,9 @@ See: {ref}`dotnet-installation-snap`
 
 | Ubuntu version              | `amd64` | `arm64` | `s390x` | `ppc64el` |
 |-----------------------------|---------|---------|---------|-----------|
-| 26.04 (Resolute Raccoon)    | 8{dim}`¹`, 9{dim}`¹`, 10 | 8{dim}`¹`, 9{dim}`¹`, 10 | 8{dim}`¹`, 9{dim}`¹`, 10 | 8{dim}`¹`, 9{dim}`¹`, 10 |
+| 26.04 (Resolute Raccoon)    | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** |
 | 25.10 (Questing Quokka)     | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 |
-| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10 | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, 10 | **8**, 9{dim}`¹`, 10 | **8**, 9{dim}`¹`, 10 |
+| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10** | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10** | **8**, 9{dim}`¹`, **10** | **8**, 9{dim}`¹`, **10** |
 | 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
