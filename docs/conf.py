@@ -148,11 +148,11 @@ templates_path = [".sphinx/_templates"]
 # Links to ignore when checking links
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
-    "https://crates.io",
+    r"https://crates\.io/.*",
     r"https://www\.nongnu\.org/.*",
     r"https://www\.gnu\.org/.*",
     r"https://matrix\.to/.*",
-    "https://blog.local-optimum.net/getting-started-with-autoinstall-on-ubuntu-desktop-24-04-lts-147a1defb2de",  # Server returns 403 Forbidden for linkcheck client, but works with a browser
+    r"https://blog\.local-optimum\.net/.*",
 ]
 
 # Pages on which to ignore anchors
@@ -246,6 +246,13 @@ rst_prolog = """
 
 # Sitemap configuration
 html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
+sitemap_url_scheme = "{link}"
+sitemap_show_lastmod = True
+sitemap_excludes = [
+    "404/",
+    "genindex/",
+    "search/",
+]
 
 # Allow for use of link substitutions
 extlinks = {"lpsrc": ("https://launchpad.net/ubuntu/+source/%s", "%s")}
