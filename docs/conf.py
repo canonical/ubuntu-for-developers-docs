@@ -148,7 +148,7 @@ templates_path = [".sphinx/_templates"]
 # Links to ignore when checking links
 linkcheck_ignore = [
     "http://127.0.0.1:8000",
-    r"https://crates\.io/.*",
+    r"https://crates\.io.*",
     r"https://www\.nongnu\.org/.*",
     r"https://www\.gnu\.org/.*",
     r"https://matrix\.to/.*",
@@ -212,7 +212,9 @@ html_js_files = ["js/bundle.js"]
 
 # If you are using the :manpage: role, set this variable to the URL for the version
 # that you want to link to:
-manpages_url = "https://manpages.ubuntu.com/manpages/questing/en/man{section}/{page}.{section}.html"
+manpages_url = (
+    "https://manpages.ubuntu.com/manpages/questing/man{section}/{page}.{section}.html"
+)
 
 ############################################################
 # Additional configuration
