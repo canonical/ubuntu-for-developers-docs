@@ -19,4 +19,5 @@ GCC <gcc.md>
 .NET <dotnet.md>
 LLVM/Clang <llvm.md>
 Java <java.md>
+Zig <zig.md>
 :::
