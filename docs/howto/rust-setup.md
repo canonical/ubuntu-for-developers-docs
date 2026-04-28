@@ -25,7 +25,10 @@ Install the {pkg}`cargo` package, which automatically pulls required dependencie
 
 1. In a terminal, run:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install cargo
     ```
 
@@ -37,19 +40,28 @@ Install the Rustup manager from the Snap Store [Snapcraft.io: Rustup](https://sn
 
 1. In a terminal, run:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     snap install --classic rustup
     ```
 
 2. After installing Rustup, use it to install the latest stable Rust version:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     rustup install stable
     ```
 
 3. Optional: If your project needs unstable Rust features that are not present in the latest stable toolchain, try the nightly Rust toolchain builds:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     rustup install nightly
     ```
 
@@ -58,7 +70,10 @@ Many external Rust libraries on [crates.io](https://crates.io) contain C/C++ cod
 
 Use the following command to install them:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install build-essential
 ```
 :::
@@ -72,7 +87,10 @@ Many editors and IDEs (Integrated Development Environment) come with various deg
 
 - [Helix Editor](https://helix-editor.com/) and [Zed Editor](https://zed.dev/): Install rust-analyzer using Rustup:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     rustup component add rust-analyzer
     ```
 
@@ -85,7 +103,10 @@ To develop Rust applications for other platforms on Ubuntu, install the necessar
 
 To see a list of platforms that you can build on Ubuntu, use the following command:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 rustup target list
 ```
 
@@ -98,19 +119,28 @@ Some targets on that list require installing additional packages or downloading 
 
 1. To target Windows, install the following packages:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install binutils-mingw-w64 g++-mingw-w64 gcc-mingw-w64
     ```
 
 2. Add the Windows target to the toolchain:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     rustup target add x86_64-pc-windows-gnu
     ```
 
 3. Build your project:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     cargo build --target x86_64-pc-windows-gnu
     ```
 
@@ -121,19 +151,28 @@ Many Rust applications can run inside a web browser. To build a Rust project for
 
 1. Install the required packages:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install clang lld
     ```
 
 2. Add the `wasm` target to the toolchain:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     rustup target add wasm32-unknown-unknown
     ```
 
 3. Build your project:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     cargo build --target wasm32-unknown-unknown
     ```
 
@@ -148,7 +187,10 @@ The {pkg}`cargo` package conflicts with the {command}`rust-lldb` command. To use
 
 To install the corresponding debugging support packages, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install gdb lldb
 ```
 

@@ -26,7 +26,10 @@ Run `dotnet --help` to see all available sub-commands.
 
 Create a directory where the project should be located and change into it:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 mkdir "HelloWorld" && cd "HelloWorld"
 ```
 
@@ -41,7 +44,11 @@ Use the `dotnet new` command to create a .NET project from a template. Select th
 <!-- Content for C# -->
 Run the following command to create a ‘Hello World’ console application written in C#:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
 dotnet new console
 ```
 
@@ -49,7 +56,7 @@ This creates the following files:
 
 - `Program.cs`: C# application code. C# source files usually have the `.cs` file extension.
 - `HelloWorld.csproj`: This is the C# project file. C# project files usually have the `.csproj` file extension.
-- `obj` directory: This directory is used to store temporary files used in order to create the final build output. Because it just contains temporary files, it is safe to delete and should be omitted from your version control system. You can ignore this directory for the rest of this article.
+- `obj/` directory: This directory is used to store temporary files used in order to create the final build output. Because it just contains temporary files, it is safe to delete and should be omitted from your version control system. You can ignore this directory for the rest of this article.
 :::::
 
 :::::{tab-item} F#
@@ -58,7 +65,11 @@ This creates the following files:
 <!-- Content for F# -->
 Run the following command to create a ‘Hello, world!’ console application written in F#:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
 dotnet new console -lang F#
 ```
 
@@ -75,7 +86,11 @@ This creates the following files:
 <!-- Content for VB -->
 Run the following command to create a ‘Hello World’ console application written in Visual Basic:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
 dotnet new console -lang VB
 ```
 
@@ -88,21 +103,30 @@ This creates the following files:
 
 ::::::
 
-````{tip}
+::::{tip}
 Run the following command in a terminal to see a list of available templates:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
 dotnet new list
 ```
-````
+::::
 
-````{tip}
-If you use {manpage}`git(1)` as you version control system, you can generate a `.gitignore` file for .NET projects by using the template with the same name:
+::::{tip}
+To generate a `.gitignore` file for .NET projects, use the template with the same name:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
 dotnet new .gitignore
 ```
-````
+::::
+
 
 ## Running the .NET project
 
@@ -130,6 +154,8 @@ The `dotnet run` command is useful for development when you have a .NET SDK inst
 :user: dev
 :host: ubuntu
 
+dotnet publish
+
 Restore complete (0.7s)
   HelloWorld succeeded (1.7s) → bin/Release/net9.0/publish/
 
@@ -138,17 +164,26 @@ Build succeeded in 2.7s
 
 As shown by the terminal output, in this case (using .NET 9) the build output is located in `bin/Release/net9.0/publish/`. This directory would also contain all dependencies (but in this case, there aren't any). You can copy this directory to the target system and run the application with:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld/bin/Release/net9.0/publish
+
 dotnet HelloWorld.dll
 ```
 
 This directory also contains a `HelloWorld` file. This is a wrapper that is able to search for a compatible .NET runtime on the target system and use that to invoke the `HelloWorld.dll` binary. So, you can also run your application just by executing:
 
-```none
-HelloWorld
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld/bin/Release/net9.0/publish
+
+./HelloWorld
 ```
 
 Finally, there is also a file called `HelloWorld.pdb` available in the publish directory. This is the {ref}`PDB debug symbol file <pdb-files>` for your application, which is not a required file to run the application, but is useful when an error happens and you need to debug your code.
+
 
 ## Debugging the .NET project
 
@@ -156,18 +191,26 @@ The .NET tooling does not include a debugger; therefore, to debug a .NET applica
 
 Regardless of your choice, once you learn to use a debugger in one environment, the knowledge should transfer to whichever other environment you might encounter in the future. For the purposes of this tutorial, we will walk through how to use the .NET debugger available in Visual Studio Code.
 
+
 (debugging-with-vscode)=
 ### Debugging with VS Code
 
 First, install Visual Studio Code:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install --classic code
 ```
 
 Open the Hello World project created in the previous steps with Visual Studio Code by running the following command from within the project root directory.
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
 code .
 ```
 
@@ -192,10 +235,7 @@ while (index < names.Count)
 
 Our goal with this piece of code is to build a list of names – Alice, Bob, and Charlie – then greet each one with “Hello” within the `while` loop. However, running this code shows that it is not working as expected:
 
-```{terminal}
-:dir: ~/HelloWorld
-:user: dev
-:host: ubuntu
+```
 Hello, Bob
 Hello, Charlie
 Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
@@ -209,6 +249,7 @@ Two problems appeared:
 2. An unhandled exception of type `System.ArgumentOutOfRangeException` happens. According to the error message, we are trying to access an index that does not exist in the collection.
 
 Let’s debug.
+
 
 #### Setting up the debugger
 
@@ -355,7 +396,10 @@ We use VS Codium for the purposes of this tutorial, but the steps should transla
 
 1. Install VS Codium:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install --classic codium
 ```
 
@@ -367,7 +411,10 @@ sudo snap install --classic codium
 
 3. Open the Hello World project created in {ref}`creating-dotnet-project` with VS Codium:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 codium HelloWorld
 ```
 
@@ -375,20 +422,28 @@ codium HelloWorld
 
 The NetCoreDbg debugger is available as a snap in the Snap Store. To install it, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install --classic netcoredbg
 ```
 
 We need to create a `launch.json` file inside the `.vscode` directory, which is a file used to configure debugging in a VS Code-based editor. In your project's root directory, run:
 
-```none
-mkdir .vscode
-touch .vscode/launch.json
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
+mkdir .vscode && touch .vscode/launch.json
 ```
 
 Open the `launch.json` file and fill it in with the following content:
 
-```json
+```{code-block} json
+:caption: `launch.json`
+
 {
    "version": "0.2.0",
    "configurations": [
@@ -426,13 +481,19 @@ To ensure you are always debugging the latest version of your application, build
 
 Let's create a build task. Create a new file called `tasks.json` inside the `.vscode` directory:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/HelloWorld
+
 touch .vscode/tasks.json
 ```
 
 Open the `tasks.json` file and fill it in with the following content:
 
-```json
+```{code-block} json
+:caption: `tasks.json`
+
 {
    "version": "2.0.0",
    "tasks": [
@@ -474,10 +535,7 @@ while (index < names.Count)
 
 This is the same code block used in {ref}`debugging-with-vscode`. The goal of this program is to build a list of names – Alice, Bob, and Charlie – then greet each one with “Hello” within the `while` loop. However, running this code shows that it is not working as expected:
 
-```{terminal}
-:dir: ~/HelloWorld
-:user: dev
-:host: ubuntu
+```
 Hello, Bob
 Hello, Charlie
 Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')

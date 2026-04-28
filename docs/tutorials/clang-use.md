@@ -31,13 +31,20 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
 
 1. Create a project directory:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    mkdir hello-world && cd hello-world
    ```
 
 1. Create a source directory within your project:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+   :dir: ~/hello-world
+
    mkdir src
    ```
 
@@ -56,13 +63,21 @@ This tutorial shows how to use Clang directly, as well as a simple CMake project
 
 From within the {file}`hello-world/` directory you created, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello-world
+
 clang -o hello src/hello.cpp
 ```
 
 And now you should be able to run your program!
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello-world
+
 ./hello
 ```
 
@@ -97,24 +112,40 @@ By default, the order that CMake uses when searching for compilers results in {r
 
 CMake is a two-stage build system, where the first stage generates lower-level build files (by default, GNU {spellexception}`makefiles` on Ubuntu), and the second executes those. During the first stage we can specify extra configuration options for the build. To instruct CMake to use Clang, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello-world
+
 cmake -DCMAKE_CXX_COMPILER=clang++ -B build
 ```
 
 In the output, you should be able to spot a line that shows which compiler CMake found. For example, something like this:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello-world
+
 -- The CXX compiler identification is Clang 18.1.3
 ```
 
 This places the build files in the {file}`build/` directory, nicely isolated from your project files. Now execute the actual build with another {command}`cmake` command:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello-world
+
 cmake --build build
 ```
 
 You should now have your {file}`hello` executable, and can run it directly:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello-world
+
 ./build/hello
 ```

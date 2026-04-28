@@ -14,13 +14,20 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
 
 1. Create a project directory and change into it:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     mkdir heygo && cd heygo
     ```
 
 2. Initialize the project as a Go module. When initializing a module, provide the URL of a repository for hosting the source. For testing purposes, use a generic URL:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/heygo
+
     go mod init youruser.github.com/heygo
     ```
 
@@ -34,6 +41,7 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
 
     ```{code-block} go
     :caption: `heygo.go`
+
     package main
 
     import "fmt"
@@ -47,7 +55,11 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
 
 4. To compile and run your program, use the `go run` command. If you pass the current directory as an argument (`.`), the Go compiler automatically finds the main package and main function during the build:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/heygo
+
     go run .
     ```
 
@@ -63,7 +75,11 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
 
 5. To build a binary of your program that can run on its own, use the `go build` command:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/heygo
+
     go build .
     ```
 
@@ -73,6 +89,8 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
+
+    ls
 
     go.mod  heygo  heygo.go
     ```
@@ -84,6 +102,8 @@ This tutorial shows how to build, run, and debug Go programs on Ubuntu. For inst
     :dir: ~/heygo
     :user: dev
     :host: ubuntu
+
+    ./heygo
 
     Hey Go!
     ```
@@ -97,13 +117,21 @@ By default, running `go build` as shown above builds a binary that can be run on
 
 To set the environment for a Windows AMD64 build, first set the `GOOS` and `GOARCH` environment variables by running:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/heygo
+
 export GOOS=windows GOARCH=amd64
 ```
 
 This causes `go build` to create a `hello.exe` binary that runs on Windows:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/heygo
+
 go build .
 ```
 
@@ -112,6 +140,8 @@ go build .
 :user: dev
 :host: ubuntu
 
+ls
+
 go.mod  heygo  heygo.exe  heygo.go
 ```
 
@@ -119,13 +149,21 @@ go.mod  heygo  heygo.exe  heygo.go
 
 For a full list of targets, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/heygo
+
 go tool dist list
 ```
 
 For this example, filter the output to Windows and Linux on `amd`:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/heygo
+
 go tool dist list | grep 'amd' | grep -E 'windows|linux'
 ```
 
@@ -157,15 +195,23 @@ clean:
 
 Generate the builds and test the Linux build:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/heygo
+
 make all
+
 ./heygo_linux_amd64
 ```
 
 :::{note}
 If you encounter a `Command 'make' not found` error, install [make](https://www.gnu.org/software/make/) by running:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install make -y
 ```
 
@@ -199,8 +245,13 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
 
 2. Run `go vet` on the file:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/heygo
+
     go vet heygoV2.go
+
     vet: ./heygoV2.go:6:14: undefined: greeting
     ```
 
@@ -222,7 +273,11 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
 
 4. Running `gofmt` with the `-w` parameter on the file identifies formatting issues and writes necessary changes to the file:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/heygo
+
     gofmt -w heygoV2.go
     ```
 
@@ -279,7 +334,10 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
 
 2. Initiate a debugging session with Delve by running `dlv debug` on the file:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     dlv debug main.go
     ```
 
@@ -419,7 +477,6 @@ Tooling built in Go, including `go vet` and `gofmt`, can be used to debug and fo
     (dlv) print i
     3
     (dlv) step
-
     ```
 
    The last step causes a panic:

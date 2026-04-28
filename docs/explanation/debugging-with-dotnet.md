@@ -39,20 +39,25 @@ The symbols available in these packages are meant to be used only with the .NET 
 
 The .NET Debug Symbols packages can be installed with `apt` just like any other regular Ubuntu package, for example:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install dotnet-sdk-dbg-9.0 dotnet-runtime-dbg-9.0 aspnetcore-runtime-dbg-9.0
 ```
 
 It is also possible to install them automatically when installing the .NET SDK and Runtime packages by including `--install-suggests` in the `apt install` command:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install dotnet9 --install-suggests
 ```
 
 The symbols packages are structured so that PDB files are placed side-by-side with the DLLs they match. This is what the SDK directory looks like after installing the `dotnet-sdk-dbg-9.0` package. Notice that for each DLL, there is a matching PDB file available.
 
 ```{terminal}
-:dir: ~
 :user: dev
 :host: ubuntu
 

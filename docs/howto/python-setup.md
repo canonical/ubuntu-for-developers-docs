@@ -20,7 +20,10 @@ Do not remove the default system installation of Python (the {pkg}`python3` pack
 
 To get a more useful runtime environment, use the special dependency package, {pkg}`python3-full`, which automatically installs the interpreter with the complete class library, support for Python virtual environments (`venv`), and the basic Python IDE (IDLE). Similarly to {pkg}`python3`, the {pkg}`python3-full` is a meta package that always depends on the currently default version of Python in Ubuntu.
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install -y python3-full
 ```
 
@@ -46,7 +49,10 @@ While the system installation uses Python modules packaged as `.deb` packages th
 
 Install with:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install -y python3-pip python3-pip-whl
 ```
 
@@ -62,7 +68,10 @@ To enable `pyenv`, complete the following steps:
    This is a fairly large installation because it includes the build dependencies required to compile Python from source locally.
    :::
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    $ sudo apt install pyenv
    ```
 
@@ -92,7 +101,10 @@ To enable `pyenv`, complete the following steps:
 
 1. For the changes to the `PATH` to work immediately, restart your shell:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    $ exec "$SHELL"
    ```
 
@@ -111,7 +123,10 @@ Advanced text editors can be extended using LSP plugins to enhance the user expe
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install -y vim python3-pylsp flake8
   ```
 
@@ -120,7 +135,10 @@ Advanced text editors can be extended using LSP plugins to enhance the user expe
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install codium --classic
   ```
 
@@ -129,7 +147,10 @@ Advanced text editors can be extended using LSP plugins to enhance the user expe
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install code --classic
   ```
 
@@ -146,7 +167,10 @@ Some of the most common IDEs for Python are:
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install -y spyder
   ```
 
@@ -155,7 +179,10 @@ Some of the most common IDEs for Python are:
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install pycharm-community --classic
   ```
 
@@ -164,7 +191,10 @@ Some of the most common IDEs for Python are:
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install eclipse --classic
   ```
 
@@ -175,7 +205,10 @@ Some of the most common IDEs for Python are:
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install default-jre
   sudo snap install netbeans --classic
   ```
@@ -192,7 +225,10 @@ To check and improve code style, formatting, and quality, use, for example, the 
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install black
   ```
 
@@ -201,7 +237,10 @@ To check and improve code style, formatting, and quality, use, for example, the 
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install flake8
   ```
 
@@ -215,7 +254,10 @@ Python has the built-in `pdb` debugger and `unittest` testing framework, but you
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install python3-pytest
   ```
 
@@ -225,7 +267,10 @@ Python has the built-in `pdb` debugger and `unittest` testing framework, but you
   Install with:
 
 ls -l /usr/bin/python3
-```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install tox
   ```
 

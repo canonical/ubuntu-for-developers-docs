@@ -17,9 +17,11 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
 
 1. Create a project directory:
 
-    ```none
-    mkdir -p ~/c-projects/hello-world
-    cd ~/c-projects/hello-world
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
+    mkdir -p ~/c-projects/hello-world && cd ~/c-projects/hello-world
     ```
 
 2. Write a 'Hello, world!' program that includes setting a variable. Create a {file}`hello.c` file with the following content:
@@ -38,7 +40,11 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
 
 3. Build the source code using the {command}`gcc` compiler, specifying {file}`hello` as the file name of the resulting executable:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/c-projects/hello-world
+
     gcc hello.c -o hello
     ```
 
@@ -51,13 +57,14 @@ The GNU Compiler Collection (GCC) provides support for several programming langu
 4. Run the program executable:
 
     ```{terminal}
-    :dir: ~/projects/hello-world
+    :dir: ~/c-projects/hello-world
     :user: dev
     :host: ubuntu
 
     Hello, world!
     The answer to everything is 42.
     ```
+
 
 ## Fixing simple bugs
 
@@ -80,24 +87,31 @@ The {command}`gcc` compiler provides helpful output when encountering a problema
 
 2. Build the source:
 
-    :::{raw} html
-    <div class="highlight-default notranslate"><div class="highlight"><pre>$ gcc hello.c -o hello
-    <span style="font-weight:bold;">hello.c:</span> In function ‘<span style="font-weight:bold;">main</span>’:
-    <span style="font-weight:bold;">hello.c:5:57:</span> <span style="font-weight:bold;color:purple;">warning: </span>format ‘<span style="font-weight:bold;">%d</span>’ expects a matching ‘<span style="font-weight:bold;">int</span>’ argument [<span style="font-weight:bold;color:purple;">-Wformat=</span>]
-        5 |     printf(&quot;Hello, world!\nThe answer to everything is <span style="font-weight:bold;color:purple;">%d</span>.\n&quot;);
-          |                                                        <span style="font-weight:bold;color:purple;">~^</span>
-          |                                                         <span style="font-weight:bold;color:purple;">|</span>
-          |                                                         <span style="font-weight:bold;color:purple;">int</span></pre></div></div>
-    :::
+    ```{terminal}
+    :dir: ~/c-projects/hello-world
+    :user: dev
+    :host: ubuntu
+
+    gcc hello.c -o hello
+
+    hello.c: In function ‘main’:
+    hello.c:5:57: warning: format ‘%d’ expects a matching ‘int’ argument [-Wformat=]
+        5 |     printf("Hello, world!\nThe answer to everything is %d.\n");
+        |                                                        ~^
+        |                                                         |
+        |                                                         int
+    ```
 
     {command}`gcc` displays a warning but still compiles the source code.
 
 3. Run the program to see how it behaves without the integer argument specified:
 
     ```{terminal}
-    :dir: ~/projects/hello-world
+    :dir: ~/c-projects/hello-world
     :user: dev
     :host: ubuntu
+
+    ./hello
 
     Hello, world!
     The answer to everything is -1350680728.
@@ -156,9 +170,11 @@ See below for a simple example of using the GNU Make build system to build the '
 2. Compile the program using {command}`make`:
 
     ```{terminal}
-    :dir: ~/projects/hello-world
+    :dir: ~/c-projects/hello-world
     :user: dev
     :host: ubuntu
+
+    make
 
     gcc -c hello.c -o hello.o
     gcc -o hello hello.o
@@ -167,9 +183,11 @@ See below for a simple example of using the GNU Make build system to build the '
     Checking the resulting files would show:
 
     ```{terminal}
-    :dir: ~/projects/hello-world
+    :dir: ~/c-projects/hello-world
     :user: dev
     :host: ubuntu
+
+    ls -1
 
     hello
     hello.c
@@ -180,9 +198,11 @@ See below for a simple example of using the GNU Make build system to build the '
 4. Run the program executable:
 
     ```{terminal}
-    :dir: ~/projects/hello-world
+    :dir: ~/c-projects/hello-world
     :user: dev
     :host: ubuntu
+
+    ./hello
 
     Hello, world!
     The answer to everything is 42.
@@ -196,16 +216,22 @@ See the example below for a quick introduction to GDB use with the 'Hello, world
 
 1. Recompile the program with the `-g` option, which produces debugging information specifically for GDB:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/c-projects/hello-world
+
     gcc -g hello.c -o hello
     ```
 
 2. Run the debugger:
 
-    ```{code-block} bash
-    :linenos:
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/c-projects/hello-world
 
-    $ gdb hello
+    gdb hello
 
     #[snip]
 
@@ -218,7 +244,7 @@ See the example below for a quick introduction to GDB use with the 'Hello, world
     Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
 
     ./hello
-    
+
     Temporary breakpoint 1, main () at hello.c:4
     4     int number = 42;
     (gdb) print number

@@ -13,7 +13,10 @@ This guide explains how to install Clang and the LLVM toolchain on Ubuntu. Clang
 
 To compile C and C++ code, you don't need to install all of the LLVM tooling, just Clang itself. Each Ubuntu release has a designated default version of Clang, which can be installed by running:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install clang
 ```
 
@@ -23,13 +26,19 @@ This installs the {command}`clang` and {command}`clang++` executables and the co
 
 To find which other versions have been packaged for your Ubuntu release, do a package search:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt search -n ^clang-[0-9]+
 ```
 
 The output is a list of {pkg}`clang` packages with explicit version numbers as part of their names, such as {pkg}`clang-20`. You can install one of these the same way you would the default version, for example:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install clang-20
 ```
 
@@ -52,7 +61,10 @@ There are also a number of IDEs available for C and C++ programming on Ubuntu, a
 
 For developers who prefer a text editor to an IDE, you can set up `clangd` as an LSP server for your project. Install it with:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install clangd
 ```
 

@@ -34,7 +34,10 @@ Setting up and building a new Java project using the Apache Maven tool.
 
     To install Maven and the default Java Development Kit from the Ubuntu archive, use:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install maven
     ```
 
@@ -47,7 +50,10 @@ Setting up and building a new Java project using the Apache Maven tool.
 
 1. Create a new Java project using the `archetype:generate` Maven sub-command:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     mvn archetype:generate -DgroupId=com.yourcompany \
         -DartifactId=helloworld -Dversion=1.0-SNAPSHOT \
         -Dpackage=com.yourcompany.helloworld \
@@ -65,6 +71,8 @@ Setting up and building a new Java project using the Apache Maven tool.
     ```{terminal}
     :user: dev
     :host: ubuntu
+
+    tree
 
     .
     └── helloworld
@@ -131,13 +139,20 @@ Setting up and building a new Java project using the Apache Maven tool.
 
 2. Change to the project directory:
 
-    ```
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     cd helloworld
     ```
 
 3. Build and package the application:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/helloworld
+
     mvn -Dmaven.compiler.release=8 package
     ```
 
@@ -172,7 +187,10 @@ Setting up and building a new Java project using the Gradle build tool.
 
     Install the Gradle snap:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo snap install gradle --classic
     ```
 
@@ -185,9 +203,19 @@ Setting up and building a new Java project using the Gradle build tool.
 
 1. Create a Java project using the `gradle init` command:
 
-    ```none
-    mkdir helloworld
-    cd helloworld
+
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
+    mkdir helloworld && cd helloworld
+    ```
+
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/helloworld
+
     gradle init \
         --type java-application \
         --dsl kotlin \
@@ -205,6 +233,9 @@ Setting up and building a new Java project using the Gradle build tool.
     ```{terminal}
     :user: dev
     :host: ubuntu
+    :dir: ~/helloworld
+
+    tree
 
     .
     └── helloworld-gradle
@@ -278,7 +309,12 @@ Setting up and building a new Java project using the Gradle build tool.
     and installation for your project. It requires `java` binary to be
     present in the path, or `JAVA_HOME` environment variable set.
     For example:
-    ```bash
+
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/helloworld
+
     export JAVA_HOME=/usr/lib/jvm/java-21-openjdk-amd64
     ```
 
@@ -289,6 +325,7 @@ Setting up and building a new Java project using the Gradle build tool.
     :host: ubuntu
 
     gradle run
+
     Calculating task graph as no cached configuration is available for tasks: run
 
     > Task :app:run
@@ -334,7 +371,10 @@ Compiling a Java application directly using the {command}`javac` tool.
 
 2. Compile the class file in the {file}`out` directory:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     javac App.java -d out
     ```
 
@@ -343,6 +383,8 @@ Compiling a Java application directly using the {command}`javac` tool.
     ```{terminal}
     :user: dev
     :host: ubuntu
+
+    cd out && java App
 
     Hello World!
     ```
@@ -388,7 +430,10 @@ Running a Java application as a script with the {command}`java` interpreter spec
 
 2. Make the file executable:
 
-    ```
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     chmod +x App
     ```
 
@@ -399,6 +444,6 @@ Running a Java application as a script with the {command}`java` interpreter spec
     :host: ubuntu
 
     ./App
-    
+
     Hello World!
     ```

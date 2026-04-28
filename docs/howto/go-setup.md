@@ -23,26 +23,38 @@ See [Pre-compiled Go binaries](#precompiled-go-binaries) for instructions on how
 
 1. Update the list of available packages:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt update
     ```
 
 2. Install the latest version of Go:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install golang-go
     ```
 
 3. Confirm successful installation with:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     go version
     ```
 
 :::{note}
 To install a specific version of Go use:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install golang-<version>
 ```
 :::
@@ -52,20 +64,29 @@ sudo apt install golang-<version>
 
 1. Install the latest Go snap:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo snap install go --classic
     ```
 
 2. Confirm successful installation:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     go version
     ```
 
 :::{note}
 To install a specific version of Go, specify the channel; for example:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install go --channel=1.22/stable --classic
 ```
 :::
@@ -77,13 +98,19 @@ When not using a package manager to install Go, you need to add the Go binary to
 
 * To temporarily add `go` to your `$PATH`, run:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     export PATH=$PATH:/path/to/your/go/bin
     ```
 
 * To persist the change and make `go` available in new terminal sessions and across reboots, append the above line to `$HOME/.profile` (or `/etc/profile`) and source the file:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     source $HOME/.profile
     ```
 
@@ -99,19 +126,28 @@ Pre-compiled Go binaries are available in a compressed format on the [release pa
 
 1. Fetch a specific Go version with `wget`:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     wget https://go.dev/dl/go<version>.linux-amd64.tar.gz 
     ```
 
 2. Extract the files into an appropriate directory:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo tar -C /usr/local -xzf go<version>.linux-amd64.tar.gz
     ```
 
 3. Add the `go` binary to your `$PATH` environment variable:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     export PATH=$PATH:/usr/local/go/bin
     ```
 
@@ -121,7 +157,10 @@ Sometimes it may be necessary to run multiple Go versions on the same machine.
 
 1. To install Go versions 1.21 and 1.23, run:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install golang-1.21 golang-1.23
     ```
 
@@ -129,7 +168,10 @@ Sometimes it may be necessary to run multiple Go versions on the same machine.
 
 2. Test the `go` binaries by calling them with their full paths:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     /usr/lib/go-1.21/bin/go version
     /usr/lib/go-1.23/bin/go version
     ```
@@ -151,11 +193,17 @@ Some of the most common IDEs used for Go are:
 
 Both can be installed as snaps:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install code --classic
 ```
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install goland --classic
 ```
 
@@ -166,7 +214,10 @@ Delve can also be installed as a standalone program and run [on the command line
 
 To install Delve, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install delve
 ```
 
@@ -176,14 +227,20 @@ A Go language server, [{spellexception}`gopls`](https://pkg.go.dev/golang.org/x/
 
 To install {spellexception}`gopls` from the Ubuntu archive:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install gopls
 ```
 
 :::{note}
 If you have Go installed and `go` in your `$PATH`, then the latest version of many Go tools like `gopls` and Delve can be installed with:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 go install url/of/tool/<name-of-tool>@latest
 ```
 

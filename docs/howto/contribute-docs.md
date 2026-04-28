@@ -59,22 +59,34 @@ Follow these steps to build the documentation on your local machine.
 1. Fork the [Ubuntu for Developers repository](https://github.com/canonical/ubuntu-for-developers-docs/). Visit [Fork a repository](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/fork-a-repo) for instructions.
 
 2. Clone the repository to your machine:
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     git clone git@github.com:<your_user_name>/ubuntu-for-developers-docs.git
     ```
 
 3. Create a new branch:
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     git checkout -b <your_branch_name>
     ```
 
 4. Change to the `docs/` directory and make your contribution:
-    ```
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     cd docs
     ```
 
 5. Build a live preview of the documentation from within the `docs/` directory:
-    ```
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     make run
     ```
     You can find all the HTML files in the `.build/` directory.

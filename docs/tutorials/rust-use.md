@@ -25,19 +25,29 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
 
 1. Create a new Rust project using the {command}`new` Cargo sub-command:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     cargo new hello_world
     ```
 
 2. Change to the project directory:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     cd hello_world
     ```
 
     Notice that Cargo has already set up a Git repository with a skeleton project inside (which includes the basic 'hello world' program):
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/hello_world
+
     cat src/main.rs
     ```
 
@@ -52,6 +62,7 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
     ```{terminal}
     :user: dev
     :host: ubuntu
+    :dir: ~/hello_world
 
     cargo run
     
@@ -61,7 +72,10 @@ If you want to use {command}`rustc` without {command}`cargo`, refer to the examp
 :::{attention}
 When building and running the program, if you get an error message related to a missing linker, then you are missing some essential build tools. Install them with:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install build-essential
 ```
 :::
@@ -73,13 +87,21 @@ A nightly toolchain can be useful if the new Rust language feature you want to t
 
 By default, the nightly Rust builds are not selected for use. Use the `+nightly` parameter to build your project with the nightly Rust version:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello_world
+
 cargo +nightly build
 ```
 
 To run the project, use:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+:dir: ~/hello_world
+
 cargo +nightly run
 ```
 
@@ -113,13 +135,19 @@ int main() {
 
 Compile the Rust code first:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 rustc answer.rs --emit obj --crate-type=lib -Copt-level=3 -o answer.o
 ```
 
 Compile and link the final program:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 gcc -O3 c_main.c answer.o -o main
 ```
 

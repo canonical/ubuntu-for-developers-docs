@@ -788,6 +788,11 @@ dotnet --list-runtimes
 Example output:
 
 ```{terminal}
+:user: dev
+:host: ubuntu
+
+dotnet --info
+
 .NET SDK:
  Version:           8.0.113
  Commit:            67977f6ab7
