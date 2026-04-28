@@ -293,7 +293,7 @@ The `zig cc` command compiles for any supported target without additional toolch
                  statically linked, not stripped
     ```
 
-1. Install QEMU user-mode emulation. Ubuntu's `qemu-user-binfmt` package registers `binfmt_misc` handlers automatically, so foreign-architecture binaries run transparently:
+1. Install QEMU user-mode emulation:
 
     ```{terminal}
     :dir: ~/zig/hello
