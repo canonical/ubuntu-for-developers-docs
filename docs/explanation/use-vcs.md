@@ -23,13 +23,19 @@ Git documentation can also be installed for local viewing in a web browser.
 
 To get it:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install -y git-doc
 ```
 
 To view it using Firefox:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 firefox /usr/share/doc/git-doc/index.html
 ```
 :::
@@ -41,13 +47,19 @@ To install Git on Ubuntu Desktop, use the regular package management system (pac
 
 To install the DEB package, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install -y git
 ```
 
 To install the snap package, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install git-scm
 ```
 
@@ -93,13 +105,19 @@ To generate and use an SSH key pair:
 
 1. Install the {pkg}`openssh-client` package:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install -y openssh-client
     ```
 
 2. Run the {command}`ssh-keygen` command:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     ssh-keygen -t ed25519 -C "user@example.com"
     ```
 3. Add the generated public key to your Git provider.

@@ -18,7 +18,10 @@ The GCC toolchain, including past versions and cross-compilers for different arc
 
 1. Install GCC compilers for C and C++:
 
-    ```none
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
     sudo apt install gcc g++
     ```
 
@@ -51,7 +54,10 @@ Some developers prefer advanced text editors such as Vim, Codium, or Visual Stud
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install -y vim ccls
   ```
   Refer to the [{spellexception}`ccls` editor configuration instructions](https://github.com/MaskRay/ccls/wiki/Editor-Configuration) for Vim LSP setup.
@@ -61,7 +67,10 @@ Some developers prefer advanced text editors such as Vim, Codium, or Visual Stud
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install codium --classic
   ```
 
@@ -70,7 +79,10 @@ Some developers prefer advanced text editors such as Vim, Codium, or Visual Stud
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install code --classic
   ```
 
@@ -84,7 +96,10 @@ Other developers enjoy the full support offered by Integrated Development Enviro
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install -y codeblocks
   ```
 
@@ -93,7 +108,10 @@ Other developers enjoy the full support offered by Integrated Development Enviro
 
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install eclipse --classic
   ```
 
@@ -104,7 +122,10 @@ Other developers enjoy the full support offered by Integrated Development Enviro
 : The [NetBeans C/C++ Development Pack](https://www.netbeans.info/products/cplusplus.html) adds support for C/C++ to NetBeans.
   Install with:
 
-  ```none
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo apt install default-jre
   sudo snap install netbeans --classic
   ```
@@ -118,7 +139,10 @@ The standard debugger developed for GCC is the [GNU Debugger (GDB)](https://sour
 
 Install with:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install -y gdb valgrind
 ```
 
@@ -132,7 +156,10 @@ The standard for GNU software is [GNU Make](https://www.gnu.org/software/make/).
 
 Install with:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install -y make cmake
 ```
 

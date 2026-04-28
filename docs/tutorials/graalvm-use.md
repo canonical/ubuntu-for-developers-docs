@@ -25,25 +25,37 @@ Spring Boot 3+ provides official support for compiling a Java application to a n
 
 2. Install the GraalVM Community Edition snap from the snap store:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    sudo snap install graalvm-jdk --channel=v21
    ```
 
 3. Point the `JAVA_HOME` environment variable to the GraalVM CE installation:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    export JAVA_HOME=/snap/graalvm-jdk/current/graalvm-ce/
    ```
 
 4. Finally, use this command to do a native compilation for your Maven project:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    ./mvnw -Pnative native:compile
    ```
 
 To build a Gradle project, use this command:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    ./gradlew nativeCompile
    ```
 

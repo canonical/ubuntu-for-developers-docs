@@ -14,7 +14,10 @@ This article covers how to install the Java toolchain and development environmen
 
 The quickest way to start developing Java code on Ubuntu is to install Eclipse IDE -- the {spellexception}`de facto` standard integrated development environment for Java development. This also provides the latest Java LTS (long-term support) version:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 snap install eclipse --classic
 ```
 
@@ -26,7 +29,10 @@ Run {command}`eclipse` to start the IDE.
 
 To install the default Java Development Kit for your Ubuntu release, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install default-jdk
 ```
 
@@ -34,7 +40,10 @@ sudo apt install default-jdk
 
 Latest or early access releases are available in the latest development release of Ubuntu. For example, to install the early access Ubuntu archive version of OpenJDK 24, use:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install openjdk-24-jdk
 ```
 
@@ -42,13 +51,19 @@ Latest or early-access releases are also available through the community maintai
 
 - To install the latest early-access release, run:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    sudo snap install openjdk --channel=edge
    ```
 
 - To install the latest release, run:
 
-   ```none
+   ```{terminal}
+   :user: dev
+   :host: ubuntu
+
    sudo snap install openjdk --channel=stable
    ```
 
@@ -59,13 +74,19 @@ The Ubuntu Archive provides packages for all supported LTS releases of [OpenJDK]
 
 To install OpenJDK, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install openjdk-<version>-jdk
 ```
 
 For example, to install the latest LTS release, use:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo apt install openjdk-21-jdk
 ```
 
@@ -74,13 +95,19 @@ sudo apt install openjdk-21-jdk
 
 GraalVM Community Edition is available and supported on Ubuntu 24.04 LTS and above, through a [snap package](https://snapcraft.io/graalvm-jdk). To install the latest GraalVM version, run:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install graalvm-jdk
 ```
 
 The snap also provides for GraalVM Community Edition for JDK 21, which is an LTS release:
 
-```none
+```{terminal}
+:user: dev
+:host: ubuntu
+
 sudo snap install graalvm-jdk --channel=v21
 ```
 
@@ -91,22 +118,42 @@ GraalVM may be used like any other Java Development Kit in the IDE of your choic
 A number of IDEs are available for Java development on Ubuntu:
 
 [Eclipse](https://www.eclipse.org/)
-: ```none
+:  
+
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install eclipse --classic
   ```
 
 [IntelliJ IDEA Community Edition](https://www.jetbrains.com/idea/)
-: ```none
+:  
+
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install intellij-idea-community --classic
   ```
 
 [Visual Studio Code](https://code.visualstudio.com/) with [Extension Pack for Java](https://marketplace.visualstudio.com/items?itemName=vscjava.vscode-java-pack)
-: ```none
+:  
+
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install code --classic
   ```
 
 [Android Studio](https://developer.android.com/studio)
-: ```none
+:  
+
+  ```{terminal}
+  :user: dev
+  :host: ubuntu
+
   sudo snap install android-studio --classic
   ```
 

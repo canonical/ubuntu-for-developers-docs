@@ -18,21 +18,31 @@ To separate the system installation of Python from your development and testing 
 
 0. (Optional) Create a directory for Python development, as well as a directory for the new project:
 
-    ```none
-    $ mkdir -p ~/python/helloworld
-    $ cd ~/python/helloworld
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
+    mkdir -p ~/python/helloworld && cd ~/python/helloworld
     ```
 
 1. Create a separate virtual environment for the new project (specifying `.venv` as the directory for it):
 
-    ```none
-    $ python3 -m venv .venv
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/python/helloworld
+
+    python3 -m venv .venv
     ```
 
 2. Activate the virtual environment by sourcing the `activate` script:
 
-    ```none
-    $ source .venv/bin/activate
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/python/helloworld
+
+    source .venv/bin/activate
     ```
 
 3. Check that the environment has been set up:
@@ -41,6 +51,8 @@ To separate the system installation of Python from your development and testing 
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
+
+    which python3
 
     /home/dev/python/helloworld/.venv/bin/python3
     ```
@@ -89,14 +101,22 @@ To illustrate the installation of a dependency confined to the Python virtual en
 
 1. Create a `requirements.txt` file with the list of dependencies. For example:
 
-    ```none
-    $ echo "requests" > requirements.txt
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/python/helloworld
+
+    echo "requests" > requirements.txt
     ```
 
 2. Install the dependencies:
 
-    ```none
-    $ pip install -r requirements.txt
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/python/helloworld
+
+    pip install -r requirements.txt
     ```
 
    Checking the list of Python packages installed within the virtual environment should show output similar to this:
@@ -105,6 +125,8 @@ To illustrate the installation of a dependency confined to the Python virtual en
     :dir: ~/python/helloworld
     :user: dev
     :host: ubuntu
+
+    pip list
 
     Package  Version
     -------- -------
@@ -161,6 +183,8 @@ To illustrate the installation of a dependency confined to the Python virtual en
     :user: dev
     :host: ubuntu
 
+    python helloworld.py
+
     Hello, world!
     ```
 
@@ -179,17 +203,23 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
 
 1. Check which versions are available:
 
-    ```none
-    $ pyenv install --list
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
+    pyenv install --list
     ```
 
 1. Install Python 3.12 (this fetches the latest `3.12.x` release):
 
     ```{terminal}
-        :user: dev
-        :host: ubuntu
+    :user: dev
+    :host: ubuntu
+    :dir: ~/python/helloworld
 
-        Downloading Python-3.12.9.tar.xz...
+    pyenv install 3.12.9
+
+    Downloading Python-3.12.9.tar.xz...
     -> https://www.python.org/ftp/python/3.12.9/Python-3.12.9.tar.xz
     Installing Python-3.12.9...
     Installed Python-3.12.9 to /home/ubuntu/.pyenv/versions/3.12.9
@@ -200,9 +230,11 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
 
 1. Create a specific directory to understand how `pyenv` switches versions automatically:
 
-    ```none
-    $ mkdir -p ~/my-python-project
-    $ cd ~/my-python-project
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
+    $ mkdir -p ~/my-python-project && $ cd ~/my-python-project
     ```
 
 1. Check the Python version to confirm it is still your system default:
@@ -212,16 +244,22 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
     :user: dev
     :host: ubuntu
 
+    python -V
+
     Python 3.13.7
     ```
 
 
 ### Activating the local version
 
-1. Instruct `pyenv` to always use Python 3.12 inside the specific folder:
+1. Instruct `pyenv` to always use Python 3.12 inside the specific directory:
 
-    ```none
-    $ pyenv local 3.12
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/my-python-project
+
+    pyenv local 3.12
     ```
 
 1. Verify that Python versions are switched:
@@ -230,6 +268,8 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
     :dir: ~/my-python-project
     :user: dev
     :host: ubuntu
+
+    pyenv versions
 
     system
     * 3.12.9 (set by /home/ubuntu/my-python-project/.python-version)
@@ -244,6 +284,8 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
     :user: dev
     :host: ubuntu
 
+    pyenv which python3
+
     home/ubuntu/.pyenv/versions/3.12.9/bin/python3
     ```
 
@@ -251,9 +293,13 @@ To illustrate `pyenv` usage, letâ€™s install Python 3.12 alongside your systemâ€
 
    The `local` command sets the version for a specific folder. To change the Python version for your entire user account (every terminal you open), use the `global` command:
 
-    ```none
-    $ pyenv global 3.12
-    ````
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/my-python-project
+
+    pyenv global 3.12
+    ```
 
    :::{note}
    The `global` command overrides the system Python for your user account, but it leaves the operating system's Python untouched for root processes (which keeps your system stable). To revert your user account to the system default, run `pyenv global system`.
@@ -266,14 +312,22 @@ Follow these steps to uninstall the Python version installed in {ref}`installing
 
 1. Revert to system Python by removing the local configuration from your project folder:
 
-    ```none
-    $ pyenv local system
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/my-python-project
+
+    pyenv local system
     ```
 
 1. Uninstall the version by removing Python 3.12 from `pyenv`:
 
-    ```none
-    $ pyenv uninstall 3.12.9
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/my-python-project
+
+    pyenv uninstall 3.12.9
     ```
 
    Type {kbd}`y` when prompted to confirm.
@@ -284,6 +338,8 @@ Follow these steps to uninstall the Python version installed in {ref}`installing
     :dir: ~/my-python-project
     :user: dev
     :host: ubuntu
+
+    pyenv versions
 
     system
     ```
@@ -368,14 +424,22 @@ To allow for the possibility of inspecting the state of the script at different 
 
 1. Add `ipdb` to the list of dependencies:
 
-    ```none
-    $ echo "ipdb" >> requirements.txt
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/python/helloworld
+
+    echo "ipdb" >> requirements.txt
     ```
 
 2. Install the dependencies:
 
-    ```none
-    $ pip install -r requirements.txt
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/python/helloworld
+
+    pip install -r requirements.txt
     ```
 
 3. Add `ipdb` module import, and insert a breakpoint in the code (see line 23):
@@ -452,8 +516,11 @@ The following example shows how to use the `pytest` testing tool. First we imple
 
 1. Ensure that `pytest` and `pytest-mock` are installed:
 
-    ```none
-    $ apt install python3-pytest python3-pytest-mock
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+
+    sudo apt install python3-pytest python3-pytest-mock
     ```
 
 2. If you added debugging lines when {ref}`debugging-python-code`, comment them out:
@@ -528,8 +595,6 @@ The following example shows how to use the `pytest` testing tool. First we imple
         # Get the printed output
         captured = capsys.readouterr()
 
-    pyenv versions
-    
         # Check that the output is as expected
         assert captured.out.strip() == "Hello, world!"
     ```
