@@ -19,6 +19,7 @@ Install and set up GCC <gcc-setup>
 Install and set up Clang <clang-setup>
 Install and set up .NET <dotnet-setup>
 Install and set up Java <java-setup>
+Install and set up Zig <zig-setup>
 :::
 
 Follow up with 'Hello, world!' {ref}`tutorials` for each of the toolchains.

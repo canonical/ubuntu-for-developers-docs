@@ -153,6 +153,7 @@ linkcheck_ignore = [
     r"https://www\.gnu\.org/.*",
     r"https://matrix\.to/.*",
     r"https://blog\.local-optimum\.net/.*",
+    r"https://www\.winehq\.org.*",
 ]
 
 # Pages on which to ignore anchors
@@ -229,7 +230,7 @@ llms_txt_description = (
     "Linux distribution as a development platform. The guides focus on "
     "setting up and using the Ubuntu system as a workstation for developers, "
     "with an emphasis on the following toolchains: Python, Golang, Rust, "
-    "GCC, Clang, .NET, and Java."
+    "GCC, Clang, .NET, Java, and Zig."
 )
 
 # markdown-builder config
