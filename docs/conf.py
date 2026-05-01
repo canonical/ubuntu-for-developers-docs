@@ -105,6 +105,18 @@ html_context = {
     "display_contributors": True,
     # Controls the time frame for showing the contributors
     # "display_contributors_since": ""
+
+    # Links for the "Ubuntu docs" dropdown in the site header
+    #  - comment out "your" docs set, duh! ;-)
+    "ubuntu_docs": [
+        # {"title": "Ubuntu for developers", "url": "https://documentation.ubuntu.com/ubuntu-for-developers/"},
+        {"title": "Ubuntu Desktop",        "url": "https://documentation.ubuntu.com/desktop/"},
+        {"title": "Ubuntu Server",         "url": "https://ubuntu.com/server/docs/"},
+        {"title": "Ubuntu on WSL",         "url": "https://documentation.ubuntu.com/wsl/latest/"},
+        {"title": "Ubuntu release notes",  "url": "https://documentation.ubuntu.com/release-notes/"},
+        {"title": "Ubuntu project",        "url": "https://documentation.ubuntu.com/project/"},
+        {"title": "Ubuntu Pro",            "url": "https://documentation.ubuntu.com/pro/"},
+    ],
 }
 
 # Enables the edit button on pages. Needs a link to a
