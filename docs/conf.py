@@ -56,7 +56,7 @@ copyright = f"{datetime.date.today().year}"
 # when linking to the documentation from another website (see https://ogp.me/)
 # The URL where the documentation will be hosted (leave empty if you
 # don't know yet)
-ogp_site_url = "https://documentation.ubuntu.com/ubuntu-for-developers/"
+ogp_site_url = "https://ubuntu.com/developers/docs/"
 # The documentation website name (usually the same as the product name)
 ogp_site_name = project
 
@@ -132,7 +132,7 @@ html_theme_options = {
 
 # If your project is on documentation.ubuntu.com, specify the project
 # slug (for example, "lxd") here.
-slug = "ubuntu-for-developers"
+slug = "developers/docs"
 
 # These paths are needed if you want to override any default assets.
 # You can comment them out if you don't need this (but you can also just
@@ -215,7 +215,7 @@ exclude_patterns = [
 html_css_files = ["custom_header.css", "cookie_banner.css"]
 
 # Add custom JavaScript files (located in .sphinx/_static/)
-html_js_files = ["js/bundle.js"]
+html_js_files = ["js/bundle.js", "js/overwrite_links.js"]
 
 # The following settings override the default configuration.
 
@@ -260,9 +260,10 @@ rst_prolog = """
 
 
 # Sitemap configuration
-html_baseurl = os.environ.get("READTHEDOCS_CANONICAL_URL", "/")
+html_baseurl = "https://ubuntu.com/developers/docs/"
 sitemap_url_scheme = "{link}"
 sitemap_show_lastmod = True
+sitemap_filename = "doc-sitemap.xml"
 sitemap_excludes = [
     "404/",
     "genindex/",
