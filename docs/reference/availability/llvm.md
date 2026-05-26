@@ -13,7 +13,7 @@ This page lists LLVM/Clang versions available in Ubuntu releases.
 
 | Ubuntu version              | available LLVM/Clang versions | {lpsrc}`llvm-defaults` |
 | --- | --- | --- |
-| 26.10 (Stonking Stingray)¹    | 17, 18, 19, 20, **21**, 22 | 21 |   
+| 26.10 (Stonking Stingray)¹   | 17, 18, 19, 20, **21**, 22 | 21 |   
 | 26.04 LTS (Resolute Raccoon) | 17, 18, 19, 20, **21**, 22 | 21 |   
 | 25.10 (Questing Quokka)      | 14, 15, 17, **18**, **19**, **20**, 21 | 20 |
 | 24.04 LTS (Noble Numbat)     | 14, 15, 16, **17**, **18**, 19, 20 | 18 |
