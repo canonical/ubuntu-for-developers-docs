@@ -33,8 +33,6 @@ Contribute documentation <howto/contribute-docs.md>
 
 The following sections map the documentation by development lifecycle stage — from environment setup and toolchain installation through active development to software distribution.
 
-**Tutorial**: {ref}`Develop with Python <use-python>`
-
 
 ### Initialization and setup
 
@@ -49,7 +47,7 @@ Setting up development on Ubuntu Desktop involves platform-level choices and too
 
 These pages cover the toolchain-specific workflows for building, running, and debugging code on Ubuntu Desktop.
 
-* **First programs**: {ref}`Develop with Go <use-go>` • {ref}`Develop with Rust <use-rust>` • {ref}`Develop with GCC <use-gcc>` • {ref}`Develop C and C++ with Clang <use-clang>` • {ref}`Develop with .NET <use-dotnet>` • {ref}`Develop with Java <use-java>` • {ref}`Develop with Zig <use-zig>`
+* **First programs**: {ref}`Develop with Python <use-python>` • {ref}`Develop with Go <use-go>` • {ref}`Develop with Rust <use-rust>` • {ref}`Develop with GCC <use-gcc>` • {ref}`Develop C and C++ with Clang <use-clang>` • {ref}`Develop with .NET <use-dotnet>` • {ref}`Develop with Java <use-java>` • {ref}`Develop with Zig <use-zig>`
 * **.NET ecosystem**: {ref}`Introduction to the .NET toolchain <dotnet-introduction>` • {ref}`Debugging with .NET <debugging-with-dotnet>`
 * **Java ecosystem**: {ref}`Compile Spring Boot apps to native executables <use-graalvm>` • {ref}`GraalVM native compilation <graalvm-introduction>` • {ref}`Fast start for Spring Boot apps with CRaC <use-crac>`
 
