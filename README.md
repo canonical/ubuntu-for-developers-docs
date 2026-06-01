@@ -15,6 +15,7 @@ The documentation provides guidance for using the [Ubuntu Desktop](https://ubunt
 * Rust
 * Clang
 * GCC
+* Zig
 
 
 ## Contributing to documentation
