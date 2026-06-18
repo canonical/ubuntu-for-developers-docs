@@ -25,6 +25,7 @@ Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Develop with Zig <zig-use>
 java-advanced/index
+Develop an LLM chat-client with Spring AI <springai-basic>
 :::
 
 
