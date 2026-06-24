@@ -288,6 +288,6 @@ If all goes well, you should see a log message indicating the application starte
 2026-06-18T21:17:05.427+05:30  INFO 977098 --- [chat-client] [           main] demo.chatclient.ChatClientApplication    : Started ChatClientApplication in 1.364 seconds (process running for 1.584)
 ```
 
-You may now open http://localhost:8080 in a browser to use the chat-client. A sample interaction is captured below:
+You may now open `http://localhost:8080` in a browser to use the chat-client. A sample interaction is captured below:
 
 ![chat-client-interaction](../images/chat-client.gif)
