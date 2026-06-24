@@ -47,6 +47,14 @@ Install `devpack-for-spring` if you don't have it installed:
 sudo snap install devpack-for-spring --classic
 ```
 
+Install the content snap for Spring AI:
+```
+devpack-for-spring snap install content-for-spring-ai-11
+```
+:::{important}
+The `content-for-spring-ai-11` snap installs Spring AI 1.1.X, which is compatible with Spring Boot 3.5.X.
+:::
+
 A Spring Boot and Spring AI project may be initialized using `devpack-for-spring`'s CLI wizard.
 
 ![spring-ai-init](../images/spring-ai-init.gif)
