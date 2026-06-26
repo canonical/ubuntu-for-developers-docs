@@ -25,6 +25,7 @@ Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Develop with Zig <zig-use>
 java-advanced/index
+Retrieval Augmented Generation with Spring AI <springai-rag>
 :::
 
 
