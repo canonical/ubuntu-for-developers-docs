@@ -13,7 +13,7 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 
 | Ubuntu version | available Java versions | {lpsrc}`java-common` version |
 | --- | --- | --- |
-| 26.10 (Stonking Stingray)   | 8, 11, 17, 21, **25** 26 27| 25 |
+| 26.10 (Stonking Stingray)   | 8, 11, 17, 21, **25**, 26, 27| 25 |
 | 26.04 (Resolute Racoon)     | 8, 11, 17, 21, **25** | 25 |
 | 25.10 (Questing Quokka)     | 8, 11, 17, **21**, 24, 25 | 21 |
 | 25.04 (Plucky Puffin)       | 8, 11, 17, **21**, 24, 25 | 21 |
