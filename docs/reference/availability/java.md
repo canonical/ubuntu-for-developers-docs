@@ -13,11 +13,9 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 
 | Ubuntu version | available Java versions | {lpsrc}`java-common` version |
 | --- | --- | --- |
-| 26.10 (Stonking Stingray)   | 8, 11, 17, 21, **25** 26 27| 25 |
-| 26.04 (Resolute Racoon)     | 8, 11, 17, 21, **25** | 25 |
-| 25.10 (Questing Quokka)     | 8, 11, 17, **21**, 24, 25 | 21 |
-| 25.04 (Plucky Puffin)       | 8, 11, 17, **21**, 24, 25 | 21 |
-| 24.10 (Oracular Oriole)     | 8, 11, 17, **21**, 22, 23, 24 | 21 |
+| 26.10 (Stonking Stingray)   | 8, 11, 17, 21, **25**, 26, 27 | 25 |
+| 26.04 (Resolute Racoon)     | 8, 11, 17, 21, **25**, 26¹ | 25 |
+| 25.10 (Questing Quokka)     | 8, 11, 17, **21**, 25, 26 | 21 |
 | 24.04 LTS (Noble Numbat)    | 8, 11, **17**, **21**, 25 | 21 |
 | 22.04 LTS (Jammy Jellyfish) | 8, **11**, 17, 18, 21, 25 | 11 |
 | 20.04 LTS (Focal Fossa)     | 8, **11**, 13, 16, 17, 21 | 11 |
@@ -26,18 +24,17 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 | 14.04 LTS (Trusty Tahr)     | 6, **7** | 7 |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
-**bold** -- package is in main
+**bold** -- package is in main    
+¹ -- package will be removed after End of Support in September 2026    
+
+### Supported
 
 | Java Version | Source package |
 | --- | --- |
 | 27 | {lpsrc}`openjdk-27` |
 | 26 | {lpsrc}`openjdk-26` |
 | 25 | {lpsrc}`openjdk-25` |
-| 24 | {lpsrc}`openjdk-24` |
-| 23 | {lpsrc}`openjdk-23` |
-| 22 | {lpsrc}`openjdk-22` |
 | 21 | {lpsrc}`openjdk-21` |
-| 19 | {lpsrc}`openjdk-19` |
 | 18 | {lpsrc}`openjdk-18` |
 | 17 | {lpsrc}`openjdk-17` |
 | 16 | {lpsrc}`openjdk-16` |
@@ -48,6 +45,16 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 | 7 | {lpsrc}`openjdk-7` |
 | 6 | {lpsrc}`openjdk-6` |
 
+### Unsupported
+
+| Java Version | Source package |
+| --- | --- |
+| 24 | {lpsrc}`openjdk-24` |
+| 23 | {lpsrc}`openjdk-23` |
+| 22 | {lpsrc}`openjdk-22` |
+| 19 | {lpsrc}`openjdk-19` |
+| 10 | {lpsrc}`openjdk-10` |
+
 ## Ubuntu OpenJDK: {abbr}`CRaC (Coordinated Restore at Checkpoint)` (deb) packages
 
 | Ubuntu version | available Java versions |
@@ -55,8 +62,6 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 | 26.10 (Stonking Stingray) | 17, 21, 25 |
 | 26.04 (Resolute Racoon) | 17, 21, 25 |
 | 25.10 (Questing Quokka) | 17, 21, 25 |
-| 25.04 (Plucky Puffin)   | 17, 21 |
-| 24.10 (Oracular Oriole) | 17, 21 |
 
 | Java Version | Source package |
 | --- | --- |
