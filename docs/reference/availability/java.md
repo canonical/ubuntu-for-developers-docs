@@ -13,9 +13,9 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 
 | Ubuntu version | available Java versions | {lpsrc}`java-common` version |
 | --- | --- | --- |
-| 26.10 (Stonking Stingray)   | 8, 11, 17, 21, **25**, 26, 27| 25 |
+| 26.10 (Stonking Stingray)   | 8, 11, 17, 21, **25**, 26, 27 | 25 |
 | 26.04 (Resolute Racoon)     | 8, 11, 17, 21, **25**, 26 | 25 |
-| 25.10 (Questing Quokka)     | 8, 11, 17, **21**, 24, 25, 26 | 21 |
+| 25.10 (Questing Quokka)     | 8, 11, 17, **21**, 25, 26 | 21 |
 | 24.04 LTS (Noble Numbat)    | 8, 11, **17**, **21**, 25 | 21 |
 | 22.04 LTS (Jammy Jellyfish) | 8, **11**, 17, 18, 21, 25 | 11 |
 | 20.04 LTS (Focal Fossa)     | 8, **11**, 13, 16, 17, 21 | 11 |
@@ -31,11 +31,7 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 | 27 | {lpsrc}`openjdk-27` |
 | 26 | {lpsrc}`openjdk-26` |
 | 25 | {lpsrc}`openjdk-25` |
-| 24 | {lpsrc}`openjdk-24` |
-| 23 | {lpsrc}`openjdk-23` |
-| 22 | {lpsrc}`openjdk-22` |
 | 21 | {lpsrc}`openjdk-21` |
-| 19 | {lpsrc}`openjdk-19` |
 | 18 | {lpsrc}`openjdk-18` |
 | 17 | {lpsrc}`openjdk-17` |
 | 16 | {lpsrc}`openjdk-16` |
