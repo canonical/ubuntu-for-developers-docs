@@ -27,6 +27,8 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 **bold** -- package is in main    
 ¹ -- package will be removed after End of Support in September 2026    
 
+### Supported
+
 | Java Version | Source package |
 | --- | --- |
 | 27 | {lpsrc}`openjdk-27` |
@@ -42,6 +44,16 @@ This page lists Java versions available in Ubuntu releases, including CRaC and G
 | 8 | {lpsrc}`openjdk-8` |
 | 7 | {lpsrc}`openjdk-7` |
 | 6 | {lpsrc}`openjdk-6` |
+
+### Unsupported
+
+| Java Version | Source package |
+| --- | --- |
+| 24 | {lpsrc}`openjdk-24` |
+| 23 | {lpsrc}`openjdk-23` |
+| 22 | {lpsrc}`openjdk-22` |
+| 19 | {lpsrc}`openjdk-19` |
+| 10 | {lpsrc}`openjdk-10` |
 
 ## Ubuntu OpenJDK: {abbr}`CRaC (Coordinated Restore at Checkpoint)` (deb) packages
 
