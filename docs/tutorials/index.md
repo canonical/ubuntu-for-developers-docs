@@ -25,6 +25,7 @@ Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Develop with Zig <zig-use>
 java-advanced/index
+Tool-calling with Spring AI <spring-ai-tool-calling>
 :::
 
 
