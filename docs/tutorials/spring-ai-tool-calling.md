@@ -39,7 +39,7 @@ sudo snap install gemma4
 ```
 
 2. Make sure gemma4 is active by issuing the `gemma4 status` command:
-```shell
+```bash
 $ gemma4 status
 engine: amd-gpu
 services:
@@ -70,18 +70,18 @@ spring.ai.openai.chat.options.model=gemma4-e4b-q4-k-m
 sudo apt update && sudo apt install openjdk-21-jdk
 ```
 
-```
+```bash
 ./gradlew bootRun
 ```
 
-6. Open http://localhost:8080 in a browser window and enter the following question:
+6. Open `http://localhost:8080` in a browser window and enter the following question:
 
-```
+```none
 Is Zig 0.16 available on Ubuntu?
 ```
 
 The answer doesn't really make sense:
-```
+```none
 While Zig is generally available for Linux, getting a very specific and potentially older version like **0.16** directly through standard Ubuntu package managers (like `apt`) can be dif   ficult because the official repositories often lag behind the latest stable releases.
 ```
 
@@ -159,7 +159,7 @@ public class DemoChatService implements DemoChatClient {
 ...
 }
 ```
-3. Launch the application and navigate to http://localhost:8080.
+3. Launch the application and navigate to `http://localhost:8080`.
 
 ```none
 ./gradlew bootRun
