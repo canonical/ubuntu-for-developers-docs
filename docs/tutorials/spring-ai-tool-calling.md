@@ -1,14 +1,14 @@
 ---
 myst:
   html_meta:
-    description: "Extend an existing Spring AI chatbot to support tool-calling"
+    description: "Extend an existing Spring AI chatbot to support tool calling"
 ---
 (spring-ai-tool-calling)=
-# Implementing tool-calling with Spring AI
+# Implementing tool calling with Spring AI
 
 The goal of this tutorial is to help appreciate the ease with which tool-calling may be implemented using Spring AI, on the client-side. We will augment the chat-client from our initial Spring AI tutorial to include a tool interaction that helps the LLM answer queries related to toolchains availability on Ubuntu versions.
 
-## Introduction to LLM tool-calling
+## Introduction to LLM tool calling
 Large language models cannot answer questions about data they are not trained on. We previously saw how Retrieval Augmented Generation provides additional information to an LLM in the form of documents. Additional information may also be generated, or deduced from existing data sources, through application logic. If an LLM is made aware of a set of existing _tools_ and the kind of information they serve, it can invoke them while answering a user question, and use the received information to generate a response. This is referred to as tool-calling.
 
 Apart from information retrieval, tools may also be configured to take action. For example, we may configure tools for tasks such as sending an email, triggering a workflow, or updating a database, on a prompt to the LLM.
@@ -17,7 +17,7 @@ Apart from information retrieval, tools may also be configured to take action. F
 Not all LLMs support tool-calling.
 :::
 
-## Tool-calling support in Spring AI
+## Tool calling support in Spring AI
 Spring AI eases tool interactions with LLMs that support tools. It provides a consistent means of applying tools when submitting a prompt. 
 
 Methods annotated using the `@Tool` annotation act as tool-callbacks. The `description` parameter must be used to suitably word the tool description. LLMs depend on these descriptions to decide which tool to invoke for a given prompt.
@@ -29,7 +29,7 @@ Here is a basic diagram that depicts the tool-calling protocol with Spring AI.
 ![spring-ai-tool-calling](../images/springai-tools/spring-ai-tool-calling.png)
 
 
-## An LLM chat-client augmented with a tool
+## An LLM chat-client with tool calling
 
 This tutorial will reuse the simple chat-client developed in the {ref}`springai-basic` tutorial. However, we will use the gemma4 model instead of Qwen VL 2.5.
 
@@ -193,3 +193,5 @@ An answer like the following should be expected:
 ```none
 Based on the available information, the package `zig0.17` does not appear to be available in the Ubuntu archive.
 ```
+## Conclusion
+Spring AI makes LLM tool-calling very easy to implement. The effectiveness of a tool depends on how specific a task it is defined for, and how close the `description` parameter of the `@Tool` annotation is to actual user questions. Refer to the [Spring AI Tool Calling documentation](https://docs.spring.io/spring-ai/reference/api/tools.html) for more details.
