@@ -6,12 +6,12 @@ myst:
 
 (springai-rag)=
 # Implementing Retrieval Augmented Generation with Spring AI
- 
-Every large language model is trained on a corpus of data. There may be prompts that relate to the knowledge of a topic which was not sufficiently covered by the corpus. This often causes hallucinations in models, generating factually incorrect responses. Retrieval Augmented Generation (RAG) lets the user ingest additional information into the model context. The hence expanded model context is likely to reduce hallucinations and produce better responses. 
+
+Every large language model is trained on a corpus of data. There may be prompts that relate to the knowledge of a topic which was not sufficiently covered by the corpus. This often causes hallucinations in models, generating factually incorrect responses. Retrieval Augmented Generation (RAG) lets the user ingest additional information into the model context. The hence expanded model context is likely to reduce hallucinations and produce better responses.
 
 ![sample-hallucinations](../images/springai-rag/simple-client.gif)
 
-This tutorial demonstrates how Spring AI libraries can be used to implement Retrieval Augmented Generation. It uses the Qwen 2.5 model installed as an inference snap. RAG also needs an embedding model and a vector database for data ingestion. The tutorial uses ollama's nomic-embed-text model and the OpenSearch vector database, respectively.
+This tutorial demonstrates how Spring AI libraries are used to implement Retrieval Augmented Generation. It uses the Qwen 2.5 model installed as an inference snap. RAG also needs an embedding model and a vector database for data ingestion. The tutorial uses ollama's {pkg}`nomic-embed-text` model and the OpenSearch vector database, respectively.
 
 The front-end is written in HTML and Javascript, with an additional text-box that lets users ingest URLs while prompting.
 
@@ -19,147 +19,202 @@ The front-end is written in HTML and Javascript, with an additional text-box tha
 The demo in this tutorial is likely to consume significant compute resources.
 :::
 
+
 ## Set up the pre-requisites
 
 Setting up the environment for this tutorial involves installation of the following:
-1. The `devpack-for-spring` snap and the `spring-ai` content snap.
-2. The `qwen-vl` inference snap.
-3. The `ollama` snap.
-4. The `opensource` charm.
 
-### Install the `devpack-for-spring` snap and `spring-ai` content snap
+1. The {pkg}`devpack-for-spring` snap and the {pkg}`spring-ai` content snap.
+1. The {pkg}`qwen-vl` inference snap.
+1. The {pkg}`ollama` snap.
+1. The {pkg}`opensource` charm.
 
-Install `devpack-for-spring`:
-```bash
+
+### Install the {pkg}`devpack-for-spring` snap and {pkg}`spring-ai` content snap
+
+Install {pkg}`devpack-for-spring`:
+
+```{terminal}
+
 sudo snap install devpack-for-spring
 ```
 
 List the available content snaps:
-```bash
+
+```{terminal}
+
 devpack-for-spring snap list
 ```
 
-This tutorial will use Spring Boot 3.5.x and hence Spring 1.1.y. So, install `content-for-spring-ai-11`:
-```bash
+This tutorial uses Spring Boot 3.5.x and hence Spring 1.1.y. So, install {pkg}`content-for-spring-ai-11`:
+
+```{terminal}
+
 devpack-for-spring snap install content-for-spring-ai-11
 ```
 
-### Install the `qwen-vl` inference snap
 
-Install the `qwen-vl` snap from the `beta` channel:
-```bash
+### Install the {pkg}`qwen-vl` inference snap
+
+Install the {pkg}`qwen-vl` snap from the `beta` channel:
+
+```{terminal}
+
 sudo snap install qwen-vl --beta
 ```
 
-Run the `status` command to ensure it is up and running:
-```bash
+Run the {command}`status` command to ensure it is up and running:
+
+```{terminal}
+
 qwen-vl status
 ```
 
-### Install the `ollama` snap and launch the embedding model
 
-Install the `ollama` snap:
-```bash
+### Install the {pkg}`ollama` snap and launch the embedding model
+
+Install the {pkg}`ollama` snap:
+
+```{terminal}
+
 sudo snap install ollama
 ```
 
-The tutorial uses `nomic-embed-text` as a text-embedding model. So, lets pull and launch it:
-```bash
+The tutorial uses {pkg}`nomic-embed-text` as a text-embedding model. So, let's pull and launch it:
+
+```{terminal}
+
 ollama pull nomic-embed-text
 ```
 
-### Deploy the `opensource` charm
 
-OpenSearch is a production-grade vector database, and is deployed as a Charm. Though simpler alternatives may appear to better suit a tutorial, none of them are charmed. Juju makes it super-easy to set up TLS for OpenSearch, and get the credentials to be used by the Spring AI application.
+### Deploy the {pkg}`opensource` charm
+
+OpenSearch is a production-grade vector database and is deployed as a Charm. Though simpler alternatives may appear to better suit a tutorial, none of them are charmed. Juju makes it super-easy to set up TLS for OpenSearch and get the credentials to be used by the Spring AI application.
+
 
 #### Juju installation
-Install juju, if you don't already have it:
-```bash
+
+Install {pkg}`juju` (skip when already installed):
+
+```{terminal}
+
 sudo snap install juju
 ```
 
-#### Deploy `opensearch`
+
+#### Deploy {pkg}`opensearch`
 
 OpenSearch needs `vm.swappiness` set to 0:
-```bash
+
+```{terminal}
+
 sudo sysctl -w vm.swappiness=0
 ```
+
 :::{important}
-Note that this is a temporary setting. A restart would reset its value to the default.
+Note that this is a temporary setting. A restart resets its value to the default.
 :::
 
 Add a juju model:
-```bash
+
+```{terminal}
+
 juju add-model opensearch-model
 ```
 
-Deploy charms for `opensearch` and `self-signed-certificates` and integrate them:
-```bash
+Deploy charms for {pkg}`opensearch` and {pkg}`self-signed-certificates` and integrate them:
+
+```{terminal}
+
 juju deploy opensearch
 juju deploy self-signed-certificates
 juju integrate opensearch self-signed-certificates
 ```
-This should launch a Juju application named OpenSearch and set up TLS certificates to access it. Please give process this a few minutes to complete. Issuing `juju status` can help you track the state.
+
+This launches a Juju application named OpenSearch and sets up TLS certificates to access it. Give this process a few minutes to complete. To track the state, issue {command}`juju status`.
 
 :::{important}
-Eventually, `juju status` will show opensearch blocked on:
-```
+Eventually, {command}`juju status` shows opensearch blocked on:
+
+```{terminal}
+:output-only:
+
 1 or more 'replica' shards are not assigned, please scale your application up.
 ```
-This is addressed in section 1.4.4.
+
+This is addressed in {ref}`unblocking-opensearch`.
 :::
 
+
 #### Get credentials for opensearch
-We use the `data-integrator` charm for this purpose.
-```bash
+
+We use the {pkg}`data-integrator` charm for this purpose.
+
+```{terminal}
+
 juju deploy data-integrator --config index-name=demo-index --config extra-user-roles=admin
 juju integrate data-integrator opensearch
-juju run data-integrator/0 get-credentials 
+juju run data-integrator/0 get-credentials
 ```
 
-From the output of the `get-credentials` command, note the following:
-1. The `tls-ca` field holds two certificates. Copy them carefully to a file named `$HOME/os.pem`, ensuring that the leading whitespaces from the output are removed.
+From the output of the {command}`get-credentials` command, note the following:
 
-2. The `username`, `password` and `endpoint` fields.
+1. The `tls-ca` field holds two certificates. Copy them carefully to a file named {file}`$HOME/os.pem`, ensuring that the leading whitespaces from the output are removed.
+1. The `username`, `password`, and `endpoint` fields.
 
 Now, set the following environment variables as per the values noted above (the values used below are samples):
-```bash
+
+```{terminal}
+
 export OPENSEARCH_CA_CERT=$HOME/os.pem
 export OPENSEARCH_USERNAME=opensearch-client_5
 export OPENSEARCH_PASSWORD=anPgGF5uGDbmFmYqQ6mARhZ8ilOTTj58
 export OPENSEARCH_URI=https://10.29.231.224:9200
 ```
 
+
+(unblocking-opensearch)=
 #### Unblocking opensearch
 
-As noted before, opensearch may be blocked with the message:
-```none
+As noted before, opensearch is blocked with the message:
+
+```{terminal}
+:output-only:
+
 1 or more 'replica' shards are not assigned, please scale your application up.
 ```
 
-We do not want to scale up opensearch for this simple use-case. So, lets set the replicas to 0.
-```bash
-  curl --cacert $HOME/os.pem -u "$OPENSEARCH_USERNAME:$OPENSEARCH_PASSWORD" \
-        -X PUT "$OPENSEARCH_URI/demo-index/_settings" \
-        -H 'Content-Type: application/json' -d '{ "index": { "number_of_replicas": 0 } }'
+We do not want to scale up opensearch for this simple use-case. So, let's set the replicas to 0.
+
+```{terminal}
+
+curl --cacert $HOME/os.pem -u "$OPENSEARCH_USERNAME:$OPENSEARCH_PASSWORD" \
+      -X PUT "$OPENSEARCH_URI/demo-index/_settings" \
+      -H 'Content-Type: application/json' -d '{ "index": { "number_of_replicas": 0 } }'
 ```
-This must return `{"acknowledged": true}`, and opensearch should unblock eventually.
 
+This returns `{"acknowledged": true}`, and opensearch unblocks eventually.
 
-Before proceeding to the next step, ensure the `juju status` output is all green.
+Before proceeding to the next step, ensure the {command}`juju status` output is all green.
 
 ![juju-all-green](../images/springai-rag/green-juju.png)
 
+
 ## Developing a basic Spring AI RAG application
 
-### Bootstrapping a project
-Using devpack-for-spring, initialize a project that uses Spring Boot 3.5.X. Include the following dependencies:
-1. `web` - for creating a Spring web application
-2. `spring-ai-openai` - for interaction with the qwen model's OpenAI interface
-3. `spring-ai-ollama` - for interaction with the nomic-embed-text embedding model from ollama
-4. `spring-ai-vectordb-opensearch` - for interaction with opensearch
 
-```bash
+### Bootstrapping a project
+
+Using {command}`devpack-for-spring`, initialize a project that uses Spring Boot 3.5.X. Include the following dependencies:
+
+1. {pkg}`web` - for creating a Spring web application
+1. {pkg}`spring-ai-openai` - for interaction with the qwen model's OpenAI interface
+1. {pkg}`spring-ai-ollama` - for interaction with the {pkg}`nomic-embed-text` embedding model from ollama
+1. {pkg}`spring-ai-vectordb-opensearch` - for interaction with opensearch
+
+```{terminal}
+
 devpack-for-spring boot start \
     --path $PWD/rag-chat-client \
     --project gradle-project \
@@ -176,26 +231,30 @@ devpack-for-spring boot start \
     --java-version 21
 ```
 
+
 ### Define the basic abstractions
 
-Create Java `record`s representing questions (prompts), answers (responses) and ingested URLs. Also, create an `interface` for a chat-client.
+Create Java `record`s representing questions (prompts), answers (responses), and ingested URLs. Also, create an `interface` for a chat-client.
 
-__File__: src/main/java/demo/chatclient/rag/Question.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/Question.java`
+
 package demo.chatclient.rag;
 
 public record Question(String question) {}
 ```
 
-__File__: src/main/java/demo/chatclient/rag/Answer.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/Answer.java`
+
 package demo.chatclient.rag;
 
 public record Answer(String answer) {}
 ```
 
-__File__: src/main/java/demo/chatclient/rag/IngestRequest.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/IngestRequest.java`
+
 package demo.chatclient.rag;
 
 import java.util.List;
@@ -203,8 +262,9 @@ import java.util.List;
 public record IngestRequest(List<String> urls) {}
 ```
 
-__File__: src/main/java/demo/chatclient/rag/DemoChatClient.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/DemoChatClient.java`
+
 package demo.chatclient.rag;
 
 public interface DemoChatClient {
@@ -212,12 +272,14 @@ public interface DemoChatClient {
 }
 ```
 
+
 ### Define the Service classes
 
 Create Spring Boot Services for the chat client and the ingestion. These classes hold the core logic to handle prompts and URL ingestion requests.
 
-__File__: src/main/java/demo/chatclient/rag/IngestService.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/IngestService.java`
+
 package demo.chatclient.rag;
 
 import org.slf4j.Logger;
@@ -312,11 +374,12 @@ public class IngestService {
     public record IngestResult(int submitted, int indexed, int skipped) {}
 }
 ```
-The `ingest()` method is the entry point into `IngestService`. It gets the content of each URL, massages it by removing HTML tags and whitespaces, and passes it to `VectorStore.add()`. This method takes the text through the `ollama/nomic-embed-text` embedding model and stores the embeddings in the `opensearch` vector database. Though the connections to the embedding model and `opensearch` are not seen in the code, the application config in `application.properties` sets up this internal wiring in Spring AI.
 
+The `ingest()` method is the entry point into `IngestService`. It gets the content of each URL, massages it by removing HTML tags and whitespaces, and passes it to `VectorStore.add()`. This method takes the text through the {pkg}`ollama`/{pkg}`nomic-embed-text` embedding model and stores the embeddings in the {pkg}`opensearch` vector database. Though the connections to the embedding model and {pkg}`opensearch` are not seen in the code, the application config in {file}`application.properties` sets up this internal wiring in Spring AI.
 
-__File__: src/main/java/demo/chatclient/rag/DemoChatService.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/DemoChatService.java`
+
 package demo.chatclient.rag;
 
 import org.springframework.ai.chat.client.ChatClient;
@@ -377,14 +440,17 @@ public class DemoChatService implements DemoChatClient {
     }
 }
 ```
+
 Note the default system prompt defined in `static String SYSTEM`. This string gets applied to the prompt by default. The `askQuestion()` method is the entrypoint into the `DemoChatService` logic. This method, based on the question text, retrieves the top K (K Nearest Neighbors) matching documents from the vector database. The text in these entries is then passed to the Qwen model, along with the question.
+
 
 ### Define the Controller classes
 
 The `Controller`s define the REST endpoints and invoke `Service`s defined previously.
 
-__File__: src/main/java/demo/chatclient/rag/IngestController.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/IngestController.java`
+
 package demo.chatclient.rag;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -407,8 +473,9 @@ public class IngestController {
 }
 ```
 
-__File__: src/main/java/demo/chatclient/rag/DemoChatController.java
-```java
+```{code-block} java
+:caption: `src/main/java/demo/chatclient/rag/DemoChatController.java`
+
 package demo.chatclient.rag;
 
 import org.springframework.web.bind.annotation.PostMapping;
@@ -431,12 +498,14 @@ public class DemoChatController {
 }
 ```
 
+
 ### Define Spring AI configuration through properties files
 
 Given how much functionality this small application is able to provide, it is easy to guess that much of the ground-work is done by configuration-based wiring in Spring Boot and Spring AI. The two properties files below are hence a significant part of the project.
 
-__File__: src/main/resources/application.properties
-```properties
+```{code-block} properties
+:caption: `src/main/resources/application.properties`
+
 spring.application.name=rag-chat-client
 server.port=8080
 
@@ -469,35 +538,39 @@ app.rag.ingest.batch-size=16
 ```
 
 A few notes about the values used above:
- - The OpenAI base URL is reported by the `qwen-vl status` command.
 
- - The model id may be inferred using this command:
-   ```bash
+ - The OpenAI base URL is reported by the {command}`qwen-vl status` command.
+
+ - To infer the model id, use this command:
+
+   ```{terminal}
+
    curl http://localhost:8326/v3/models 2>/dev/null | jq | grep "id"
    ```
 
  - The Ollama base URL is a commonly known default value.
 
- - For Opensearch, you may define your own index name using OPENSEARCH_INDEX. The tutorial uses `url-docs` as default.
+ - To define a custom Opensearch index name, use OPENSEARCH_INDEX. The tutorial uses `url-docs` as default.
 
+We need this additional configuration to enable the application to connect to a TLS-secured OpenSearch instance. Note that this falls under a different profile named `tls`, which needs to be activated during execution.
 
-We need this additional configuration to enable the application to connect to a TLS-secured OpenSource instance. Please note that this falls under a different profile named `tls`, which needs to be activated during execution.
+```{code-block} properties
+:caption: `src/main/resources/application-tls.properties`
 
- __File__: src/main/resources/application-tls.properties
- ```properties
 # OpenSearch TLS profile, needed when talking to a TLS-secured OpenSearch
 # Activate with SPRING_PROFILES_ACTIVE=tls
 spring.ssl.bundle.pem.opensearch.truststore.certificate=file:${OPENSEARCH_CA_CERT}
 spring.ai.vectorstore.opensearch.ssl-bundle=opensearch
 ```
 
+
 ### HTML for the front-end
 
 Use the following HTML for the landing web-page.
 
-__File__: src/main/resources/static/index.html
+```{code-block} html
+:caption: `src/main/resources/static/index.html`
 
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -632,35 +705,44 @@ __File__: src/main/resources/static/index.html
 </html>
 ```
 
+
 ## Running the RAG chat client
 
-Install `openjdk-17-jdk` is you don't have it installed.
-```bash
+Install {pkg}`openjdk-17-jdk` (skip when already installed).
+
+```{terminal}
+
 sudo apt update && sudo apt install openjdk-17-jdk
 ```
 
 Run the RAG application:
-```bash
+
+```{terminal}
+
 SPRING_PROFILES_ACTIVE=tls ./gradlew bootRun
 ```
 
-The application should now be accessible in a browser at `https://localhost:8080`.
+The application is now accessible in a browser at `https://localhost:8080`.
 
 :::{important}
-As mentioned before, the `opensearch` application might get blocked again with this message:
-```
+As mentioned before, the {pkg}`opensearch` application might get blocked again with this message:
+
+```{terminal}
+:output-only:
+
 1 or more 'replica' shards are not assigned, please scale your application up.
 ```
-Please note that the index used now is `url-docs`. Run this command:
-```bash
-  curl --cacert $HOME/os.pem -u "$OPENSEARCH_USERNAME:$OPENSEARCH_PASSWORD" \
-        -X PUT "$OPENSEARCH_URI/url-docs/_settings" \
-        -H 'Content-Type: application/json' -d '{ "index": { "number_of_replicas": 0 } }'
+
+Note that the index used now is `url-docs`. Run this command:
+
+```{terminal}
+
+curl --cacert $HOME/os.pem -u "$OPENSEARCH_USERNAME:$OPENSEARCH_PASSWORD" \
+      -X PUT "$OPENSEARCH_URI/url-docs/_settings" \
+      -H 'Content-Type: application/json' -d '{ "index": { "number_of_replicas": 0 } }'
 ```
 :::
 
 Here is the screen-capture of a sample run.
 
 ![rag-client](../images/springai-rag/rag-client.gif)
-
-
