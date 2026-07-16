@@ -20,50 +20,42 @@ explanation/index
 Contribute documentation <howto/contribute-docs.md>
 :::
 
-**Ubuntu is a Linux-based operating system that provides a complete development platform supporting multiple programming languages and toolchains.**
+**Ubuntu is a Linux-based operating system and development platform.** Python, Go, Rust, GCC, Clang, .NET, Java, and Zig toolchains are available through Ubuntu repositories and snaps, with build tools, debuggers, linters, formatters, and IDEs.
 
-**Each supported toolchain integrates with Ubuntu's package management and tooling ecosystem.** Python, Go, Rust, GCC, Clang, .NET, Java, and Zig are available through Ubuntu repositories and snaps, together with build tools, debuggers, linters, formatters, and IDEs (integrated development environments).
-
-**This documentation reduces the time needed to configure a working development environment on Ubuntu.** It covers toolchain installation, first-program tutorials, version-reference data, and background context, providing a path from a fresh Ubuntu Desktop install to a productive development setup.
-
-**The documentation is for developers who use or plan to use Ubuntu Desktop as their workstation.** It does not teach programming; it shows how to install toolchains, build first programs, and use supporting tools on Ubuntu Desktop. No prior Ubuntu experience is required.
+**This documentation guides developers from a fresh Ubuntu Desktop install to a productive development setup.** It covers toolchain installation, first-program tutorials, version-reference data, and background context. It does not teach programming; no prior Ubuntu experience is required.
 
 
 ## In this documentation
 
-The following sections map the documentation by development lifecycle stage — from environment setup and toolchain installation through active development to software distribution.
+The following sections map the documentation by lifecycle stage — from platform basics and setup through toolchain installation and active development — so you can find content by where it falls in your workflow.
 
 
-### Initialization and setup
+### Introduction
 
-Setting up development on Ubuntu Desktop involves platform-level choices and toolchain-specific configuration.
+Pages covering platform-level setup and Ubuntu-specific concepts that apply across all toolchains.
 
-* **System preparation**: {ref}`Installing Ubuntu Desktop for developers <install-ubuntu>` • {ref}`Using Git version control on Ubuntu <use-git>`
-* **Editor selection**: {ref}`Integrated developer environments <ides>`
-* **Toolchain configuration**: {ref}`Install and set up Python <install-python>` • {ref}`Install and set up Go <install-golang>` • {ref}`Install and set up Rust <install-rust>` • {ref}`Install and set up GCC <install-gcc>` • {ref}`Install and set up Clang <install-clang>` • {ref}`Install and set up .NET <install-dotnet>` • {ref}`Install and set up Java <install-java>` • {ref}`Install and set up Zig <install-zig>`
+* **The basics**: {ref}`Overview <explanation>` • {ref}`Installing Ubuntu Desktop for developers <install-ubuntu>` • {ref}`Using Git version control on Ubuntu <use-git>` • {ref}`Integrated developer environments <ides>`
 
 
-### Active development
+### Language toolchains and support
 
-These pages cover the toolchain-specific workflows for building, running, and debugging code on Ubuntu Desktop.
+Each supported language has its own installation guide, first-program tutorial, and version availability reference.
 
-* **First programs**: {ref}`Develop with Python <use-python>` • {ref}`Develop with Go <use-go>` • {ref}`Develop with Rust <use-rust>` • {ref}`Develop with GCC <use-gcc>` • {ref}`Develop C and C++ with Clang <use-clang>` • {ref}`Develop with .NET <use-dotnet>` • {ref}`Develop with Java <use-java>` • {ref}`Develop with Zig <use-zig>`
-* **.NET ecosystem**: {ref}`Introduction to the .NET toolchain <dotnet-introduction>` • {ref}`Debugging with .NET <debugging-with-dotnet>`
-* **Java ecosystem**: {ref}`Compile Spring Boot apps to native executables <use-graalvm>` • {ref}`GraalVM native compilation <graalvm-introduction>` • {ref}`Fast start for Spring Boot apps with CRaC <use-crac>`
-
-
-### Evolution and packaging
-
-This section covers distributing software built on Ubuntu Desktop as a Debian package, snap, or container image.
-
-* **Software distribution**: {ref}`Packaging software <packaging>`
+* **Python**: {ref}`Installation and set-up <install-python>` | {ref}`Tutorial <use-python>` | {ref}`Available versions <python-toolchain-availability>`
+* **Go**: {ref}`Installation and set-up <install-golang>` | {ref}`Tutorial <use-go>` | {ref}`Available versions <go-toolchain-availability>`
+* **Rust**: {ref}`Installation and set-up <install-rust>` | {ref}`Tutorial <use-rust>` | {ref}`Available versions <rust-toolchain-availability>`
+* **GCC**: {ref}`Installation and set-up <install-gcc>` | {ref}`Tutorial <use-gcc>` | {ref}`Available versions <gcc-toolchain-availability>`
+* **Clang**: {ref}`Installation and set-up <install-clang>` | {ref}`Tutorial <use-clang>` | {ref}`Available versions <llvm-toolchain-availability>`
+* **.NET**: {ref}`Introduction to the .NET toolchain <dotnet-introduction>` | {ref}`Installation and set-up <install-dotnet>` | {ref}`Tutorial <use-dotnet>` | {ref}`Debugging <debugging-with-dotnet>` | {ref}`Available versions <dotnet-toolchain-availability>`
+* **Java**: {ref}`Installation and set-up <install-java>` | {ref}`Tutorial <use-java>` | {ref}`GraalVM native compilation <graalvm-introduction>` | {ref}`Compile Spring Boot apps to native executables <use-graalvm>` | {ref}`Fast start for Spring Boot apps with CRaC <use-crac>` | {ref}`Available versions <java-toolchain-availability>`
+* **Zig**: {ref}`Installation and set-up <install-zig>` | {ref}`Tutorial <use-zig>` | {ref}`Available versions <zig-toolchain-availability>`
 
 
-### Resources and references
+### Packaging and distribution
 
-Version matrices for each supported toolchain, showing what is available across Ubuntu releases.
+Distribute software built on Ubuntu as packages, snaps, or container images.
 
-* **Toolchain availability**: {ref}`Python <python-toolchain-availability>` • {ref}`Go <go-toolchain-availability>` • {ref}`Rust <rust-toolchain-availability>` • {ref}`GCC <gcc-toolchain-availability>` • {ref}`LLVM/Clang <llvm-toolchain-availability>` • {ref}`.NET <dotnet-toolchain-availability>` • {ref}`Java <java-toolchain-availability>` • {ref}`Zig <zig-toolchain-availability>`
+* **Packaging**: {ref}`Packaging software <packaging>`
 
 
 ## How this documentation is organized
