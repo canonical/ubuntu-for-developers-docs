@@ -47,3 +47,14 @@ ZLS
 zls
 libc
 musl
+devpack
+devpacks
+toctree
+toctrees
+howto
+onboarding
+rediraffe
+dirs
+scaffolded
+devcontainer
+devcontainers
