@@ -170,7 +170,7 @@ they're not in the sidebar toctree.
 ## 8. URL stability & redirects
 
 Existing URLs are preserved where possible. When files move, redirects are
-configured via [rediraffe](https://github.com/sphinx-contrib/rediraffe), a
+configured via [rediraffe](https://github.com/sphinx-doc/sphinxext-rediraffe), a
 Sphinx extension that generates HTML redirect pages.
 
 ### Configuration (in `docs/conf.py`)
