@@ -16,6 +16,7 @@ tutorials/index
 howto/index
 reference/index
 explanation/index
+toolchains/index
 
 Contribute documentation <howto/contribute-docs.md>
 :::
@@ -27,7 +28,7 @@ Contribute documentation <howto/contribute-docs.md>
 
 ## In this documentation
 
-The following sections map the documentation by lifecycle stage — from platform basics and setup through toolchain installation and active development — so you can find content by where it falls in your workflow.
+The following sections map the documentation by lifecycle stage – from platform basics and setup through toolchain installation and active development – so you can find content by where it falls in your workflow.
 
 
 ### Introduction
@@ -41,14 +42,14 @@ Pages covering platform-level setup and Ubuntu-specific concepts that apply acro
 
 Each supported language has its own installation guide, first-program tutorial, and version availability reference.
 
-* **Python**: {ref}`Installation and set-up <install-python>` | {ref}`Tutorial <use-python>` | {ref}`Available versions <python-toolchain-availability>`
-* **Go**: {ref}`Installation and set-up <install-golang>` | {ref}`Tutorial <use-go>` | {ref}`Available versions <go-toolchain-availability>`
-* **Rust**: {ref}`Installation and set-up <install-rust>` | {ref}`Tutorial <use-rust>` | {ref}`Available versions <rust-toolchain-availability>`
-* **GCC**: {ref}`Installation and set-up <install-gcc>` | {ref}`Tutorial <use-gcc>` | {ref}`Available versions <gcc-toolchain-availability>`
-* **Clang**: {ref}`Installation and set-up <install-clang>` | {ref}`Tutorial <use-clang>` | {ref}`Available versions <llvm-toolchain-availability>`
-* **.NET**: {ref}`Introduction to the .NET toolchain <dotnet-introduction>` | {ref}`Installation and set-up <install-dotnet>` | {ref}`Tutorial <use-dotnet>` | {ref}`Debugging <debugging-with-dotnet>` | {ref}`Available versions <dotnet-toolchain-availability>`
-* **Java**: {ref}`Installation and set-up <install-java>` | {ref}`Tutorial <use-java>` | {ref}`GraalVM native compilation <graalvm-introduction>` | {ref}`Compile Spring Boot apps to native executables <use-graalvm>` | {ref}`Fast start for Spring Boot apps with CRaC <use-crac>` | {ref}`Available versions <java-toolchain-availability>`
-* **Zig**: {ref}`Installation and set-up <install-zig>` | {ref}`Tutorial <use-zig>` | {ref}`Available versions <zig-toolchain-availability>`
+* **{ref}`Python <python-on-ubuntu>`**: {ref}`Install <install-python>` | {ref}`Tutorial <use-python>` | {ref}`Available versions <python-toolchain-availability>`
+* **{ref}`Go <go-on-ubuntu>`**: {ref}`Install <install-golang>` | {ref}`Tutorial <use-go>` | {ref}`Available versions <go-toolchain-availability>`
+* **{ref}`Rust <rust-on-ubuntu>`**: {ref}`Install <install-rust>` | {ref}`Tutorial <use-rust>` | {ref}`Available versions <rust-toolchain-availability>`
+* **{ref}`GCC <gcc-on-ubuntu>`**: {ref}`Install <install-gcc>` | {ref}`Tutorial <use-gcc>` | {ref}`Available versions <gcc-toolchain-availability>`
+* **{ref}`Clang <clang-on-ubuntu>`**: {ref}`Install <install-clang>` | {ref}`Tutorial <use-clang>` | {ref}`Available versions <llvm-toolchain-availability>`
+* **{ref}`.NET <dotnet-on-ubuntu>`**: {ref}`Install <install-dotnet>` | {ref}`Tutorial <use-dotnet>` | {ref}`Available versions <dotnet-toolchain-availability>` | {ref}`Debugging <debugging-with-dotnet>`
+* **{ref}`Java <java-on-ubuntu>`**: {ref}`Install <install-java>` | {ref}`Tutorial <use-java>` | {ref}`Available versions <java-toolchain-availability>` | {ref}`Advanced <java-advanced>`
+* **{ref}`Zig <zig-on-ubuntu>`**: {ref}`Install <install-zig>` | {ref}`Tutorial <use-zig>` | {ref}`Available versions <zig-toolchain-availability>`
 
 
 ### Packaging and distribution
@@ -83,7 +84,7 @@ Ubuntu Desktop is part of the Ubuntu family of open-source projects, developed a
 
 ### Governance and policies
 
-* [Code of conduct](https://ubuntu.com/community/ethos/code-of-conduct)
+* {external+project:ref}`code-of-conduct`
 
 
 ### Commercial support
