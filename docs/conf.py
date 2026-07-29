@@ -105,17 +105,22 @@ html_context = {
     "display_contributors": True,
     # Controls the time frame for showing the contributors
     # "display_contributors_since": ""
-
     # Links for the "Ubuntu docs" dropdown in the site header
     #  - comment out "your" docs set, duh! ;-)
     "ubuntu_docs": [
         # {"title": "Ubuntu for developers", "url": "https://documentation.ubuntu.com/ubuntu-for-developers/"},
-        {"title": "Ubuntu Desktop",        "url": "https://documentation.ubuntu.com/desktop/"},
-        {"title": "Ubuntu Server",         "url": "https://ubuntu.com/server/docs/"},
-        {"title": "Ubuntu on WSL",         "url": "https://documentation.ubuntu.com/wsl/latest/"},
-        {"title": "Ubuntu release notes",  "url": "https://documentation.ubuntu.com/release-notes/"},
-        {"title": "Ubuntu project",        "url": "https://documentation.ubuntu.com/project/"},
-        {"title": "Ubuntu Pro",            "url": "https://documentation.ubuntu.com/pro/"},
+        {"title": "Ubuntu Desktop", "url": "https://documentation.ubuntu.com/desktop/"},
+        {"title": "Ubuntu Server", "url": "https://ubuntu.com/server/docs/"},
+        {
+            "title": "Ubuntu on WSL",
+            "url": "https://documentation.ubuntu.com/wsl/latest/",
+        },
+        {
+            "title": "Ubuntu release notes",
+            "url": "https://documentation.ubuntu.com/release-notes/",
+        },
+        {"title": "Ubuntu project", "url": "https://documentation.ubuntu.com/project/"},
+        {"title": "Ubuntu Pro", "url": "https://documentation.ubuntu.com/pro/"},
     ],
 }
 
@@ -149,9 +154,9 @@ templates_path = [".sphinx/_templates"]
 # For example: 'explanation/old-name.html': '../how-to/prettify.html',
 # You can also configure redirects in the Read the Docs project dashboard
 # (see https://docs.readthedocs.io/en/stable/guides/redirects.html).
-# To enable redirect generation, add 'sphinx_rerediraffe' to extensions
-# and uncomment the following:
-# rediraffe_redirects = {}
+rediraffe_branch = "main"
+rediraffe_redirects = "redirects.txt"
+rediraffe_dir_only = True
 
 ############################################################
 # Link checker exceptions
@@ -189,7 +194,7 @@ myst_enable_extensions = {"colon_fence"}
 # You must include the canonical_sphinx extension here.
 # If you need more extensions, add them here (in addition to canonical_sphinx).
 extensions = [
-    # Upstream extensions (loaded explicitly — previously auto-bundled)
+    # Upstream extensions (loaded explicitly – previously auto-bundled)
     "canonical_sphinx",
     "sphinx_roles",
     "sphinx_terminal",
@@ -201,6 +206,7 @@ extensions = [
     "sphinx.ext.extlinks",
     "sphinxcontrib.mermaid",
     "sphinx_llm.txt",
+    "sphinx_rerediraffe",
 ]
 
 myst_fence_as_directive = ["mermaid"]
@@ -278,6 +284,7 @@ intersphinx_mapping = {
     "ubuntu-server": ("https://documentation.ubuntu.com/server/", None),
     "launchpad": ("https://documentation.ubuntu.com/launchpad/en/latest/", None),
     "adsys": ("https://documentation.ubuntu.com/adsys/stable/", None),
+    "project": ("https://ubuntu.com/project/docs/", None),
 }
 
 # Redefine the Sphinx 'command' role to behave/render like 'literal'
