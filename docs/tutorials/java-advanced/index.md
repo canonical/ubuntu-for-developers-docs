@@ -1,7 +1,7 @@
 ---
 myst:
   html_meta:
-    description: "Advanced Java development tutorials: GraalVM and CRaC on Ubuntu."
+    description: "Advanced Java development tutorials: GraalVM, CRaC, and devpack-for-spring on Ubuntu."
 ---
 
 (java-advanced)=
@@ -12,6 +12,7 @@ These tutorials cover advanced Java development topics on Ubuntu, beyond the bas
 :::{toctree}
 :maxdepth: 1
 
+Devpack for Spring <devpack-for-spring>
 Native compile with GraalVM <graalvm-use>
 Checkpoint/Restore with OpenJDK CRaC <crac-use>
 :::

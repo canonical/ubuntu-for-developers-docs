@@ -32,5 +32,6 @@ java-advanced/index
 
 - {ref}`Native compile with GraalVM <use-graalvm>`
 - {ref}`Checkpoint/Restore with OpenJDK CRaC <use-crac>`
+- {ref}`Devpack for Spring <devpack-for-spring>`
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.
