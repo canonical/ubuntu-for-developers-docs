@@ -24,14 +24,8 @@ Develop with Clang <clang-use>
 Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Develop with Zig <zig-use>
-java-advanced/index
+Native compile with GraalVM <graalvm-use>
+Checkpoint/Restore with OpenJDK CRaC <crac-use>
 :::
-
-
-## Java -- advanced
-
-- {ref}`Native compile with GraalVM <use-graalvm>`
-- {ref}`Checkpoint/Restore with OpenJDK CRaC <use-crac>`
-- {ref}`Devpack for Spring <devpack-for-spring>`
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.

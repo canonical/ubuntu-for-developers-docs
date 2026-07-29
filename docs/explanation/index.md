@@ -61,14 +61,3 @@ An introduction to GraalVM and native-image technology, its advantages and limit
 
 graalvm-introduction
 :::
-
-
-## Devpacks
-
-What devpacks are and how they work.
-
-:::{toctree}
-:maxdepth: 1
-
-devpacks
-:::
