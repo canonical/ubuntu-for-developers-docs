@@ -12,7 +12,7 @@ This guide explains how to install Go and set up a development environment on Ub
 
 ## Installing and setting up Go
 
-Go includes the `go` command, a compiler and other tools. You can install Go as a Debian package or as a snap. Snap provides a larger number of Go versions but — unlike a Debian package — these cannot be installed in a Docker container.
+Go includes the `go` command, a compiler and other tools. You can install Go as a Debian package or as a snap. Snap provides a larger number of Go versions but – unlike a Debian package – these cannot be installed in a Docker container.
 
 :::{note}
 See [Pre-compiled Go binaries](#precompiled-go-binaries) for instructions on how to install Go without a package manager.
