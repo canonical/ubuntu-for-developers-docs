@@ -25,6 +25,7 @@ Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Develop with Zig <zig-use>
 java-advanced/index
+rust-advanced/index
 :::
 
 
@@ -33,5 +34,10 @@ java-advanced/index
 - {ref}`Native compile with GraalVM <use-graalvm>`
 - {ref}`Checkpoint/Restore with OpenJDK CRaC <use-crac>`
 - {ref}`Devpack for Spring <devpack-for-spring>`
+
+
+## Rust -- advanced
+
+- {ref}`Devpack for Rust <devpack-for-rust>`
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.

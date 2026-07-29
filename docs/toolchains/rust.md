@@ -13,3 +13,13 @@ myst:
 - {ref}`Install the Rust toolchain <install-rust>`
 - {ref}`Develop with Rust <use-rust>`
 - {ref}`Available versions <rust-toolchain-availability>`
+
+
+## Advanced
+
+- {ref}`Devpack for Rust <devpack-for-rust>` – interactive wizard for toolchain, IDE, and CLI tool setup
+
+
+## What next
+
+- For the general devpack concept, see {ref}`devpacks`.
