@@ -19,3 +19,9 @@ myst:
 
 - {ref}`GraalVM native compilation <graalvm-introduction>` – {ref}`compile Spring Boot apps to native executables <use-graalvm>`
 - {ref}`Fast start for Spring Boot apps with CRaC <use-crac>`
+- {ref}`Devpack for Spring <devpack-for-spring>` – automated setup, scaffolding, and library management
+
+
+## What next
+
+- For the general devpack concept, see {ref}`devpacks`.
