@@ -58,3 +58,8 @@ dirs
 scaffolded
 devcontainer
 devcontainers
+subcommands
+ripgrep
+ksh
+csh
+Zsh

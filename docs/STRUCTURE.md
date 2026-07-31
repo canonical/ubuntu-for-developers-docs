@@ -90,7 +90,8 @@ Current sub-toctrees:
 
 - `explanation/index.md`: ".NET basics", "GraalVM native image", "Devpacks"
 - `tutorials/index.md`: "Java – Advanced" (graalvm-use, crac-use,
-  devpack-for-spring, springai-basic, springai-rag, spring-ai-tool-calling)
+  devpack-for-spring, springai-basic, springai-rag, spring-ai-tool-calling),
+  "Rust – Advanced" (devpack-for-rust)
 
 ## 4. Toolchain landing pages ("little homepages")
 
