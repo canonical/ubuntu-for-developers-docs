@@ -9,7 +9,7 @@ myst:
 
 Every large language model is trained on a corpus of data. There may be prompts that relate to the knowledge of a topic which was not sufficiently covered by the corpus. This often causes hallucinations in models, generating factually incorrect responses. Retrieval Augmented Generation (RAG) lets the user ingest additional information into the model context. The hence expanded model context is likely to reduce hallucinations and produce better responses.
 
-![sample-hallucinations](../images/springai-rag/simple-client.gif)
+![sample-hallucinations](../../../images/springai-rag/simple-client.gif)
 
 This tutorial demonstrates how Spring AI libraries are used to implement Retrieval Augmented Generation. It uses the Qwen 2.5 model installed as an inference snap. RAG also needs an embedding model and a vector database for data ingestion. The tutorial uses ollama's {pkg}`nomic-embed-text` model and the OpenSearch vector database, respectively.
 
@@ -198,7 +198,7 @@ This returns `{"acknowledged": true}`, and opensearch unblocks eventually.
 
 Before proceeding to the next step, ensure the {command}`juju status` output is all green.
 
-![juju-all-green](../images/springai-rag/green-juju.png)
+![juju-all-green](../../../images/springai-rag/green-juju.png)
 
 
 ## Developing a basic Spring AI RAG application
@@ -745,4 +745,4 @@ curl --cacert $HOME/os.pem -u "$OPENSEARCH_USERNAME:$OPENSEARCH_PASSWORD" \
 
 Here is the screen-capture of a sample run.
 
-![rag-client](../images/springai-rag/rag-client.gif)
+![rag-client](../../../images/springai-rag/rag-client.gif)
