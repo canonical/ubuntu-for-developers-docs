@@ -25,7 +25,6 @@ Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Develop with Zig <zig-use>
 java-advanced/index
-Develop an LLM chat-client with Spring AI <springai-basic>
 :::
 
 
@@ -34,5 +33,6 @@ Develop an LLM chat-client with Spring AI <springai-basic>
 - {ref}`Native compile with GraalVM <use-graalvm>`
 - {ref}`Checkpoint/Restore with OpenJDK CRaC <use-crac>`
 - {ref}`Devpack for Spring <devpack-for-spring>`
+- {ref}`Develop an LLM chat-client with Spring AI <springai-basic>`
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.

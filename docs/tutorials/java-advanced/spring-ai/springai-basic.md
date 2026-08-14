@@ -77,7 +77,7 @@ The {pkg}`content-for-spring-ai-11` snap installs Spring AI 1.1.X, which is comp
 
 To initialize a Spring Boot and Spring AI project, use {command}`devpack-for-spring`'s CLI wizard.
 
-![spring-ai-init](../images/spring-ai-init.gif)
+![spring-ai-init](../../../images/spring-ai-init.gif)
 
 Alternatively, initialize it using this command:
 
@@ -351,4 +351,4 @@ A successful launch produces a log message indicating the application started. N
 
 Open `http://localhost:8080` in a browser to use the chat-client. A sample interaction is captured below:
 
-![chat-client-interaction](../images/chat-client.gif)
+![chat-client-interaction](../../../images/chat-client.gif)
