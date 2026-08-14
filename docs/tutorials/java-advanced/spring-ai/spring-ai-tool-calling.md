@@ -31,7 +31,7 @@ The `@Tool` methods belong to a Spring bean class annotated as `@Component`, who
 
 Here is a basic diagram that depicts the tool-calling protocol with Spring AI.
 
-![spring-ai-tool-calling](../images/springai-tools/spring-ai-tool-calling.png)
+![spring-ai-tool-calling](../../../images/springai-tools/spring-ai-tool-calling.png)
 
 
 ## An LLM chat-client with tool calling
