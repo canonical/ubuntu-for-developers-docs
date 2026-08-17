@@ -7,9 +7,11 @@ myst:
 (springai-rag)=
 # Implementing Retrieval Augmented Generation with Spring AI
 
-Every large language model is trained on a corpus of data. There may be prompts that relate to the knowledge of a topic which was not sufficiently covered by the corpus. This often causes hallucinations in models, generating factually incorrect responses. Retrieval Augmented Generation (RAG) lets the user ingest additional information into the model context. The hence expanded model context is likely to reduce hallucinations and produce better responses.
+Every large language model is trained on a corpus of data. There may be prompts that relate to the knowledge of a topic which was not sufficiently covered by the corpus. This often causes hallucinations in models, generating factually incorrect responses.
 
 ![sample-hallucinations](../../../images/springai-rag/simple-client.gif)
+
+Retrieval Augmented Generation (RAG) lets the user ingest additional information into the model context. The hence expanded model context is likely to reduce hallucinations and produce better responses.
 
 This tutorial demonstrates how Spring AI libraries are used to implement Retrieval Augmented Generation. It uses the Qwen 2.5 model installed as an inference snap. RAG also needs an embedding model and a vector database for data ingestion. The tutorial uses ollama's {pkg}`nomic-embed-text` model and the OpenSearch vector database, respectively.
 
@@ -161,7 +163,7 @@ juju run data-integrator/0 get-credentials
 From the output of the {command}`get-credentials` command, note the following:
 
 1. The `tls-ca` field holds two certificates. Copy them carefully to a file named {file}`$HOME/os.pem`, ensuring that the leading whitespaces from the output are removed.
-1. The `username`, `password`, and `endpoint` fields.
+2. The `username`, `password`, and `endpoint` fields.
 
 Now, set the following environment variables as per the values noted above (the values used below are samples):
 
