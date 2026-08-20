@@ -19,13 +19,18 @@ GUIs
 html
 LLM
 LLMs
+Javascript
+javascript
 Makefile
+Ollama
+ollama
 PhpStorm
 PyCharm
 pyenv
 pytest
 reformats
 Qwen
+qwen
 RubyMine
 Runtimes
 RustRover
@@ -62,3 +67,8 @@ dirs
 scaffolded
 devcontainer
 devcontainers
+Qwen
+qwen
+OpenAI
+openai
+
