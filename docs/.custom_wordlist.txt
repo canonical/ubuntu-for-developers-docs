@@ -17,6 +17,8 @@ GoLand
 Gradle
 GUIs
 html
+LLM
+LLMs
 Javascript
 javascript
 Makefile
@@ -33,6 +35,7 @@ RubyMine
 Runtimes
 RustRover
 Rustup
+rmadison
 Quokka
 SDKs
 src

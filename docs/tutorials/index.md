@@ -33,6 +33,7 @@ java-advanced/index
 - {ref}`Native compile with GraalVM <use-graalvm>`
 - {ref}`Checkpoint/Restore with OpenJDK CRaC <use-crac>`
 - {ref}`Devpack for Spring <devpack-for-spring>`
+- {ref}`Implement tool calling with Spring AI <spring-ai-tool-calling>`
 - {ref}`Implement retrieval-augmented generation with Spring AI <springai-rag>`
 - {ref}`Develop an LLM chat-client with Spring AI <springai-basic>`
 

@@ -12,6 +12,7 @@ These tutorials demonstrate how to build LLM-powered applications with Spring AI
 :::{toctree}
 :maxdepth: 1
 
+Implement tool calling with Spring AI <spring-ai-tool-calling>
 Implement retrieval-augmented generation with Spring AI <springai-rag>
 Develop an LLM chat-client with Spring AI <springai-basic>
 :::
