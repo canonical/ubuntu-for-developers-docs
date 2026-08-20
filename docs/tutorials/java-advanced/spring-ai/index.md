@@ -13,4 +13,5 @@ These tutorials demonstrate how to build LLM-powered applications with Spring AI
 :maxdepth: 1
 
 Implement retrieval-augmented generation with Spring AI <springai-rag>
+Develop an LLM chat-client with Spring AI <springai-basic>
 :::

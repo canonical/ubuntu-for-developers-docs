@@ -64,3 +64,8 @@ dirs
 scaffolded
 devcontainer
 devcontainers
+Qwen
+qwen
+OpenAI
+openai
+
