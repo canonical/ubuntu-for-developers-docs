@@ -15,8 +15,13 @@ The [`go` snap](https://snapcraft.io/go) let's you install the following Golang 
 
 | Golang Version | Snap Channel |
 | --- | --- |
-| 1.25 | `latest/edge` |
-| 1.24 | `1.24/stable`, `latest/stable`  |
+| 1.26 | `latest/edge` |
+| 1.26 (FIPS certified) | `1.26-fips/stable` |
+| 1.26 | `1.26/stable` |
+| 1.25 (FIPS certified) | `1.25-fips/stable` |
+| 1.25 | `1.25/stable` |
+| 1.24 (FIPS certified) | `1.24-fips/stable` |
+| 1.24 | `1.24/stable` |
 | 1.23 (FIPS certified) | `1.23-fips/stable` |
 | 1.23 | `1.23/stable` |
 | 1.22 (FIPS certified) | `1.22-fips/stable` |
@@ -46,6 +51,7 @@ The [`go` snap](https://snapcraft.io/go) let's you install the following Golang 
 
 | Ubuntu version | available Golang versions | {lpsrc}`golang-defaults` version | 
 | --- | --- | --- |
+| 26.04 (Resolute Raccoon)     | 1.23, 1.24, 1.25, **1.26** | 1.26 |
 | 25.10 (Questing Quokka)     | 1.23, **1.24** | 1.24 |
 | 25.04 (Plucky Puffin)       | 1.23, **1.24** | 1.24 |
 | 24.10 (Oracular Oriole)     | **1.22**, **1.23** | 1.23 |
