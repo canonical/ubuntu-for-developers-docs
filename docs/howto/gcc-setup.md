@@ -7,7 +7,7 @@ myst:
 (install-gcc)=
 # How to set up a development environment for GCC on Ubuntu
 
-This guide explains how to install GCC and related tooling on Ubuntu Desktop. The [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a set of compilers for programming languages, including C, C++, Assembly, and many more. It is the {spellexception}`de facto` standard in Linux environments and is used to compile both the GNU toolchain and the Linux kernel.
+This guide explains how to install GCC and related tooling on Ubuntu Desktop. The [GNU Compiler Collection (GCC)](https://gcc.gnu.org/) is a set of compilers for programming languages, including C, C++, Assembly, and many more. It is the standard in Linux environments and is used to compile both the GNU toolchain and the Linux kernel.
 
 This guide shows how to install GCC and related tooling, including a build system and debuggers, on Ubuntu Desktop.
 
@@ -50,7 +50,7 @@ You may see a different version number from the one listed here.  That is not a 
 Some developers prefer advanced text editors such as Vim, Codium, or Visual Studio Code with [Language Server Protocol (LSP)](https://langserver.org/) plug-ins for a lightweight and streamlined development experience.
 
 [Vim with LSP](https://www.vim.org/)
-: A mode-driven text editor with powerful editing features. Combined with an LSP, such as [{spellexception}`ccls`](https://github.com/MaskRay/ccls), it offers code completion, linting, navigation, and more.
+: A mode-driven text editor with powerful editing features. Combined with an LSP, such as [{pkg}`ccls`](https://github.com/MaskRay/ccls), it offers code completion, linting, navigation, and more.
 
   Install with:
 
@@ -60,7 +60,7 @@ Some developers prefer advanced text editors such as Vim, Codium, or Visual Stud
 
   sudo apt install -y vim ccls
   ```
-  Refer to the [{spellexception}`ccls` editor configuration instructions](https://github.com/MaskRay/ccls/wiki/Editor-Configuration) for Vim LSP setup.
+  Refer to the [{pkg}`ccls` editor configuration instructions](https://github.com/MaskRay/ccls/wiki/Editor-Configuration) for Vim LSP setup.
 
 [Codium](https://vscodium.com/)
 : The freely-licensed binary distribution of Microsoft’s Visual Studio Code. It includes extensive C/C++ support out of the box, and numerous extensions available from the open-source [Open VSX](https://open-vsx.org/) registry provide support for additional functionality for coding with C. For example, the all-in-one [C/C++ Extension Pack](https://open-vsx.org/extension/franneck94/vscode-c-cpp-dev-extension-pack).
@@ -135,7 +135,7 @@ Other developers enjoy the full support offered by Integrated Development Enviro
 
 ### Debuggers, profilers, and other tooling
 
-The standard debugger developed for GCC is the [GNU Debugger (GDB)](https://sourceware.org/gdb/). Other tools, such as [`gprof`](https://sourceware.org/binutils/docs/gprof/) (part of {pkg}`binutils`) and [{spellexception}`Valgrind`](https://valgrind.org/) provide support for profiling and advanced dynamic analysis.
+The standard debugger developed for GCC is the [GNU Debugger (GDB)](https://sourceware.org/gdb/). Other tools, such as [`gprof`](https://sourceware.org/binutils/docs/gprof/) (part of {pkg}`binutils`) and [Valgrind](https://valgrind.org/) provide support for profiling and advanced dynamic analysis.
 
 Install with:
 
@@ -148,7 +148,7 @@ sudo apt install -y gdb valgrind
 
 (The {pkg}`binutils` package is installed automatically with {pkg}`gcc`.)
 
-See the [GDB manual](https://sourceware.org/gdb/current/onlinedocs/gdb.html/) and [{spellexception}`Valgrind` documentation](https://valgrind.org/docs/manual/quick-start.html) for more information about how to troubleshoot your programs.
+See the [GDB manual](https://sourceware.org/gdb/current/onlinedocs/gdb.html/) and [Valgrind documentation](https://valgrind.org/docs/manual/quick-start.html) for more information about how to troubleshoot your programs.
 
 ### Build systems
 

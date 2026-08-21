@@ -870,7 +870,7 @@ The following popular .NET extensions are available for VS Code:
   * - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp):
     - Base language support for C#
     - free
-  * - [C# {spellexception}`Dev` Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
+  * - [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
     - Extended language support and builds on top of the "C#" extension
     - - free for individuals, academia, and open-source development
       - paid for organizations

@@ -17,7 +17,7 @@ Popular build system choices for C and C++ include these, all of which can be co
 - **CMake** - Cross-platform build generator, most popular for modern C/C++ (`sudo apt install cmake`)
 - **Meson** - Fast, user-friendly build system (`sudo apt install meson ninja-build`)
 - **Make** - Traditional build automation (`sudo apt install make`)
-- **{spellexception}`Autotools`** - Traditional GNU build system for legacy projects (`sudo apt install autoconf automake libtool`)
+- **Autotools** - Traditional GNU build system for legacy projects (`sudo apt install autoconf automake libtool`)
 
 This tutorial shows how to use Clang directly, as well as a simple CMake project.
 
@@ -110,7 +110,7 @@ There are three commands we're using in this definition:
 
 By default, the order that CMake uses when searching for compilers results in {ref}`GCC <use-gcc>` being detected first. To use Clang, specify that directly when we configure the build.
 
-CMake is a two-stage build system, where the first stage generates lower-level build files (by default, GNU {spellexception}`makefiles` on Ubuntu), and the second executes those. During the first stage we can specify extra configuration options for the build. To instruct CMake to use Clang, run:
+CMake is a two-stage build system, where the first stage generates lower-level build files (by default, GNU makefiles on Ubuntu), and the second executes those. During the first stage we can specify extra configuration options for the build. To instruct CMake to use Clang, run:
 
 ```{terminal}
 :user: dev
