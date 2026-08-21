@@ -41,7 +41,7 @@ The .NET platform contains a runtime, a set of framework libraries, an SDK conta
 
    Diagram of the Common Language Infrastructure
 
-   Credit: {spellexception}`Deviousasti` (License: CC BY-SA 4.0 Deed)
+   Credit: Deviousasti (License: CC BY-SA 4.0 Deed)
 ```
 
 ### Software Development Kit (SDK)
@@ -71,7 +71,7 @@ The .NET host (the `dotnet` command) contains the logic to resolve and select th
    Logo of NuGet
 ```
 
-The primary mechanism for sharing code, assets, and libraries in the .NET toolchain are NuGet packages. A NuGet package is a single ZIP file with the `.nupkg` file extension that contains compiled code ({spellexception}`DLLs`), other files related to that code, and a descriptive manifest that includes information like the package version number.
+The primary mechanism for sharing code, assets, and libraries in the .NET toolchain are NuGet packages. A NuGet package is a single ZIP file with the `.nupkg` file extension that contains compiled code (DLLs), other files related to that code, and a descriptive manifest that includes information like the package version number.
 
 NuGet is also the name of the the package manager for .NET. The NuGet client tools provide the ability to produce and consume packages.
 
@@ -189,4 +189,4 @@ The table below illustrates the transition timeline and the versioning conflict 
   - .NET 8
 ```
 
-See more .NET release information on [{spellexception}`versionsof.net`](https://versionsof.net/).
+See more .NET release information on [versionsof.net](https://versionsof.net/).

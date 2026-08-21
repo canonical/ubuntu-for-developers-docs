@@ -12,7 +12,7 @@ This article covers how to install the Java toolchain and development environmen
 
 ## Installing Eclipse IDE
 
-The quickest way to start developing Java code on Ubuntu is to install Eclipse IDE -- the {spellexception}`de facto` standard integrated development environment for Java development. This also provides the latest Java LTS (long-term support) version:
+The quickest way to start developing Java code on Ubuntu is to install Eclipse IDE -- the standard integrated development environment for Java development. This also provides the latest Java LTS (long-term support) version:
 
 ```{terminal}
 :user: dev

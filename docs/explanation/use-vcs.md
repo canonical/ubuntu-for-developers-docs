@@ -11,7 +11,7 @@ This article explains how to install, configure, and use Git for version control
 
 Version control systems (VCS) track and manage code changes, enabling teams to collaborate efficiently, revert to previous versions, and maintain a history of modifications. Git is the most widely used version control system; however, others including [Concurrent Version System (CVS)](https://www.nongnu.org/cvs/), [Apache Subversion (SVN)](https://subversion.apache.org/), [Mercurial](https://www.mercurial-scm.org/), and Bazaar are also available for those who require them for specific use cases.
 
-This article focuses on Git -- the {spellexception}`de facto` standard in software development.
+This article focuses on Git -- the standard in software development.
 
 
 ## Git
@@ -166,10 +166,10 @@ Git shell helpers
 : Using a Git shell helper, such as the bundled `git-prompt.sh`, can improve your Git workflow with features including auto-completion and branch names with repository status displayed as part of the command prompt in the terminal. To set it up, read the instructions in the {file}`/usr/lib/git-core/git-sh-prompt` file. See also [Git in Other Environments - Git in Bash](https://git-scm.com/book/id/v2/Appendix-A%3A-Git-in-Other-Environments-Git-in-Bash).
 
 Text user interfaces (TUI)
-: Git TUIs, such as [{spellexception}`Tig`](https://jonas.github.io/tig/), provide a visual way to interact with Git in the terminal, making it easier to navigate commits and branches. Install with {command}`sudo apt install -y tig`.
+: Git TUIs, such as [Tig](https://jonas.github.io/tig/), provide a visual way to interact with Git in the terminal, making it easier to navigate commits and branches. Install with {command}`sudo apt install -y tig`.
 
 Graphical user interfaces (GUI)
-: Git GUIs, such as the basic [{spellexception}`gitk`](https://git-scm.com/docs/gitk) or GNOME-native [{spellexception}`gitg`](https://wiki.gnome.org/Apps/Gitg/), provide a graphical interface to manage repositories instead of using the command line. Install with {command}`sudo apt install -y gitk gitg`. See [GUI Clients](https://git-scm.com/downloads/guis?os=linux) for an overview of available applications (includes TUIs).
+: Git GUIs, such as the basic [{pkg}`gitk`](https://git-scm.com/docs/gitk) or GNOME-native [{pkg}`gitg`](https://wiki.gnome.org/Apps/Gitg/), provide a graphical interface to manage repositories instead of using the command line. Install with {command}`sudo apt install -y gitk gitg`. See [GUI Clients](https://git-scm.com/downloads/guis?os=linux) for an overview of available applications (includes TUIs).
 
 Git hooks
 : Git hooks are scripts that trigger actions at specific Git events (e.g., before a commit, after a push). This enables you to enforce coding standards, prevent commits with errors or unformatted code, and automate tasks such as linting, formatting, and commit-message validation. See [Customizing Git - Git Hooks](https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks).

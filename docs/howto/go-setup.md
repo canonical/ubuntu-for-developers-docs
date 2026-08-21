@@ -223,9 +223,9 @@ sudo apt install delve
 
 An overview of basic Delve use is included in our {ref}`use-go` tutorial.
 
-A Go language server, [{spellexception}`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls), is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
+A Go language server, [{pkg}`gopls`](https://pkg.go.dev/golang.org/x/tools/gopls), is actively maintained, which has helped ensure that Go is widely supported across many editors, including Emacs, (Neo)Vim, and others.
 
-To install {spellexception}`gopls` from the Ubuntu archive:
+To install {pkg}`gopls` from the Ubuntu archive:
 
 ```{terminal}
 :user: dev

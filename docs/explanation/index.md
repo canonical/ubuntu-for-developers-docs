@@ -23,7 +23,7 @@ install-ubuntu
 
 ## Git for development on Ubuntu
 
-Context and advice for configuring Git, the {spellexception}`de facto` standard system for version control and source-code management, on Ubuntu.
+Context and advice for configuring Git, the standard system for version control and source-code management, on Ubuntu.
 
 :::{toctree}
 :maxdepth: 1

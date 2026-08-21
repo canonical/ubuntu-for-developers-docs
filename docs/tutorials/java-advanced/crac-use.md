@@ -33,7 +33,7 @@ sudo apt update && sudo apt install openjdk-21-crac-jdk-headless
 ```
 
 
-## Checkpointing and restoring Spring Boot applications
+## Checkpoint and restore Spring Boot applications
 
 Spring Boot 3.2 introduced [support for CRaC](https://github.com/spring-projects/spring-boot/wiki/Spring-Boot-3.2-Release-Notes#initial-support-for-jvm-checkpoint-restore). This, coupled with the underlying OpenJDK CRaC runtime, lets us checkpoint and restore Spring Boot applications.
 
@@ -85,7 +85,7 @@ The following sections list steps to build, checkpoint, and restore a Spring Boo
 Upon a successful build, a JAR file is generated in the target directory.
 
 
-## Checkpointing the Spring Boot application on start-up
+## Checkpoint the Spring Boot application on start-up
 
 1. Start the application using this command:
 

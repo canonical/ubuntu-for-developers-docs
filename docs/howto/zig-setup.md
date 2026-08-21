@@ -104,7 +104,7 @@ Several editors and IDEs support Zig, primarily through [ZLS](https://github.com
   ```
 
 :::{note}
-ZLS is managed automatically by the VS Code and Codium extensions. For other editors (Vim, {spellexception}`Neovim`, Emacs, Helix), install ZLS manually. Refer to the [ZLS installation guide](https://github.com/zigtools/zls#installation) for instructions.
+ZLS is managed automatically by the VS Code and Codium extensions. For other editors (Vim, Neovim, Emacs, Helix), install ZLS manually. Refer to the [ZLS installation guide](https://github.com/zigtools/zls#installation) for instructions.
 :::
 
 
