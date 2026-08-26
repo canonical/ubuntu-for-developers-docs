@@ -25,6 +25,7 @@ Develop with .NET <dotnet-use>
 Develop with Java <java-use>
 Develop with Zig <zig-use>
 java-advanced/index
+go-advanced/index
 :::
 
 
@@ -36,5 +37,10 @@ java-advanced/index
 - {ref}`Implement tool calling with Spring AI <spring-ai-tool-calling>`
 - {ref}`Implement retrieval-augmented generation with Spring AI <springai-rag>`
 - {ref}`Develop an LLM chat-client with Spring AI <springai-basic>`
+
+
+## Go -- advanced
+
+- {ref}`Devpack for Go <devpack-for-go>`
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.

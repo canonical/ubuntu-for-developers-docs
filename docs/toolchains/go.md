@@ -13,3 +13,13 @@ myst:
 - {ref}`Install the Go toolchain <install-golang>`
 - {ref}`Develop with Go <use-go>`
 - {ref}`Available versions <go-toolchain-availability>`
+
+
+## Advanced
+
+- {ref}`Devpack for Go <devpack-for-go>` -- companion snap for Go development tools
+
+
+## What next
+
+- For the general devpack concept, see {ref}`devpacks`.

@@ -41,3 +41,4 @@ For manual control over which packages are installed, use the individual toolcha
 ## What next
 
 - {ref}`devpack-for-spring` tutorial
+- {ref}`devpack-for-go` tutorial
