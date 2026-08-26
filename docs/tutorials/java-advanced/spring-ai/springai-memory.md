@@ -17,18 +17,18 @@ To set the context, here is a screen-capture of a conversation with a chat-clien
 
 Spring AI lets us add chat memory with a very concise code change, using the [Advisor API](https://docs.spring.io/spring-ai/reference/api/advisors.html). Advisors intercept data sent to, and received from, the Large Language Model.
 
-#### MessageChatMemoryAdvisor and MessageWindowChatMemory
+### MessageChatMemoryAdvisor and MessageWindowChatMemory
 We simply register a [MessageChatMemoryAdvisor](https://docs.spring.io/spring-ai/docs/current/api/org/springframework/ai/chat/client/advisor/MessageChatMemoryAdvisor.html) with the `ChatClient.Builder`.
 
 This Advisor needs a chat memory implementation. For this tutorial, we use the basic [MessageWindowChatMemory](https://docs.spring.io/spring-ai/reference/api/chat-memory.html#_message_window_chat_memory). It provides an in-memory implementation of a specified size, ensuring the total number of messages does not exceed this limit.
 
-#### Conversation identifier
+### Conversation identifier
 With the `MessageChatMemoryAdvisor`, every question needs to be associated with a conversation identifier. This is critical when multiple users interact with the chat client. For this tutorial, we use a default conversation identifier.
 
 
-#### Steps to add chat memory
+### Steps to add chat memory
 
-##### 1. Clone the basic chat-client repository
+#### 1. Clone the basic chat-client repository
 The chat-client developed in {ref}`springai-basic` is available in this [repository](https://github.com/pushkarnk/spring-ai-chat-client-demo.git):
 
 ```{terminal}
@@ -36,7 +36,7 @@ git clone https://github.com/pushkarnk/spring-ai-chat-client-demo.git && \
     cd spring-ai-chat-client-demo
 ```
 
-##### 2. Update the DemoChatService
+#### 2. Update the DemoChatService
 
 We augment the `ChatClient` with a `MessageChatMemoryAdvisor` that uses the `MessageWindowChatMemory` implementation. We also pass the conversation identifier
 while submitting the prompt.
@@ -82,7 +82,7 @@ public class DemoChatService implements DemoChatClient {
 :::
 
 
-##### 3. Update the DemoChatController
+#### 3. Update the DemoChatController
 
 Add the conversation identifier (header name `X_AI_CONVERSATION_ID`) as a `RequestHeader` to the handler method. For simplicity, a specified default value ("default") would be used here.
 
@@ -114,7 +114,7 @@ public class DemoChatController {
 }
 ```
 
-##### 4. Update the `DemoChatClient` interface
+#### 4. Update the `DemoChatClient` interface
 
 Add the new parameter for the conversation identifier, to the `askQuestion` method.
 
@@ -128,14 +128,14 @@ public interface DemoChatClient {
 }
 ```
 
-##### 5. Run the updated chat client
+#### 5. Run the updated chat client
 
 Build and run the chat client application:
 ```{terminal}
 ./gradlew bootRun
 ```
 
-Open http://localhost:8080 and do an interaction that exercises chat memory. Here is the screen-capture of a sample interaction:
+Open `http://localhost:8080` and do an interaction that exercises chat memory. Here is the screen-capture of a sample interaction:
 
 ![chat-client-no-memory](../../../images/springai-memory/with-memory.gif)
 
