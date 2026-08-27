@@ -96,7 +96,7 @@ spring.ai.mcp.client.streamable-http.connections.currency.url=http://localhost:9
 
 ### 5. Add the MCP client dependency
 
-Add the `org.springframework.ai:spring-ai-starter-mcp-client` depedency to `build.gradle`.
+Add the `org.springframework.ai:spring-ai-starter-mcp-client` dependency to `build.gradle`.
 
 ```{code-block} groovy
 dependencies {
