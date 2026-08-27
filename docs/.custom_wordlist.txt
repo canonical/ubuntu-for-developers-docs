@@ -49,6 +49,8 @@ Quokka
 SDKs
 src
 Spyder
+stdout
+Streamable
 sudo
 Tig
 toolchain

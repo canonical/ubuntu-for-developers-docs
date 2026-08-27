@@ -12,7 +12,7 @@ This is the first part of a two-part tutorial on Model Context Protocol (MCP) an
 
 ## Introduction to Model Context Protocol
 
-The {ref}`spring-ai-tool-calling` tutorial introduced the idea of Large Language Models requesting the AI application to invoke a tool, either to obtain information, or to carry out a task. Tool calling does not entail how the tool is discovered and how it is connected with; tje AI application is expected to work this out. Model Context Protocol bridges this gap. It is an open-source standard for discovering and connecting with external systems.
+The {ref}`spring-ai-tool-calling` tutorial introduced the idea of Large Language Models requesting the AI application to invoke a tool, either to obtain information, or to carry out a task. Tool calling does not entail how the tool is discovered and how it is connected with; the AI application is expected to work this out. Model Context Protocol bridges this gap. It is an open-source standard for discovering and connecting with external systems.
 
 ![mcp-architecture](../../../images/springai-mcp/mcp_architecture.png)
 
@@ -125,7 +125,7 @@ spring.ai.mcp.server.protocol=STREAMABLE
 The other important bit here is the `spring.ai.mcp.server.protocol` property. With Spring AI, the default transport protocol while using HTTP is HTTP+SSE (Server-Sent Events). However, this is deprecated by the MCP specification. So, we explicitly configure Streamable HTTP.
 
 :::{note}
-MCP and Spring AI also support a tranport protocol named STDIO. With this protocol, the client starts the server process, and the processes communicate over stdio and stdout. The client and server are tightly coupled.
+MCP and Spring AI also support a transport protocol named STDIO. With this protocol, the client starts the server process, and the processes communicate over stdio and stdout. The client and server are tightly coupled.
 :::
 
 ### 4. Launch the MCP server and test it with MCP Inspector
