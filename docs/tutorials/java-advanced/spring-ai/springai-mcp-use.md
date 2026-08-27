@@ -157,4 +157,6 @@ Open `http://localhost:8080` and run the same sample prompt used before.
 
 ## Further reading
 
-
+1. [What is the Model Context Protocol?](https://modelcontextprotocol.io/docs/2026-07-28/getting-started/intro)
+2. [Getting started with Model Context Protocol](https://docs.spring.io/spring-ai/reference/guides/getting-started-mcp.html)
+3. [Model Context Protocol - Spring AI Reference](https://docs.spring.io/spring-ai/reference/api/mcp/mcp-overview.html) 
