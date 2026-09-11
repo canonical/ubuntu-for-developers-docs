@@ -12,7 +12,7 @@ The tutorial demonstrates how metrics like token usage count, and statistics for
 
 In the {ref}`springai-rag` tutorial, we implemented Retrieval Augmented Generation using the {pkg}`ollama`/{pkg}`nomic-embed-text` embedding model and storing the embeddings in an {pkg}`opensearch` vector database. This tutorial extends the RAG example by adding Spring AI observability metrics. 
 
-The Spring Boot Actuator is at the center of Spring AI observability. The Actuator presents production-ready features to monitor and manage Spring Boot applications after pushing them to production, through endpoints. This tutorial uses the `/metrics` and `/prometheus` endpoints to fetch Spring AI metrics and view them in {pkg}`prometheus`.
+The Spring Boot [Actuator](https://docs.spring.io/spring-boot/reference/actuator/enabling.html) is at the center of Spring AI observability. The Actuator presents production-ready features to monitor and manage Spring Boot applications after pushing them to production, through [endpoints](https://docs.spring.io/spring-boot/reference/actuator/endpoints.html). This tutorial uses the `/metrics` and `/prometheus` endpoints to fetch Spring AI metrics and view them in {pkg}`prometheus`.
 
 :::{important}
 Implementing the {ref}`springai-rag` tutorial is a strict pre-requisite to implement and appreciate this tutorial.
@@ -305,7 +305,7 @@ Add the following dependency to {file}`build.gradle` to the `dependencies` task:
 implementation 'io.micrometer:micrometer-registry-prometheus'
 ```
 
-#### 2.2 Expose the Actuator's prometheus endpoing
+#### 2.2 Expose the Actuator's prometheus endpoint
 
 Simply append prometheus to the new property defined in {file}`src/main/resource/application.properties`:
 ```{code-block} properties
@@ -359,3 +359,9 @@ Here is the screen-capture of a sample interaction with prometheus:
 :::{note}
 The Spring AI application should be running while accessing prometheus. An application restart resets the metrics.
 :::
+
+## References
+
+1. [Spring Boot Actuator Documentation](https://docs.spring.io/spring-boot/reference/actuator/enabling.html)
+2. [Spring Boot Actuator Endpoints](https://docs.spring.io/spring-boot/reference/actuator/endpoints.html)
+3. [Spring AI Observability](https://docs.spring.io/spring-ai/reference/observability/index.html)
