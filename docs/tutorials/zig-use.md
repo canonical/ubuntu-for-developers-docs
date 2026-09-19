@@ -14,22 +14,24 @@ This tutorial shows how to create, build, run, and test a Zig program on Ubuntu.
 
 1. Create a project directory and change into it:
 
-    ```{terminal}
-    :dir: ~
+    ```{terminal-literalinclude} code/zig/task.yaml
     :user: dev
     :host: ubuntu
-
-    mkdir -p ~/zig/hello && cd ~/zig/hello
+    :dir: ~
+    :start-after: [docs:create-and-change-dir]
+    :end-before: [docs:create-and-change-dir-end]
+    :dedent: 2
     ```
 
 1. Initialize the project:
 
-    ```{terminal}
+    ```{terminal-literalinclude} code/zig/task.yaml
     :dir: ~/zig/hello
     :user: dev
     :host: ubuntu
-
-    zig init
+    :start-after: [docs:initialize-zig-project]
+    :end-before: [docs:initialize-zig-project-end]
+    :dedent: 2
     ```
 
    {command}`zig init` creates the following project structure:
@@ -77,36 +79,33 @@ This tutorial shows how to create, build, run, and test a Zig program on Ubuntu.
 
 1. Build and run the project using {command}`zig build run`:
 
-    ```{terminal}
+    ```{terminal-literalinclude} code/zig/task.yaml
     :dir: ~/zig/hello
     :user: dev
     :host: ubuntu
-
-    zig build run
+    :start-after: [docs:build-and-run-zig-project]
+    :end-before: [docs:build-and-run-zig-project-end]
+    :dedent: 2
 
     All your codebase are belong to us.
     ```
 
 1. Replace the message in {file}`src/main.zig` with 'Hello, world!':
 
-    ```{code-block} zig
+    ```{literalinclude} code/zig/hello.zig
     :caption: `src/main.zig`
-
-    const std = @import("std");
-
-    pub fn main() !void {
-        std.debug.print("Hello, world!\n", .{});
-    }
+    :language: zig
     ```
 
 1. Build and run again:
 
-    ```{terminal}
+    ```{terminal-literalinclude} code/zig/task.yaml
     :dir: ~/zig/hello
     :user: dev
     :host: ubuntu
-
-    zig build run
+    :start-after: [docs:build-and-run-hello-world]
+    :end-before: [docs:build-and-run-hello-world-end]
+    :dedent: 2
 
     Hello, world!
     ```
@@ -118,36 +117,33 @@ Use {command}`zig build-exe` to compile a single source file without a project s
 
 1. Create a standalone source file:
 
-    ```{code-block} zig
+    ```{literalinclude} code/zig/hello.zig
     :caption: `hello.zig`
-
-    const std = @import("std");
-
-    pub fn main() !void {
-        std.debug.print("Hello, world!\n", .{});
-    }
+    :language: zig
     ```
 
 1. Compile it:
 
-    ```{terminal}
-    :dir: ~/zig/hello
+    ```{terminal-literalinclude} code/zig/task.yaml
+    :dir: ~
     :user: dev
     :host: ubuntu
-
-    zig build-exe hello.zig
+    :start-after: [docs:compile-single-zig-file]
+    :end-before: [docs:compile-single-zig-file-end]
+    :dedent: 2
     ```
 
    This produces an executable named {file}`hello` in the current directory.
 
 1. Run the executable:
 
-    ```{terminal}
-    :dir: ~/zig/hello
+    ```{terminal-literalinclude} code/zig/task.yaml
+    :dir: ~
     :user: dev
     :host: ubuntu
-
-    ./hello
+    :start-after: [docs:run-executable]
+    :end-before: [docs:run-executable-end]
+    :dedent: 2
 
     Hello, world!
     ```
@@ -178,12 +174,13 @@ The generated {file}`src/root.zig` already contains an example test.
 
 1. Run the test:
 
-    ```{terminal}
+    ```{terminal-literalinclude} code/zig/task.yaml
     :dir: ~/zig/hello
     :user: dev
     :host: ubuntu
-
-    zig build --summary all test
+    :start-after: [docs:run-zig-tests]
+    :end-before: [docs:run-zig-tests-end]
+    :dedent: 2
     ```
 
     :::{raw} html
@@ -204,28 +201,9 @@ This separates the output destination of the function from its logic, which make
 
 Modify the {file}`src/main.zig` file:
 
-```{code-block} zig
+```{literalinclude} code/zig/test-hello.zig
 :caption: `src/main.zig`
-
-const std = @import("std");
-
-// Duck-typing the 'writer' parameter
-pub fn hello(writer: anytype) !void {
-    try writer.print("Hello, world!\n", .{});
-}
-
-// Sending output to STDOUT
-pub fn main() !void {
-    try hello(std.io.getStdOut().writer());
-}
-
-// Sending output to an array
-test "hello writes 'Hello, world!' to stdout" {
-    var output = std.ArrayList(u8).init(std.testing.allocator);
-    defer output.deinit();
-    try hello(output.writer());
-    try std.testing.expectEqualStrings("Hello, world!\n", output.items);
-}
+:language: zig
 ```
 
 :::{note}
@@ -242,25 +220,20 @@ Zig includes a built-in C (Clang LLVM) compiler, `zig cc`, which works as a drop
 
 1. Create a C source file:
 
-    ```{code-block} c
+    ```{literalinclude} code/zig/hello.c
     :caption: `hello.c`
-
-    #include <stdio.h>
-
-    int main(void) {
-        printf("Hello, world!\n");
-        return 0;
-    }
+    :language: c
     ```
 
 1. Compile and run:
 
-    ```{terminal}
-    :dir: ~/zig/hello
+    ```{terminal-literalinclude} code/zig/task.yaml
+    :dir: ~
     :user: dev
     :host: ubuntu
-
-    zig cc hello.c -o hello && ./hello
+    :start-after: [docs:zig-compile-and-run-c-program]
+    :end-before: [docs:zig-compile-and-run-c-program-end]
+    :dedent: 2
 
     Hello, world!
     ```
@@ -272,22 +245,24 @@ The `zig cc` command compiles for any supported target without additional toolch
 
 1. Cross-compile for 64-bit ARM Linux (statically linked against the [musl](https://musl.libc.org/) libc implementation):
 
-    ```{terminal}
-    :dir: ~/zig/hello
+    ```{terminal-literalinclude} code/zig/task.yaml
+    :dir: ~
     :user: dev
     :host: ubuntu
-
-    zig cc hello.c -target aarch64-linux-musl -o hello-arm64
+    :start-after: [docs:zig-cross-compile-for-arm64]
+    :end-before: [docs:zig-cross-compile-for-arm64-end]
+    :dedent: 2
     ```
 
 1. Verify the binary targets ARM64:
 
-    ```{terminal}
-    :dir: ~/zig/hello
+    ```{terminal-literalinclude} code/zig/task.yaml
+    :dir: ~
     :user: dev
     :host: ubuntu
-
-    file hello-arm64
+    :start-after: [docs:verify-binary-target]
+    :end-before: [docs:verify-binary-target-end]
+    :dedent: 2
 
     hello-arm64: ELF 64-bit LSB executable, ARM aarch64, version 1 (SYSV),
                  statically linked, not stripped
@@ -295,24 +270,26 @@ The `zig cc` command compiles for any supported target without additional toolch
 
 1. Install QEMU user-mode emulation:
 
-    ```{terminal}
-    :dir: ~/zig/hello
+    ```{terminal-literalinclude} code/zig/task.yaml
+    :dir: ~
     :user: dev
     :host: ubuntu
-
-    sudo apt install qemu-user-binfmt
+    :start-after: [docs:install-qemu]
+    :end-before: [docs:install-qemu-end]
+    :dedent: 2
     ```
 
    Ubuntu's {pkg}`qemu-user-binfmt` package registers `binfmt_misc` handlers automatically, so foreign-architecture binaries run transparently.
 
 1. Run the Aarch64 executable:
 
-    ```{terminal}
-    :dir: ~/zig/hello
+    ```{terminal-literalinclude} code/zig/task.yaml
+    :dir: ~
     :user: dev
     :host: ubuntu
-
-    ./hello-arm64
+    :start-after: [docs:run-arm64-exe]
+    :end-before: [docs:run-arm64-exe-end]
+    :dedent: 2
 
     Hello, world!
     ```
@@ -320,28 +297,31 @@ The `zig cc` command compiles for any supported target without additional toolch
 :::{note}
 Similarly, cross-compile for 64-bit Windows and run with [Wine](https://www.winehq.org/):
 
-```{terminal}
-:dir: ~/zig/hello
+```{terminal-literalinclude} code/zig/task.yaml
+:dir: ~
 :user: dev
 :host: ubuntu
-
-zig cc hello.c -target x86_64-windows-gnu -o hello.exe
+:start-after: [docs:cross-compile-for-windows]
+:end-before: [docs:cross-compile-for-windows-end]
+:dedent: 2
 ```
 
-```{terminal}
-:dir: ~/zig/hello
+```{terminal-literalinclude} code/zig/task.yaml
+:dir: ~
 :user: dev
 :host: ubuntu
-
-sudo apt install wine
+:start-after: [docs:install-wine]
+:end-before: [docs:install-wine-end]
+:dedent: 2
 ```
 
-```{terminal}
-:dir: ~/zig/hello
+```{terminal-literalinclude} code/zig/task.yaml
+:dir: ~
 :user: dev
 :host: ubuntu
-
-wine hello.exe
+:start-after: [docs:run-with-wine]
+:end-before: [docs:run-with-wine-end]
+:dedent: 2
 
 Hello, world!
 ```
