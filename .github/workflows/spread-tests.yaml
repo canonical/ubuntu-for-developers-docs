@@ -1,0 +1,40 @@
+name: Spread tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    paths:
+      - 'docs/**'
+      - 'spread.yaml'
+      - '.github/workflows/spread-tests.yaml'
+
+  workflow_dispatch:
+    # Manual trigger
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  spread:
+    runs-on: ubuntu-26.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install Multipass
+        run: sudo snap install multipass
+
+      - name: Set up Go
+        uses: actions/setup-go@v5
+        with:
+          go-version: 'stable'
+
+      - name: Install Spread
+        run: |
+          go install github.com/canonical/spread/cmd/spread@latest
+          echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
+
+      - name: Run spread tests
+        run: spread -vv
