@@ -1,8 +1,11 @@
 import datetime
 import os
-from docutils.parsers.rst import roles
-from sphinx.util.docutils import SphinxRole
+from docutils.parsers.rst import directives, roles
 from docutils import nodes
+from sphinx.directives import optional_int
+from sphinx.directives.code import LiteralIncludeReader
+from sphinx.util.docutils import SphinxRole
+from sphinx_terminal.directive import TerminalDirective
 
 # Configuration for the Sphinx documentation builder.
 # All configuration specific to your project should be done in this file.
@@ -297,7 +300,50 @@ class CommandRole(SphinxRole):
         return [node], []
 
 
+# Custom directive combining `literalinclude` and `terminal`.
+class TerminalIncludeDirective(TerminalDirective):
+    required_arguments = 1
+    option_spec = {
+        **TerminalDirective.option_spec,
+        "language": directives.unchanged,
+        "encoding": directives.encoding,
+        "lines": directives.unchanged_required,
+        "start-after": directives.unchanged_required,
+        "end-before": directives.unchanged_required,
+        "start-at": directives.unchanged_required,
+        "end-at": directives.unchanged_required,
+        "prepend": directives.unchanged_required,
+        "append": directives.unchanged_required,
+        "dedent": optional_int,
+        "tab-width": directives.positive_int,
+    }
+
+    def run(self):
+        document = self.state.document
+        try:
+            location = self.state_machine.get_source_and_line(self.lineno)
+            rel_filename, filename = self.env.relfn2path(self.arguments[0])
+            self.env.note_dependency(rel_filename)
+
+            reader = LiteralIncludeReader(filename, self.options, self.config)
+            text, _ = reader.read(location=location)
+        except Exception as exc:
+            return [document.reporter.warning(exc, line=self.lineno)]
+
+        output_lines = list(self.content)
+        while output_lines and not output_lines[0].strip():
+            output_lines.pop(0)
+        while output_lines and not output_lines[-1].strip():
+            output_lines.pop()
+
+        self.content = text.splitlines()
+        if output_lines:
+            self.content += [""] + output_lines
+        return super().run()
+
+
 def setup(app):
+    app.add_directive("terminal-literalinclude", TerminalIncludeDirective)
     roles.register_local_role("command", CommandRole())
     # Workaround for https://github.com/canonical/canonical-sphinx/issues/34
     if (
