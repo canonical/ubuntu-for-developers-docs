@@ -24,7 +24,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Multipass
-        run: sudo snap install multipass
+        run: |
+          sudo snap install multipass
+          sudo usermod --append --groups sudo "$USER"
 
       - name: Set up Go
         uses: actions/setup-go@v5
@@ -37,4 +39,4 @@ jobs:
           echo "$(go env GOPATH)/bin" >> "$GITHUB_PATH"
 
       - name: Run spread tests
-        run: spread -vv
+        run: sg sudo -c "spread -vv"
