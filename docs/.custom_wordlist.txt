@@ -21,10 +21,11 @@ GoLand
 Gradle
 GUIs
 html
+IDEs
+Javascript
+javascriptS
 LLM
 LLMs
-Javascript
-javascript
 Makefile
 makefiles
 Neovim

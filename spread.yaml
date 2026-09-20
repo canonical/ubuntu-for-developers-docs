@@ -1,0 +1,62 @@
+project: ubuntu-for-developers-docs
+
+path: /ubuntu-for-developers-docs
+
+# CI checkouts contain a .git directory; don't ship it to test machines.
+exclude:
+  - .git
+
+# The zig tutorial installs large packages (wine, qemu); the default
+# 15-minute kill timeout is too tight for shared CI runners.
+kill-timeout: 30m
+
+suites:
+  docs/tutorials/code/:
+    summary: test tutorials from ubuntu developer docs
+    systems:
+    - ubuntu-26.04-64
+
+backends:
+  multipass:
+    type: adhoc
+    allocate: |
+      multipass_image=26.04
+      # Multipass instance names cannot contain dots; derive a unique,
+      # per-system name so parallel runs and stale leftovers don't clash.
+      instance_name="spread-$(echo "${SPREAD_SYSTEM}" | tr -cd 'a-z0-9-')"
+
+      # Remove a stale instance from a previous run, if any.
+      multipass delete --purge "${instance_name}" 2>/dev/null || true
+
+      # Launch Multipass VM
+      multipass launch --cpus 2 --disk 10G --memory 2G --name "${instance_name}" "${multipass_image}"
+
+      # Wait for cloud-init so tasks don't race it for the apt lock.
+      multipass exec "${instance_name}" -- cloud-init status --wait
+
+      # Enable PasswordAuthentication for root over SSH.
+      multipass exec "${instance_name}" -- \
+        sudo sh -c "echo 'root:${SPREAD_PASSWORD}' | chpasswd"
+      multipass exec "${instance_name}" -- \
+        sudo sh -c \
+        "if [ -d /etc/ssh/sshd_config.d/ ]
+        then
+          echo 'PasswordAuthentication yes' > /etc/ssh/sshd_config.d/10-spread.conf
+          echo 'PermitRootLogin yes' >> /etc/ssh/sshd_config.d/10-spread.conf
+        else
+          sed -i /etc/ssh/sshd_config -E -e 's/^#?PasswordAuthentication.*/PasswordAuthentication yes/' -e 's/^#?PermitRootLogin.*/PermitRootLogin yes/'
+        fi"
+      multipass exec "${instance_name}" -- \
+        sudo systemctl restart ssh
+
+      # Get the IP from the instance
+      ip=$(multipass info "${instance_name}" --format json | jq -r ".info[\"${instance_name}\"].ipv4[0]")
+      ADDRESS "$ip"
+
+    discard: |
+      instance_name="spread-$(echo "${SPREAD_SYSTEM}" | tr -cd 'a-z0-9-')"
+      multipass delete --purge "${instance_name}" 2>/dev/null || true
+
+    systems:
+      - ubuntu-26.04-64:
+          workers: 1

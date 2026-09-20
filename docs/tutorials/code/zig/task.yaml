@@ -1,0 +1,88 @@
+###########################################
+# IMPORTANT
+# Comments matter!
+# The docs use the wrapping comments as
+# markers for including said instructions
+# as snippets in the docs.
+###########################################
+summary: Getting started with Zig tutorial
+
+execute: |
+  set -x
+  ls
+  apt update && apt install zig -y
+
+  # [docs:create-and-change-dir]
+  mkdir -p ~/zig/hello && cd ~/zig/hello
+  # [docs:create-and-change-dir-end]
+  
+  # [docs:initialize-zig-project]
+  zig init
+  # [docs:initialize-zig-project-end]
+  
+  # [docs:build-and-run-zig-project]
+  zig build run
+  # [docs:build-and-run-zig-project-end]
+
+  cp /ubuntu-for-developers-docs/docs/tutorials/code/zig/hello.zig src/main.zig
+
+  # [docs:build-and-run-hello-world]
+  zig build run
+  # [docs:build-and-run-hello-world-end]
+
+  cd ~
+  cp /ubuntu-for-developers-docs/docs/tutorials/code/zig/hello.zig .
+
+  # [docs:compile-single-zig-file]
+  zig build-exe hello.zig
+  # [docs:compile-single-zig-file-end]
+  
+  # [docs:run-executable]
+  ./hello
+  # [docs:run-executable-end]
+ 
+  cd ~/zig/hello
+
+  # [docs:run-zig-tests]
+  zig build --summary all test
+  # [docs:run-zig-tests-end]
+
+  cp /ubuntu-for-developers-docs/docs/tutorials/code/zig/test-hello.zig src/main.zig
+  zig build test
+
+  cd ~
+  cp /ubuntu-for-developers-docs/docs/tutorials/code/zig/hello.c .
+
+  # [docs:zig-compile-and-run-c-program]
+  zig cc hello.c -o hello && ./hello
+  # [docs:zig-compile-and-run-c-program-end]
+  
+  # [docs:zig-cross-compile-for-arm64]
+  zig cc hello.c -target aarch64-linux-musl -o hello-arm64
+  # [docs:zig-cross-compile-for-arm64-end]
+
+  # [docs:verify-binary-target]
+  file hello-arm64
+  # [docs:verify-binary-target-end]
+
+  file hello-arm64 | grep "ARM aarch64"
+
+  # [docs:install-qemu]
+  sudo apt install qemu-user-binfmt -y
+  # [docs:install-qemu-end]
+  
+  # [docs:run-arm64-exe]
+  ./hello-arm64
+  # [docs:run-arm64-exe-end]
+  
+  # [docs:cross-compile-for-windows]
+  zig cc hello.c -target x86_64-windows-gnu -o hello.exe
+  # [docs:cross-compile-for-windows-end]
+
+  # [docs:install-wine]
+  sudo apt install wine -y
+  # [docs:install-wine-end]
+  
+  # [docs:run-with-wine]
+  wine hello.exe
+  # [docs:run-with-wine-end]
