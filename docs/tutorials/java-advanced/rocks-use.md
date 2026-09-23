@@ -170,15 +170,15 @@ For long-running applications, Pebble provides process supervision, automatic re
     :dir: ~/hello-service
 
     docker build -t hello-service .
-    
+
     ```
 
 5. Query service status and health checks:
 
-    
 
 
 ## Next steps
 
 - **Pebble**: Explore advanced health check types and service options in the [Pebble documentation](https://documentation.ubuntu.com/pebble/).
 - **Source repositories**: Track releases or report issues at [`canonical/jre-rock`](https://github.com/canonical/jre-rock) and [`canonical/jdk-rock`](https://github.com/canonical/jdk-rock).
+- **Rockcraft**: Explore [Rockcraft documentation](https://ubuntu.com/containers/rockcraft/docs/) and build your own ROCK containers.
