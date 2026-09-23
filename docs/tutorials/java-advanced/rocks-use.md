@@ -19,7 +19,7 @@ The Ubuntu namespace has two distinct images for each supported Java release:
 - `ubuntu/jdk` – OpenJDK build environment with compiler tools (`javac`) and standard shells (`bash`, `sh`). Use this image for local compilation, debugging, and multi-stage container build stages.
 - `ubuntu/jre` – hardened OpenJDK runtime containing only headless execution modules and Pebble. It contains no compiler (on Java 21 and earlier), no package manager, and no shell. Use this image as the deployment base.
 
-Available tags follow the channel-style convention `<java-version>-<ubuntu-version>_<risk>` (for example, `ubuntu/jdk:21-24.04_stable`, `ubuntu/jre:25-26.04_stable`). Pin all three fields in production builds: the Ubuntu version fixes the `glibc` and system library baseline, while the risk channel (`_stable`, `_candidate`, `_edge`) controls the security update cadence. See [`ubuntu/jdk` on Docker Hub](https://hub.docker.com/r/ubuntu/jdk) and [`ubuntu/jre` on Docker Hub](https://hub.docker.com/r/ubuntu/jre) for published tags.
+Available tags follow the channel-style convention `<java-version>-<ubuntu-version>_<risk>` (for example, `ubuntu/jdk:21-24.04_stable`, `ubuntu/jre:25-26.04_stable`). Pin all three fields in production builds: the Ubuntu version fixes the `glibc` and system library baseline, while the risk channel (`stable`, `candidate`, `edge`) controls the security update cadence. See [`ubuntu/jdk` on Docker Hub](https://hub.docker.com/r/ubuntu/jdk) and [`ubuntu/jre` on Docker Hub](https://hub.docker.com/r/ubuntu/jre) for published tags.
 
 The remainder of this tutorial uses OpenJDK 21 on Ubuntu 24.04.
 
@@ -50,7 +50,7 @@ For quick prototyping or running ad-hoc scripts without installing a local Java 
     Hello, World
     ```
 
-    The image `ENTRYPOINT` is `/usr/bin/pebble enter`, so arguments passed to `docker run` are received by Pebble. The `exec` subcommand instructs Pebble to launch a one-shot process, and `-w /work` sets the working directory to the mounted volume so `java` finds `HelloWorld.java`.
+    The `ENTRYPOINT` of a ROCK image is `/usr/bin/pebble enter`, therefore arguments passed to `docker run` are received by Pebble. The `exec` subcommand instructs Pebble to launch a one-shot process, and `-w /work` sets the working directory to the mounted volume so `java` finds `HelloWorld.java`.
 
 
 ## Running classes with JRE ROCK
@@ -67,7 +67,7 @@ In this workflow, the JDK container serves as a disposable compilation toolchain
     docker run --user $(id -u):$(id -g) -v $PWD:/work --rm ubuntu/jdk:21-24.04_stable exec -w /work javac HelloWorld.java
     ```
 
-    ROCK images run as the non-root `_daemon_` user (UID 584792) by default. Because `javac` writes `HelloWorld.class` back to the host directory mounted at `/work`, passing `--user $(id -u):$(id -g)` ensures the process has write permission on the host directory and creates the class file with your user ownership.
+    ROCK images run as the non-root `_daemon_` user (UID 584792) by default. Pass `--user $(id -u):$(id -g)`, to ensure that the `javac` process has the permission to write `HelloWorld.class` to the host directory mounted at `/work` and creates the class file with your user's ownership.
 
 2. Run the compiled class using the JRE image:
 
@@ -152,7 +152,7 @@ For long-running applications, Pebble provides process supervision, automatic re
     COPY --from=builder /app/HelloService.class /
     ```
 
-    *(The `CMD` instruction is omitted because Pebble automatically starts any service configured with `startup: enabled` in its default layers.)*
+    
 
 4. Build and run the service container in the background:
 
@@ -162,19 +162,12 @@ For long-running applications, Pebble provides process supervision, automatic re
     :dir: ~/hello-service
 
     docker build -t hello-service .
-    docker run -d --name hello-service -p 8080:8080 hello-service
+    
     ```
 
 5. Query service status and health checks:
 
-    ```{terminal}
-    :user: dev
-    :host: ubuntu
-
-    docker exec hello-service pebble services
-    docker exec hello-service pebble checks
-    docker exec hello-service pebble health
-    ```
+    
 
 
 ## Next steps
