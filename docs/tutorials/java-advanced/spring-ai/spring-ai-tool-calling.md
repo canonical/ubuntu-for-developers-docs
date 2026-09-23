@@ -113,10 +113,10 @@ This tutorial reuses the simple chat-client developed in the {ref}`springai-basi
 
 The {command}`rmadison` command line utility fetches archive package data that helps answer such questions. Let's set up a tool that invokes this command.
 
-1. Add a new @Component class named {file}`UbuntuTools.java` with the following implementation:
+1. Add a new @Component class named {file}`src/main/java/demo/chatclient/UbuntuTools.java` with the following implementation:
 
    ```{code-block} java
-   :caption: `UbuntuTools.java`
+   :caption: `src/main/java/demo/chatclient/UbuntuTools.java`
 
    package demo.chatclient;
 
