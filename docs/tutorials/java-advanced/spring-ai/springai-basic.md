@@ -61,7 +61,7 @@ Install {pkg}`devpack-for-spring` (skip this step when already installed):
 
 ```{terminal}
 
-sudo snap install devpack-for-spring --classic
+sudo snap install devpack-for-spring --classic --channel latest/edge
 ```
 
 Install the content snap for Spring AI:

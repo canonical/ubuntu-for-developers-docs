@@ -38,7 +38,7 @@ Install {pkg}`devpack-for-spring`:
 
 ```{terminal}
 
-sudo snap install devpack-for-spring
+sudo snap install devpack-for-spring --classic --channel latest/edge
 ```
 
 List the available content snaps:
