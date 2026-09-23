@@ -21,6 +21,7 @@ GoLand
 Gradle
 GUIs
 html
+IDEs
 LLM
 LLMs
 Javascript
