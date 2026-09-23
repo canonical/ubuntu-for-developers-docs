@@ -45,14 +45,14 @@ List the available content snaps:
 
 ```{terminal}
 
-devpack-for-spring snap list
+devpack-for-spring libraries
 ```
 
-This tutorial uses Spring Boot 3.5.x and hence Spring 1.1.y. So, install {pkg}`content-for-spring-ai-11`:
+This tutorial uses Spring Boot 4.0.x and hence Spring AI 2.0.x. So, install {pkg}`content-for-spring-ai-20`:
 
 ```{terminal}
 
-devpack-for-spring snap install content-for-spring-ai-11
+devpack-for-spring add-library content-for-spring-ai-20
 ```
 
 
@@ -221,7 +221,7 @@ devpack-for-spring boot start \
     --path $PWD/rag-chat-client \
     --project gradle-project \
     --language java \
-    --boot-version 3.5.16 \
+    --boot-version 4.0.8 \
     --version 0.0.1 \
     --group demo.chatclient.rag \
     --artifact demo \
@@ -533,6 +533,7 @@ spring.ai.vectorstore.opensearch.username=${OPENSEARCH_USERNAME}
 spring.ai.vectorstore.opensearch.password=${OPENSEARCH_PASSWORD}
 spring.ai.vectorstore.opensearch.index-name=${OPENSEARCH_INDEX:url-docs}
 spring.ai.vectorstore.opensearch.initialize-schema=true
+spring.ai.vectorstore.opensearch.aws.enabled=false
 
 # RAG config
 app.rag.top-k=5

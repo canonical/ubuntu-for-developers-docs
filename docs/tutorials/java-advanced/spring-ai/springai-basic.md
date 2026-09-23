@@ -68,11 +68,11 @@ Install the content snap for Spring AI:
 
 ```{terminal}
 
-devpack-for-spring snap install content-for-spring-ai-11
+devpack-for-spring add-library content-for-spring-ai-20
 ```
 
 :::{important}
-The {pkg}`content-for-spring-ai-11` snap installs Spring AI 1.1.X, which is compatible with Spring Boot 3.5.X.
+The {pkg}`content-for-spring-ai-20` snap installs Spring AI 2.X, which is compatible with Spring Boot 4.0.x.
 :::
 
 To initialize a Spring Boot and Spring AI project, use {command}`devpack-for-spring`'s CLI wizard.
@@ -87,7 +87,7 @@ devpack-for-spring boot start \
     --path $PWD/chat-client \
     --project gradle-project \
     --language java \
-    --boot-version 3.5.15 \
+    --boot-version 4.0.8 \
     --version 0.0.1-SNAPSHOT \
     --group demo.chatclient \
     --artifact demo \
