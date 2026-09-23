@@ -15,5 +15,6 @@ These tutorials cover advanced Java development topics on Ubuntu, beyond the bas
 Devpack for Spring <devpack-for-spring>
 Native compile with GraalVM <graalvm-use>
 Checkpoint/Restore with OpenJDK CRaC <crac-use>
+OpenJDK ROCK images <rocks-use>
 Spring AI <spring-ai/index>
 :::
