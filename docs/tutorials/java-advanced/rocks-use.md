@@ -83,8 +83,16 @@ In this workflow, the JDK container serves as a disposable compilation toolchain
 
     The `--user` flag is omitted here because the JRE process only reads `HelloWorld.class` and does not write to the mounted volume.
 
-    ```{note}
     Starting with OpenJDK 25 (`ubuntu/jre:25-*`), the JRE image bundles `jdk.compiler` and the `javac` binary, allowing source-file launch directly on the JRE image.
+
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/hello-world
+
+    docker run -v $PWD:/work --rm ubuntu/jre:25-26.04_stable exec -w work java HelloWorld.java
+
+    Hello, World
     ```
 
 ## Managing a service with Pebble checks
