@@ -83,6 +83,7 @@ In this workflow, the JDK container serves as a disposable compilation toolchain
 
     The `--user` flag is omitted here because the JRE process only reads `HelloWorld.class` and does not write to the mounted volume.
 
+    ````{note}
     Starting with OpenJDK 25 (`ubuntu/jre:25-*`), the JRE image bundles `jdk.compiler` and the `javac` binary, allowing source-file launch directly on the JRE image.
 
     ```{terminal}
@@ -94,6 +95,7 @@ In this workflow, the JDK container serves as a disposable compilation toolchain
 
     Hello, World
     ```
+    ````
 
 ## Managing a service with Pebble checks
 
@@ -160,7 +162,9 @@ For long-running applications, Pebble provides process supervision, automatic re
     COPY --from=builder /app/HelloService.class /
     ```
 
-    
+    ```{note}
+    The `CMD` instruction is omitted because Pebble automatically starts any service configured with `startup: enabled` in its default layers.
+    ```
 
 4. Build and run the service container in the background:
 
@@ -170,12 +174,41 @@ For long-running applications, Pebble provides process supervision, automatic re
     :dir: ~/hello-service
 
     docker build -t hello-service .
+    ```
 
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    :dir: ~/hello-service
+
+    docker run -d --name hello-service -p 8080:8080 hello-service
     ```
 
 5. Query service status and health checks:
 
-
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    docker exec hello-service pebble services
+    
+    Service        Startup  Current  Since
+    hello-service  enabled  active   today at 09:09 UTC
+    ```
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    docker exec hello-service pebble checks
+    
+    Check  Level  Startup  Status  Successes  Failures  Change
+    up     -      enabled  up      4          0/3       1
+    ```
+    ```{terminal}
+    :user: dev
+    :host: ubuntu
+    docker exec hello-service pebble health
+    
+    healthy
+    ```
 
 ## Next steps
 
