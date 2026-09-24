@@ -232,7 +232,7 @@ html_js_files = ["js/bundle.js", "js/overwrite_links.js"]
 # If you are using the :manpage: role, set this variable to the URL for the version
 # that you want to link to:
 manpages_url = (
-    "https://manpages.ubuntu.com/manpages/questing/man{section}/{page}.{section}.html"
+    "https://manpages.ubuntu.com/manpages/resolute/man{section}/{page}.{section}.html"
 )
 
 ############################################################
