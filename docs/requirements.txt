@@ -33,4 +33,4 @@ vale
 
 # Project-specific extensions
 sphinxcontrib-mermaid
-sphinx-llm
+sphinx-llm==1.1.0
