@@ -243,6 +243,7 @@ manpages_url = (
 
 # sphinx-llm config
 llms_txt_suffix_mode = "url-suffix"
+llms_txt_suppress_unknown_node_warnings = True
 llms_txt_description = (
     "This documentation provides guidance for using the Ubuntu Desktop "
     "Linux distribution as a development platform. The guides focus on "
