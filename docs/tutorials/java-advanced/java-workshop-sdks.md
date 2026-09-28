@@ -127,29 +127,29 @@ Compile a Java application directly using tools from the {pkg}`openjdk` workshop
 
    1. Prepare workshop after initialization:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop launch openjdk-example
-        ```
+      workshop launch openjdk-example
+      ```
 
-    1. View information about the workshop:
+   1. View information about the workshop:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop info openjdk-example
-        ```
+      workshop info openjdk-example
+      ```
 
-       This prepares the workshop by automatically pulling and installing the defined SDKs, after which it starts the workshop container. If any changes are made to the {file}`.workshop/openjdk-example.yaml` file, the workshop can be refreshed using the {command}`workshop refresh` command.
+      This prepares the workshop by automatically pulling and installing the defined SDKs, after which it starts the workshop container. If any changes are made to the {file}`.workshop/openjdk-example.yaml` file, the workshop can be refreshed using the {command}`workshop refresh` command.
 
-       :::{note}
-       To stop the workshop environment from running, use {command}`workshop stop`. To then make the workshop ready for use again, start it with the {command}`workshop start` command.
-       :::
+      :::{note}
+      To stop the workshop environment from running, use {command}`workshop stop`. To then make the workshop ready for use again, start it with the {command}`workshop start` command.
+      :::
 
 1. Compile the class file in the `out` directory within the workshop:
 
@@ -218,23 +218,23 @@ Set up and build a new Java project using the {pkg}`maven` workshop SDK.
 
    1. Prepare workshop after initialization:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop launch maven-example
-        ```
+      workshop launch maven-example
+      ```
 
    1. View information about the workshop:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop info maven-example
-        ```
+      workshop info maven-example
+      ```
 
 1. Enter the workshop using the {command}`workshop exec` command:
 
@@ -327,23 +327,23 @@ Set up and build a new Java project using the {pkg}`gradle` workshop SDK.
 
    1. Prepare workshop after initialization:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop launch gradle-example
-        ```
+      workshop launch gradle-example
+      ```
 
-    1. View information about the workshop:
+   1. View information about the workshop:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop info gradle-example
-        ```
+      workshop info gradle-example
+      ```
 
 1. Enter the workshop using the {command}`workshop exec` command:
 
@@ -468,7 +468,7 @@ Set up and build the {file}`petclinic` sample application using the Java Worksho
 
     The plug and slot pair defined above are the interfaces that specify how to communicate and share resources. This allows each workshop to operate in its own isolated environment, whilst still allowing controlled interactions between the SDKs and the host. In our example, we first define a slot for Maven, which provides the capability to expose a desired network endpoint through the tunnel interface.
 
-    Secondly, the example defines a tunnel plug that consumes the capability provided by the Maven slot. Since the plug is defined for the system SDK, this routes the Maven endpoint to the host endpoint and allows to access the application from the host. This can be seen in the diagram below, where our interface pairing allows the client access to the application in the workshop.
+    Secondly, the example defines a tunnel plug that consumes the capability provided by the Maven slot. Since the plug is defined for the system SDK, this routes the Maven endpoint to the host endpoint and allows us to access the application from the host. This can be seen in the diagram below, where our interface pairing allows the client access to the application in the workshop.
 
     The following diagram shows the interface pairing that gives the client access to the application in the workshop:
 
@@ -554,35 +554,35 @@ Set up and build the {file}`petclinic` sample application using the Java Worksho
 
 1. Refresh the workshop to now use the {pkg}`gradle` SDK instead of the {pkg}`maven` SDK:
 
-    1. Refresh the environment with Gradle:
+   1. Refresh the environment with Gradle:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop refresh petclinic-example
-        ```
+      workshop refresh petclinic-example
+      ```
 
-    1. Confirm that information has changed:
+   1. Confirm that information has changed:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop info petclinic-example
-        ```
+      workshop info petclinic-example
+      ```
 
-    1. And start the application using Gradle:
+   1. And start the application using Gradle:
 
-        ```{terminal}
-        :copy:
-        :user: dev
-        :host: ubuntu
+      ```{terminal}
+      :copy:
+      :user: dev
+      :host: ubuntu
 
-        workshop run petclinic-example -- start
-        ```
+      workshop run petclinic-example -- start
+      ```
 
 :::{note}
 For the {file}`petclinic` project, make sure that the combination of {pkg}`openjdk` and the chosen build tool versions are compatible.
