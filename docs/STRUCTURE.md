@@ -68,6 +68,7 @@ docs/
 - **Articles:** short, no quadrant or namespace prefix (`java-use.md`, not
   `tutorial-java-use.md`).
 - **Devpack articles:** `devpack-for-{name}.md` (e.g., `devpack-for-spring.md`).
+- **Workshop articles:** `{name}-workshop-sdk(s).md` (e.g., `java-workshop-sdks.md`)
 - **Article-series manifests:** `_{series-name}-series.md` (underscore prefix
   keeps them out of toctrees).
 - **Landing pages:** `{lang}.md` in `docs/toolchains/`.
