@@ -12,9 +12,10 @@ These tutorials demonstrate how to build LLM-powered applications with Spring AI
 :::{toctree}
 :maxdepth: 1
 
-Implement tool calling with Spring AI <spring-ai-tool-calling>
-Implement retrieval-augmented generation with Spring AI <springai-rag>
 Develop an LLM chat-client with Spring AI <springai-basic>
 Implement an MCP server using Spring AI <springai-mcp-server>
-Using an MCP server with the LLM chat-client <springai-mcp-use>
+Use an MCP server with the LLM chat-client <springai-mcp-use>
+Configure chat memory with Spring AI <springai-memory>
+Implement retrieval-augmented generation with Spring AI <springai-rag>
+Implement tool calling with Spring AI <spring-ai-tool-calling>
 :::
