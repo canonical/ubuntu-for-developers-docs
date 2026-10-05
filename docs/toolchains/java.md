@@ -20,6 +20,7 @@ myst:
 - {ref}`GraalVM native compilation <graalvm-introduction>` – {ref}`compile Spring Boot apps to native executables <use-graalvm>`
 - {ref}`Fast start for Spring Boot apps with CRaC <use-crac>`
 - {ref}`Devpack for Spring <devpack-for-spring>` – automated setup, scaffolding, and library management
+- {ref}`OpenJDK ROCK images <use-rock>` – minimal OpenJDK container images with pebble service management
 
 
 ## What next
