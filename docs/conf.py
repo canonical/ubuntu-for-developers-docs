@@ -296,24 +296,6 @@ html_js_files = ["js/bundle.js", "js/overwrite_links.js"]
 # NOTE: If set, adding ':manpage:' to an .rst file
 #       adds a link to the corresponding man section at the bottom of the page.
 manpages_url = (
-    "https://manpages.ubuntu.com/manpages/questing/man{section}/{page}.{section}.html"
-)
-
-############################################################
-# Additional configuration
-############################################################
-
-# Add any configuration that is not covered by the common conf.py file.
-
-# sphinx-llm config
-llms_txt_suffix_mode = "url-suffix"
-llms_txt_suppress_unknown_node_warnings = True
-llms_txt_description = (
-    "This documentation provides guidance for using the Ubuntu Desktop "
-    "Linux distribution as a development platform. The guides focus on "
-    "setting up and using the Ubuntu system as a workstation for developers, "
-    "with an emphasis on the following toolchains: Python, Golang, Rust, "
-    "GCC, Clang, .NET, Java, and Zig."
     "https://manpages.ubuntu.com/manpages/latest/man{section}/{page}.{section}.html"
 )
 
