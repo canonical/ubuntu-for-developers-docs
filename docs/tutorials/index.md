@@ -26,6 +26,7 @@ Develop with Java <java-use>
 Develop with Zig <zig-use>
 java-advanced/index
 go-advanced/index
+rust-advanced/index
 :::
 
 
@@ -42,5 +43,11 @@ go-advanced/index
 ## Go -- advanced
 
 - {ref}`Devpack for Go <devpack-for-go>`
+
+See the {ref}`howto` for instructions on installing and setting up the individual toolchains.
+
+## Rust -- Advanced
+
+- {ref}`Rust Workshop SDKs <rust-workshop-sdks>`
 
 See the {ref}`howto` for instructions on installing and setting up the individual toolchains.
