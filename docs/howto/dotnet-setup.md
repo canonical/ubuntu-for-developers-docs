@@ -190,8 +190,6 @@ Example output:
 ├─────────────┼─────────────────────┼──────────────────────┼──────────────────────┼─────────────┤
 │ .NET 11     │ Available [11.0.0]  │ Available [11.0.0]   │ Available [11.0.100] │ 11/14/2028  │
 │ .NET 10 LTS │ Installed [10.0.14] │ Installed [10.0.14]  │ Installed [10.0.114] │ 11/14/2028  │
-│ .NET 9      │ Available [9.0.22]  │ Available [9.0.22]   │ Available [9.0.123]  │ 11/10/2026  │
-│ .NET 8 LTS  │ Available [8.0.33]  │ Available [8.0.33]   │ Available [8.0.133]  │ 11/10/2026  │
 └─────────────┴─────────────────────┴──────────────────────┴──────────────────────┴─────────────┘
 ```
 
@@ -215,17 +213,13 @@ Examples:
   ```text
   dotnet-installer install sdk lts
   ```
-- To install the .NET 8 ASP\.NET Core runtime, run:
+- To install the .NET 10 ASP\.NET Core runtime, run:
   ```text
-  dotnet-installer install aspnetcore-runtime 8
-  ```
-- To install the .NET 9 SDK, run:
-  ```text
-  dotnet-installer install sdk 9.0
+  dotnet-installer install aspnetcore-runtime 10
   ```
 - To install the .NET 11 SDK, run:
   ```text
-  dotnet-installer install sdk 11
+  dotnet-installer install sdk 11.0
   ```
 
 #### Uninstalling .NET components
@@ -379,10 +373,13 @@ Available for architectures:
 
 <!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 9 -->
 
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
+
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
 ```
 
 ```{include} /reuse/howto/dotnet-setup/dotnet9-apt-install-ubuntu-package.md
@@ -393,6 +390,9 @@ Available for architectures:
 :sync: 8.0
 
 <!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 8 -->
+
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
 
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
@@ -632,6 +632,9 @@ Available for architectures:
 
 <!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 9 -->
 
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
+
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
@@ -739,6 +742,9 @@ Available for architectures:
 :sync: 9.0
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 9 -->
+
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
 
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)

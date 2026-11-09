@@ -122,10 +122,10 @@ See: {ref}`dotnet-installation-snap`
 | Ubuntu version              | `amd64` | `arm64` | `s390x` | `ppc64el` |
 |-----------------------------|---------|---------|---------|-----------|
 | 26.10 (Stonking Stingray)   | **10**, 11 | **10**, 11 | **10**, 11 | **10**, 11 |
-| 26.04 LTS (Resolute Raccoon) | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` |
+| 26.04 LTS (Resolute Raccoon) | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` |
 | 25.10 (Questing Quokka)     | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 |
-| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10**, 11{dim}`¹` | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10**, 11{dim}`¹` | **8**, 9{dim}`¹`, **10**, 11{dim}`¹` | **8**, 9{dim}`¹`, **10**, 11{dim}`¹` |
-| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` |
+| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | **8**, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | **8**, 9{dim}`¹ ²`, **10**, 11{dim}`¹` |
+| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` | **6**, 7, **8**, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` | **8**, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` | **8**, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
