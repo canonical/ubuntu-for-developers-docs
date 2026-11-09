@@ -185,12 +185,14 @@ Example output:
 
 ```{terminal}
 :scroll:
-┌────────────┬────────────────────┬──────────────────────┬─────────────────────┬─────────────┐
-│ Version    │ .NET Runtime       │ ASP.NET Core Runtime │ SDK                 │ End of Life │
-├────────────┼────────────────────┼──────────────────────┼─────────────────────┼─────────────┤
-│ .NET 9     │ Available [9.0.2]  │ Available [9.0.2]    │ Available [9.0.103] │ 5/12/2026   │
-│ .NET 8 LTS │ Installed [8.0.13] │ Installed [8.0.13]   │ Installed [8.0.113] │ 11/10/2026  │
-└────────────┴────────────────────┴──────────────────────┴─────────────────────┴─────────────┘
+┌─────────────┬─────────────────────┬──────────────────────┬──────────────────────┬─────────────┐
+│ Version     │ .NET Runtime        │ ASP.NET Core Runtime │ SDK                  │ End of Life │
+├─────────────┼─────────────────────┼──────────────────────┼──────────────────────┼─────────────┤
+│ .NET 11     │ Available [11.0.0]  │ Available [11.0.0]   │ Available [11.0.100] │ 11/14/2028  │
+│ .NET 10 LTS │ Installed [10.0.14] │ Installed [10.0.14]  │ Installed [10.0.114] │ 11/14/2028  │
+│ .NET 9      │ Available [9.0.22]  │ Available [9.0.22]   │ Available [9.0.123]  │ 11/10/2026  │
+│ .NET 8 LTS  │ Available [8.0.33]  │ Available [8.0.33]   │ Available [8.0.133]  │ 11/10/2026  │
+└─────────────┴─────────────────────┴──────────────────────┴──────────────────────┴─────────────┘
 ```
 
 #### Installing .NET components
@@ -220,6 +222,10 @@ Examples:
 - To install the .NET 9 SDK, run:
   ```text
   dotnet-installer install sdk 9.0
+  ```
+- To install the .NET 11 SDK, run:
+  ```text
+  dotnet-installer install sdk 11
   ```
 
 #### Uninstalling .NET components
@@ -256,6 +262,80 @@ lsb_release -rs
 ::::::{tab-set}
 :sync-group: series
 
+:::::{tab-item} 26.10
+:sync: stonking
+
+Choose the .NET version you want to install:
+
+::::{tab-set}
+:sync-group: dotnet-version
+
+:::{tab-item} .NET 11
+:sync: 11.0
+
+<!-- Content for Ubuntu 26.10 (Stonking Stingray) and .NET 11 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet11-apt-install-ubuntu-package.md
+```
+
+:::
+
+:::{tab-item} .NET 10
+:sync: 10.0
+
+<!-- Content for Ubuntu 26.10 (Stonking Stingray) and .NET 10 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
+
+:::
+
+:::{tab-item} .NET 9
+:sync: 9.0
+
+<!-- Content for Ubuntu 26.10 (Stonking Stingray) and .NET 9 -->
+
+.NET 9 isn't supported on Ubuntu 26.10 (Stonking Stingray).
+:::
+
+:::{tab-item} .NET 8
+:sync: 8.0
+
+<!-- Content for Ubuntu 26.10 (Stonking Stingray) and .NET 8 -->
+
+.NET 8 isn't supported on Ubuntu 26.10 (Stonking Stingray).
+:::
+
+:::{tab-item} .NET 7
+:sync: 7.0
+
+<!-- Content for Ubuntu 26.10 (Stonking Stingray) and .NET 7 -->
+
+.NET 7 isn't supported on Ubuntu 26.10 (Stonking Stingray).
+:::
+
+:::{tab-item} .NET 6
+:sync: 6.0
+
+<!-- Content for Ubuntu 26.10 (Stonking Stingray) and .NET 6 -->
+
+.NET 6 isn't supported on Ubuntu 26.10 (Stonking Stingray).
+:::
+
+::::
+
+:::::
+
 :::::{tab-item} 26.04 LTS
 :sync: resolute
 
@@ -263,6 +343,21 @@ Choose the .NET version you want to install:
 
 ::::{tab-set}
 :sync-group: dotnet-version
+
+:::{tab-item} .NET 11
+:sync: 11.0
+
+<!-- Content for Ubuntu 26.04 LTS (Resolute Raccoon) and .NET 11 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet11-apt-install-ubuntu-package.md
+```
+
+:::
 
 :::{tab-item} .NET 10
 :sync: 10.0
@@ -338,6 +433,14 @@ Choose the .NET version you want to install:
 ::::{tab-set}
 :sync-group: dotnet-version
 
+:::{tab-item} .NET 11
+:sync: 11.0
+
+<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 11 -->
+
+.NET 11 isn't available as an Ubuntu package on Ubuntu 25.10 (Questing Quokka). We recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
+:::
+
 :::{tab-item} .NET 10
 :sync: 10.0
 
@@ -412,11 +515,26 @@ Choose the .NET version you want to install:
 ::::{tab-set}
 :sync-group: dotnet-version
 
+:::{tab-item} .NET 11
+:sync: 11.0
+
+<!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 11 -->
+
+.NET 11 isn't available as an Ubuntu package on Ubuntu 25.04 (Plucky Puffin). We recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
+:::
+
 :::{tab-item} .NET 10
 :sync: 10.0
 
 <!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 10 -->
-We are working on getting this version of .NET in the Ubuntu archive. In the meantime we recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
 
 :::
 
@@ -479,11 +597,33 @@ Choose the .NET version you want to install:
 ::::{tab-set}
 :sync-group: dotnet-version
 
+:::{tab-item} .NET 11
+:sync: 11.0
+
+<!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 11 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet11-apt-install-ubuntu-package.md
+```
+
+:::
+
 :::{tab-item} .NET 10
 :sync: 10.0
 
 <!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 10 -->
-We are working on getting this version of .NET in the Ubuntu archive. In the meantime we recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
+```
 
 :::
 
@@ -564,6 +704,21 @@ Choose the .NET version you want to install:
 
 ::::{tab-set}
 :sync-group: dotnet-version
+
+:::{tab-item} .NET 11
+:sync: 11.0
+
+<!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 11 -->
+Available for architectures:
+: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
+
+```{include} /reuse/howto/dotnet-setup/dotnet-install-backports-ppa.md
+```
+
+```{include} /reuse/howto/dotnet-setup/dotnet11-apt-install-ubuntu-package.md
+```
+
+:::
 
 :::{tab-item} .NET 10
 :sync: 10.0

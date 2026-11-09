@@ -59,11 +59,19 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
 * - .NET version
   - identifiers
   - End of Life
-* - .NET 10 (LTS)
+* - .NET 11 (STS)
   - ```none
     latest
     ```
     ```none
+    11
+    ```
+    ```none
+    11.0
+    ```
+  - 14 November, 2028
+* - .NET 10 (LTS)
+  - ```none
     lts
     ```
     ```none
@@ -113,10 +121,11 @@ See: {ref}`dotnet-installation-snap`
 
 | Ubuntu version              | `amd64` | `arm64` | `s390x` | `ppc64el` |
 |-----------------------------|---------|---------|---------|-----------|
-| 26.04 (Resolute Raccoon)    | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** |
+| 26.10 (Stonking Stingray)   | **10**, 11 | **10**, 11 | **10**, 11 | **10**, 11 |
+| 26.04 LTS (Resolute Raccoon) | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` | 8{dim}`¹`, 9{dim}`¹`, **10**, 11{dim}`¹` |
 | 25.10 (Questing Quokka)     | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 |
-| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10** | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10** | **8**, 9{dim}`¹`, **10** | **8**, 9{dim}`¹`, **10** |
-| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` |
+| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10**, 11{dim}`¹` | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10**, 11{dim}`¹` | **8**, 9{dim}`¹`, **10**, 11{dim}`¹` | **8**, 9{dim}`¹`, **10**, 11{dim}`¹` |
+| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹`, 11{dim}`¹` |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
@@ -125,6 +134,7 @@ See: {ref}`dotnet-installation-snap`
 
 | .NET Version | Source package | End of Life (Upstream) | 
 |--------------|----------------|------------------------|
+| .NET 11 (STS) | {lpsrc}`dotnet11` | 14 November, 2028 |
 | .NET 10 (LTS) | {lpsrc}`dotnet10` | 14 November, 2028 |
 | .NET 9 (STS) | {lpsrc}`dotnet9` | 10 November, 2026 |
 | .NET 8 (LTS) | {lpsrc}`dotnet8` | 10 November 2026 |
@@ -144,6 +154,16 @@ See: {ref}`dotnet-installation-ubuntu-packages`
 
   * - .NET Version
     - available Debug Symbols packages
+  * - .NET 11
+    - ```text
+      dotnet-sdk-dbg-11.0
+      ```
+      ```text
+      dotnet-runtime-dbg-11.0
+      ```
+      ```text
+      aspnetcore-runtime-dbg-11.0
+      ```
   * - .NET 10
     - ```text
       dotnet-sdk-dbg-10.0

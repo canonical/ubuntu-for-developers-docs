@@ -84,7 +84,7 @@ Learn more about NuGet [here](https://learn.microsoft.com/en-us/nuget/what-is-nu
 A major new release of .NET is published every November, alternating between a long-term support (LTS) release and a standard-term support (STS) release:
 
 - **LTS releases**: Get free support and patches for three years by the .NET team. These releases usually have an even major version number and are released in an odd-numbered year.
-- **STS releases:** Get free support and patches for 18 months by the .NET team. These releases usually have an odd major version number and and are released in an even-numbered year.
+- **STS releases:** Get free support and patches for two years by the .NET team. These releases usually have an odd major version number and are released in an even-numbered year.
 
 The quality of all releases is the same. The only difference is the length of support provided by upstream.
 
@@ -187,6 +187,15 @@ The table below illustrates the transition timeline and the versioning conflict 
 * - 2023
   -  
   - .NET 8
+* - 2024
+  -  
+  - .NET 9
+* - 2025
+  -  
+  - .NET 10
+* - 2026
+  -  
+  - .NET 11
 ```
 
 See more .NET release information on [versionsof.net](https://versionsof.net/).
