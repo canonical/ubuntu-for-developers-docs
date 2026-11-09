@@ -20,7 +20,7 @@ There are multiple methods for installing the .NET toolchain on Ubuntu:
 - Manual installation – download the release binaries as a tarball and install them manually.
 
 ```{warning}
-It's recommended to install the .NET toolchain from.**Do not mix multiple installation methods**, as this may lead to problems when applications try to resolve a specific version of .NET or when you try to update your installation to a new release.
+Choose one of these methods and use it for all .NET versions you install. **Do not mix multiple installation methods**, as this may lead to problems when applications try to resolve a specific version of .NET or when you try to update your installation to a new release.
 ```
 
 ### Deciding how to install .NET
