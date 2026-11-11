@@ -157,17 +157,17 @@ The `dotnet run` command is useful for development when you have a .NET SDK inst
 dotnet publish
 
 Restore complete (0.7s)
-  HelloWorld succeeded (1.7s) → bin/Release/net9.0/publish/
+  HelloWorld succeeded (1.7s) → bin/Release/net10.0/publish/
 
 Build succeeded in 2.7s
 ```
 
-As shown by the terminal output, in this case (using .NET 9) the build output is located in `bin/Release/net9.0/publish/`. This directory would also contain all dependencies (but in this case, there aren't any). You can copy this directory to the target system and run the application with:
+As shown by the terminal output, in this case (using .NET 10) the build output is located in `bin/Release/net10.0/publish/`. This directory would also contain all dependencies (but in this case, there aren't any). You can copy this directory to the target system and run the application with:
 
 ```{terminal}
 :user: dev
 :host: ubuntu
-:dir: ~/HelloWorld/bin/Release/net9.0/publish
+:dir: ~/HelloWorld/bin/Release/net10.0/publish
 
 dotnet HelloWorld.dll
 ```
@@ -177,7 +177,7 @@ This directory also contains a `HelloWorld` file. This is a wrapper that is able
 ```{terminal}
 :user: dev
 :host: ubuntu
-:dir: ~/HelloWorld/bin/Release/net9.0/publish
+:dir: ~/HelloWorld/bin/Release/net10.0/publish
 
 ./HelloWorld
 ```
