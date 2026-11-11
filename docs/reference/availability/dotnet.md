@@ -97,14 +97,6 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) lets you install .NET component
     8.0
     ```
   - 10 November 2026
-* - .NET 7 (STS, end of life)
-  - ```none
-    7
-    ```
-    ```none
-    7.0
-    ```
-  - 14 May 2024
 * - .NET 6 (LTS, end of life)
   - ```none
     6
@@ -116,6 +108,10 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) lets you install .NET component
 ````
 
 End-of-life versions can still be installed with the snap, but `dotnet-installer list` only shows them when you add the `--all` flag.
+
+```{note}
+.NET 7 isn't available through the `dotnet` snap. It was already out of support when the snap was created, and only a .NET Runtime build exists for it, without an ASP\.NET Core Runtime or SDK.
+```
 
 See: {ref}`dotnet-installation-snap`
 
