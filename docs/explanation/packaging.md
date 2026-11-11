@@ -66,7 +66,7 @@ Docker is one of the most commonly used container runtimes, and their documentat
 - [Docker workshop: containerize an application](https://docs.docker.com/get-started/workshop/02_our_app/)
 - [Docker concepts: building images](https://docs.docker.com/get-started/docker-concepts/building-images/)
 
-Canonical, the creator of Ubuntu, also has a tool to create production-grade container images: [Rockcraft](https://documentation.ubuntu.com/rockcraft/stable/). Rockcraft allows to make efficient container images, called *rocks*, which are based on Ubuntu. This has the benefits of Ubuntu support, while being smaller in footprint than regular images.
+Canonical, the creator of Ubuntu, also has a tool to create production-grade container images: [Rockcraft](https://ubuntu.com/containers/rockcraft/docs/latest/). Rockcraft allows to make efficient container images, called *rocks*, which are based on Ubuntu. This has the benefits of Ubuntu support, while being smaller in footprint than regular images.
 
-For guidance on how to use Rockcraft, see [Rockcraft tutorial](https://documentation.ubuntu.com/rockcraft/latest/tutorial/#tutorial).
+For guidance on how to use Rockcraft, see [Rockcraft tutorial](https://ubuntu.com/containers/rockcraft/docs/latest/tutorial/#tutorial).
 
