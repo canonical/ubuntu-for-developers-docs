@@ -102,7 +102,7 @@ Before initializing a workshop, search the SDK Store to confirm that the SDK exi
 The `rust` SDK is published by Canonical and tracks a single channel, `latest/stable`, with builds for the Ubuntu 22.04, 24.04, and 26.04 bases. The `CHANNELS` table in the `sdk info rust` output lists the supported bases for your machine.
 
 :::{note}
-The output you see depends on the version of the SDK available at the time you run these commands. When a newer release is published, the version number, build date, and revision shown above will differ. The `CHANNELS` table may also list a different set of Ubuntu bases, since it reflects the builds available for your machine.
+The output you see depends on the version of the SDK available at the time you run these commands. When a newer release is published, the version number, build date, and revision shown above differ. The `CHANNELS` table may also list a different set of Ubuntu bases, since it reflects the builds available for your machine.
 :::
 
 
@@ -201,7 +201,7 @@ Let's create a "Hello, world!" program and build it with tools from the {pkg}`ru
               workshop-target:  /home/workshop/.cargo/registry
       ```
 
-       The `rust` SDK installs rustup and the default `stable` toolchain inside the workshop, alongside a mount that caches downloaded dependencies on the host between workshop updates. For more information about `workshop info`, refer to [its documentation page](https://ubuntu.com/workshop/docs/reference/cli/workshop/#ref-workshop-info).
+       The `rust` SDK installs rustup and the default `stable` toolchain inside the workshop, alongside a mount that caches downloaded dependencies on the host between workshop updates. For more information, refer to [`workshop info`](https://ubuntu.com/workshop/docs/reference/cli/workshop/#ref-workshop-info).
 
     :::{note}
     To stop the workshop environment from running, use {command}`workshop stop`. To then make the workshop ready for use again, start it with the {command}`workshop start` command.
@@ -285,16 +285,16 @@ rustc 1.85.0 (4d91de4e4 2025-02-17)
 ```
 
 :::{note}
-The toolchain file takes precedence over your personal rustup settings. Even if you have selected a different default toolchain, commands run in the project directory use the version pinned in {file}`rust-toolchain.toml`. Commit the file to your repository so that every contributor builds the project with the same Rust version.
+The toolchain file takes precedence over your personal rustup settings. Even if you have selected a different default toolchain, commands run in the project directory use the version pinned in {file}`rust-toolchain.toml`. Commit the file to your repository, so that every contributor builds the project with the same Rust version.
 :::
 
-If you no longer need the pinned version, remove the file to fall back to the default toolchain.
+To stop using the pinned version, remove the file to fall back to the default toolchain.
 
 :::
 ### Selecting a toolchain with rustup
 :::
 
-If you would like to pick a toolchain version without a project file, use rustup from within the workshop:
+To pick a toolchain version without a project file, use rustup from within the workshop:
 
 ```{terminal}
 :copy:
@@ -366,9 +366,9 @@ Refreshing the workshop re-runs the SDK setup, which resets the default toolchai
 :::
 
 
-## A daily workflow with actions
+## Daily workflow with actions
 
-Typing the full {command}`workshop exec` incantation for every build soon gets tedious. [Workshop actions](https://ubuntu.com/workshop/docs/how-to/customize-workshops/add-actions/) let you name the commands you run often and invoke them as targets of {command}`workshop run`: {command}`workshop run build` runs the `build` action. To list the actions of a workshop, use {command}`workshop actions`.
+Typing the full {command}`workshop exec` command for every build soon gets tedious. [Workshop actions](https://ubuntu.com/workshop/docs/how-to/customize-workshops/add-actions/) let you name the commands you run often and invoke them as targets of {command}`workshop run`: {command}`workshop run build` runs the `build` action. To list the actions of a workshop, use {command}`workshop actions`.
 
 Add an `actions` section to the workshop definition:
 
@@ -388,7 +388,7 @@ actions:
   doc: cargo doc "$@"
 ```
 
-Each action is a bash command, and the `"$@"` expansion forwards every argument supplied after the action name into the command. For instance, `workshop run build --release` becomes `cargo build --release` inside the workshop.
+Each action is a Bash command, and the `"$@"` expansion forwards every argument supplied after the action name into the command. For instance, `workshop run build --release` becomes `cargo build --release` inside the workshop.
 
 Run the actions:
 
@@ -420,15 +420,15 @@ The same pattern works for any command you run often; see [How to add actions to
 (rust-webapi-example)=
 ## Advanced example: expose a Rust web API to your host
 
-So far, everything has run inside the workshop. In this section, you will build a web service with the [`axum`](https://github.com/tokio-rs/axum) web framework and expose it to your host machine with a *tunnel* interface, so you can open it in a browser on the host.
+So far, everything has run inside the workshop. In this section, you build a web service with the [`axum`](https://github.com/tokio-rs/axum) web framework and expose it to your host machine with a *tunnel* interface, so you can open it in a browser on the host.
 
 
 :::
 ### Prerequisites
 :::
 
-- Workshop and LXD, installed as described in the [Workshop getting-started tutorial](https://ubuntu.com/workshop/docs/tutorial/part-1-get-started/)
-- The {file}`hello-workshop` project directory from the previous sections
+- Workshop and LXD, installed as described in the [Workshop getting-started tutorial](https://ubuntu.com/workshop/docs/tutorial/part-1-get-started/).
+- The {file}`hello-workshop` project directory from the previous sections.
 
 
 :::
@@ -634,6 +634,6 @@ Installed toolchains and rustup configuration live inside the workshop container
 This SDK doesn't define any slots out of the box. As shown in the {ref}`advanced example <rust-webapi-example>`, you can declare custom slots in your workshop definition to expose services, such as web applications, from the workshop to the host.
 
 
-## For More Information
+## For more information
 
-The source code for the Rust SDK for Workshop is publicly available on [GitHub](https://github.com/canonical/rust-sdk).
+The source code for the Rust SDK for Workshop is publicly available on GitHub: [rust-sdk](https://github.com/canonical/rust-sdk).
