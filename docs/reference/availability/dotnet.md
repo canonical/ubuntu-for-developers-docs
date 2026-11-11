@@ -110,7 +110,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) lets you install .NET component
 End-of-life versions can still be installed with the snap, but `dotnet-installer list` only shows them when you add the `--all` flag.
 
 ```{note}
-.NET 7 isn't available through the `dotnet` snap. It was already out of support when the snap was created, and only a .NET Runtime build exists for it, without an ASP\.NET Core Runtime or SDK.
+.NET 7 isn't available through the `dotnet` snap. It was already out of support when the snap was created, and only a .NET Runtime content snap exists for it, without an ASP\.NET Core Runtime or SDK.
 ```
 
 See: {ref}`dotnet-installation-snap`
