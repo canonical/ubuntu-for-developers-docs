@@ -91,7 +91,7 @@ The quality of all releases is the same. The only difference is the length of su
 Patch updates are released monthly on the second Tuesday of each month, also known as Patch Tuesday. Within a release's support life-cycle, systems must remain current on released patch updates. Patches to releases are compatible, which eliminates the risk of adversely affecting applications.
 
 ```{figure} /images/dotnet-release-schedule.svg
-   :alt: release and support timeline of .NET 8 (November 2023) to .NET 12 (November 2027), with a new release every November alternating between LTS releases (.NET 8, 10, 12; patches for 3 years) and STS releases (.NET 9, 11; patches for 2 years), and .NET 10 marked as the latest release
+   :alt: release and support timeline of .NET 9 (November 2024) to .NET 13 (November 2028), with a new release every November alternating between STS releases (.NET 9, 11, 13; patches for 2 years) and LTS releases (.NET 10, 12; patches for 3 years), and .NET 11 marked as the latest release
 
    .NET release and (upstream) support schedule
 

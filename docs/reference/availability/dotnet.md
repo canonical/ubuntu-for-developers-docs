@@ -69,7 +69,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     ```none
     11.0
     ```
-  - 14 November, 2028
+  - 14 November 2028
 * - .NET 10 (LTS)
   - ```none
     lts
@@ -80,7 +80,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     ```none
     10.0
     ```
-  - 14 November, 2028
+  - 14 November 2028
 * - .NET 9 (STS)
   - ```none
     9
@@ -88,7 +88,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     ```none
     9.0
     ```
-  - 10 November, 2026
+  - 10 November 2026
 * - .NET 8 (LTS)
   - ```none
     8
@@ -134,9 +134,9 @@ See: {ref}`dotnet-installation-snap`
 
 | .NET Version | Source package | End of Life (Upstream) | 
 |--------------|----------------|------------------------|
-| .NET 11 (STS) | {lpsrc}`dotnet11` | 14 November, 2028 |
-| .NET 10 (LTS) | {lpsrc}`dotnet10` | 14 November, 2028 |
-| .NET 9 (STS) | {lpsrc}`dotnet9` | 10 November, 2026 |
+| .NET 11 (STS) | {lpsrc}`dotnet11` | 14 November 2028 |
+| .NET 10 (LTS) | {lpsrc}`dotnet10` | 14 November 2028 |
+| .NET 9 (STS) | {lpsrc}`dotnet9` | 10 November 2026 |
 | .NET 8 (LTS) | {lpsrc}`dotnet8` | 10 November 2026 |
 | .NET 7 (STS) | {lpsrc}`dotnet7` | 14 May 2024 |
 | .NET 6 (LTS) | {lpsrc}`dotnet6` | 12 November 2024 |
