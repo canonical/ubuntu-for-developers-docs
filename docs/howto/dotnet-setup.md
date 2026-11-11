@@ -15,7 +15,7 @@ There are multiple methods for installing the .NET toolchain on Ubuntu:
 
 - Using the [`dotnet` snap](https://snapcraft.io/dotnet) – a .NET toolchain installer that makes it easy to install the latest releases of .NET  SDKs/runtimes in parallel.
 - Using Ubuntu packages from Ubuntu package feeds – official packages maintained by the Ubuntu team and installed through the Ubuntu package-management system.
-- Using Microsoft packages from the Microsoft package feed – official packages maintained by Microsoft and installed through the Ubuntu package-management  system.
+- Using Microsoft packages from the Microsoft package feed – official packages maintained by Microsoft and installed through the Ubuntu package-management system. The feed only provides .NET 8 and older (all end of life) for Ubuntu 22.04, and no packages for Ubuntu 24.04 or newer.
 - Using Microsoft's installation script – a script you download and run in your terminal that allows you to install any .NET release.
 - Manual installation – download the release binaries as a tarball and install them manually.
 
@@ -47,8 +47,6 @@ flowchart TD
     
     UbuntuPackagesInstallation["`Use Ubuntu packages`"]
     SnapInstallation["`**Use the <c>dotnet</c> Snap**`"]
-    MicrosoftPackagesInstallation1["`Use Microsoft packages`"]
-    MicrosoftPackagesInstallation2["`Use Microsoft packages`"]
     MicrosoftScriptInstallation1["`Use the Microsoft<br>installer script`"]
     MicrosoftScriptInstallation2["`Use the Microsoft<br>installer script`"]
     MicrosoftScriptInstallation3["`Use the Microsoft<br>installer script`"]
@@ -58,8 +56,7 @@ flowchart TD
 
     NeedNewerFeatureBands -- Yes --> WhichArch1
     NeedNewerFeatureBands -- No --> NeedOlderVersions
-    WhichArch1 -- x64 --> MicrosoftPackagesInstallation1
-    WhichArch1 -- arm64 or arm32 --> MicrosoftScriptInstallation1
+    WhichArch1 -- x64, arm64 or arm32 --> MicrosoftScriptInstallation1
     WhichArch1 -- other --> NoInstallation1
 
     NeedOlderVersions -- No ----> WhichArch3
@@ -74,7 +71,7 @@ flowchart TD
     WhichArch3 -- s390x or ppc64el --> UsesS390xOrPowerJammyOrNewer
     WhichArch3 -- other --> NoInstallation3
 
-    UsesAmd64JammyOrNewer -- No --> MicrosoftPackagesInstallation2
+    UsesAmd64JammyOrNewer -- No --> MicrosoftScriptInstallation3
     UsesAmd64JammyOrNewer -- Yes --> NeedAPTOrPreview
 
     UsesArm64JammyOrNewer -- Yes --> NeedAPTOrPreview
@@ -107,12 +104,15 @@ flowchart TD
       as soon as they are available
     - only supports Ubuntu 22.04 or newer
 * - [Microsoft packages](dotnet-installation-microsoft-packages)
-  - - supports Ubuntu 16.04, 18.04, 20.04
-    - higher SDK feature bands are available (> x.x.1xx)
-  - - requires installing an APT repository
-    - APT may needs to be configure to resolve conflicts with
+  - - higher SDK feature bands are available (> x.x.1xx) for
+      the .NET versions in the feed
+  - - only provides .NET 8 and older, which are no longer
+      supported (end of life)
+    - only provides packages for Ubuntu 22.04; no support for
+      Ubuntu 24.04 or newer¹
+    - requires installing an APT repository
+    - APT may need to be configured to resolve conflicts with
       Ubuntu packages
-    - no support for Ubuntu 24.04 or newer¹
     - only supports the `x64` system architecture
 * - Microsoft's [scripted](#dotnet-installation-microsoft-script) / 
     [manual](dotnet-installation-microsoft-manual) installation
@@ -224,13 +224,13 @@ Examples:
 
 #### Uninstalling .NET components
 
-To install a .NET component, run the following command:
+To uninstall a .NET component, run the following command:
 
 ```text
-dotnet-installer remove <component> <versison>
+dotnet-installer remove <component> <version>
 ```
 
-The command works similar to the `dotnet installer install` command (documented above) -- just uninstalling instead of installing. One difference to the syntax of the installation command is that the parameters `<component>` and
+The command works similar to the `dotnet-installer install` command (documented above) -- just uninstalling instead of installing. One difference to the syntax of the installation command is that the parameters `<component>` and
 `<version>` are required.
 
 #### Uninstalling the `dotnet` snap
@@ -355,6 +355,7 @@ Available for architectures:
 
 :::{tab-item} .NET 10
 :sync: 10.0
+:selected:
 
 <!-- Content for Ubuntu 26.04 (Resolute Raccoon) and .NET 10 -->
 Available for architectures:
@@ -450,6 +451,7 @@ Available for architectures:
 
 :::{tab-item} .NET 10
 :sync: 10.0
+:selected:
 
 <!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 10 -->
 Available for architectures:
@@ -491,9 +493,6 @@ Available for architectures:
 
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
 
 ```{include} /reuse/howto/dotnet-setup/dotnet8-apt-install-ubuntu-package.md
 ```
@@ -564,6 +563,7 @@ Available for architectures:
 
 :::{tab-item} .NET 10
 :sync: 10.0
+:selected:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 10 -->
 Available for architectures:
@@ -606,9 +606,6 @@ Available for architectures:
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
 ```{include} /reuse/howto/dotnet-setup/dotnet8-apt-install-ubuntu-package.md
 ```
 :::
@@ -625,9 +622,6 @@ Available for architectures:
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`
 
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
 ```{include} /reuse/howto/dotnet-setup/dotnet7-apt-install-ubuntu-package.md
 ```
 :::
@@ -643,9 +637,6 @@ Available for architectures:
 
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
 
 ```{include} /reuse/howto/dotnet-setup/dotnet6-apt-install-ubuntu-package.md
 ```
@@ -761,6 +752,10 @@ Already installed proposed updates remain installed. To remove them, uninstall a
 TODO: add doumentation about conflicts with Ubuntu provided packages 
       and how to resolve them
 -->
+```{caution}
+The Microsoft package feed only provides .NET 8 and older for Ubuntu 22.04, and no .NET packages for Ubuntu 24.04 or newer. All .NET versions it provides are no longer supported (end of life). To install a supported .NET version, use the {ref}`dotnet snap <dotnet-installation-snap>`, {ref}`Ubuntu packages <dotnet-installation-ubuntu-packages>`, or the {ref}`Microsoft installation script <dotnet-installation-microsoft-script>`.
+```
+
 For this installation method, see Microsoft's documentation: [Install .NET SDK or .NET Runtime on Ubuntu](https://learn.microsoft.com/en-us/dotnet/core/install/linux-ubuntu-install).
 
 (dotnet-installation-microsoft-script)=
@@ -794,7 +789,7 @@ To list installed .NET runtimes, run the following command:
 dotnet --list-runtimes
 ```
 
-Example output:
+Example outputs:
 
 ```{terminal}
 :user: dev
@@ -803,32 +798,37 @@ Example output:
 dotnet --info
 
 .NET SDK:
- Version:           8.0.113
- Commit:            67977f6ab7
- Workload version:  8.0.100-manifests.bbbf61fd
+ Version:           11.0.100
+ Commit:            297acf930f
+ Workload version:  11.0.100-manifests.08e30c08
+ MSBuild version:   18.12.2-1.26529.118+297acf930
 
 Runtime Environment:
  OS Name:     ubuntu
  OS Version:  24.04
  OS Platform: Linux
- RID:         ubuntu.22.04-x64
- Base Path:   /var/snap/dotnet/common/dotnet/sdk/8.0.113/
+ RID:         ubuntu.24.04-x64
+ Base Path:   /usr/lib/dotnet/sdk/11.0.100
 
 .NET workloads installed:
- Workload version: 8.0.100-manifests.bbbf61fd
 There are no installed workloads to display.
+Configured to use workload sets when installing new manifests.
+No workload sets are installed. Run "dotnet workload restore" to install a workload set.
 
 Host:
-  Version:      9.0.1
+  Version:      11.0.0
   Architecture: x64
-  Commit:       1cf154a56d
+  Commit:       297acf930f
 
 .NET SDKs installed:
-  8.0.113 [/var/snap/dotnet/common/dotnet/sdk]
+  10.0.115 [/usr/lib/dotnet/sdk]
+  11.0.100 [/usr/lib/dotnet/sdk]
 
 .NET runtimes installed:
-  Microsoft.AspNetCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.AspNetCore.App]
-  Microsoft.NETCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.AspNetCore.App 10.0.15 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.AspNetCore.App 11.0.0 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+  Microsoft.NETCore.App 10.0.15 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+  Microsoft.NETCore.App 11.0.0 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
 
 Other architectures found:
   None
@@ -844,11 +844,28 @@ Learn more:
 
 Download .NET:
   https://aka.ms/dotnet/download
+```
 
-8.0.113 [/var/snap/dotnet/common/dotnet/sdk]
+```{terminal}
+:user: dev
+:host: ubuntu
 
-Microsoft.AspNetCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.AspNetCore.App]
-Microsoft.NETCore.App 8.0.13 [/var/snap/dotnet/common/dotnet/shared/Microsoft.NETCore.App]
+dotnet --list-sdks
+
+10.0.115 [/usr/lib/dotnet/sdk]
+11.0.100 [/usr/lib/dotnet/sdk]
+```
+
+```{terminal}
+:user: dev
+:host: ubuntu
+
+dotnet --list-runtimes
+
+Microsoft.AspNetCore.App 10.0.15 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.AspNetCore.App 11.0.0 [/usr/lib/dotnet/shared/Microsoft.AspNetCore.App]
+Microsoft.NETCore.App 10.0.15 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
+Microsoft.NETCore.App 11.0.0 [/usr/lib/dotnet/shared/Microsoft.NETCore.App]
 ```
 
 (setting-up-dotnet-ide)=
@@ -876,7 +893,7 @@ The following popular .NET extensions are available for VS Code:
   * - Extension
     - Description
     - Terms
-  * - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp):
+  * - [C#](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csharp)
     - Base language support for C#
     - free
   * - [C# Dev Kit](https://marketplace.visualstudio.com/items?itemName=ms-dotnettools.csdevkit)
@@ -906,10 +923,15 @@ The following popular .NET extensions are available for VS Codium:
   * - Extension
     - Description
     - Terms
-  * - [C#](https://open-vsx.org/extension/muhammad-sammy/csharp):
+  * - [C#](https://open-vsx.org/extension/muhammad-sammy/csharp)
     - Base language support for C# 
     
       (fork of the Microsoft extension that replaces the proprietary debugger with Samsung's FOSS .NET debugger)
+    - free
+  * - [C# (`dotnetdev-kr-custom`)](https://open-vsx.org/extension/dotnetdev-kr-custom/csharp)
+    - Alternative base language support for C#
+
+      (used in the {ref}`debugging-with-netcoredbg` tutorial together with the `netcoredbg` snap)
     - free
   * - [Ionide for F#](https://open-vsx.org/extension/Ionide/Ionide-fsharp)
     - F# language support
@@ -918,7 +940,6 @@ The following popular .NET extensions are available for VS Codium:
 
 To install [VS Codium](https://snapcraft.io/codium), run the following command:
 
-dotnet --list-runtimes
 ```text
 sudo snap install codium --classic
 ```

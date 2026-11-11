@@ -61,9 +61,9 @@ The symbols packages are structured so that PDB files are placed side-by-side wi
 :user: dev
 :host: ubuntu
 
-tree -L 1 --charset unicode /usr/lib/dotnet/shared/Microsoft.NETCore.App/10.0.14/
+tree -L 1 --charset unicode /usr/lib/dotnet/shared/Microsoft.NETCore.App/10.0.15/
 
-/usr/lib/dotnet/shared/Microsoft.NETCore.App/10.0.14/
+/usr/lib/dotnet/shared/Microsoft.NETCore.App/10.0.15/
 …
 |-- Microsoft.CSharp.dll
 |-- Microsoft.CSharp.pdb

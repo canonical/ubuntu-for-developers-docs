@@ -22,7 +22,7 @@ This article lists Canonical maintained .NET builds.
 
 ## .NET Snap
 
-The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET components of the following versions on Ubuntu 22.04 LTS and above for `amd64` and `arm64` architectures.
+The [`dotnet` snap](https://snapcraft.io/dotnet) lets you install .NET components of the following versions on Ubuntu 22.04 LTS and above for `amd64` and `arm64` architectures.
 
 (dotnet-snap-components)=
 ### Components
@@ -37,17 +37,17 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
   - ```none
     sdk
     ```
-  - let's you build and run .NET apps
+  - lets you build and run .NET apps
 * - ASP\.NET Core Runtime
   - ```none
     aspnetcore-runtime
     ```
-  - let's you run .NET apps (including ASP\.NET Core apps)
+  - lets you run .NET apps (including ASP\.NET Core apps)
 * - .NET Runtime
   - ```none
     runtime
     ```
-  - let's you run .NET apps (without the components needed to run ASP\.NET Core apps)
+  - lets you run .NET apps (without the components needed to run ASP\.NET Core apps)
 ````
 
 (dotnet-snap-versions)=
@@ -81,7 +81,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     10.0
     ```
   - 14 November 2028
-* - .NET 9 (STS)
+* - .NET 9 (STS, end of life)
   - ```none
     9
     ```
@@ -89,7 +89,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     9.0
     ```
   - 10 November 2026
-* - .NET 8 (LTS)
+* - .NET 8 (LTS, end of life)
   - ```none
     8
     ```
@@ -97,7 +97,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     8.0
     ```
   - 10 November 2026
-* - .NET 7 (STS)
+* - .NET 7 (STS, end of life)
   - ```none
     7
     ```
@@ -105,7 +105,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     7.0
     ```
   - 14 May 2024
-* - .NET 6 (LTS)
+* - .NET 6 (LTS, end of life)
   - ```none
     6
     ```
@@ -114,6 +114,8 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     ```
   - 12 November 2024
 ````
+
+End-of-life versions can still be installed with the snap, but `dotnet-installer list` only shows them when you add the `--all` flag.
 
 See: {ref}`dotnet-installation-snap`
 
