@@ -425,170 +425,6 @@ Available for architectures:
 
 :::::
 
-:::::{tab-item} 25.10
-:sync: questing
-
-Choose the .NET version you want to install:
-
-::::{tab-set}
-:sync-group: dotnet-version
-
-:::{tab-item} .NET 11
-:sync: 11.0
-
-<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 11 -->
-
-.NET 11 isn't available as an Ubuntu package on Ubuntu 25.10 (Questing Quokka). We recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
-:::
-
-:::{tab-item} .NET 10
-:sync: 10.0
-
-<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 10 -->
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
-```
-
-:::
-
-:::{tab-item} .NET 9
-:sync: 9.0
-
-<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 9 -->
-
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet9-apt-install-ubuntu-package.md
-```
-:::
-
-:::{tab-item} .NET 8
-:sync: 8.0
-
-<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 8 -->
-
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet8-apt-install-ubuntu-package.md
-```
-:::
-
-:::{tab-item} .NET 7
-:sync: 7.0
-
-<!-- Content for Ubuntu 25.10 (Questing Quokka) and .NET 7 -->
-
-.NET 7 isn't supported on Ubuntu 25.10 (Questing Quokka).
-:::
-
-:::{tab-item} .NET 6
-:sync: 6.0
-
-
-<!-- Content for 25.10 (Questing Quokka) and .NET 6 -->
-
-.NET 6 isn't supported on Ubuntu 25.10 (Questing Quokka).
-:::
-
-::::
-
-:::::
-
-:::::{tab-item} 25.04
-:sync: plucky
-
-Choose the .NET version you want to install:
-
-::::{tab-set}
-:sync-group: dotnet-version
-
-:::{tab-item} .NET 11
-:sync: 11.0
-
-<!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 11 -->
-
-.NET 11 isn't available as an Ubuntu package on Ubuntu 25.04 (Plucky Puffin). We recommend {ref}`installing this version of .NET via the dotnet snap<dotnet-installation-snap>`.
-:::
-
-:::{tab-item} .NET 10
-:sync: 10.0
-
-<!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 10 -->
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet10-apt-install-ubuntu-package.md
-```
-
-:::
-
-:::{tab-item} .NET 9
-:sync: 9.0
-
-<!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 9 -->
-
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet9-apt-install-ubuntu-package.md
-```
-:::
-
-:::{tab-item} .NET 8
-:sync: 8.0
-
-<!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 8 -->
-
-Available for architectures:
-: `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
-
-```{include} /reuse/howto/dotnet-setup/dotnet-install-proposed-updates.md
-```
-
-```{include} /reuse/howto/dotnet-setup/dotnet8-apt-install-ubuntu-package.md
-```
-:::
-
-:::{tab-item} .NET 7
-:sync: 7.0
-
-<!-- Content for Ubuntu 25.04 (Plucky Puffin) and .NET 7 -->
-
-.NET 7 isn't supported on Ubuntu 25.04 (Plucky Puffin).
-:::
-
-:::{tab-item} .NET 6
-:sync: 6.0
-
-
-<!-- Content for 25.04 (Plucky Puffin) and .NET 6 -->
-
-.NET 6 isn't supported on Ubuntu 25.04 (Plucky Puffin).
-:::
-
-::::
-
-:::::
-
 :::::{tab-item} 24.04 LTS
 :sync: noble
 
@@ -649,6 +485,9 @@ Available for architectures:
 :sync: 8.0
 
 <!-- Content for Ubuntu 24.04 LTS (Noble Numbat) and .NET 8 -->
+
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
 
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
@@ -761,6 +600,9 @@ Available for architectures:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 8 -->
 
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
+
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`, `s390x` (aka IBM System Z), `ppc64el` (aka POWER)
 
@@ -777,6 +619,9 @@ Available for architectures:
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 7 -->
 
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
+
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`
 
@@ -792,6 +637,9 @@ Available for architectures:
 
 
 <!-- Content for Ubuntu 22.04 LTS (Jammy Jellyfish) and .NET 6 -->
+
+```{include} /reuse/howto/dotnet-setup/dotnet-version-no-longer-maintained.md
+```
 
 Available for architectures:
 : `amd64` (aka `x64`), `arm64`
