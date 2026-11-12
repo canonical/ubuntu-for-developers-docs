@@ -98,7 +98,7 @@ This creates the following files:
 
 - `Program.vb`: Visual Basic application code. Visual Basic source files usually have the `.vb` file extension.
 - `HelloWorld.vbproj`: This is the Visual Basic project file. VB project files usually have the `.vbproj` file extension.
-- `obj` directory: This directory is used to store temporary files used in order to create the final build output. Because it just contains temporary files, it is safe to delete ans should be omitted from your version control system. You can ignore this directory for the rest of this article.
+- `obj` directory: This directory is used to store temporary files used in order to create the final build output. Because it just contains temporary files, it is safe to delete and should be omitted from your version control system. You can ignore this directory for the rest of this article.
 :::::
 
 ::::::
@@ -137,6 +137,8 @@ Let's see the application in action. Use the `dotnet run` command to restore dep
 :user: dev
 :host: ubuntu
 
+dotnet run
+
 Hello, World!
 ```
 
@@ -157,17 +159,17 @@ The `dotnet run` command is useful for development when you have a .NET SDK inst
 dotnet publish
 
 Restore complete (0.7s)
-  HelloWorld succeeded (1.7s) → bin/Release/net9.0/publish/
+  HelloWorld succeeded (1.7s) → bin/Release/net10.0/publish/
 
 Build succeeded in 2.7s
 ```
 
-As shown by the terminal output, in this case (using .NET 9) the build output is located in `bin/Release/net9.0/publish/`. This directory would also contain all dependencies (but in this case, there aren't any). You can copy this directory to the target system and run the application with:
+As shown by the terminal output, in this case (using .NET 10) the build output is located in `bin/Release/net10.0/publish/`. This directory would also contain all dependencies (but in this case, there aren't any). You can copy this directory to the target system and run the application with:
 
 ```{terminal}
 :user: dev
 :host: ubuntu
-:dir: ~/HelloWorld/bin/Release/net9.0/publish
+:dir: ~/HelloWorld/bin/Release/net10.0/publish
 
 dotnet HelloWorld.dll
 ```
@@ -177,7 +179,7 @@ This directory also contains a `HelloWorld` file. This is a wrapper that is able
 ```{terminal}
 :user: dev
 :host: ubuntu
-:dir: ~/HelloWorld/bin/Release/net9.0/publish
+:dir: ~/HelloWorld/bin/Release/net10.0/publish
 
 ./HelloWorld
 ```
@@ -228,6 +230,7 @@ var index = 0;
 
 while (index < names.Count)
 {
+    // The bug is on the next line:
     index++;
     Console.WriteLine($"Hello, {names[index]}");
 }
@@ -271,7 +274,7 @@ By analyzing the {guilabel}`Variables` window, we see that the `names` variable 
    :alt: A debugger session highlighting the name variable contains 3 elements and index has value 3
 ```
 
-The issue is that we are incrementing the index variable *before* accessing the names collection. Since the index variable is first assigned to 0, the first increment brings it to 1, making the program greet names starting from the second one -- this is a classic [off-by-one error](https://en.wikipedia.org/wiki/Off-by-one_error). We fix this by moving `index++` one line down. Running the program again shows no errors:
+The issue is that we are incrementing the index variable *before* accessing the names collection. Since the index variable is first assigned to 0, the first increment brings it to 1, making the program greet names starting from the second one -- this is a classic [off-by-one error](https://en.wikipedia.org/wiki/Off-by-one_error). We fix this by moving `index++` one line down, after the `Console.WriteLine` call, and removing the comment. Running the program again shows no errors:
 
 ```{figure} /images/debug-dotnet/05-program-fixed.png
    :alt: A highlight that the program exited successfully with exit code 0
@@ -533,14 +536,14 @@ while (index < names.Count)
 }
 ```
 
-This is the same code block used in {ref}`debugging-with-vscode`. The goal of this program is to build a list of names – Alice, Bob, and Charlie – then greet each one with “Hello” within the `while` loop. However, running this code shows that it is not working as expected:
+This is the same code used in {ref}`debugging-with-vscode`, without the comment. The goal of this program is to build a list of names – Alice, Bob, and Charlie – then greet each one with “Hello” within the `while` loop. However, running this code shows that it is not working as expected:
 
 ```
 Hello, Bob
 Hello, Charlie
 Unhandled exception. System.ArgumentOutOfRangeException: Index was out of range. Must be non-negative and less than the size of the collection. (Parameter 'index')
    at System.Collections.Generic.List`1.get_Item(Int32 index)
-   at Program.<Main>$(String[] args) in /home/ubuntu/HelloWorld/Program.cs:line 8
+   at Program.<Main>$(String[] args) in /home/ubuntu/HelloWorld/Program.cs:line 7
 ```
 
 Two problems appeared:
@@ -560,7 +563,6 @@ Go to the {guilabel}`Run and Debug` section in VS Codium and click the {guilabel
 
 Notice an exception is thrown on line 7, during the `Console.WriteLine` call.
 
-dotnet run
 ```{figure} /images/debug-dotnet/19-netcoredbg-exception.png
    :alt: An ArgumentOutOfRangeException thrown during a NetCoreDbg debugging session
 ```

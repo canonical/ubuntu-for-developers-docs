@@ -22,7 +22,7 @@ This article lists Canonical maintained .NET builds.
 
 ## .NET Snap
 
-The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET components of the following versions on Ubuntu 22.04 LTS and above for `amd64` and `arm64` architectures.
+The [`dotnet` snap](https://snapcraft.io/dotnet) lets you install .NET components of the following versions on Ubuntu 22.04 LTS and above for `amd64` and `arm64` architectures.
 
 (dotnet-snap-components)=
 ### Components
@@ -37,17 +37,17 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
   - ```none
     sdk
     ```
-  - let's you build and run .NET apps
+  - lets you build and run .NET apps
 * - ASP\.NET Core Runtime
   - ```none
     aspnetcore-runtime
     ```
-  - let's you run .NET apps (including ASP\.NET Core apps)
+  - lets you run .NET apps (including ASP\.NET Core apps)
 * - .NET Runtime
   - ```none
     runtime
     ```
-  - let's you run .NET apps (without the components needed to run ASP\.NET Core apps)
+  - lets you run .NET apps (without the components needed to run ASP\.NET Core apps)
 ````
 
 (dotnet-snap-versions)=
@@ -59,11 +59,19 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
 * - .NET version
   - identifiers
   - End of Life
-* - .NET 10 (LTS)
+* - .NET 11 (STS)
   - ```none
     latest
     ```
     ```none
+    11
+    ```
+    ```none
+    11.0
+    ```
+  - 14 November 2028
+* - .NET 10 (LTS)
+  - ```none
     lts
     ```
     ```none
@@ -72,16 +80,16 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     ```none
     10.0
     ```
-  - 14 November, 2028
-* - .NET 9 (STS)
+  - 14 November 2028
+* - .NET 9 (STS, end of life)
   - ```none
     9
     ```
     ```none
     9.0
     ```
-  - 10 November, 2026
-* - .NET 8 (LTS)
+  - 10 November 2026
+* - .NET 8 (LTS, end of life)
   - ```none
     8
     ```
@@ -89,15 +97,7 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
     8.0
     ```
   - 10 November 2026
-* - .NET 7 (STS)
-  - ```none
-    7
-    ```
-    ```none
-    7.0
-    ```
-  - 14 May 2024
-* - .NET 6 (LTS)
+* - .NET 6 (LTS, end of life)
   - ```none
     6
     ```
@@ -107,16 +107,22 @@ The [`dotnet` snap](https://snapcraft.io/dotnet) let's you install .NET componen
   - 12 November 2024
 ````
 
+End-of-life versions can still be installed with the snap, but `dotnet-installer list` only shows them when you add the `--all` flag.
+
+```{note}
+.NET 7 isn't available through the `dotnet` snap. It was already out of support when the snap was created, and only a .NET Runtime content snap exists for it, without an ASP\.NET Core Runtime or SDK.
+```
+
 See: {ref}`dotnet-installation-snap`
 
 ## Ubuntu (deb) packages
 
 | Ubuntu version              | `amd64` | `arm64` | `s390x` | `ppc64el` |
 |-----------------------------|---------|---------|---------|-----------|
-| 26.04 (Resolute Raccoon)    | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** | 8{dim}`¹`, 9{dim}`¹`, **10** |
-| 25.10 (Questing Quokka)     | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 | **8**, 9, 10 |
-| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10** | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**, 9{dim}`¹`, **10** | **8**, 9{dim}`¹`, **10** | **8**, 9{dim}`¹`, **10** |
-| 22.04 LTS (Jammy Jellyfish) | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **6**, 7, **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` | **8**, 9{dim}`¹`, 10{dim}`¹` |
+| 26.10 (Stonking Stingray)   | **10**, 11 | **10**, 11 | **10**, 11 | **10**, 11 |
+| 26.04 LTS (Resolute Raccoon) | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 8{dim}`¹ ²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` |
+| 24.04 LTS (Noble Numbat)    | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**{dim}`²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | 6{dim}`¹ ²`, 7{dim}`¹ ²`, **8**{dim}`²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | **8**{dim}`²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` | **8**{dim}`²`, 9{dim}`¹ ²`, **10**, 11{dim}`¹` |
+| 22.04 LTS (Jammy Jellyfish) | **6**{dim}`²`, 7{dim}`²`, **8**{dim}`²`, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` | **6**{dim}`²`, 7{dim}`²`, **8**{dim}`²`, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` | **8**{dim}`²`, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` | **8**{dim}`²`, 9{dim}`¹ ²`, 10{dim}`¹`, 11{dim}`¹` |
 
 <!-- Do not forget to add 4 spaces at the end of line to keep future diffs more readable -->
 **bold** -- package is in main    
@@ -125,8 +131,9 @@ See: {ref}`dotnet-installation-snap`
 
 | .NET Version | Source package | End of Life (Upstream) | 
 |--------------|----------------|------------------------|
-| .NET 10 (LTS) | {lpsrc}`dotnet10` | 14 November, 2028 |
-| .NET 9 (STS) | {lpsrc}`dotnet9` | 10 November, 2026 |
+| .NET 11 (STS) | {lpsrc}`dotnet11` | 14 November 2028 |
+| .NET 10 (LTS) | {lpsrc}`dotnet10` | 14 November 2028 |
+| .NET 9 (STS) | {lpsrc}`dotnet9` | 10 November 2026 |
 | .NET 8 (LTS) | {lpsrc}`dotnet8` | 10 November 2026 |
 | .NET 7 (STS) | {lpsrc}`dotnet7` | 14 May 2024 |
 | .NET 6 (LTS) | {lpsrc}`dotnet6` | 12 November 2024 |
@@ -144,6 +151,16 @@ See: {ref}`dotnet-installation-ubuntu-packages`
 
   * - .NET Version
     - available Debug Symbols packages
+  * - .NET 11
+    - ```text
+      dotnet-sdk-dbg-11.0
+      ```
+      ```text
+      dotnet-runtime-dbg-11.0
+      ```
+      ```text
+      aspnetcore-runtime-dbg-11.0
+      ```
   * - .NET 10
     - ```text
       dotnet-sdk-dbg-10.0
