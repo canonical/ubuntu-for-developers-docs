@@ -44,7 +44,7 @@ Each supported language has its own installation guide, first-program tutorial, 
 
 * **{ref}`Python <python-on-ubuntu>`**: {ref}`Install <install-python>` | {ref}`Tutorial <use-python>` | {ref}`Available versions <python-toolchain-availability>`
 * **{ref}`Go <go-on-ubuntu>`**: {ref}`Install <install-golang>` | {ref}`Tutorial <use-go>` | {ref}`Available versions <go-toolchain-availability>`
-* **{ref}`Rust <rust-on-ubuntu>`**: {ref}`Install <install-rust>` | {ref}`Tutorial <use-rust>` | {ref}`Available versions <rust-toolchain-availability>`
+* **{ref}`Rust <rust-on-ubuntu>`**: {ref}`Install <install-rust>` | {ref}`Tutorial <use-rust>` | {ref}`Available versions <rust-toolchain-availability>` | {ref}`Advanced <rust-advanced>`
 * **{ref}`GCC <gcc-on-ubuntu>`**: {ref}`Install <install-gcc>` | {ref}`Tutorial <use-gcc>` | {ref}`Available versions <gcc-toolchain-availability>`
 * **{ref}`Clang <clang-on-ubuntu>`**: {ref}`Install <install-clang>` | {ref}`Tutorial <use-clang>` | {ref}`Available versions <llvm-toolchain-availability>`
 * **{ref}`.NET <dotnet-on-ubuntu>`**: {ref}`Install <install-dotnet>` | {ref}`Tutorial <use-dotnet>` | {ref}`Available versions <dotnet-toolchain-availability>` | {ref}`Debugging <debugging-with-dotnet>`
