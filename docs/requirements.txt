@@ -24,7 +24,6 @@ sphinx-sitemap~=2.9
 sphinx-llm==1.1.0
 
 # Vale dependencies
-rst2html
 vale~=3.13
 
 # Project-specific extensions
